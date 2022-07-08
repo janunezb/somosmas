@@ -1,9 +1,9 @@
-@extends('layouts.plantilla')
+@extends('layouts.nav')
 
 @section('title', 'Somos Más')
 
 @section('content')
-<section id="portales" class="d-flex justify-content-center align-items-center p-2">
+<section id="portales" class="d-flex justify-content-center align-items-center p-4">
 
 
 
@@ -16,9 +16,7 @@
         </div>
         <div class="col-12 texto">
             <p>Ingresa a tu portal!
-            {{-- {{$prueba = isset($liwa) : $liwa ? 'f';
-             $prueba
-            }} --}}
+
 
             </p>
         </div>
@@ -28,8 +26,8 @@
                     <article class="card h-100">
                         <div class="card-body">
                             <div class="d-flex mb-3">
-                                <a class="formulario"  href="{{route('admin.index')}}">
-                                    <img src="{{ asset('images/logos/liwa.png') }}"  alt="">
+                                <a href="{{route('admin.index')}}">
+                                    <img src="{{ asset('images/logos/liwa.png') }}"   alt="">
                                 </a>
                             </div>
 
@@ -55,7 +53,7 @@
 <section  id="portales2" class="d-flex justify-content-center align-items-center p-2">
 
         <div class="row">
-        <div class="col-6 p-3" onclick="alerta()">
+        <div class="col-6 p-3">
             <article class="card h-100">
                 <div class="card-body">
                     <div class="d-flex mb-3">
@@ -73,7 +71,7 @@
                 <div class="card-body">
                     <div class="d-flex mb-3">
                         <a href="{{route('admin.navega')}}">
-                            <img src="{{ asset('images/logos/navega.png') }}" height="180px"  alt="">
+                            <img  src="{{ asset('images/logos/navega.png') }}"  alt="">
                         </a>
 
                     </div>

@@ -61,7 +61,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-8">
-                            <h1 style="color: #007aff">Sistema de gestion de seguridad
+                            <h1 style="color: #007aff">Sistema de gestión de seguridad
                                 y salud en el trabajo.</h1>
                             <div style="">
                                 <p class="nuevaa h3">
@@ -81,14 +81,21 @@
       <section id="poldeseguridad" class="container d-flex justify-content">
         <div class="row">
             <div class="col-6 p-3">
-                <h4>Politica de seguridad y salud en el trabajo</h4>
                 <p>
-                    "Desde la dirección de Liwa estamos comprometidos con la implementación, desarrollo, mejora continua y cumplimiento legal del sistema de gestión de Seguridad y salud en el trabajo como en nuestra gestión ambiental a través de la asignación de los diferentes recursos necesarios para tal fin; identificando y gestionando los diferentes peligros y riesgos a los que se encuentran expuestos nuestros colaboradores como los terceros al igual que los diferentes aspectos ambientales que se puedan generar durante el desarrollo de nuestras diferentes actividades;vigilando no solo el cumplimiento legal de nuestros procesos sino el de los terceros que hagan parte del desarrollo de nuestras actividades"
+                    <br>
+                    <br>
+                    <hr>
+
+
+                </p>
+                <h4>Política de seguridad y salud en el trabajo</h4>
+                <p>
+                    "Desde la dirección de Liwa estamos comprometidos con la implementación, desarrollo, mejora continua y cumplimiento legal del sistema de gestión de Seguridad y salud en el trabajo como en nuestra gestión ambiental a través de la asignación de los diferentes recursos necesarios para tal fin; identificando y gestionando los diferentes peligros y riesgos a los que se encuentran expuestos nuestros colaboradores como los terceros al igual que los diferentes aspectos ambientales que se puedan generar durante el desarrollo de nuestras diferentes actividades; vigilando no solo el cumplimiento legal de nuestros procesos sino el de los terceros que hagan parte del desarrollo de nuestras actividades"
                 </p>
 
                 <h4>Objetivos del SGSST</h4>
                     <p>
-                        <i class="bi bi-check-circle p-2"></i> Identificar, evaluar y controlar los agentes y factores de riesgos derivados de condiciones peligrosas y actos subestándares presentes en el medio de trabajo, que puedan causar accidentes o alteraciones en la salud de los colaboradores y socializarlos.
+                        <i class="bi bi-check-circle p-2"></i> Identificar, evaluar y controlar los agentes y factores de riesgos derivados de condiciones peligrosas y actos sub estándares presentes en el medio de trabajo, que puedan causar accidentes o alteraciones en la salud de los colaboradores y socializarlos.
                     </p>
                     <p>
                         <i class="bi bi-check-circle p-2"></i> Diseñar, implementar y evaluar el desarrollo del Sistema de Gestión en Seguridad y Salud en el trabajo.
@@ -101,7 +108,7 @@
                         <i class="bi bi-check-circle p-2"></i> Cumplir con los requisitos legales que en materia de seguridad y salud en el trabajo apliquen a la empresa.
                     </p>
                     <p>
-                        <i class="bi bi-check-circle p-2"></i>  Desarrollar, implementar y hacer seguimiento a campañas de estilos de vida saludables generando la cultura del autocuidado.
+                        <i class="bi bi-check-circle p-2"></i>  Desarrollar, implementar y hacer seguimiento a campañas de estilos de vida saludables generando la cultura del auto-cuidado.
                     </p>
             </div>
             <div class="col-6">
@@ -111,13 +118,13 @@
             <div class="col-6">
                 <h4>Etapas 1 a la 4 del SGSST</h4>
                 <p>
-                    <a href="#etapa1" class="btn"><i class="bi bi-check-circle p-2"></i>1.Recursos humanos, financieros, tecnicos entre otros.</a>
+                    <a href="#etapa1" class="btn"><i class="bi bi-check-circle p-2"></i>1.Recursos humanos, financieros, técnicos entre otros.</a>
                     <br>
-                    <a href="#etapa2" class="btn"><i class="bi bi-check-circle p-2"></i>2.Programa de formacion SGSST, medio ambiente y seguridad Vial.</a>
+                    <a href="#etapa2" class="btn"><i class="bi bi-check-circle p-2"></i>2.Programa de formación SGSST, medio ambiente y seguridad Vial.</a>
                     <br>
-                    <a href="#etapa3" class="btn"><i class="bi bi-check-circle p-2"></i>3.Politica SGSST revisada por el representante legal.</a>
+                    <a href="#etapa3" class="btn"><i class="bi bi-check-circle p-2"></i>3.Política SGSST revisada por el representante legal.</a>
                     <br>
-                    <a href="#etapa4" class="btn"><i class="bi bi-check-circle p-2"></i>4.Definicion de objetivos: SGSST,seguridad vial y medio ambiente.</a>
+                    <a href="#etapa4" class="btn"><i class="bi bi-check-circle p-2"></i>4.Definición de objetivos: SGSST, seguridad vial y medio ambiente.</a>
                 </p>
             </div>
         </div>
@@ -126,7 +133,7 @@
       <div class="cuadrado">
           <div class="row">
               <div class="col-12 fs-2">
-                Fases del sistema de gestion: Recursos humanos, financieros, tecnicos entre otros.
+                Fases del sistema de gestión: Recursos humanos, financieros, técnicos, entre otros.
               </div>
           </div>
       </div>
@@ -145,13 +152,13 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        1. Formato actas del SGSST
+                        1. Formato actas del SGSST.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno p-2"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        5. Soportes del profesional SGSST:Hv,licencia,C50 horas,coord. alturas.
+                        5. Soportes del profesional SGSST:Hv, licencia, C50, horas, coord. alturas.
                     </span>
                     </button>
                     <p></p>
@@ -163,26 +170,26 @@
                     <p></p>
                     <button class="buton uno p-2"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        13. Registro de actividades de alto riesgo en las MIPER si aplica.
+                        13. Registro de actividades de alto riesgo en las MIPER sí aplica.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno p-2"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        17. Copasst programacion de inspecciones.
+                        17. Copasst programación de inspecciones.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno p-2"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        21. Actas de reuniones trimestrales comite de convivencia.
+                        21. Actas de reuniones trimestrales comité de convivencia.
                     </span>
                     </button>
                 </div>
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        2. Formato registros de asistencia en fisico del SGSST.
+                        2. Formato registros de asistencia en físico del SGSST.
                     </span>
                     </button>
                     <p></p>
@@ -194,25 +201,25 @@
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        10. Documento asignacion de recursos para el SGSST por representante legal.
+                        10. Documento asignación de recursos para el SGSST por representante legal.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        14. Votaciones de conformacion del Copasst.
+                        14. Votaciones de conformación del Copasst.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        18. Acta de conformacion del comite de seguridad Vial.
+                        18. Acta de conformación del comité de seguridad Vial.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        22. Informes a la gerencia comite de convivencia.
+                        22. Informes a la gerencia comité de convivencia.
                     </span>
                     </button>
                     <p></p>
@@ -220,13 +227,13 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        3. Formato registros de formacion en fisico del SGSST.
+                        3. Formato registros de formación en físico del SGSST.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        7. Divulgacion funciones y responsabilidades dentro del SGSST.
+                        7. Divulgación, funciones y responsabilidades dentro del SGSST.
                     </span>
                     </button>
                     <p></p>
@@ -244,7 +251,7 @@
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        19. Actas de reuniones trimestrales comite de seguridad vial.
+                        19. Actas de reuniones trimestrales comité de seguridad vial.
                     </span>
                     </button>
 
@@ -258,7 +265,7 @@
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        8. Documento procedimiento de seleccion de conductores.
+                        8. Documento procedimiento de selección de conductores.
                     </span>
                     </button>
                     <p></p>
@@ -270,13 +277,13 @@
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        16. Copasst formaciones:Inv.de accidentes,inspecciones, politicas, auditoria.
+                        16. Copasst formaciones:Inv.de accidentes,inspecciones, políticas, auditoria.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        20. Acta de conformacion del comite de convivencia.
+                        20. Acta de conformación del comité de convivencia.
                     </span>
                     </button>
                     <p></p>
@@ -287,7 +294,7 @@
       <div class="cuadrado">
         <div class="row">
             <div class="col-12 fs-2">
-                Fases del sistema de gestion: Programa de formacion SGSST, medio ambiente y seguridad Vial.
+                Fases del sistema de gestión: Programa de formación SGSST, medio ambiente y seguridad Vial.
             </div>
         </div>
     </div>
@@ -306,13 +313,13 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        1. Programa de formacion: Sgsst, seguridad vial y ambiente.
+                        1. Programa de formación: Sgsst, seguridad vial y ambiente.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno p-2"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        5. Matriz de seguimiento formacion en avanzado en alturas o reentrenamiento vigentes.
+                        5. Matriz de seguimiento formación en avanzado en alturas o re-entrenamiento vigentes.
                     </span>
                     <p></p>
 
@@ -320,13 +327,13 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        2. Formacion teorica a conductores.
+                        2. Formación teórica a conductores.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        6. Matriz de seguimiento inducciones y reinducciones.
+                        6. Matriz de seguimiento inducciones y re-inducciones.
                         </span>
                     </button>
                     <p></p>
@@ -336,7 +343,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        3. Formacion practica a conductores.
+                        3. Formación practica a conductores.
                     </span>
                     </button>
                     <p></p>
@@ -348,13 +355,13 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        4. Formacion riesgo electrico telecomunicaciones.
+                        4. Formación riesgo eléctrico telecomunicaciones.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        8. Matriz de seguimiento formacion a conductores.
+                        8. Matriz de seguimiento formación a conductores.
                     </span>
                     </button>
 
@@ -365,7 +372,7 @@
         <div class="cuadrado">
             <div class="row">
                 <div class="col-12 fs-2">
-                    Fases del sistema de gestion: Politica SGSST revisada por el representante legal, divulgada y realizada conforme dec 1072 de 2015.
+                    Fases del sistema de gestión: Política SGSST revisada por el representante legal, divulgada y realizada conforme dec 1072 de 2015.
                 </div>
             </div>
         </div>
@@ -384,19 +391,19 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        1. Politica revisada y firmada por el representante legal.
+                        1. Política revisada y firmada por el representante legal.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno p-2"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        5. Divulgacion politicas de seguridad Vial.
+                        5. Divulgación políticas de seguridad Vial.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno p-2"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        9. Divulgacion reglamento de higiene y seguridad industrial.
+                        9. Divulgación reglamento de higiene y seguridad industrial.
                     </span>
                     </button>
                     <p></p>
@@ -405,31 +412,31 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        2. Politica divulgada al Copasst.
+                        2. Política divulgada al Copasst.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        6. Elaboracion politicas de alcohol y drogas.
+                        6. Elaboración políticas de alcohol y drogas.
 
                 </div>
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        3. Politica divulgada al personal.
+                        3. Política divulgada al personal.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        7. Registros divulgacion politica de alcohol y drogas.
+                        7. Registros divulgación política de alcohol y drogas.
 
                 </div>
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        4. Elaboracion politicas de seguridad Vial.
+                        4. Elaboración políticas de seguridad Vial.
                     </span>
                     </button>
                     <p></p>
@@ -446,7 +453,7 @@
         <div class="cuadrado">
             <div class="row">
                 <div class="col-12 fs-2">
-                    Fases del sistema de gestion: Definicion de objetivos: SGSST,seguridad vial y medio ambiente.
+                    Fases del sistema de gestión: Definición de objetivos: SGSST,seguridad vial y medio ambiente.
                 </div>
             </div>
         </div>
@@ -473,7 +480,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        2. Registro de divulgacion de objetivos a los trabajadores HSE.
+                        2. Registro de divulgación de objetivos a los trabajadores HSE.
                     </span>
                     </button>
                     <p></p>

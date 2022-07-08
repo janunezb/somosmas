@@ -6,10 +6,15 @@ use App\Http\Controllers\RegistroLiwa;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('home');
-})->middleware('auth');
+// Route::get('/', function () {
+//     return view('home');
+// })->middleware('auth');
+
+Route::get('/', [HomeController::class, 'home'])
+        -> name('home');
+
 
 
 Route::get('/register', [RegisterController::class, 'create'])
@@ -55,27 +60,28 @@ Route::get('inicio/portales/portal-sunco', [AdminController::class, 'sunco'])
 
 //Interfaz De Inicio
 
-Route::get('inicio', [IndexController::class, 'index'])->name('inicio.index');
+Route::get('inicio', [IndexController::class, 'index'])
+    ->middleware('auth')
+    ->name('inicio.index');
 
-Route::get('inicio/cultura', [IndexController::class, 'cultura'])->name('inicio.cultura');
+Route::get('inicio/cultura', [IndexController::class, 'cultura'])
+    ->middleware('auth')
+    ->name('inicio.cultura');
 
-Route::get('inicio/red-de-apoyo', [IndexController::class, 'red'])->name('inicio.red');
+Route::get('inicio/red-de-apoyo', [IndexController::class, 'red'])
+    ->middleware('auth')
+    ->name('inicio.red');
 
-Route::get('inicio/actividad', [IndexController::class, 'actividad'])->name('inicio.actividad');
+Route::get('inicio/actividad', [IndexController::class, 'actividad'])
+    ->middleware('auth')
+    ->name('inicio.actividad');
 
-Route::get('inicio/portales', [IndexController::class, 'portales'])->name('inicio.portales');
+Route::get('inicio/portales', [IndexController::class, 'portales'])
+    ->middleware('auth')
+    ->name('inicio.portales');
 
 
 
-//Portales Inicios
-
-//Route::get('inicio/portales/portalliwa', [IndexController::class, 'portalliwa'])->name('inicio.portalliwa');
-
-//Route::get('inicio/portales/portallibre', [IndexController::class, 'portallibre'])->name('inicio.portallibre');
-
-//Route::get('inicio/portales/portalnavega', [IndexController::class, 'portalnavega'])->name('inicio.portalnavega');
-
-//Route::get('inicio/portales/portalsunco', [IndexController::class, 'portalsunco'])->name('inicio.portalsunco');
 
 // Vistas Portal Liwa
 
