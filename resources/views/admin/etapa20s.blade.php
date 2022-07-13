@@ -54,13 +54,14 @@
           </div>
         </div>
       </nav>
+
       <div  style="background-color: rgb(201, 201, 201)">
         <main class="container d-flex p-5">
             <div class="row">
                 <div class="col-12">
                     <div class="row">
                         <div class="col-8">
-                            <h1 style="color: #007aff">Sistema de gestion de seguridad
+                            <h1 style="color: #007aff">Sistema de gestión de seguridad
                                 y salud en el trabajo.</h1>
                             <div style="">
                                 <p class="nuevaa h3">
@@ -82,9 +83,9 @@
         <div class="col-6">
             <h4>Etapas 20 a la 22 del SGSST</h4>
             <p>
-                <a href="#etapa20" class="btn"><i class="bi bi-check-circle p-2"></i>20.Plan de prevencion, preparacion y respuesta ante emergencias.</a>
+                <a href="#etapa20" class="btn"><i class="bi bi-check-circle p-2"></i>20.Plan de prevención, preparación y respuesta ante emergencias.</a>
                 <br>
-                <a href="#etapa21" class="btn"><i class="bi bi-check-circle p-2"></i>21.Gestion frente al desempeño del SGSST.</a>
+                <a href="#etapa21" class="btn"><i class="bi bi-check-circle p-2"></i>21.Gestión frente al desempeño del SGSST.</a>
                 <br>
                 <a href="#etapa22" class="btn"><i class="bi bi-check-circle p-2"></i>22.Acciones preventivas y correctivas del SGSST.</a>
                 <br>
@@ -96,7 +97,7 @@
           <div class="row">
               <div class="col-12 fs-2">
                   <P></P>
-                Fases del sistema de gestion: Plan de prevencion, preparacion y respuesta ante emergencias.
+                Fases del sistema de gestión: Plan de prevención, preparación y respuesta ante emergencias.
                 <P></P>
               </div>
           </div>
@@ -134,7 +135,7 @@
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        13. Acta de conformacion de la brigada.
+                        13. Acta de conformación de la brigada.
                     </span>
                     </button>
                     <p></p>
@@ -142,19 +143,19 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        2. Analisis de vulnerabilidad del plan.
+                        2. Análisis de vulnerabilidad del plan.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        6. Guia de señalizacion de las sedes.
+                        6. Guía de señalización de las sedes.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        10. Contacto con los administradores de la energia de la zona en caso de requerir apoyo.
+                        10. Contacto con los administradores de la energía de la zona en caso de requerir apoyo.
                     </span>
                     </button>
                     <p></p>
@@ -168,7 +169,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        3. Tabla de gestion de reportes de actos y condiciones inseguras.
+                        3. Tabla de gestión de reportes de actos y condiciones inseguras.
                     </span>
                     </button>
                     <p></p>
@@ -218,7 +219,7 @@
             <div class="row">
                 <div class="col-12 fs-2">
                     <P></P>
-                    Fases del sistema de gestion: Acciones preventivas y correctivas del SGSST.
+                    Fases del sistema de gestión: Acciones preventivas y correctivas del SGSST.
                     <P></P>
                 </div>
             </div>
@@ -238,7 +239,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        1. Procedimiento de mejora continua seguimiento y medicion.
+                        1. Procedimiento de mejora continua seguimiento y medición.
                     </span>
                     </button>
                     <p></p>
@@ -247,7 +248,7 @@
                     <button class="butoon gordo"><span>
                         <i class="fa-solid fa-rocket"></i>
 
-                        2. Matriz planes de accion: AT, comportamiento indicadores, auditorias,reporte actos y condiciones inseguras, revision gerencial.
+                        2. Matriz planes de acción: AT, comportamiento indicadores, auditorias,reporte actos y condiciones inseguras, revision gerencial.
                         <br>
                     </span>
                     </button>
@@ -270,9 +271,9 @@
             <div class="col-6">
                 <h4>Etapas 20 a la 22 del SGSST</h4>
                 <p>
-                <a href="#etapa20" class="btn"><i class="bi bi-check-circle p-2"></i>20.Plan de prevencion, preparacion y respuesta ante emergencias.</a>
+                <a href="#etapa20" class="btn"><i class="bi bi-check-circle p-2"></i>20.Plan de prevención, preparación y respuesta ante emergencias.</a>
                 <br>
-                <a href="#etapa21" class="btn"><i class="bi bi-check-circle p-2"></i>21.Gestion frente al desempeño del SGSST.</a>
+                <a href="#etapa21" class="btn"><i class="bi bi-check-circle p-2"></i>21.Gestión frente al desempeño del SGSST.</a>
                 <br>
                 <a href="#etapa22" class="btn"><i class="bi bi-check-circle p-2"></i>22.Acciones preventivas y correctivas del SGSST.</a>
                 <br>

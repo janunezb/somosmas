@@ -68,7 +68,7 @@
               <div class="row">
                   <div class="col-6">
                       <h1>Bienvenidos!!</h1>
-                      <div style="">
+                      <div>
                           <p class="nuevaa" style="background-color: #FAFAFA">
                             Hola soy Ivon Romero y quiero darte una grata bienvenida!!
                             Orgullosamente podemos decir hoy que SOMOS MÁS, una comunidad con valores comunes, sueños, proyectos, grandes retos por delante y sobre todo una comunidad llena de personas sorprendentes con ganas de hacer las cosas y hacerlas bien, trabajamos para hacer que la vida sea mejor para ti, para todos. Por eso hemos creado este espacio, para estar más cerca, conocernos e interactuar y seguir construyendo juntos este ecosistema llamado LIWA.</p>
@@ -136,10 +136,10 @@
                     </div>
                     <div class="row">
                     <div class="col-3 p-2">
-                        <div class="card text-justify" style="">
+                        <div class="card text-justify">
                             <img src="{{ asset('images/perrito.jpg') }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Prevención del riesgo biomecánico</h5>
+                              <h5 class="card-title">Prevención del riesgo bio-mecánico</h5>
                               <p class="card-text">Dirigida a todo el personal de cada empresa. </p>
                               <p class="text-justify card-text">  Tu escritorio es el lugar en donde permaneces la mayor parte de tu jornada laboral, convirtiéndose así en tu
                                 mejor aliado frente al desarrollo de tus metas.
@@ -152,10 +152,10 @@
                         <div class="card" style="">
                             <img src="{{ asset('images/coronavirus.jpg') }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Prevención del virus Covid-19 <br> </h5>
+                              <h5 class="card-title">Prevención del virus COVID-19 <br> </h5>
 
                               <p class="card-text">Dirigida a todo el personal de cada empresa. </p>
-                              <p class="text-justify card-text"> El COVID-19 se encuentra en su cuarto pico y es fundamental que sepas como prevenirlo; las medidas más importantes, bioseguridad y vacunación.
+                              <p class="text-justify card-text"> El COVID-19 se encuentra en su cuarto pico y es fundamental que sepas como prevenirlo; las medidas más importantes, bio-seguridad y vacunación.
 
 
                             </p>
@@ -167,7 +167,7 @@
                         <div class="card" style="">
                             <img src="{{ asset('images/Telecomunicaciones.jpg') }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Prevención del riesgo electrico</h5>
+                              <h5 class="card-title">Prevención del riesgo eléctrico</h5>
                               <p class="card-text">Dirigida a todo el personal técnico y operativo. </p>
                               <p class="text-justify card-text"> El riesgo eléctrico está presente durante la labor de instalación y mantenimiento
                                 por ello la importancia de saber como identificarlo y prevenirlo.
@@ -184,7 +184,7 @@
                               <h5 class="card-title">Actuación general en caso de emergencias</h5>
                               <p class="card-text">Dirigida a todo el personal de cada empresa. </p>
                               <p class="text-justify card-text"> Conoce las medidas básicas de actuación frente a una emergencia
-                                y los diferentes recursos para su adecuada gestión, para saber como acturar ante una situación. </p>
+                                y los diferentes recursos para su adecuada gestión, para saber como actuar ante una situación. </p>
 
                               <a href="https://forms.gle/ptS4U8nGuBzxGQtd6" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
                             </div>
@@ -204,7 +204,7 @@
                     </div>
                     <div class="row">
                     <div class="col-3 p-2">
-                        <div class="card" style="">
+                        <div class="card">
                             <img src="{{ asset('images/copasst.png') }}" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title">Formación integrantes del Copasst</h5>
@@ -220,8 +220,8 @@
                         <div class="card" style="">
                             <img src="{{ asset('images/convivencia.jpg') }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Formación integrantes comite de convivencia</h5>
-                              <p class="card-text">Dirigida a los integrantes del comite. </p>
+                              <h5 class="card-title">Formación integrantes comité de convivencia</h5>
+                              <p class="card-text">Dirigida a los integrantes del comité. </p>
                               <p class="text-justify crad-text"> Conoce los aspectos básicos de entrada del comité. </p>
                               <br>
                               <a href="https://forms.gle/426pemCcEFMCFG228" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
@@ -233,8 +233,8 @@
                         <div class="card" style="">
                             <img src="{{ asset('images/vial.jpg') }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Formación integrantes del comite vial</h5>
-                              <p class="card-text">Dirigida a los integrantes del comite. </p>
+                              <h5 class="card-title">Formación integrantes del comité vial</h5>
+                              <p class="card-text">Dirigida a los integrantes del comité. </p>
                               <p class="text-justify card-text">Conoce los aspectos básicos de entrada del comité.
 
                             </p>
@@ -247,8 +247,8 @@
                         <div class="card" style="">
                             <img src="{{ asset('images/ambiental.jpg') }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Formación integrantes del comite ambiental</h5>
-                              <p class="card-text">Dirigida a los integrantes del comite. </p>
+                              <h5 class="card-title">Formación integrantes del comité ambiental</h5>
+                              <p class="card-text">Dirigida a los integrantes del comité. </p>
                               <p class="text-justify card-text"> Conoce los aspectos básicos de entrada del comité.
 
 
@@ -285,7 +285,7 @@
                         <button class="botonn">
                             <div>
                                 <i class=" fa-solid fa-virus-covid"></i>
-                                <h5 class="card-title">Encuesta de prevencion Covid-19</h5>
+                                <h5 class="card-title">Encuesta de prevención COVID-19</h5>
                                 <p class="card-text h6">Debes realizarla mínimo 1 ves a la semana durante cada mes. Tiempo estimado 1 minuto.</p>
                                 <a href="https://forms.gle/RuYsLP2iRA1N5wEh9" class="btn btn-outline-light" target="_blank"><i class="icon bi bi-arrow-right"></i> Ingresa</a>
 
@@ -296,7 +296,7 @@
                         <button class="botonn1">
                             <div>
                                 <span class="iconify" data-icon="ri:user-heart-line"></span>
-                                <h5 class="card-title">Encuesta de perfil sociodemografico</h5>
+                                <h5 class="card-title">Encuesta de perfil sociodemográfico</h5>
                                 <p></p>
 
                                 <p class="card-text h6">Realizada en Enero 2022. Tiempo estimado 5 minutos.</p> <p></p>
@@ -311,7 +311,7 @@
                         <button class="botonn2">
                             <div>
                                 <span class="iconify" data-icon="ri:open-arm-line"></span>
-                                <h5 class="card-title">Gestion de riesgos ergonomicos</h5>
+                                <h5 class="card-title">Gestión de riesgos ergonómicos</h5>
                                 <p></p>
 
                                 <p class="card-text h6">Enfoque cargas y posturas. Tiempo estimado 5 minutos.</p> <p></p>
@@ -434,7 +434,7 @@
                         <button class="botonn7">
                             <div>
                                 <span class="iconify" data-icon="ri:user-3-fill"></span>
-                                <h5 class="card-title">Formación teorica para conductores</h5>
+                                <h5 class="card-title">Formación teórica para conductores</h5>
                                 <p class="card-text h6">Dirigida a conductores que se desplazan en ellos con fines de la actividad económica de la empresa.</p>
                                 <a href="https://forms.gle/YDDPqcozj3B8cYoB8" class="btn btn-outline-light" target="_blank"><i class="icon bi bi-arrow-right"></i> Ingresa</a>
 

@@ -212,7 +212,7 @@
                             <div class="card-body">
 
                               <h5 class="card-title">Ahora Somos Liwa</h5>
-                              <p class="card-text">Nacimos digitales, somos digitales. Liwa significa acceso y conexion. Liwa es donde el proposito se encuentra con la innovación</p>
+                              <p class="card-text">Nacimos digitales, somos digitales. Liwa significa acceso y conexión. Liwa es donde el propósito se encuentra con la innovación</p>
 
                               <a href="https://open.spotify.com/episode/31wpAQW8tTaMMQYWdwE2FT" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
                             </div>
@@ -238,7 +238,7 @@
             <section id="comite" class="d-flex justify-content-center align-items-center p-2">
                 <div class="row aling items center">
                     <div class="col-8 offset-2">
-                        <h2 class="titulo">Conoce tu comite de diversidad e inclusión.</h2>
+                        <h2 class="titulo">Conoce tu comité de diversidad e inclusión.</h2>
 
                     </div>
                     <div class="col-12 texto">
@@ -248,7 +248,7 @@
 
                         <img src="{{ asset('images/juanma.jpg') }}" class="" alt="...">
                         <p class="h2 juan">Juan Manuel</p>
-                        <p class="uno"> Presidente del comite de <br> diversidad e inclusión.</p>
+                        <p class="uno"> Presidente del comité de <br> diversidad e inclusión.</p>
                     </div>
                     <div class="col-6 hola pt-3 fondo1 ">
                         <h3>Comité de diversidad e inclusion.</h3>
@@ -287,7 +287,7 @@
 
                     </div>
                     <div class="col-12 texto">
-                        <p>Participa!! compártenos tus opiniones, tus películas, fotografias favoritas, libros, planes de fin de semana, entre miles de tematicas más. Pronto vendrán concursos, foros, donde premiaremos el contenido con más Like, apoya a tus compañeros y también atrévete a ser parte de "Likes", mes a mes premiaremos el mejor contenido. Cual contenido sera el mas popular? ¡¡Descubrámoslo juntos, no te los pierdas!!</p>
+                        <p>Participa!! compártenos tus opiniones, tus películas, fotografías favoritas, libros, planes de fin de semana, entre miles de temáticas más. Pronto vendrán concursos, foros, donde premiaremos el contenido con más Like, apoya a tus compañeros y también atrévete a ser parte de "Likes", mes a mes premiaremos el mejor contenido. Cual contenido sera el mas popular? ¡¡Descubrámoslo juntos, no te los pierdas!!</p>
                     </div>
                     <div class="col-6 p-3">
                         <article class="card h-100">
@@ -339,7 +339,7 @@
                                         </div>
                                          <br>
 
-                                        <p class="fs-6 lh-1">“Hola estoy muy feliz de compartir con ustedes a través de este canal,  una pelicula basada en hechos reales muy especial para esta época de fin de año y unión familiar que nos invita a trabajar por nuestros sueños y a superar cualquier limitación que en muchos casos pueden ser oportunidades, un abrazo a todos. Descúbrela !!"</p>
+                                        <p class="fs-6 lh-1">“Hola estoy muy feliz de compartir con ustedes a través de este canal,  una película basada en hechos reales muy especial para esta época de fin de año y unión familiar que nos invita a trabajar por nuestros sueños y a superar cualquier limitación que en muchos casos pueden ser oportunidades, un abrazo a todos. Descúbrela !!"</p>
                                         <div class="padrevideo1">
                                             <div class="video1">
                                             <div class=" ratio ratio-16x9">
@@ -424,7 +424,7 @@
                                 <img src="{{ asset('images/vanesa.jpg') }}"  alt="" class="border border-primary border-3 rounded-circle" style="width: 100px; height: 100px;">
                                 <div class="ps-3">
                                     <br>
-                                    <h6 class="m-0 h6">Vanesa pinzon</h6>
+                                    <h6 class="m-0 h6">Vanesa pinzón</h6>
                                     <p class="m-0 h6">Suncoenergy</p>
                                 </div>
 

@@ -61,7 +61,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-8">
-                            <h1 style="color: #007aff">Sistema de gestion de seguridad
+                            <h1 style="color: #007aff">Sistema de gestión de seguridad
                                 y salud en el trabajo.</h1>
                             <div style="">
                                 <p class="nuevaa h3">

@@ -61,7 +61,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-8">
-                            <h1 style="color: #007aff">Sistema de gestion de seguridad
+                            <h1 style="color: #007aff">Sistema de gestión de seguridad
                                 y salud en el trabajo.</h1>
                             <div style="">
                                 <p class="nuevaa h3">
@@ -83,15 +83,15 @@
         <div class="col-6">
             <h4>Etapas 10 a la 14 del SGSST</h4>
             <p>
-                <a href="#etapa10" class="btn"><i class="bi bi-check-circle p-2"></i>10.Gestion de la comunicacion del SGSST.</a>
+                <a href="#etapa10" class="btn"><i class="bi bi-check-circle p-2"></i>10.Gestión de la comunicación del SGSST.</a>
                 <br>
                 <a href="#etapa11" class="btn"><i class="bi bi-check-circle p-2"></i>11.Procedimiento de compras con criterios HSE.</a>
                 <br>
-                <a href="#etapa12" class="btn"><i class="bi bi-check-circle p-2"></i>12.Procedimiento de seleccion, seguimiento contratistas criterios HSE.</a>
+                <a href="#etapa12" class="btn"><i class="bi bi-check-circle p-2"></i>12.Procedimiento de selección, seguimiento contratistas criterios HSE.</a>
                 <br>
                 <a href="#etapa13" class="btn"><i class="bi bi-check-circle p-2"></i>13.Seguridad de los visitantes en las sedes.</a>
                 <br>
-                <a href="#etapa14" class="btn"><i class="bi bi-check-circle p-2"></i>14.Gestion del cambio procedimiento y registros</a>
+                <a href="#etapa14" class="btn"><i class="bi bi-check-circle p-2"></i>14.Gestión del cambio procedimiento y registros</a>
 
             </p>
         </div>
@@ -101,7 +101,7 @@
           <div class="row">
               <div class="col-12 fs-2">
                   <P></P>
-                Fases del sistema de gestion: Gestión de la comunicación del SGSST.
+                Fases del sistema de gestión: Gestión de la comunicación del SGSST.
                 <P></P>
               </div>
           </div>
@@ -129,7 +129,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        2. Ficha fisica de reporte de actos y condiciones inseguras.
+                        2. Ficha física de reporte de actos y condiciones inseguras.
                     </span>
                     </button>
                     <p></p>
@@ -137,7 +137,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        3. Tabla de gestion de reportes de actos y condiciones inseguras.
+                        3. Tabla de gestión de reportes de actos y condiciones inseguras.
                     </span>
                     </button>
                     <p></p>
@@ -145,7 +145,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        4. Registros de comunicacion con administradores de la energia.
+                        4. Registros de comunicación con administradores de la energía.
                     </span>
                     </button>
                     <p></p>
@@ -157,7 +157,7 @@
             <div class="row">
                 <div class="col-12 fs-2">
                     <P></P>
-                    Fases del sistema de gestion: Procedimiento de compras con criterios HSE.
+                    Fases del sistema de gestión: Procedimiento de compras con criterios HSE.
                     <P></P>
                 </div>
             </div>
@@ -183,7 +183,7 @@
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        5. Formacion al encargado de compras criterios de compra HSE.
+                        5. Formación al encargado de compras criterios de compra HSE.
                     </span>
                     </button>
                     <p></p>
@@ -191,7 +191,7 @@
                  <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        2. Formato de evaluacion de proveedores criterios HSE.
+                        2. Formato de evaluación de proveedores criterios HSE.
                     </span>
                     </button>
                     <p></p>
@@ -217,7 +217,7 @@
         <div class="cuadrado">
             <div class="row">
                 <div class="col-12 fs-2">
-                    Fases del sistema de gestion: Procedimiento de seleccion y seguimiento contratistas criterios HSE.
+                    Fases del sistema de gestión: Procedimiento de selección y seguimiento contratistas criterios HSE.
                 </div>
             </div>
         </div>
@@ -236,7 +236,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        1. Procedimiento de seleccion y evaluacion HSE contratistas.
+                        1. Procedimiento de selección y evaluación HSE contratistas.
                     </span>
                     </button>
                     <p></p>
@@ -250,13 +250,13 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        2. Matriz de seguimiento conductores y vehiculos.
+                        2. Matriz de seguimiento conductores y vehículos.
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        6. Registro de envio del manual a los contratistas.
+                        6. Registro de envió del manual a los contratistas.
                     </span>
                     </button>
                     <p></p>
@@ -285,7 +285,7 @@
             <div class="row">
                 <div class="col-12 fs-2">
                     <p></p>
-                    Fases del sistema de gestion: Seguridad de los visitantes en las sedes.
+                    Fases del sistema de gestión: Seguridad de los visitantes en las sedes.
                     <p></p>
                 </div>
             </div>
@@ -325,7 +325,7 @@
             <div class="row">
                 <div class="col-12 fs-2">
                     <p></p>
-                    Fases del sistema de gestion: Gestion del cambio procedimiento y registros.
+                    Fases del sistema de gestión: Gestión del cambio procedimiento y registros.
                     <p></p>
                 </div>
             </div>
@@ -345,7 +345,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        1. Procedimiento de gestion del cambio.
+                        1. Procedimiento de gestión del cambio.
                     </span>
                     </button>
                     <p></p>
@@ -353,7 +353,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        2. Formato de registro de gestion del cambio.
+                        2. Formato de registro de gestión del cambio.
                     </span>
                     </button>
                     <p></p>
@@ -374,15 +374,15 @@
             <div class="col-6">
                 <h4>Etapas 10 a la 14 del SGSST</h4>
                 <p>
-                    <a href="#etapa10" class="btn"><i class="bi bi-check-circle p-2"></i>10.Gestion de la comunicacion del SGSST.</a>
+                    <a href="#etapa10" class="btn"><i class="bi bi-check-circle p-2"></i>10.Gestión de la comunicación del SGSST.</a>
                     <br>
                     <a href="#etapa11" class="btn"><i class="bi bi-check-circle p-2"></i>11.Procedimiento de compras con criterios HSE.</a>
                     <br>
-                    <a href="#etapa12" class="btn"><i class="bi bi-check-circle p-2"></i>12.Procedimiento de seleccion, seguimiento contratistas criterios HSE.</a>
+                    <a href="#etapa12" class="btn"><i class="bi bi-check-circle p-2"></i>12.Procedimiento de selección, seguimiento contratistas criterios HSE.</a>
                     <br>
                     <a href="#etapa13" class="btn"><i class="bi bi-check-circle p-2"></i>13.Seguridad de los visitantes en las sedes.</a>
                     <br>
-                    <a href="#etapa14" class="btn"><i class="bi bi-check-circle p-2"></i>14.Gestion del cambio procedimiento y registros</a>
+                    <a href="#etapa14" class="btn"><i class="bi bi-check-circle p-2"></i>14.Gestión del cambio procedimiento y registros</a>
                 </p>
             </div>
         </section>

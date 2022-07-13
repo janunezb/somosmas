@@ -61,7 +61,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-8">
-                            <h1 style="color: #007aff">Sistema de gestion de seguridad
+                            <h1 style="color: #007aff">Sistema de gestión de seguridad
                                 y salud en el trabajo.</h1>
                             <div style="">
                                 <p class="nuevaa h3">
@@ -83,15 +83,15 @@
         <div class="col-6">
             <h4>Etapas 5 a la 9 del SGSST</h4>
             <p>
-                <a href="#etapa5" class="btn"><i class="bi bi-check-circle p-2"></i>5.Evaluacion inicial del SGSST.</a>
+                <a href="#etapa5" class="btn"><i class="bi bi-check-circle p-2"></i>5.Evaluación inicial del SGSST.</a>
                 <br>
                 <a href="#etapa6" class="btn"><i class="bi bi-check-circle p-2"></i>6.Plan anual de trabajo SGSST.</a>
                 <br>
-                <a href="#etapa7" class="btn"><i class="bi bi-check-circle p-2"></i>7.Procedimiento de control de documentos y registros</a>
+                <a href="#etapa7" class="btn"><i class="bi bi-check-circle p-2"></i>7.Procedimiento de control de documentos y registros.</a>
                 <br>
-                <a href="#etapa8" class="btn"><i class="bi bi-check-circle p-2"></i>8.Rendicion de cuentas de todos los niveles</a>
+                <a href="#etapa8" class="btn"><i class="bi bi-check-circle p-2"></i>8.Rendición de cuentas de todos los niveles.</a>
                 <br>
-                <a href="#etapa9" class="btn"><i class="bi bi-check-circle p-2"></i>9.Matriz legal cumplimiento normativo HSE</a>
+                <a href="#etapa9" class="btn"><i class="bi bi-check-circle p-2"></i>9.Matriz legal cumplimiento normativo HSE.</a>
 
             </p>
         </div>
@@ -100,7 +100,7 @@
       <div class="cuadrado">
           <div class="row">
               <div class="col-12 fs-2">
-                Fases del sistema de gestion: Evalución incial del sistema de gestión, reporte fondo de riesgos laborales.
+                Fases del sistema de gestión: Evaluación inicial del sistema de gestión, reporte fondo de riesgos laborales.
               </div>
           </div>
       </div>
@@ -119,7 +119,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        1. Evaluacion inicial fondo de riesgos laborales: SGSST
+                        1. Evaluación inicial fondo de riesgos laborales: SGSST
                     </span>
                     </button>
                     <p></p>
@@ -127,7 +127,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        2. Encuesta de diagnostico: Seguridad Vial
+                        2. Encuesta de diagnóstico: Seguridad Vial
                     </span>
                     </button>
                     <p></p>
@@ -135,7 +135,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        3. Registros participacion reporte de peligros y riesgos.
+                        3. Registros participación reporte de peligros y riesgos.
                     </span>
                     </button>
                     <p></p>
@@ -146,7 +146,7 @@
         <div class="cuadrado">
             <div class="row">
                 <div class="col-12 fs-2">
-                    Fases del sistema de gestion: Programa de formacion SGSST, medio ambiente y seguridad Vial.
+                    Fases del sistema de gestión: Programa de formación SGSST, medio ambiente y seguridad Vial.
                 </div>
             </div>
         </div>
@@ -165,7 +165,7 @@
                 <div class="col-3">
                     <button class="butoon gordo"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        1. Plan anual de trabajo firmado por HSE y representante legal :Objetivo, meta, recurso, responsable, cronograma.
+                        1. Plan anual de trabajo firmado por HSE y representante legal: Objetivo, meta, recurso, responsable, cronograma.
                     </span>
                     </button>
                     <p></p>
@@ -175,7 +175,7 @@
         <div class="cuadrado">
             <div class="row">
                 <div class="col-12 fs-2">
-                    Conservacion de la documentacion: Procedimiento de control de documentos y registros.
+                    Conservación de la documentación: Procedimiento de control de documentos y registros.
                 </div>
             </div>
         </div>
@@ -194,7 +194,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        1. Procedimiento control de registros y documentos.
+                        1. Procedimiento, control de registros y documentos.
                     </span>
                     </button>
                     <p></p>
@@ -202,7 +202,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        2. Matriz de seguimiento conductores y vehiculos.
+                        2. Matriz de seguimiento, conductores y vehículos.
                     </span>
                     </button>
                     <p></p>
@@ -225,7 +225,7 @@
             <div class="row">
                 <div class="col-12 fs-2">
                     <p></p>
-                    Fases del sistema de gestion: Rendicion de cuentas de todos los niveles.
+                    Fases del sistema de gestión: Rendición de cuentas de todos los niveles.
                     <p></p>
                 </div>
             </div>
@@ -245,21 +245,13 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        1. Reporte de rendicion de cuentas:Representante legal
+                        1. Reporte de rendición de cuentas:Representante legal
                     </span>
                     </button>
                     <p></p>
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        5. Reporte de rendicion de cuentas: Copasst
-                    </span>
-                    </button>
-                    <p></p>
-                </div>
-                <div class="col-3">
-                    <button class="buton uno"><span>
-                        <i class="fa-solid fa-rocket"></i>
-                        2. Reporte de rendicion de cuentas:Lideres de zona
+                        5. Reporte de rendición de cuentas: Copasst
                     </span>
                     </button>
                     <p></p>
@@ -267,7 +259,7 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        3. Reporte de rendicion de cuentas: Profesional SST
+                        2. Reporte de rendición de cuentas:Lideres de zona
                     </span>
                     </button>
                     <p></p>
@@ -275,7 +267,15 @@
                 <div class="col-3">
                     <button class="buton uno"><span>
                         <i class="fa-solid fa-rocket"></i>
-                        4. Reporte de rendicion de cuentas: Colaboradores
+                        3. Reporte de rendición de cuentas: Profesional SST
+                    </span>
+                    </button>
+                    <p></p>
+                </div>
+                <div class="col-3">
+                    <button class="buton uno"><span>
+                        <i class="fa-solid fa-rocket"></i>
+                        4. Reporte de rendición de cuentas: Colaboradores
                     </span>
                     </button>
                     <p></p>
@@ -287,7 +287,7 @@
             <div class="row">
                 <div class="col-12 fs-2">
                     <p></p>
-                    Fases del sistema de gestion: Matriz legal cumplimiento normativo HSE
+                    Fases del sistema de gestión: Matriz legal cumplimiento normativo HSE
                     <p></p>
                 </div>
             </div>
@@ -328,13 +328,13 @@
             <div class="col-6">
                 <h4>Etapas 5 a la 9 del SGSST</h4>
                 <p>
-                <a href="#etapa5" class="btn"><i class="bi bi-check-circle p-2"></i>5.Evaluacion inicial del SGSST.</a>
+                <a href="#etapa5" class="btn"><i class="bi bi-check-circle p-2"></i>5.Evaluación inicial del SGSST.</a>
                 <br>
                 <a href="#etapa6" class="btn"><i class="bi bi-check-circle p-2"></i>6.Plan anual de trabajo SGSST.</a>
                 <br>
                 <a href="#etapa7" class="btn"><i class="bi bi-check-circle p-2"></i>7.Procedimiento de control de documentos y registros</a>
                 <br>
-                <a href="#etapa8" class="btn"><i class="bi bi-check-circle p-2"></i>8.Rendicion de cuentas de todos los niveles</a>
+                <a href="#etapa8" class="btn"><i class="bi bi-check-circle p-2"></i>8.Rendición de cuentas de todos los niveles</a>
                 <br>
                 <a href="#etapa9" class="btn"><i class="bi bi-check-circle p-2"></i>9.Matriz legal cumplimiento normativo HSE</a>
                 </p>
