@@ -388,7 +388,7 @@ nuevaa{
     min-width: 300px;
     max-width: 300px;
     height: 300px;
-    outline: 2px solid black;
+    outline: 2px solid #FF0083;
 
 }
 
@@ -407,17 +407,28 @@ nuevaa{
 
 .carrusel-items1{
     display: flex;
-    overflow-x: scroll;
-    overflow-y: hidden;
 
+    overflow-y: hidden;
+}
+
+.carrusel-items1::-webkit-scrollbar {
+    width: 3px;
 
 }
+
+.carrusel-items1::-webkit-scrollbar-thumb {
+    background-color: #FF0083;
+    border-radius: 10px;
+}
+
+
+
 
 .carrusel-item1{
     min-width: 300px;
     max-width: 300px;
     height: 300px;
-    outline: 2px solid rgb(224, 54, 159);
+    outline: 2px solid #FF0083;
 
 }
 

@@ -136,7 +136,7 @@
                     </div>
                     <div class="row">
                     <div class="col-3 p-2">
-                        <div class="card" style="">
+                        <div class="card text-justify" style="">
                             <img src="{{ asset('images/perrito.jpg') }}" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title">Prevención del riesgo biomecánico</h5>
@@ -152,9 +152,10 @@
                         <div class="card" style="">
                             <img src="{{ asset('images/coronavirus.jpg') }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Prevención del Covid-19</h5>
+                              <h5 class="card-title">Prevención del virus Covid-19 <br> </h5>
+
                               <p class="card-text">Dirigida a todo el personal de cada empresa. </p>
-                              <p class="text-justify crad-text"> El COVID-19 se encuentra en su cuarto pico y es fundamental que sepas como prevenirlo; las medidas más importantes, bioseguridad y vacunación.
+                              <p class="text-justify card-text"> El COVID-19 se encuentra en su cuarto pico y es fundamental que sepas como prevenirlo; las medidas más importantes, bioseguridad y vacunación.
 
 
                             </p>
@@ -169,9 +170,9 @@
                               <h5 class="card-title">Prevención del riesgo electrico</h5>
                               <p class="card-text">Dirigida a todo el personal técnico y operativo. </p>
                               <p class="text-justify card-text"> El riesgo eléctrico está presente durante la labor de instalación y mantenimiento
-                                por ello la importancia de identificarlo y prevenirlo.
+                                por ello la importancia de saber como identificarlo y prevenirlo.
                             </p>
-                            <br>
+
                               <a href="https://forms.gle/o3yguzBCbob6q7Sz9" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
                             </div>
                           </div>
@@ -183,8 +184,8 @@
                               <h5 class="card-title">Actuación general en caso de emergencias</h5>
                               <p class="card-text">Dirigida a todo el personal de cada empresa. </p>
                               <p class="text-justify card-text"> Conoce las medidas básicas de actuación frente a una emergencia
-                                y los diferentes recursos para su adecuada gestión. </p>
-                                <br>
+                                y los diferentes recursos para su adecuada gestión, para saber como acturar ante una situación. </p>
+
                               <a href="https://forms.gle/ptS4U8nGuBzxGQtd6" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
                             </div>
                           </div>
@@ -221,7 +222,7 @@
                             <div class="card-body">
                               <h5 class="card-title">Formación integrantes comite de convivencia</h5>
                               <p class="card-text">Dirigida a los integrantes del comite. </p>
-                              <p class="text-justify crad-text"> Conoce los aspectos básicos de entrada del comite. </p>
+                              <p class="text-justify crad-text"> Conoce los aspectos básicos de entrada del comité. </p>
                               <br>
                               <a href="https://forms.gle/426pemCcEFMCFG228" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
                             </div>
@@ -232,7 +233,7 @@
                         <div class="card" style="">
                             <img src="{{ asset('images/vial.jpg') }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Formación integrantes comite del comite vial</h5>
+                              <h5 class="card-title">Formación integrantes del comite vial</h5>
                               <p class="card-text">Dirigida a los integrantes del comite. </p>
                               <p class="text-justify card-text">Conoce los aspectos básicos de entrada del comité.
 
@@ -248,11 +249,11 @@
                             <div class="card-body">
                               <h5 class="card-title">Formación integrantes del comite ambiental</h5>
                               <p class="card-text">Dirigida a los integrantes del comite. </p>
-                              <p class="text-justify card-text"> Conoce los aspectos básicos de entrada del comité ambiental.
+                              <p class="text-justify card-text"> Conoce los aspectos básicos de entrada del comité.
 
 
                                 </p>
-
+                                <br>
                               <a href="https://forms.gle/YauqYbGhC6Exoxu69" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
                             </div>
                           </div>
