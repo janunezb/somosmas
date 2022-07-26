@@ -66,22 +66,21 @@
 
       <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            @foreach ($contenido as $banner)
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{$loop->index}}" class="@if($loop->index == 0) active @endif" aria-current="true" aria-label="Slide {{$banner->id}}"></button>
+            @endforeach
         </div>
+
 
         <div class="carousel-inner">
             @foreach ($contenido as $banner)
-             <div class="carousel-item active" data-bs-interval="4000">
+             <div class="carousel-item @if($loop->index == 0) active @endif" data-bs-interval="4000">
                 <img src="{{$banner->imagen}}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5 style="color: black">{{$banner->nombre}}</h5>
-                             <p style="color : black">
-                                 {{$banner->titulo}}
-                            </p>
+                        <!--h5 style="color: black">{{$banner->nombre}}</h5>
+                        <p style="color : black">
+                            {{$banner->titulo}}
+                        </p-->
                      </div>
             </div>
           @endforeach
