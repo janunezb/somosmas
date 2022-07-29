@@ -4,67 +4,69 @@
 
 @section('content')
 
+     {{-- <div class="container-xxl" style="background-color: gray">
+      <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="4000">
+              <img src="{{ asset('images/navega.jpg') }}" class="d-block w-100" alt="..." style="background-size: cover" >
 
-    {{-- <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <div class="carousel-caption d-none d-md-block">
+                <h5> <strong style="color: #ff0080">Somos:</strong> Navega</h5>
+              <p style="color: white">
+                    "Navega Sin Enrredos"
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+              <img src="{{ asset('images/LIBRE2.jpg') }}" class="d-block w-100" alt="..." style="background-size: cover" >
+              <div class="carousel-caption d-none d-md-block">
+                <h5><strong style="color: #ff0080">Somos:</strong> Libre</h5>
+                <p style="color: white">"Conexión Sin Limites"</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+              <img src="{{ asset('images/liwa.jpg') }}" class="d-block w-100" alt="..." style="background-size: cover" >
+              <div class="carousel-caption d-none d-md-block">
+                <h5><strong style="color: #ff0080">Somos:</strong> Liwa</strong></h5>
+                <p align-text style="color: white">"Nacimos digitales, somos digitales"</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+              <img src="{{ asset('images/suncolombia.jpg') }}" class="d-block w-100" alt="..." style="background-size: cover" >
+              <div class="carousel-caption d-none d-md-block">
+                <h5><strong style="color: #ff0080">Somos:</strong> Suncolombia</h5>
+                <p style="color: white">"El sol sale para todos."</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+              <img src="{{ asset('images/suncoenergy.jpg') }}" class="d-block w-100" alt="..."  style="background-size: cover" >
+              <div class="carousel-caption d-none d-md-block">
+                <h5><strong style="color: #ff0080">Somos:</strong> Suncoenergy</h5>
+                <p style="color: white">"Energía Para Todos"</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="4000">
-            <img src="{{ asset('images/navega.jpg') }}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5> <strong style="color: #ff0080">Somos:</strong> Navega</h5>
-             <p style="color: white">
-                  "Navega Sin Enrredos"
-              </p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="4000">
-            <img src="{{ asset('images/LIBRE2.jpg') }}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5><strong style="color: #ff0080">Somos:</strong> Libre</h5>
-              <p style="color: white">"Conexión Sin Limites"</p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="4000">
-            <img src="{{ asset('images/liwa.jpg') }}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5><strong style="color: #ff0080">Somos:</strong> Liwa</strong></h5>
-              <p align-text style="color: white">"Nacimos digitales, somos digitales"</p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="4000">
-            <img src="{{ asset('images/suncolombia.jpg') }}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5><strong style="color: #ff0080">Somos:</strong> Suncolombia</h5>
-              <p style="color: white">"El sol sale para todos."</p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="4000">
-            <img src="{{ asset('images/suncoenergy.jpg') }}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5><strong style="color: #ff0080">Somos:</strong> Suncoenergy</h5>
-              <p style="color: white">"Energía Para Todos"</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div> --}}
 
 
 
-      <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+       <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             @foreach ($contenido as $banner)
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{$loop->index}}" class="@if($loop->index == 0) active @endif" aria-current="true" aria-label="Slide {{$banner->id}}"></button>
@@ -108,17 +110,23 @@
           <div class="col-12">
               <div class="row">
                   <div class="col-6">
-                      <h1>Bienvenidos!!</h1>
+                    @foreach ($noticia as $noticias)
+
+
+                      <h1>{{$noticias->titulo}}</h1>
                       <div>
                           <p class="nuevaa" style="background-color: #FAFAFA">
-                            Hola soy Ivon Romero y quiero darte una grata bienvenida!!
-                            Orgullosamente podemos decir hoy que SOMOS MÁS, una comunidad con valores comunes, sueños, proyectos, grandes retos por delante y sobre todo una comunidad llena de personas sorprendentes con ganas de hacer las cosas y hacerlas bien, trabajamos para hacer que la vida sea mejor para ti, para todos. Por eso hemos creado este espacio, para estar más cerca, conocernos e interactuar y seguir construyendo juntos este ecosistema llamado LIWA.</p>
+                            {{$noticias->cuerpo}}
+                         </p>
+                      </div>
+                      <div>
+                        <a href="{{route('inicio.noticia')}}" class="btn btn-outline-dark">Ver mas...</a>
                       </div>
                   </div>
                   <div class="col-6">
-                    <img src="{{ asset('images/ivon.rr.jpg') }}" alt="">
+                    <img src="{{$noticias->imagen}}" alt="" style="border-radius: 10px; object-fit: cover;" width="500px" height="350x">
                   </div>
-
+                  @endforeach
               </div>
 
               <section id="induccion">

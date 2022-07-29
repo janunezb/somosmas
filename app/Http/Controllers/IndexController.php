@@ -15,9 +15,14 @@ class IndexController extends Controller
 
 
 
-        $contenido = Content::where('estado', '1')->get();
+        $contenido = Content::where('estado', '1')->where('categoria_id', '1')->get();
 
-        return view ('inicio.index', compact('contenido'));
+        $noticia = Content::where('estado', '1')->where('categoria_id', '2')
+        ->where('nombre', 'inicio')
+        ->get();
+
+
+        return view ('inicio.index', compact('contenido', 'noticia'));
     }
 
     public function cultura(){
@@ -37,6 +42,14 @@ class IndexController extends Controller
         return view('inicio.portales');
 
     }
+
+    public function noticia(){
+
+        $not = Content::where('estado', '1')->where('categoria_id', '2')->get();
+
+        return view('inicio.noticia', compact('not'));
+    }
+
 
 
     /*vistas portales */

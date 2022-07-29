@@ -80,6 +80,10 @@ Route::get('inicio/portales', [IndexController::class, 'portales'])
     ->middleware('auth')
     ->name('inicio.portales');
 
+Route::get('inicio/noticia', [IndexController::class, 'noticia'])
+    ->middleware('auth')
+    ->name('inicio.noticia');
+
 
 
 

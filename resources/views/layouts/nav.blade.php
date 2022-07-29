@@ -39,6 +39,9 @@
                   <li class="nav-item">
                     <a class="nav-link text-white" href="{{route('inicio.cultura')}}">Cultura</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="{{route('inicio.noticia')}}">Noticia destacada</a>
+                  </li>
 
 
 
@@ -67,4 +70,12 @@
         </div>
       </nav>
 
+      <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="mensaje"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+      </script>
+
+</body>
 @yield('content')

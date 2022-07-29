@@ -17,7 +17,7 @@ class CreateContentsTable extends Migration
             $table->id();
             $table->string('nombre')->nullable();
             $table->string('titulo')->nullable();
-            $table->string('cuerpo')->nullable();
+            $table->text('cuerpo')->nullable();
             $table->string('imagen')->nullable();
             $table->string('adjunto')->nullable();
             $table->string('orden')->nullable();
