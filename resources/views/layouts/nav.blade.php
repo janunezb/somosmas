@@ -40,7 +40,7 @@
                     <a class="nav-link text-white" href="{{route('inicio.cultura')}}">Cultura</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-white" href="{{route('inicio.noticia')}}">Noticia destacada</a>
+                    <a class="nav-link text-white" href="{{route('inicio.noticia')}}">Noticias</a>
                   </li>
 
 

@@ -38,9 +38,24 @@
                 {{$noticias->cuerpo}}
             </p>
 
-                <a data-bs-toggle="mensaje" title="hola" href="" class="btn btn-outline-dark">Ver mas...</a>
+                <a style="align-items: left" data-bs-toggle="mensaje" title="hola" href="" class="btn btn-outline-dark">Ver mas...</a>
 
+                <p
+                    style="color: #6a6a6a;
+                    font-size: small;
+                    padding-top: 10px;
+                    padding-bottom: 0;
+                    text-align: right ;"
+
+                >
+                    Publicado:
+                    {{$noticias->updated_at}}
+                </p>
         </div>
         @endforeach
     </div>
+
+    {{-- {{$not -> links('pagination::bootstrap-4')}} --}}
+
+
 @endsection

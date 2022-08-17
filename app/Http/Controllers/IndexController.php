@@ -21,8 +21,19 @@ class IndexController extends Controller
         ->where('nombre', 'inicio')
         ->get();
 
+        $noticia = Content::where('estado', '1')->where('categoria_id', '2')
+        ->where('nombre', 'inicio')
+        ->get();
 
-        return view ('inicio.index', compact('contenido', 'noticia'));
+        $card = Content::where('estado', '1')->where('categoria_id', '3')->where('orden', '1')
+        ->get();
+
+        $formacion = Content::where('estado', '1')->where('categoria_id', '3')
+        ->where('nombre', 'formacion')->where('orden', '2')
+        ->get();
+
+
+        return view ('inicio.index', compact('contenido', 'noticia', 'card', 'formacion'));
     }
 
     public function cultura(){
@@ -45,7 +56,8 @@ class IndexController extends Controller
 
     public function noticia(){
 
-        $not = Content::where('estado', '1')->where('categoria_id', '2')->get();
+        //$not = Content::paginate();
+        $not = Content::where('estado', '1')->where('categoria_id', '2')->orderBy('id', 'desc')->get();
 
         return view('inicio.noticia', compact('not'));
     }

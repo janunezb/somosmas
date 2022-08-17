@@ -17,8 +17,40 @@
 <body>
 
 
-        <section id="actividad" class="d-flex justify-content-center  p-3">
-             <div class="row">
+        <section id="actividad" class="">
+
+            <h1 class="tutulo">Actvidad del mes</h1>
+
+            <div class="container-2">
+
+                <div class="card-2">
+                    <img src="{{ asset('images/nm.jpg') }}" alt="">
+                    <h4>Tus Representantes</h4>
+                    <p style="text-align: justify">
+                        Selecciona a los compañeros que quieres que te representen en el Copasst y en el comité de convivencia; recuerda que el copasst es el comité que
+                         apoya los temas de seguridad y salud en el trabajo en tu empresa y el de convivencia prevenir el riesgo psicosocial.
+                    </p>
+
+                        <a href="https://forms.gle/69qYRLGjVD9cTrNb9" class="btn btn-outline-dark" target="_blank">Ingresa</a>
+
+                </div>
+
+                <div class="card-2">
+                    <img src="{{ asset('images/nm1.jpg') }}" alt="">
+                    <h4>Tus Representantes</h4>
+                    <p style="text-align: justify">
+                        Selecciona a los compañeros que quieres que te representen en el Copasst y en el comité de convivencia; recuerda que el copasst es el comité que
+                         apoya los temas de seguridad y salud en el trabajo en tu empresa y el de convivencia prevenir el riesgo psicosocial.
+                    </p>
+
+                        <a href="https://forms.gle/nVyxfLoVoxeaxMwX7" class="btn btn-outline-dark" target="_blank">Ingresa</a>
+
+                </div>
+
+            </div>
+
+
+             {{-- <div class="row">
          <div class="col-md-6 align-items-center offset-3">
           <h2 class="titulo">Actividad Del Mes</h2>
       </div>
@@ -55,17 +87,15 @@
       </div>
         </div>
       </div>
-    </div>
+    </div> --}}
 </section>
-    </div>
-</div>
 
 
 
 
 
 
-    <section id="redapoyo" class="d-flex justify-content-center align-items-center rounded">
+    {{-- <section id="redapoyo" class="d-flex justify-content-center align-items-center rounded">
         <div class="footer bg-dark text-color:white">
             <div class="row p-5">
             <div class="col-4">
@@ -116,7 +146,7 @@
             </div>
 
                 </div>
-    </section>
+    </section> --}}
 
     </body>
 

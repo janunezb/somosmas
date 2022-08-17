@@ -4,67 +4,15 @@
 
 @section('content')
 
-     {{-- <div class="container-xxl" style="background-color: gray">
-      <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="4000">
-              <img src="{{ asset('images/navega.jpg') }}" class="d-block w-100" alt="..." style="background-size: cover" >
-
-              <div class="carousel-caption d-none d-md-block">
-                <h5> <strong style="color: #ff0080">Somos:</strong> Navega</h5>
-              <p style="color: white">
-                    "Navega Sin Enrredos"
-                </p>
-              </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="4000">
-              <img src="{{ asset('images/LIBRE2.jpg') }}" class="d-block w-100" alt="..." style="background-size: cover" >
-              <div class="carousel-caption d-none d-md-block">
-                <h5><strong style="color: #ff0080">Somos:</strong> Libre</h5>
-                <p style="color: white">"Conexión Sin Limites"</p>
-              </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="4000">
-              <img src="{{ asset('images/liwa.jpg') }}" class="d-block w-100" alt="..." style="background-size: cover" >
-              <div class="carousel-caption d-none d-md-block">
-                <h5><strong style="color: #ff0080">Somos:</strong> Liwa</strong></h5>
-                <p align-text style="color: white">"Nacimos digitales, somos digitales"</p>
-              </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="4000">
-              <img src="{{ asset('images/suncolombia.jpg') }}" class="d-block w-100" alt="..." style="background-size: cover" >
-              <div class="carousel-caption d-none d-md-block">
-                <h5><strong style="color: #ff0080">Somos:</strong> Suncolombia</h5>
-                <p style="color: white">"El sol sale para todos."</p>
-              </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="4000">
-              <img src="{{ asset('images/suncoenergy.jpg') }}" class="d-block w-100" alt="..."  style="background-size: cover" >
-              <div class="carousel-caption d-none d-md-block">
-                <h5><strong style="color: #ff0080">Somos:</strong> Suncoenergy</h5>
-                <p style="color: white">"Energía Para Todos"</p>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div> --}}
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Somos Más</title>
+</head>
+<body>
 
        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -137,111 +85,170 @@
                 </p>
               </section>
 
-              <section id="Induccion" class="d-flex justify-content-center  p-4 nueva">
-                  <div class="row">
-                    <br>
-                    <div class="col-md-4 align-items-center offset-4">
-                        <h2 class="titulo">Inducción</h2>
+              <section id="Induccion" class="">
+
+                <h1 class="tutulo">Inducción</h1>
+
+                <div class="container-1">
+                    @foreach ($card as $cards)
+                    <div class="card-1">
+                        <img src="{{$cards->imagen}}" alt="">
+                        <h4 style="text-align: justify">{{$cards->titulo}}</h4>
+                        <p style="text-align: justify">
+                            {{$cards->cuerpo}}
+                        </p>
+
+                            <a href="{{$cards->adjunto}}" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresar</a>
+
                     </div>
-                    <div class="row">
-                    <div class="col-3 offset-1 p-2">
-                      <div class="card" style="width: 20rem;">
-                        <img src="{{ asset('images/induccion1.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h4 class="card-title ">Inducción Colaboradores áreas administrativas.</h4>
-                          <p class=" text-justify">Bienvenido! Para nosotros tu bienestar es muy importante, disfruta de esta
-                            sección donde podrás entender conceptos
-                             básicos de nuestro sistema de gestión de seguridad y salud en el trabajo.
-                              Tu compromiso y el nuestro es velar por tu seguridad.</p>
-                              <br>
-                          <a href="https://forms.gle/yCHoN6QrjfK2RVZC9" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-3 offset-2 p-2">
-                      <div class="card" style="width: 20rem;">
-                        <img src="{{ asset('images/induccion2.jpg') }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h4 class="card-title">Inducción Colaboradores técnicos y operativos.</h4>
-                          <p class=" text-justify"> Bienvenido! Tu trabajo es fundamental para el desarrollo del negocio, queremos garantizar que lo realices con seguridad.
-                            En esta sección conocerás a profundidad la manera de controlar y gestionar los riesgos asociados a tu actividad,
-                             tu compromiso y el nuestro es velar por tu bienestar. </p>
-                          <a href="https://forms.gle/3Wiikuws4TMMqEiTA" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                        </div>
-                    </div>
-                      </div>
-                    </div>
-                  </div>
+                    @endforeach
+                </div>
 
 
               </section>
 
               <hr>
 
-              <section id="formaciones" class="d-flex justify-content-center align-items-center p-2">
-                <div class="row">
-                    <div class="col-6 offset-3">
-                        <h2 class="titulo">Formaciones Del Mes</h2>
-                    </div>
-                    <div class="row">
-                    <div class="col-3 p-2">
-                        <div class="card text-justify">
-                            <img src="{{ asset('images/perrito.jpg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Prevención del riesgo bio-mecánico</h5>
-                              <p class="card-text">Dirigida a todo el personal de cada empresa. </p>
-                              <p class="text-justify card-text">  Tu escritorio es el lugar en donde permaneces la mayor parte de tu jornada laboral, convirtiéndose así en tu
-                                mejor aliado frente al desarrollo de tus metas.
-                                </p>
-                              <a href="https://forms.gle/hbyNgADzZWj2VkUm9" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-3 p-2">
-                        <div class="card" style="">
-                            <img src="{{ asset('images/coronavirus.jpg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Prevención del virus COVID-19 <br> </h5>
+              <section id="formaciones" class="">
 
-                              <p class="card-text">Dirigida a todo el personal de cada empresa. </p>
-                              <p class="text-justify card-text"> El COVID-19 se encuentra en su cuarto pico y es fundamental que sepas como prevenirlo; las medidas más importantes, bio-seguridad y vacunación.
+                <h1 class="tutulo">Formaciones Del Mes</h1>
 
 
-                            </p>
-                              <a href="https://forms.gle/SoA1Mh36WfuGZ32QA" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-3 p-2">
-                        <div class="card" style="">
-                            <img src="{{ asset('images/Telecomunicaciones.jpg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Prevención del riesgo eléctrico</h5>
-                              <p class="card-text">Dirigida a todo el personal técnico y operativo. </p>
-                              <p class="text-justify card-text"> El riesgo eléctrico está presente durante la labor de instalación y mantenimiento
-                                por ello la importancia de saber como identificarlo y prevenirlo.
-                            </p>
+<div class="container">
+    <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
 
-                              <a href="https://forms.gle/o3yguzBCbob6q7Sz9" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-3 p-2">
-                        <div class="card" style="">
-                            <img src="{{ asset('images/simulacro.jpg') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Actuación general en caso de emergencias</h5>
-                              <p class="card-text">Dirigida a todo el personal de cada empresa. </p>
-                              <p class="text-justify card-text"> Conoce las medidas básicas de actuación frente a una emergencia
-                                y los diferentes recursos para su adecuada gestión, para saber como actuar ante una situación. </p>
 
-                              <a href="https://forms.gle/ptS4U8nGuBzxGQtd6" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                            </div>
-                          </div>
+        <div class="swiper-container mySwiper">
+
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                @foreach ($formacion as $formaciones)
+                <div class="card">
+                    <img src="{{$formaciones->imagen}}" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$formaciones->titulo}}</h5>
+
+                      <p class="card-text">
+                        {{$formaciones->cuerpo}}
+                        </p>
+                        <br>
+                      <a href="{{$formaciones->adjunto}}" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
                     </div>
+                  </div>
+                  @endforeach
+            </div>
+            <div class="swiper-slide">
+                @foreach ($formacion as $formaciones)
+                <div class="card">
+                    <img src="{{$formaciones->imagen}}" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$formaciones->titulo}}</h5>
+
+                      <p class="card-text">
+                        {{$formaciones->cuerpo}}
+                        </p>
+                        <br>
+                      <a href="{{$formaciones->adjunto}}" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
+                    </div>
+                  </div>
+                  @endforeach
+            </div>
+            <div class="swiper-slide">
+                @foreach ($formacion as $formaciones)
+                <div class="card">
+                    <img src="{{$formaciones->imagen}}" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$formaciones->titulo}}</h5>
+
+                      <p class="card-text">
+                        {{$formaciones->cuerpo}}
+                        </p>
+                        <br>
+                      <a href="{{$formaciones->adjunto}}" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
+                    </div>
+                  </div>
+                  @endforeach
+            </div>
+            <div class="swiper-slide">
+                @foreach ($formacion as $formaciones)
+                <div class="card">
+                    <img src="{{$formaciones->imagen}}" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$formaciones->titulo}}</h5>
+
+                      <p class="card-text">
+                        {{$formaciones->cuerpo}}
+                        </p>
+                        <br>
+                      <a href="{{$formaciones->adjunto}}" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
+                    </div>
+                  </div>
+                  @endforeach
+            </div>
+            <div class="swiper-slide">
+                @foreach ($formacion as $formaciones)
+                <div class="card">
+                    <img src="{{$formaciones->imagen}}" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$formaciones->titulo}}</h5>
+
+                      <p class="card-text">
+                        {{$formaciones->cuerpo}}
+                        </p>
+                        <br>
+                      <a href="{{$formaciones->adjunto}}" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
+                    </div>
+                  </div>
+                  @endforeach
+            </div>
+            <div class="swiper-slide">
+                @foreach ($formacion as $formaciones)
+                <div class="card">
+                    <img src="{{$formaciones->imagen}}" alt="">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$formaciones->titulo}}</h5>
+
+                      <p class="card-text">
+                        {{$formaciones->cuerpo}}
+                        </p>
+                        <br>
+                      <a href="{{$formaciones->adjunto}}" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
+                    </div>
+                  </div>
+                  @endforeach
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+                <div class="container-1">
+                    @foreach ($formacion as $formaciones)
+                    <div class="card-1">
+                        <img src="{{$formaciones->imagen}}" alt="">
+                        <h4 style="text-align: justify">{{$formaciones->titulo}}</h4>
+                        <p style="text-align: justify">
+                            {{$formaciones->cuerpo}}
+                        </p>
+
+                            <a href="{{$formaciones->adjunto}}" class="btn btn-outline-dark" target="_blank">Ingresar</a>
+
+                    </div>
+                    @endforeach
                 </div>
 
-                </div>
               </section>
 
               <hr>
@@ -607,7 +614,11 @@
                         </div>
         </section>
 
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+         <script src="{{asset('js/new.js')}}"></script>
 
+</body>
+</html>
 
 
 
