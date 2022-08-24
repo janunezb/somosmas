@@ -67,8 +67,13 @@
                                 <h1>{{ $noticias->titulo }}</h1>
                                 <div>
                                     <p class="nuevaa">
-                                        {{ $noticias->cuerpo }}
+                                        {{ $noticias->cuerpo }}                                        
                                     </p>
+                                    @if($noticias->adjunto)
+                                    <p>                                        
+                                        <a href="{{ $noticias->adjunto }}" target="_blank">Ver adjunto</a>
+                                    </p>
+                                    @endif
                                 </div>
                                 <div style="padding-top: 80px; padding-left:76%">
                                     <a href="{{ route('inicio.noticia') }}" style="color: #6a6a6a">Ver más noticias</a>

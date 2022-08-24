@@ -19,7 +19,7 @@ class IndexController extends Controller
 
         $contenido = Content::where('estado', '1')->where('categoria_id', '1')->orderBy('orden', 'asc')->get();
 
-        $noticia = Content::where('estado', '1')->where('categoria_id', '4')->Limit('1')->get();
+        $noticia = Content::where('estado', '1')->where('categoria_id', '4')->orderBy('created_at', 'desc')->Limit('1')->get();
 
         $card = Content::where('estado', '1')->where('categoria_id', '3')->where('orden', '1')
         ->get();
