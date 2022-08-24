@@ -78,7 +78,45 @@
     </div>
 
 
+
+
+
+
+
+
     <div class="container-3">
+
+        <div class="contenedor-textos">
+            <h2>Modal</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+            <a href="" class="cta">Abrir Modal</a>
+        </div>
+
+
+
+
+
+        <div class="modal-container">
+            <div class="modal modal-close">
+                <p class="close">X</p>
+                <div class="modal-textos">
+                    <h2>Si Funciona</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, quos.</p>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
         @foreach ($not as $noticias)
 
         <div class="row pb-4 card-3">
@@ -93,7 +131,11 @@
 
                 {{-- Validacion si supera mas de 200 caracteres --}}
                 @if ( strlen ($noticias->cuerpo) > 200)
-                <input type="checkbox" id="btn-modal">
+
+
+
+
+                {{-- <input type="checkbox" id="btn-modal">
                 <label for="btn-modal" class="lbl-modal">Ver mas</label>
                 <div class="modal">
                     <div class="contenedor">
@@ -118,7 +160,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 @endif
 
@@ -178,7 +220,7 @@
 
 
 
-
+        <script src="{{asset('js/modal.js')}}"></script>
 
       <script>
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="mensaje"]'))
