@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Content;
 use App\Models\User;
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class IndexController extends Controller
 {
@@ -15,15 +17,9 @@ class IndexController extends Controller
 
 
 
-        $contenido = Content::where('estado', '1')->where('categoria_id', '1')->get();
+        $contenido = Content::where('estado', '1')->where('categoria_id', '1')->orderBy('orden', 'asc')->get();
 
-        $noticia = Content::where('estado', '1')->where('categoria_id', '2')
-        ->where('nombre', 'inicio')
-        ->get();
-
-        $noticia = Content::where('estado', '1')->where('categoria_id', '2')
-        ->where('nombre', 'inicio')
-        ->get();
+        $noticia = Content::where('estado', '1')->where('categoria_id', '4')->Limit('1')->get();
 
         $card = Content::where('estado', '1')->where('categoria_id', '3')->where('orden', '1')
         ->get();
@@ -57,7 +53,8 @@ class IndexController extends Controller
     public function noticia(){
 
         //$not = Content::paginate();
-        $not = Content::where('estado', '1')->where('categoria_id', '2')->orderBy('id', 'desc')->get();
+        $not = Content::where('estado', '1')->where('categoria_id', '2')->orderBy('id', 'desc')->paginate(2)
+        ;
 
         return view('inicio.noticia', compact('not'));
     }

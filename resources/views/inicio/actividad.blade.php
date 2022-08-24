@@ -19,7 +19,7 @@
 
         <section id="actividad" class="">
 
-            <h1 class="tutulo">Actvidad del mes</h1>
+            <h1 class="tutulo">Actividad del mes</h1>
 
             <div class="container-2">
 
