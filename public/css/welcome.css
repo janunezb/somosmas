@@ -1,0 +1,8 @@
+.welcome a{
+    color: black;
+}
+.welcome a:hover{
+    transition: 0.3s;
+    color: #ff0083;
+    font-size: 32px;
+}

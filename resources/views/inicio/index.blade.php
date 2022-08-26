@@ -12,9 +12,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Somos Más</title>
+        <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
     </head>
 
     <body>
+
 
         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -32,9 +36,9 @@
                         <img src="{{ $banner->imagen }}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <!--h5 style="color: black">{{ $banner->nombre }}</h5>
-                            <p style="color : black">
-                                {{ $banner->titulo }}
-                            </p-->
+                                    <p style="color : black">
+                                        {{ $banner->titulo }}
+                                    </p-->
                         </div>
                     </div>
                 @endforeach
@@ -56,35 +60,95 @@
 
 
 
+
         {{-- Contenido Principal --}}
         <main class="container d-flex justify-content-center align-items-center p-5 pr-10">
             <div class="row">
                 <div class="col-12">
+                    @php $cant = 0; @endphp
                     @foreach ($noticia as $noticias)
-                    <div class="row">
-                        <div class="col-6 pb-5" style="padding-right: 1px;">
+                    @php $cant = $cant+1; @endphp
+                        <div class="row">
+                            <div class="col-6 " style="padding-right: 1px;">
 
                                 <h1>{{ $noticias->titulo }}</h1>
                                 <div>
-                                    <p class="nuevaa">
-                                        {{ $noticias->cuerpo }}                                        
-                                    </p>
-                                    @if($noticias->adjunto)
-                                    <p>                                        
-                                        <a href="{{ $noticias->adjunto }}" target="_blank">Ver adjunto</a>
-                                    </p>
-                                    @endif
-                                </div>
-                                <div style="padding-top: 80px; padding-left:76%">
-                                    <a href="{{ route('inicio.noticia') }}" style="color: #6a6a6a">Ver más noticias</a>
-                                </div>
-                        </div>
-                        <div class="col-6" style="float: left">
-                            <img src="{{ $noticias->imagen }}" class="img-fluid" alt=""
-                                style="border-radius: 10px; object-fit: cover;" width="500px" height="350x">
-                        </div>
 
-                    </div>
+
+                                    <p class="nuevaa">
+                                        {{ Str::limit($noticias->cuerpo, 400, '...') }}
+                                    </p>
+
+
+                                    <div class="row">
+
+                                        @if (strlen($noticias->cuerpo) > 400)
+                                        <div class="col-3">
+                                            <button type="button" class="ctn" data-toggle="modal"
+                                                data-target="#myModal<?php echo $cant; ?>">Ver más</button>
+
+                                            <div class="modal fade" id="myModal<?php echo $cant; ?>" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+
+                                                            <header style="" class="h2">{{ $noticias->titulo }}</header>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <div class="contenido">
+                                                            <div class="row pt-2">
+                                                                <div class="" style="float: left">
+                                                                    <img src="{{ $noticias->imagen }}" class="img-fluid" alt=""
+                                                                    >
+                                                                </div>
+                                                                <div class="pb-5" style="padding-right: 1px;">
+                                                                    <div>
+                                                                        <p class="nuevaa" style="background-color: #FAFAFA">
+                                                                            {{ $noticias->cuerpo }}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        @endif
+
+
+
+                                        @if ($noticias->adjunto)
+                                            <div class="col-3">
+                                                <div class="">
+                                                    <a class="btn btn-outline-dark" href="{{ $noticias->adjunto }}"
+                                                        target="_blank">Ver adjunto</a>
+                                                </div>
+                                            </div>
+                                        @endif
+
+
+                                    </div>
+
+                                </div>
+                                <div class="vermas" style="padding-top: 20%; padding-left:76%">
+                                    <a href="{{ route('inicio.noticia') }}">Más noticias <i
+                                            class="bi bi-arrow-right-square"></i> </a>
+                                </div>
+                            </div>
+                            <div class="col-6 noticia">
+                                <img src="{{ $noticias->imagen }}" class="" alt="">
+                            </div>
+
+                        </div>
                     @endforeach
 
 
@@ -94,6 +158,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <p>
+
                                     <br>
                                     <br>
                                     <hr>
@@ -103,6 +168,7 @@
 
                     </section>
 
+                    <p></p>
                     <section id="Induccion" class="">
                         <div class="row">
                             <div class="col-4 offset-4">
@@ -111,21 +177,21 @@
                         </div>
 
 
-                            <div class="container-1">
-                                @foreach ($card as $cards)
-                                    <div class="card-1">
-                                        <img src="{{ $cards->imagen }}" alt="">
-                                        <h4 style="text-align: justify">{{ $cards->titulo }}</h4>
-                                        <p style="text-align: justify">
-                                            {{ $cards->cuerpo }}
-                                        </p>
+                        <div class="container-1">
+                            @foreach ($card as $cards)
+                                <div class="card-1">
+                                    <img src="{{ $cards->imagen }}" alt="">
+                                    <h4 style="text-align: justify">{{ $cards->titulo }}</h4>
+                                    <p style="text-align: justify">
+                                        {{ $cards->cuerpo }}
+                                    </p>
 
-                                        <a href="{{ $cards->adjunto }}" class="btn btn-outline-dark" target="_blank"><i
-                                                class="bi bi-arrow-right"></i> Ingresar</a>
+                                    <a href="{{ $cards->adjunto }}" class="btn btn-outline-dark" target="_blank"><i
+                                            class="bi bi-arrow-right"></i> Ingresar</a>
 
-                                    </div>
-                                @endforeach
-                            </div>
+                                </div>
+                            @endforeach
+                        </div>
 
 
                     </section>
@@ -139,63 +205,138 @@
                             </div>
                         </div>
 
-
-
-                            <div class="container">
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-
-
-                                <div class="swiper-container mySwiper">
-
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            @foreach ($formacion as $formaciones)
-                                                <div class="card">
-                                                    <img src="{{ $formaciones->imagen }}" alt="">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">{{ $formaciones->titulo }}</h5>
-
-                                                        <p class="card-text">
-                                                            {{ $formaciones->cuerpo }}
-                                                        </p>
-                                                        <br>
-                                                        <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
-                                                            target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                                                    </div>
-                                                </div>
-                                            @endforeach
-                                        </div>
+                        <br>
 
 
 
 
 
 
+        <div class="container">
 
 
 
-                                    </div>
+
+
+            <div class="swiper-container mySwiper">
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        @foreach ($formacion as $formaciones)
+                            <div class="card">
+                                <img src="{{ $formaciones->imagen }}" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $formaciones->titulo }}</h5>
+
+                                    <p class="card-text">
+                                        {{ $formaciones->cuerpo }}
+                                    </p>
+                                    <br>
+                                    <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
+                                        target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
                                 </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-slide">
+                        @foreach ($formacion as $formaciones)
+                            <div class="card">
+                                <img src="{{ $formaciones->imagen }}" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $formaciones->titulo }}</h5>
 
-
-
-
-                                <div class="container-1">
-                                    @foreach ($formacion as $formaciones)
-                                        <div class="card-1">
-                                            <img src="{{ $formaciones->imagen }}" alt="">
-                                            <h4 style="text-align: justify">{{ $formaciones->titulo }}</h4>
-                                            <p style="text-align: justify">
-                                                {{ $formaciones->cuerpo }}
-                                            </p>
-
-                                            <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
-                                                target="_blank">Ingresar</a>
-
-                                        </div>
-                                    @endforeach
+                                    <p class="card-text">
+                                        {{ $formaciones->cuerpo }}
+                                    </p>
+                                    <br>
+                                    <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
+                                        target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
                                 </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-slide">
+                        @foreach ($formacion as $formaciones)
+                            <div class="card">
+                                <img src="{{ $formaciones->imagen }}" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $formaciones->titulo }}</h5>
+
+                                    <p class="card-text">
+                                        {{ $formaciones->cuerpo }}
+                                    </p>
+                                    <br>
+                                    <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
+                                        target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-slide">
+                        @foreach ($formacion as $formaciones)
+                            <div class="card">
+                                <img src="{{ $formaciones->imagen }}" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $formaciones->titulo }}</h5>
+
+                                    <p class="card-text">
+                                        {{ $formaciones->cuerpo }}
+                                    </p>
+                                    <br>
+                                    <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
+                                        target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-slide">
+                        @foreach ($formacion as $formaciones)
+                            <div class="card">
+                                <img src="{{ $formaciones->imagen }}" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $formaciones->titulo }}</h5>
+
+                                    <p class="card-text">
+                                        {{ $formaciones->cuerpo }}
+                                    </p>
+                                    <br>
+                                    <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
+                                        target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-slide">
+                        @foreach ($formacion as $formaciones)
+                            <div class="card">
+                                <img src="{{ $formaciones->imagen }}" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $formaciones->titulo }}</h5>
+
+                                    <p class="card-text">
+                                        {{ $formaciones->cuerpo }}
+                                    </p>
+                                    <br>
+                                    <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
+                                        target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+
+
+
 
                     </section>
 
@@ -616,6 +757,7 @@
             </div>
         </section>
 
+        <script src="{{ asset('js/modal.js') }}"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script src="{{ asset('js/new.js') }}"></script>
 

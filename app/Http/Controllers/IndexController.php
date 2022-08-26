@@ -21,11 +21,11 @@ class IndexController extends Controller
 
         $noticia = Content::where('estado', '1')->where('categoria_id', '4')->orderBy('created_at', 'desc')->Limit('1')->get();
 
-        $card = Content::where('estado', '1')->where('categoria_id', '3')->where('orden', '1')
+        $card = Content::where('estado', '1')->where('categoria_id', '3')->where('nombre', 'card')->where('orden', '1')
         ->get();
 
         $formacion = Content::where('estado', '1')->where('categoria_id', '3')
-        ->where('nombre', 'formacion')->where('orden', '2')
+        ->where('orden', '2')
         ->get();
 
 

@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/72557239af.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 
     <title>Somos Más</title>
 </head>
@@ -19,11 +20,8 @@
     </nav>
 
 
-    <div class="block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200 rounded-lg shadow-">
-        <a href="{{route('login.index')}}" class="text-center text-3xl text-center font-bold text-pink-600">Bienvenido <i class="fa-solid fa-right-to-bracket"></i> </a>
-
-
-
+    <div class="block mx-auto bg-white my-12 p-8 w-1/3 border border-gray-200 rounded-lg welcome">
+        <a href="{{route('login.index')}}" class="text-center text-3xl text-center font-bold">Bienvenido <i class="fa-solid fa-right-to-bracket"></i> </a>
     </div>
 
 
