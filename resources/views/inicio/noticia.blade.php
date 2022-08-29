@@ -110,7 +110,7 @@
                     <h1>{{ $noticias->titulo }}</h1>
                     <div>
                         <p class="nuevaa">
-                            {{ Str::limit($noticias->cuerpo, 400, '...') }}
+                            {{ Str::limit($noticias->cuerpo, 800, '...') }}
                         </p>
                     </div>
 
@@ -118,7 +118,7 @@
 
 
 
-                        @if (strlen($noticias->cuerpo) > 400)
+                        @if (strlen($noticias->cuerpo) > 800)
                         <div class="col-3">
                             <button type="button" class="ctn" data-toggle="modal"
                                 data-target="#myModal<?php echo $cant; ?>">Ver más</button>
@@ -162,20 +162,36 @@
 
                         @endif
 
-
+                        @if ($noticias->adjunto)
                         <div class="col-3">
-                            @if ($noticias->adjunto)
+
 
                                     <div class="contenedor-textos2">
                                         <a class="cta" href="{{ $noticias->adjunto }}"
                                             target="_blank">Ver adjunto</a>
                                     </div>
 
-                            @endif
+
                         </div>
+                        @endif
 
                     </div>
+
+                    <div class="vermaa" style="padding-top: 10%; padding-left:76%">
+                        {{$noticias->updated_at}}
+                    </div>
+
+                    {{-- <div>
+                        <p>
+                            {{$noticias->updated_at}}
+                        </p>
+                    </div> --}}
+
                 </div>
+
+
+
+
 
                 <div class="col-6 noticiaa">
                     <img src="{{ $noticias->imagen }}" class="pb-4" alt="">
