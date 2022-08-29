@@ -237,7 +237,7 @@
 
 
 
-<script src="{{ asset('js/modal.js') }}"></script>
+{{-- <script src="{{ asset('js/modal.js') }}"></script> --}}
 
 <script>
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="mensaje"]'))

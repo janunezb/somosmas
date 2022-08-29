@@ -24,8 +24,7 @@ class IndexController extends Controller
         $card = Content::where('estado', '1')->where('categoria_id', '3')->where('nombre', 'card')->where('orden', '1')
         ->get();
 
-        $formacion = Content::where('estado', '1')->where('categoria_id', '3')
-        ->where('orden', '2')
+        $formacion = Content::where('estado', '1')->where('categoria_id', '3')->where('orden', '2')->orderBy('created_at', 'desc')
         ->get();
 
 

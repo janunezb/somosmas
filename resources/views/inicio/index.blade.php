@@ -76,13 +76,13 @@
 
 
                                     <p class="nuevaa">
-                                        {{ Str::limit($noticias->cuerpo, 400, '...') }}
+                                        {{ Str::limit($noticias->cuerpo, 800, '...') }}
                                     </p>
 
 
                                     <div class="row">
 
-                                        @if (strlen($noticias->cuerpo) > 400)
+                                        @if (strlen($noticias->cuerpo) > 800)
                                         <div class="col-3">
                                             <button type="button" class="ctn" data-toggle="modal"
                                                 data-target="#myModal<?php echo $cant; ?>">Ver más</button>
@@ -257,91 +257,9 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="swiper-slide">
-                        @foreach ($formacion as $formaciones)
-                            <div class="card">
-                                <img src="{{ $formaciones->imagen }}" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $formaciones->titulo }}</h5>
 
-                                    <p class="card-text">
-                                        {{ $formaciones->cuerpo }}
-                                    </p>
-                                    <br>
-                                    <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
-                                        target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="swiper-slide">
-                        @foreach ($formacion as $formaciones)
-                            <div class="card">
-                                <img src="{{ $formaciones->imagen }}" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $formaciones->titulo }}</h5>
 
-                                    <p class="card-text">
-                                        {{ $formaciones->cuerpo }}
-                                    </p>
-                                    <br>
-                                    <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
-                                        target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="swiper-slide">
-                        @foreach ($formacion as $formaciones)
-                            <div class="card">
-                                <img src="{{ $formaciones->imagen }}" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $formaciones->titulo }}</h5>
 
-                                    <p class="card-text">
-                                        {{ $formaciones->cuerpo }}
-                                    </p>
-                                    <br>
-                                    <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
-                                        target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="swiper-slide">
-                        @foreach ($formacion as $formaciones)
-                            <div class="card">
-                                <img src="{{ $formaciones->imagen }}" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $formaciones->titulo }}</h5>
-
-                                    <p class="card-text">
-                                        {{ $formaciones->cuerpo }}
-                                    </p>
-                                    <br>
-                                    <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
-                                        target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="swiper-slide">
-                        @foreach ($formacion as $formaciones)
-                            <div class="card">
-                                <img src="{{ $formaciones->imagen }}" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $formaciones->titulo }}</h5>
-
-                                    <p class="card-text">
-                                        {{ $formaciones->cuerpo }}
-                                    </p>
-                                    <br>
-                                    <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
-                                        target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
 
 
 
