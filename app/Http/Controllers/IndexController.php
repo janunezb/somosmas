@@ -53,7 +53,7 @@ class IndexController extends Controller
     public function noticia(){
 
         //$not = Content::paginate();
-        $not = Content::where('estado', '1')->where('categoria_id', '2')->orderBy('id', 'desc')->paginate(2)
+        $not = Content::where('estado', '1')->where('categoria_id', '2')->orderBy('id', 'desc')->Paginate(2)
         ;
 
         return view('inicio.noticia', compact('not'));

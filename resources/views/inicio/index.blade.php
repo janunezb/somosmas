@@ -178,19 +178,38 @@
 
 
                         <div class="container-1">
-                            @foreach ($card as $cards)
+
                                 <div class="card-1">
-                                    <img src="{{ $cards->imagen }}" alt="">
-                                    <h4 style="text-align: justify">{{ $cards->titulo }}</h4>
+                                    <img src="{{ asset('images/induccion1.jpg')}}" alt="">
+                                    <h4 style="text-align: justify">Inducción Colaboradores áreas administrativas.</h4>
                                     <p style="text-align: justify">
-                                        {{ $cards->cuerpo }}
+                                        Bienvenido! Para nosotros tu bienestar es muy importante, disfruta de esta
+                                    sección donde podrás entender conceptos
+                                    básicos de nuestro sistema de gestión de seguridad y salud en el trabajo.
+                                    Tu compromiso y el nuestro es velar por tu seguridad.
+
                                     </p>
 
-                                    <a href="{{ $cards->adjunto }}" class="btn btn-outline-dark" target="_blank"><i
+                                    <a href="https://forms.gle/yCHoN6QrjfK2RVZC9" class="btn btn-outline-dark" target="_blank"><i
                                             class="bi bi-arrow-right"></i> Ingresar</a>
 
                                 </div>
-                            @endforeach
+
+                                <div class="card-1">
+                                    <img src="{{ asset('images/induccion2.jpg')}}" alt="">
+                                    <h4 style="text-align: justify">Inducción Colaboradores técnicos y operativos.</h4>
+                                    <p style="text-align: justify">
+                                        Bienvenido! Tu trabajo es fundamental para el desarrollo del negocio, queremos garantizar que lo realices con seguridad.
+                            En esta sección conocerás a profundidad la manera de controlar y gestionar los riesgos asociados a tu actividad,
+                             tu compromiso y el nuestro es velar por tu bienestar.
+
+                                    </p>
+
+                                    <a href="https://forms.gle/3Wiikuws4TMMqEiTA" class="btn btn-outline-dark" target="_blank"><i
+                                            class="bi bi-arrow-right"></i> Ingresar</a>
+
+                                </div>
+
                         </div>
 
 
