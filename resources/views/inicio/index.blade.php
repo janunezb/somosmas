@@ -36,9 +36,9 @@
                         <img src="{{ $banner->imagen }}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <!--h5 style="color: black">{{ $banner->nombre }}</h5>
-                                    <p style="color : black">
-                                        {{ $banner->titulo }}
-                                    </p-->
+                                        <p style="color : black">
+                                            {{ $banner->titulo }}
+                                        </p-->
                         </div>
                     </div>
                 @endforeach
@@ -67,7 +67,7 @@
                 <div class="col-12">
                     @php $cant = 0; @endphp
                     @foreach ($noticia as $noticias)
-                    @php $cant = $cant+1; @endphp
+                        @php $cant = $cant+1; @endphp
                         <div class="row">
                             <div class="col-6 " style="padding-right: 1px;">
 
@@ -83,45 +83,47 @@
                                     <div class="row">
 
                                         @if (strlen($noticias->cuerpo) > 800)
-                                        <div class="col-3">
-                                            <button type="button" class="ctn" data-toggle="modal"
-                                                data-target="#myModal<?php echo $cant; ?>">Ver más</button>
+                                            <div class="col-3">
+                                                <button type="button" class="ctn" data-toggle="modal"
+                                                    data-target="#myModal<?php echo $cant; ?>">Ver más</button>
 
-                                            <div class="modal fade" id="myModal<?php echo $cant; ?>" role="dialog">
-                                                <div class="modal-dialog">
+                                                <div class="modal fade" id="myModal<?php echo $cant; ?>" role="dialog">
+                                                    <div class="modal-dialog">
 
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
+                                                        <!-- Modal content-->
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
 
-                                                            <header style="" class="h2">{{ $noticias->titulo }}</header>
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        </div>
-                                                        <div class="contenido">
-                                                            <div class="row pt-2">
-                                                                <div class="" style="float: left">
-                                                                    <img src="{{ $noticias->imagen }}" class="img-fluid" alt=""
-                                                                    >
-                                                                </div>
-                                                                <div class="pb-5" style="padding-right: 1px;">
-                                                                    <div>
-                                                                        <p class="nuevaa" style="background-color: #FAFAFA">
-                                                                            {{ $noticias->cuerpo }}
-                                                                        </p>
+                                                                <header style="" class="h2">
+                                                                    {{ $noticias->titulo }}</header>
+                                                                <button type="button" class="close"
+                                                                    data-dismiss="modal">&times;</button>
+                                                            </div>
+                                                            <div class="contenido">
+                                                                <div class="row pt-2">
+                                                                    <div class="" style="float: left">
+                                                                        <img src="{{ $noticias->imagen }}" class="img-fluid"
+                                                                            alt="">
                                                                     </div>
+                                                                    <div class="pb-5" style="padding-right: 1px;">
+                                                                        <div>
+                                                                            <p class="nuevaa"
+                                                                                style="background-color: #FAFAFA">
+                                                                                {{ $noticias->cuerpo }}
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+
                                                                 </div>
+
+
 
                                                             </div>
-
-
-
                                                         </div>
-                                                    </div>
 
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-
                                         @endif
 
 
@@ -179,36 +181,38 @@
 
                         <div class="container-1">
 
-                                <div class="card-1">
-                                    <img src="{{ asset('images/induccion1.jpg')}}" alt="">
-                                    <h4 style="text-align: justify">Inducción Colaboradores áreas administrativas.</h4>
-                                    <p style="text-align: justify">
-                                        Bienvenido! Para nosotros tu bienestar es muy importante, disfruta de esta
+                            <div class="card-1">
+                                <img src="{{ asset('images/induccion1.jpg') }}" alt="">
+                                <h4 style="text-align: justify">Inducción Colaboradores áreas administrativas.</h4>
+                                <p style="text-align: justify">
+                                    Bienvenido! Para nosotros tu bienestar es muy importante, disfruta de esta
                                     sección donde podrás entender conceptos
                                     básicos de nuestro sistema de gestión de seguridad y salud en el trabajo.
                                     Tu compromiso y el nuestro es velar por tu seguridad.
 
-                                    </p>
+                                </p>
 
-                                    <a href="https://forms.gle/yCHoN6QrjfK2RVZC9" class="btn btn-outline-dark" target="_blank"><i
-                                            class="bi bi-arrow-right"></i> Ingresar</a>
+                                <a href="https://forms.gle/yCHoN6QrjfK2RVZC9" class="btn btn-outline-dark"
+                                    target="_blank"><i class="bi bi-arrow-right"></i> Ingresar</a>
 
-                                </div>
+                            </div>
 
-                                <div class="card-1">
-                                    <img src="{{ asset('images/induccion2.jpg')}}" alt="">
-                                    <h4 style="text-align: justify">Inducción Colaboradores técnicos y operativos.</h4>
-                                    <p style="text-align: justify">
-                                        Bienvenido! Tu trabajo es fundamental para el desarrollo del negocio, queremos garantizar que lo realices con seguridad.
-                            En esta sección conocerás a profundidad la manera de controlar y gestionar los riesgos asociados a tu actividad,
-                             tu compromiso y el nuestro es velar por tu bienestar.
+                            <div class="card-1">
+                                <img src="{{ asset('images/induccion2.jpg') }}" alt="">
+                                <h4 style="text-align: justify">Inducción Colaboradores técnicos y operativos.</h4>
+                                <p style="text-align: justify">
+                                    Bienvenido! Tu trabajo es fundamental para el desarrollo del negocio, queremos
+                                    garantizar que lo realices con seguridad.
+                                    En esta sección conocerás a profundidad la manera de controlar y gestionar los riesgos
+                                    asociados a tu actividad,
+                                    tu compromiso y el nuestro es velar por tu bienestar.
 
-                                    </p>
+                                </p>
 
-                                    <a href="https://forms.gle/3Wiikuws4TMMqEiTA" class="btn btn-outline-dark" target="_blank"><i
-                                            class="bi bi-arrow-right"></i> Ingresar</a>
+                                <a href="https://forms.gle/3Wiikuws4TMMqEiTA" class="btn btn-outline-dark"
+                                    target="_blank"><i class="bi bi-arrow-right"></i> Ingresar</a>
 
-                                </div>
+                            </div>
 
                         </div>
 
@@ -217,7 +221,7 @@
 
                     <hr>
 
-                    <section id="formaciones" class="">
+                 <section id="formaciones" class="">
                         <div class="row">
                             <div class="col-6 offset-3">
                                 <h2 class="titulo">Formaciones Del Mes</h2>
@@ -226,22 +230,35 @@
 
                         <br>
 
+                        <div class="">
+
+
+                            <div class="carrusel-itemss">
+                                @foreach ($formacion as $formaciones)
+                                <div class="carrusel-itemm">
+
+                                        <div class="card" style="widtyh: 18rem;">
+                                            <img src="{{ $formaciones->imagen }}" alt="">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ $formaciones->titulo }}</h5>
+
+                                                <p class="card-text">
+                                                    {{ $formaciones->cuerpo }}
+                                                </p>
+                                                <br>
+                                                <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
+                                                    target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
+                                            </div>
+                                        </div>
+                                </div>
+
+                                @endforeach
+                            </div>
+                        </div>
 
 
 
-
-
-        <div class="container">
-
-
-
-
-
-            <div class="swiper-container mySwiper">
-
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        @foreach ($formacion as $formaciones)
+                        {{-- @foreach ($formacion as $formaciones)
                             <div class="card">
                                 <img src="{{ $formaciones->imagen }}" alt="">
                                 <div class="card-body">
@@ -255,8 +272,7 @@
                                         target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
+                        @endforeach --}}
 
 
 
@@ -266,16 +282,12 @@
 
 
 
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
 
 
 
 
 
-                    </section>
+                </section>
 
                     <hr>
 

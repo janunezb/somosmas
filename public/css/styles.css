@@ -41,11 +41,9 @@
     text-decoration: none;
 
 }
-.swiper-button-next{
 
-    right: 26px !important;
-}
-.swiper-button-prev{
 
-    left: 26px !important;
+
+.scroll-items{
+
 }
