@@ -640,7 +640,7 @@
             </div>
         </main>
 
-        <hr>
+
 
         <section id="redapoyo" class="d-flex justify-content-center align-items-center rounded">
             <div class="footer bg-dark text-color:white">

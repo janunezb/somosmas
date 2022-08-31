@@ -1,35 +1,11 @@
 @extends('layouts.nav')
 
-@section('title', 'Somos Más')
+@section('title', 'Cultura')
 
 @section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cultura</title>
-</head>
-<body>
 
     <main class="container d-flex justify-content-center align-items-center p-5">
-
-
-
-
-         {{-- <div class="row text-center">
-             <div class="">
-                 <h2 id="fechas" class="titulo">Fechas Especiales</h2>
-             </div>
-             <div class="">
-                <p>Un pequeño homenaje para las mujeres que hacen parte de nuestro ecosistema.
-                    ¡¡¡Feliz día para todas ustedes!!!</p>
-             </div>
-            </div> --}}
-
-
 
         <div class="container text-center aling-items-center">
             <div class="row aling-items-center">
@@ -244,13 +220,13 @@
                     <div class="col-12 texto">
                         <p>En nuestra organización celebramos la Diversidad y le apostamos a la inclusión; es por eso por lo que desde el segundo semestre del 2021 se creó un comité que tiene como objetivo principal “Garantizar y promover al interior de la organización la correcta valoración de la diversidad de pensamiento, creencias e identidades, fomentando ambientes y formas de expresión equitativas e igualitarias que logren un mayor bienestar en la compañía.</p>
                     </div>
-                    <div class="col-6 pt-3 fondo">
+                    <div class="col-6 pt-3 fondo " style="border-radius: 20px">
 
-                        <img src="{{ asset('images/juanma.jpg') }}" class="" alt="...">
-                        <p class="h2 juan">Juan Manuel</p>
-                        <p class="uno"> Presidente del comité de <br> diversidad e inclusión.</p>
+                        <img src="{{ asset('images/juanma.jpg') }}" style="border-radius: 20px" class="" alt="..." width="100%" height="60%">
+                        <p class="h1 juan">Juan Manuel</p>
+                        <p class="" style="color: white; font-size:200%;"> Presidente del comité de <br> diversidad e inclusión.</p>
                     </div>
-                    <div class="col-6 hola pt-3 fondo1 ">
+                    <div class="col-6 hola pt-3 fondo1  " >
                         <h3>Comité de diversidad e inclusion.</h3>
                         <p>¿Quiénes hacen parte de nuestro comité?
                             Somos un grupo de personas que creemos que fomentar la empatía nos ayuda a reconocer la diversidad, creemos en el respeto y valoramos la diferencia.
@@ -266,10 +242,10 @@
                                 <li class="list-group-item"><i class="bi bi-check-circle"></i> Integrante: Iván Diaz - Suncolombia</li>
                             </ul>
                             <br>
-                            <div class="azul h6">
-                                <hr>
-                                <p class="h6"> Pronto conocerás mas sobre nosotros, algunas de las actividades que hemos realizado y como puedes hacer parte de ellas.</p>
-                                <hr>
+                            <div class="h6" style="background-color: cyan; height:8%; border-radius:10px;">
+
+                                <p class="h6 p-1"> Pronto conocerás mas sobre nosotros, algunas de las actividades que hemos realizado y como puedes hacer parte de ellas.</p>
+
                             </div>
                     </div>
                 </div>
@@ -328,8 +304,8 @@
                                         <img src="{{ asset('images/carlos.jpg') }}"  alt="" class="border border-primary border-3 rounded-circle" style="width: 100px; height: 100px;">
                                         <div class="ps-3">
                                             <br>
-                                            <h6 class="m-0 h6">Jhon López</h6>
-                                            <p class="m-0 h6">Suncolombia</p>
+                                            <h6 class="m-0 h6">Carlos Herrada</h6>
+                                            <p class="m-0 h6">Liwa</p>
                                         </div>
 
                                     </div>
@@ -667,7 +643,6 @@
 
   <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
   <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
-</body>
-</html>
+
 
 @endsection

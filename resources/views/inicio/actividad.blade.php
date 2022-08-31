@@ -1,25 +1,18 @@
 @extends('layouts.nav')
 
-@section('title', 'Somos Más')
+@section('title', 'Actividad del mes')
 
 @section('content')
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Actividad Del Mes</title>
-</head>
-<body>
 
 
         <section id="actividad" class="">
+            <div class="pt-3 col-4 offset-4">
+                <h1 class="titulo">Actividad del mes</h1>
+            </div>
 
-            <h1 class="tutulo">Actividad del mes</h1>
 
             <div class="container-2">
 
@@ -50,44 +43,6 @@
             </div>
 
 
-             {{-- <div class="row">
-         <div class="col-md-6 align-items-center offset-3">
-          <h2 class="titulo">Actividad Del Mes</h2>
-      </div>
-      <div class="col-12">
-            <p class="texto">Vota por los compañeros que te representaran en el Copasst y en el comité de convivencia; colaboradores Navega y Suncoenergy</p>
-
-      </div>
-      <div class="row">
-      <div class="col-4 offset-2">
-        <div class="card" style="width:;">
-          <img src="{{ asset('images/nm.jpg') }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h3 class="card-title ">Tus Representantes</h3>
-            <p class="card-text"> Selecciona a los compañeros que quieres que te representen en el Copasst y en el comité de convivencia; recuerda que el copasst es el comité que
-                apoya los temas de seguridad y salud en el trabajo en tu empresa y el de convivencia prevenir el riesgo psicosocial.
-            </p>
-            <p>Tiempo estimado 5 minutos.</p>
-
-            <a href="https://forms.gle/69qYRLGjVD9cTrNb9" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card" style="width:;">
-          <img src="{{ asset('images/nm1.jpg') }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h3 class="card-title">Tus Representantes</h3>
-            <p class="card-text"> Selecciona a los compañeros que quieres que te representen en el Copasst y en el comité de convivencia; recuerda que el copasst es el comité que
-                apoya los temas de seguridad y salud en el trabajo en tu empresa y el de convivencia prevenir el riesgo psicosocial.
-            </p>
-            <p>Tiempo estimado 5 minutos.</p>
-            <a href="https://forms.gle/nVyxfLoVoxeaxMwX7" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-          </div>
-      </div>
-        </div>
-      </div>
-    </div> --}}
 </section>
 
 
@@ -148,12 +103,6 @@
                 </div>
     </section> --}}
 
-    </body>
 
-
-
-
-
-</html>
 
 @endsection

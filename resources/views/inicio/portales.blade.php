@@ -1,6 +1,6 @@
 @extends('layouts.nav')
 
-@section('title', 'Somos Más')
+@section('title', 'Portales')
 
 @section('content')
 <section id="portales" class="d-flex justify-content-center align-items-center p-4">
