@@ -256,37 +256,6 @@
                             </div>
                         </div>
 
-
-
-                        {{-- @foreach ($formacion as $formaciones)
-                            <div class="card">
-                                <img src="{{ $formaciones->imagen }}" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $formaciones->titulo }}</h5>
-
-                                    <p class="card-text">
-                                        {{ $formaciones->cuerpo }}
-                                    </p>
-                                    <br>
-                                    <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
-                                        target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                                </div>
-                            </div>
-                        @endforeach --}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </section>
 
                     <hr>

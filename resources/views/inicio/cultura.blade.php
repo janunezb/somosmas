@@ -44,7 +44,7 @@
                         >
                             <div class="modal-dialog modal-lg modal-dialog-center">
                                 <div class="modal-content">
-                                    <video src="{{ asset('videos/videosg/bleidy.mp4') }}" title="" allowfullscreen="" type="video/mp4" controls=""></video>
+                                    <video src="https://liwarepo.s3.us-west-2.amazonaws.com/somosmas/bleidy.mp4" title="" allowfullscreen="" type="video/mp4" controls=""></video>
 
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                         >
                             <div class="modal-dialog modal-lg modal-dialog-center">
                                 <div class="modal-content">
-                                    <video src="{{ asset('videos/videosg/olga.mp4') }}" title="" allowfullscreen="" type="video/mp4" controls=""></video>
+                                    <video src="https://liwarepo.s3.us-west-2.amazonaws.com/somosmas/olga.mp4" title="" allowfullscreen="" type="video/mp4" controls=""></video>
                                 </div>
                             </div>
 
@@ -69,7 +69,7 @@
                         >
                             <div class="modal-dialog modal-lg modal-dialog-center">
                                 <div class="modal-content">
-                                    <video src="{{ asset('videos/videosg/catalina.mp4') }}" title="" allowfullscreen="" type="video/mp4" controls=""></video>
+                                    <video src="https://liwarepo.s3.us-west-2.amazonaws.com/somosmas/catalina.mp4" title="" allowfullscreen="" type="video/mp4" controls=""></video>
                                 </div>
                             </div>
 
@@ -82,7 +82,7 @@
                             <div class="modal-dialog modal-lg modal-dialog-center">
                                 <div class="modal-content">
                                     <div class="modal-content">
-                                        <video src="{{ asset('videos/videosg/claudiap.mp4') }}" title="" allowfullscreen="" type="video/mp4" controls=""></video>
+                                        <video src="https://liwarepo.s3.us-west-2.amazonaws.com/somosmas/claudiap.mp4" title="" allowfullscreen="" type="video/mp4" controls=""></video>
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +95,7 @@
                         >
                             <div class="modal-dialog modal-lg modal-dialog-center">
                                 <div class="modal-content">
-                                    <video src="{{ asset('videos/videosg/liliana.mp4') }}" title="" allowfullscreen="" type="video/mp4" controls=""></video>
+                                    <video src="https://liwarepo.s3.us-west-2.amazonaws.com/somosmas/liliana.mp4" title="" allowfullscreen="" type="video/mp4" controls=""></video>
                                 </div>
                             </div>
 
@@ -107,7 +107,7 @@
                         >
                             <div class="modal-dialog modal-lg modal-dialog-center">
                                 <div class="modal-content">
-                                    <video src="{{ asset('videos/videosg/maribel.mp4') }}" title="" allowfullscreen="" type="video/mp4" controls=""></video>
+                                    <video src="https://liwarepo.s3.us-west-2.amazonaws.com/somosmas/maribel.mp4" title="" allowfullscreen="" type="video/mp4" controls=""></video>
                                 </div>
                             </div>
 
@@ -119,7 +119,7 @@
                         >
                             <div class="modal-dialog modal-lg modal-dialog-center">
                                 <div class="modal-content">
-                                    <video src="{{ asset('videos/videosg/monica.mp4') }}" title="" allowfullscreen="" type="video/mp4" controls=""></video>
+                                    <video src="https://liwarepo.s3.us-west-2.amazonaws.com/somosmas/monica.mp4" title="" allowfullscreen="" type="video/mp4" controls=""></video>
                                 </div>
                             </div>
 
@@ -181,34 +181,48 @@
                             <p class="texto">Te gustaría escuchar desde la voz de los diferentes lideres de cada una de las empresas, las últimas novedades y lanzamientos. ¡¡Tus Podcast te esperan!!</p>
                         </div>
                     </div>
-                    <div class="row">
-                    <div class="col-4 p-2 offset-2">
-                        <div class="card hov-1" style="">
-                            <img src="{{ asset('images/logos/spotify.png') }}" class="card-img-top" alt="...">
-                            <div class="card-body">
 
-                              <h5 class="card-title">Ahora Somos Liwa</h5>
-                              <p class="card-text">Nacimos digitales, somos digitales. Liwa significa acceso y conexión. Liwa es donde el propósito se encuentra con la innovación</p>
+                    <div class="container-4">
 
-                              <a href="https://open.spotify.com/episode/31wpAQW8tTaMMQYWdwE2FT" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-4 p-2">
-                        <div class="card hov-2" style="">
-                            <img src="{{ asset('images/logos/spotify.png')}}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">¿Por que cebra y no unicornio?</h5>
-                              <p class="card-text">En este episodio invitamos a Juan Diego Gomez uno de los lideres del ecosistema Liwa, quien nos aclara ¿Por que cebra y no unicornio?. </p>
+                        <div class="card-4">
+                            <img src="{{ asset('images/logos/spotify.png') }}" alt="">
+                            <h4 style="text-align: justify">Ahora Somos Liwa.</h4>
+                            <p style="text-align: justify">
+                                Nacimos digitales, somos digitales. Liwa significa acceso y conexión. Liwa es donde el propósito se encuentra con la innovación.
 
-                              <a href="https://open.spotify.com/episode/6PQZIHp9RfUZiEB0sCXBOT" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
+                            </p>
+
+
+                            <div class="bordes">
+                                <a href="https://open.spotify.com/episode/31wpAQW8tTaMMQYWdwE2FT" class="btn btn-outline-dark"
+                                target="_blank"><i class="bi bi-arrow-right"></i> Ingresar</a>
                             </div>
 
-                          </div>
+
+                        </div>
+
+                        <div class="card-4">
+                            <img src="{{ asset('images/logos/spotify.png') }}" alt="">
+                            <h4 style="text-align: ">¿Por que cebra y no unicornio?</h4>
+                            <p style="text-align: justify">
+                                En este episodio invitamos a Juan Diego Gomez uno de los lideres del ecosistema Liwa, quien nos aclara ¿Por que cebra y no unicornio?
+
+                            </p>
+
+                            <div class="bordes">
+                                <a href="https://open.spotify.com/episode/6PQZIHp9RfUZiEB0sCXBOT" style="padding-left: 15px;" class="btn btn-outline-dark"
+                                target="_blank"><i class="bi bi-arrow-right"></i> Ingresar</a>
+                            </div>
+
+
+                        </div>
+
                     </div>
 
+
+
                 </div>
-                </div>
+
             </section>
 
             <section id="comite" class="d-flex justify-content-center align-items-center p-2">
@@ -288,7 +302,7 @@
                                     <div class="padrevideo1">
                                         <div class="video1">
                                         <div class=" ratio ratio-16x9">
-                                        <video src="{{ asset('videos/Jhon.mp4') }}" title="" allowfullscreen="" type="video/mp4" controls=""></video>
+                                        <video src="https://liwarepo.s3.us-west-2.amazonaws.com/somosmas/Jhon.mp4" title="" allowfullscreen="" type="video/mp4" controls=""></video>
                                         </div>
                                         </div>
                                         </div>
@@ -319,7 +333,7 @@
                                         <div class="padrevideo1">
                                             <div class="video1">
                                             <div class=" ratio ratio-16x9">
-                                            <video src="{{ asset('videos/carlos.mp4') }}" title="" allowfullscreen="" type="video/mp4" controls=""></video>
+                                            <video src="https://liwarepo.s3.us-west-2.amazonaws.com/somosmas/carlos.mp4" title="" allowfullscreen="" type="video/mp4" controls=""></video>
                                             </div>
                                             </div>
                                             </div>
@@ -350,7 +364,7 @@
                                     <div class="padrevideo1">
                                         <div class="video1">
                                         <div class=" ratio ratio-16x9">
-                                        <video src="{{ asset('videos/ximena.mp4') }}" title="" allowfullscreen="" type="video/mp4" controls=""></video>
+                                        <video src="https://liwarepo.s3.us-west-2.amazonaws.com/somosmas/ximena.mp4" title="" allowfullscreen="" type="video/mp4" controls=""></video>
                                         </div>
                                         </div>
                                         </div>
@@ -384,7 +398,7 @@
                                 <div class="padrevideo1">
                                     <div class="video1">
                                     <div class=" ratio ratio-16x9">
-                                    <video src="{{ asset('videos/paula.mp4') }}" title="" allowfullscreen="" type="video/mp4" controls=""></video>
+                                    <video src="https://liwarepo.s3.us-west-2.amazonaws.com/somosmas/paula.mp4" title="" allowfullscreen="" type="video/mp4" controls=""></video>
                                     </div>
                                     </div>
                                     </div>
@@ -416,7 +430,7 @@
                                 <div class="padrevideo1">
                                     <div class="video1">
                                     <div class=" ratio ratio-16x9">
-                                    <video src="{{ asset('videos/vanesa.mp4') }}" title="" allowfullscreen="" type="video/mp4" controls=""></video>
+                                    <video src="https://liwarepo.s3.us-west-2.amazonaws.com/somosmas/vanesa.mp4" title="" allowfullscreen="" type="video/mp4" controls=""></video>
                                     </div>
                                     </div>
                                     </div>
@@ -448,7 +462,7 @@
                             <div class="padrevideo1">
                                 <div class="video1">
                                 <div class=" ratio ratio-16x9">
-                                <video src="{{ asset('videos/anamaria.mp4') }}" title="" allowfullscreen="" type="video/mp4" controls=""></video>
+                                <video src="https://liwarepo.s3.us-west-2.amazonaws.com/somosmas/anamaria.mp4" title="" allowfullscreen="" type="video/mp4" controls=""></video>
                                 </div>
                                 </div>
                                 </div>
