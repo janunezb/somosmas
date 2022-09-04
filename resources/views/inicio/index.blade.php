@@ -4,20 +4,7 @@
 
 @section('content')
 
-    <!DOCTYPE html>
-    <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Somos Más</title>
-        <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-    </head>
-
-    <body>
 
 
         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -611,7 +598,7 @@
 
 
 
-        <section id="redapoyo" class="d-flex justify-content-center align-items-center rounded">
+        {{-- <section id="redapoyo" class="d-flex justify-content-center align-items-center rounded">
             <div class="footer bg-dark text-color:white">
                 <div class="row p-5">
                     <div class="col-4">
@@ -673,15 +660,13 @@
             </div>
 
             </div>
-        </section>
+        </section> --}}
 
         <script src="{{-- asset('js/modal.js') --}}"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script src="{{ asset('js/new.js') }}"></script>
 
-    </body>
 
-    </html>
 
 
 
@@ -694,3 +679,6 @@
 
 
 @endsection
+
+
+
