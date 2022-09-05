@@ -21,66 +21,31 @@
                 </p>
             </div>
             <section id="portales1" class="d-flex justify-content-center align-items-center p-2">
-                <div class="row">
-                    <div class="col-6 p-3">
+
+                @foreach ($portal as $portales)
+
+                <div class="rowpl-2 aling-items:center">
+
+
+
+                    <div class="col-12 p-3">
                         <article class="card h-100">
                             <div class="card-body">
                                 <div class="d-flex mb-3">
-                                    <a href="{{ route('admin.index') }}">
-                                        <img src="{{ asset('images/logos/liwa.png') }}" alt="">
+                                    <a href="{{ route($portales->direccionamiento)}}">
+                                        <img src="{{ $portales->imagen }}" alt="">
                                     </a>
-                                </div>
-
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-6 p-3">
-                        <article class="card h-100">
-                            <div class="card-body">
-                                <div class="d-flex mb-3">
-                                    <a href="{{ route('admin.sunco') }}">
-                                        <img src="{{ asset('images/logos/sunco.png') }}" alt="">
-                                    </a>
-
                                 </div>
 
                             </div>
                         </article>
                     </div>
                 </div>
+
+                @endforeach
+
             </section>
 
-            <section id="portales2" class="d-flex justify-content-center align-items-center p-2">
-
-                <div class="row">
-                    <div class="col-6 p-3">
-                        <article class="card h-100">
-                            <div class="card-body">
-                                <div class="d-flex mb-3">
-                                    <a href="{{ route('admin.libre') }}">
-                                        <img src="{{ asset('images/logos/libre.png') }}" alt="">
-                                    </a>
-
-                                </div>
-
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-6 p-3">
-                        <article class="card h-100">
-                            <div class="card-body">
-                                <div class="d-flex mb-3">
-                                    <a href="{{ route('admin.navega') }}">
-                                        <img src="{{ asset('images/logos/navega.png') }}" alt="">
-                                    </a>
-
-                                </div>
-
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
         </div>
     </section>
 

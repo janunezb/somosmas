@@ -427,8 +427,8 @@ nuevaa{
 
 .carrusel-items1{
     display: flex;
-
-    overflow-y: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .carrusel-items1::-webkit-scrollbar {
@@ -773,6 +773,31 @@ nuevaa{
     object-fit: cover;
 
 }
+
+.carrusel-itemms{
+    padding: 10px;
+    min-width: 20%;
+    max-width: 20%;
+    text-align: center;
+    color: #000;
+    font-size: medium;
+
+}
+
+.carrusel-itemms img {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 80%;
+
+}
+
+
+
+
+
 
 
 .container-4{

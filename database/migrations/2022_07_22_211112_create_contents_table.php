@@ -21,7 +21,7 @@ class CreateContentsTable extends Migration
             $table->string('imagen')->nullable();
             $table->string('adjunto')->nullable();
             $table->string('orden')->nullable();
-            // $table->date('fecha')->nullable();
+
             $table->string('estado');
             $table->string('categoria_id');
             $table->timestamps();

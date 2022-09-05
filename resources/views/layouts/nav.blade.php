@@ -55,7 +55,7 @@
             </ul>
 
             <div class="pr-2">
-                <a class="pr-2 text-white" style="text-decoration: none">Bienvenido: <b> {{ auth()->user()->name }}</b></a>
+                <a class="pr-2 text-white" style="text-decoration: none">Bienvenido: <b> {{ auth()->user()->nombre }}</b></a>
             </div>
 
 
