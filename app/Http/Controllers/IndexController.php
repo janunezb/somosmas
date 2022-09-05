@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Log;
 
 class IndexController extends Controller
 {
@@ -49,15 +50,25 @@ class IndexController extends Controller
         $now = Carbon::now();
         $currentDate = $now->toDateString();
 
+        $cumple = User::get();        
+        $lista = [];
+        foreach($cumple as $cmp) {
+            $data = [];
+            $convert = strtotime($cmp['birthday_date']);
+            $formato = date('m-d',$convert);
+            $now = date('m-d', time());
+            Log::info("fecha BD es :".$formato);
+            Log::info("fecha actual es :".$now);
 
+            if($formato == $now) {
+                $data["nombre"] = $cmp['nombre'];
+                $data["foto"] = $cmp['foto'];
+                Log::alert('coincidencia');
+                array_push($lista, $data);
+            }
+        }
 
-        $cumple = User::get();
-        $cumpleaños = User::where('birthday_date', $currentDate)->get();
-
-
-
-
-
+        Log::info("Lista de cumpleaños", $lista);
 
 
 
