@@ -51,7 +51,7 @@ class IndexController extends Controller
 
 
 
-        $cumple = User::get();
+
         $cumpleaños = User::where('birthday_date', $currentDate)->get();
 
 
@@ -61,7 +61,8 @@ class IndexController extends Controller
 
 
 
-        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'cumpleaños', 'cumple', 'now', 'currentDate'));
+
+        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'cumpleaños', 'now', 'currentDate'));
     }
 
     public function cultura()

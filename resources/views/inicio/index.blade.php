@@ -57,7 +57,7 @@
 
                 <section id="cumpleaños" class="">
 
-                    {{-- @foreach ($cumple as $validacion_fecha) --}}
+
                         @if (auth()->user()->birthday_date == $currentDate)
                             <div class="row">
                                 <div class="col-6 offset-3">
@@ -93,7 +93,7 @@
                             </p>
 
                         @endif
-                    {{-- @endforeach --}}
+
 
 
 
