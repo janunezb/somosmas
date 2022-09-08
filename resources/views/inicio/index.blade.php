@@ -58,28 +58,41 @@
                 <section id="cumpleaños" class="">
 
 
+
+
+
                         @if (auth()->user()->birthday_date == $currentDate)
                             <div class="row">
-                                <div class="col-6 offset-3">
+                                <div class="col-4 offset-4">
                                     <h2 class="titulo">Cumpleaños!</h2>
                                 </div>
                             </div>
 
-                            <br>
+                            <div class="col-12">
+                                <p class="texto">
+                                    Felicitamos a los colaboradores que hoy {{$fecha_actual}} están cumpliendo años.
+                                </p>
+                            </div>
+
 
                             <div class="">
 
 
                                 <div class="carrusel-itemss">
-                                    @foreach ($cumpleaños as $fecha)
+                                    @foreach ($lista as $fecha)
                                         <div class="carrusel-itemms">
 
                                             <div class="card" style="widtyh: 18rem;">
-                                                <img src="{{ $fecha->foto }}" alt="">
-                                                <div class="card-body">
-                                                    <p class="card-title">Feliz Cumpleaños {{ $fecha->nombre }}</p>
-                                                    <br>
+                                                <div class="tamaño">
+                                                    <img src="{{ $fecha["foto"] }}" alt="">
+                                                </div>
 
+                                                <div class="card-body">
+                                                    <p class="card-title h5">{{ $fecha["nombre"] }}</p>
+
+                                                    <p style="color: #707b7c" class="tam">
+                                                        {{$fecha["cargo"]}}
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>

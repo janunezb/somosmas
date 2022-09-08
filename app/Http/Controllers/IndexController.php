@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Log;
 
 class IndexController extends Controller
 {
@@ -50,19 +51,35 @@ class IndexController extends Controller
         $currentDate = $now->toDateString();
 
 
+        $hoy = $now;
+        $fecha_actual = $hoy->toFormattedDateString();
 
-
-        $cumpleaños = User::where('birthday_date', $currentDate)->get();
-
-
-
-
+        // $hoy = $now->format('l jS \\of F Y');
 
 
 
+        $cumple = User::get();
+        $lista = [];
+        foreach($cumple as $cmp) {
+            $data = [];
+            $convert = strtotime($cmp['birthday_date']);
+            $formato = date('m-d',$convert);
+            $now = date('m-d', time());
+            Log::info("fecha BD es :".$formato);
+            Log::info("fecha actual es :".$now);
+
+            if($formato == $now) {
+                $data["nombre"] = $cmp['nombre'];
+                $data["foto"] = $cmp['foto'];
+                $data["cargo"] = $cmp['cargo'];
+                Log::alert('coincidencia');
+                array_push($lista, $data);
+            }
+        }
 
 
-        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'cumpleaños', 'now', 'currentDate'));
+
+        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'cumple', 'now', 'lista' ,'currentDate', 'fecha_actual'));
     }
 
     public function cultura()
