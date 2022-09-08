@@ -51,8 +51,8 @@ class IndexController extends Controller
         $currentDate = $now->toDateString();
 
 
-        $hoy = $now;
-        $fecha_actual = $hoy->toFormattedDateString();
+        // $hoy = $now;
+        // $fecha_actual = $hoy->toFormattedDateString();
 
         // $hoy = $now->format('l jS \\of F Y');
 
@@ -79,7 +79,7 @@ class IndexController extends Controller
 
 
 
-        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'cumple', 'now', 'lista' ,'currentDate', 'fecha_actual'));
+        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'now', 'lista' ,'currentDate', 'fecha_actual'));
     }
 
     public function cultura()
