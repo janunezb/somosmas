@@ -61,7 +61,9 @@
 
 
 
-                        @if (auth()->user()->birthday_date == $currentDate)
+                        @empty($lista)                            
+                        
+                        @else
                             <div class="row">
                                 <div class="col-4 offset-4">
                                     <h2 class="titulo">Cumpleaños!</h2>
@@ -105,11 +107,7 @@
                                 <hr>
                             </p>
 
-                        @endif
-
-
-
-
+                        @endempty
 
 
                 </section>

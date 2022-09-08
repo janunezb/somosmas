@@ -77,9 +77,9 @@ class IndexController extends Controller
             }
         }
 
+        LOG::alert($lista);
 
-
-        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'cumple', 'now', 'lista' ,'currentDate', 'fecha_actual'));
+        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'now', 'lista' ,'currentDate', 'fecha_actual'));
     }
 
     public function cultura()
