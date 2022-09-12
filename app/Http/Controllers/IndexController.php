@@ -51,12 +51,6 @@ class IndexController extends Controller
         $currentDate = $now->toDateString();
 
 
-        // $hoy = $now;
-        // $fecha_actual = $hoy->toFormattedDateString();
-
-        // $hoy = $now->format('l jS \\of F Y');
-
-
 
         $cumple = User::get();
         $lista = [];
@@ -77,9 +71,10 @@ class IndexController extends Controller
             }
         }
 
+        LOG::alert($lista);
 
 
-        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'now', 'lista' ,'currentDate', 'fecha_actual'));
+        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'now', 'lista' ,'currentDate'));
     }
 
     public function cultura()

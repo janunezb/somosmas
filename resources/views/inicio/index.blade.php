@@ -61,7 +61,9 @@
 
 
 
-                        @if (auth()->user()->birthday_date == $currentDate)
+                        @empty($lista)
+
+                        @else
                             <div class="row">
                                 <div class="col-4 offset-4">
                                     <h2 class="titulo">Cumpleaños!</h2>
@@ -70,12 +72,19 @@
 
                             <div class="col-12">
                                 <p class="texto">
-                                    Felicitamos a los colaboradores que hoyestán cumpliendo años.
+                                    Felicitamos a los colaboradores que hoy
+                                    <script>
+                                        var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                                        var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+                                        var f=new Date();
+                                        document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+                                        </script>
+                                    están cumpliendo años.
                                 </p>
                             </div>
 
 
-                            <div class="">
+
 
 
                                 <div class="carrusel-itemss">
@@ -98,18 +107,14 @@
                                         </div>
                                     @endforeach
                                 </div>
-                            </div>
+
 
 
                             <p>
                                 <hr>
                             </p>
 
-                        @endif
-
-
-
-
+                        @endempty
 
 
                 </section>
@@ -662,10 +667,7 @@
     </main>
 
 
-    <script>
-        var f = new Date();
-        document.write(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
-    </script>
+
 
 
     <script src="{{-- asset('js/modal.js') --}}"></script>

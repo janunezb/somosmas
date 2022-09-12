@@ -742,7 +742,7 @@ nuevaa{
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
-
+    justify-content: center;
 }
 
 .carrusel-itemss::-webkit-scrollbar {
