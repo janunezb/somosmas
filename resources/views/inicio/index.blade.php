@@ -97,7 +97,7 @@
                                                 </div>
 
                                                 <div class="card-body">
-                                                    <p class="card-title h5">{{ $fecha["nombre"] }}</p>
+                                                    <p class="card-title" style="font-size: larger">{{ $fecha["nombre"] }}</p>
 
                                                     <p style="color: #707b7c" class="tam">
                                                         {{$fecha["cargo"]}}

@@ -102,11 +102,13 @@ class IndexController extends Controller
     public function noticia()
     {
 
+        $pag = env('PAGINATION');
+
         //$not = Content::paginate();
         $not = Content::where('estado', '1')
             ->where('categoria_id', '2')
             ->orderBy('id', 'desc')
-            ->Paginate(2);
+            ->Paginate($pag);
 
         return view('inicio.noticia', compact('not'));
     }

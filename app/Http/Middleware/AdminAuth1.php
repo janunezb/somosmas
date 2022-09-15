@@ -17,11 +17,11 @@ class AdminAuth1
     public function handle(Request $request, Closure $next)
     {
         if (auth()->check()){
-            if(auth()->user()->role == 'navega') {
+            if(auth()->user()->business_id == '2') {
             return $next($request);
             }
         }
 
-        return redirect()->route('inicio.portales', array ('liwa'=>1));
+        return redirect()->route('inicio.portales', array ('somosmas'=>'Not found'));
     }
 }

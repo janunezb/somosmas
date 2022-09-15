@@ -18,12 +18,6 @@
         <ul class="w-1/2 px-16 ml-auto flex justify-end pt-1">
             @if (auth()->check())
 
-            {{-- <li class="mx-8">
-                <p class="text-xl">Bienvenido <b> {{auth()->user()->name }}</b></p>
-            </li>
-            <li>
-                <a href="{{route('login.destroy')}}" class="font-bold  py-2 px-4 rounded-md bg-red-500 hover:bg-red-600 hover:text-white">Cerrar Sesión</a>
-            </li> --}}
 
             @endif
         </ul>

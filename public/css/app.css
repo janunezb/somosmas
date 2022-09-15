@@ -739,11 +739,15 @@ nuevaa{
 
 
 .carrusel-itemss{
+    width: 100%;
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
-    justify-content: center;
+    /* justify-content: center; */
+
 }
+
+
 
 .carrusel-itemss::-webkit-scrollbar {
     width: 3px;
@@ -782,7 +786,7 @@ nuevaa{
     color: #000;
     font-size: medium;
     display: flex;
-    flex-wrap: wrap;
+
 
 
 }
@@ -883,5 +887,8 @@ nuevaa{
     padding-left: 16px;
 }
 
-
+.posicion{
+    justify-content: center;
+    text-align: center;
+}
 

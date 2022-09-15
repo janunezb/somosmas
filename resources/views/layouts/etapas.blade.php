@@ -82,17 +82,19 @@
                     Estamos para servirte cuenta con nosotros
                     WhatsApp profesionales HSE: Chia-Fusagasuga-Bogota</p>
 
-                <a href="https://wa.me/573118076877/?text=Soy%20tu%20apoyo%20en%20Navega" class="btn btn-success"
+                <a href="https://wa.me/573118076877" data-bs-toggle="tooltip" data-placement="top" title="Chía" class="btn btn-success"
                     target="_blank"> <i class="bi bi-whatsapp"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=573016373640&text=Soy%20tu%20apoyo%20en%20Libre."
+                <a href="https://wa.me/573016373640" data-bs-toggle="tooltip" data-placement="top" title="Chía"
                     class="btn btn-success" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=573245522551&text=Soy%20tu%20apoyo%20en%20Bogota."
+                <a href="https://wa.me/57{{ env('FUSA_WHASTAPP') }}"
+                data-bs-toggle="tooltip" data-placement="top" title="Fusagasugá"
                     class="btn btn-success" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                <a href="https://api.whatsapp.com/send?phone=573223097701&text=Soy%20tu%20apoyo%20en%20Bogota."
+                <a href="https://wa.me/57{{ env('BOGOTA_WHASTAPP') }}"
+                data-bs-toggle="tooltip" data-placement="top" title="Bogotá"
                     class="btn btn-success" target="_blank"><i class="bi bi-whatsapp"></i></a>
                 <p></p>
                 <button type="button" class="btn btn-outline-light">
-                    Chía -Fusagasugá -Bogotá
+                    Chía - Fusagasugá - Bogotá
                 </button>
 
             </div>
