@@ -23,9 +23,9 @@
                     <img src="{{ $banner->imagen }}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <!--h5 style="color: black">{{ $banner->nombre }}</h5>
-                                                    <p style="color : black">
-                                                        {{ $banner->titulo }}
-                                                    </p-->
+                                                            <p style="color : black">
+                                                                {{ $banner->titulo }}
+                                                            </p-->
                     </div>
                 </div>
             @endforeach
@@ -61,64 +61,81 @@
 
 
 
-                        @empty($lista)
-
-                        @else
-                            <div class="row">
-                                <div class="col-4 offset-4">
-                                    <h2 class="titulo">Cumpleaños!</h2>
-                                </div>
+                    @empty($lista)
+                    @else
+                        <div class="row">
+                            <div class="col-4 offset-4">
+                                <h2 class="titulo">Cumpleaños!</h2>
                             </div>
+                        </div>
 
-                            <div class="col-12">
-                                <p class="texto">
-                                    Felicitamos a los colaboradores que hoy
-                                    <script>
-                                        var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-                                        var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
-                                        var f=new Date();
-                                        document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
-                                        </script>
-                                    están cumpliendo años.
-                                </p>
-                            </div>
-
-
-
-
-
-                                <div class="carrusel-itemss">
-                                    @foreach ($lista as $fecha)
-                                        <div class="carrusel-itemms">
-
-                                            <div class="card" style="widtyh: 18rem;">
-                                                <div class="tamaño">
-                                                    <img src="{{ $fecha["foto"] }}" alt="">
-                                                </div>
-
-                                                <div class="card-body">
-                                                    <p class="card-title" style="font-size: larger">{{ $fecha["nombre"] }}</p>
-
-                                                    <p style="color: #707b7c" class="tam">
-                                                        {{$fecha["cargo"]}}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-
-
-
-                            <p>
-                                <hr>
+                        <div class="col-12">
+                            <p class="texto">
+                                Felicitamos a los colaboradores que hoy
+                                <script>
+                                    var meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
+                                        "Octubre", "Noviembre", "Diciembre");
+                                    var diasSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
+                                    var f = new Date();
+                                    document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f
+                                        .getFullYear());
+                                </script>
+                                están cumpliendo años.
                             </p>
+                        </div>
 
-                        @endempty
+
+
+
+
+                        <div class="carrusel-itemss">
+                            @foreach ($lista as $fecha)
+                                <div class="carrusel-itemms">
+
+                                    <div class="card" style="">
+                                        <div class="tamaño">
+                                            @if ($fecha['foto'])
+                                                <img src="{{ $fecha['foto'] }}" alt="">
+                                            @else
+                                                <img src="{{ asset('https://p16-va-default.akamaized.net/img/musically-maliva-obj/1665282759496710~c5_720x720.jpeg') }}"
+                                                    alt="">
+                                            @endif
+
+                                        </div>
+
+                                        <div class="card-body pt-0">
+                                            <p class="card-title" style="font-size:medium;">
+                                                <strong>{{ $fecha['nombre'] }}</strong></p>
+
+                                            <p style="color: #707b7c" class="tam">
+                                                {{ $fecha['cargo'] }}
+                                            </p>
+
+                                            <p style="color: #ff0083">
+                                                <strong>
+
+
+                                                </strong>
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+
+
+
+
+
+                        <p>
+                            <hr>
+                        </p>
+
+                    @endempty
 
 
                 </section>
-
 
 
 
@@ -170,6 +187,7 @@
                                                                                 style="background-color: #FAFAFA">
                                                                                 {{ $noticias->cuerpo }}
                                                                             </p>
+
                                                                         </div>
                                                                     </div>
 

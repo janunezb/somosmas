@@ -99,6 +99,10 @@
                             {{ auth()->user()->nombre }}</b></a>
                 </div>
 
+                <div class="pr-3">
+                     <img src="{{ auth()->user()->foto}}" alt="" class="usuario">
+                </div>
+
 
                 <form class="d-flex">
 

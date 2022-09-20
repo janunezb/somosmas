@@ -32,7 +32,7 @@
                                     <div class="card-body">
                                         <div class="d-flex mb-3 posicion">
                                             <a href="{{ route($portales->direccionamiento)}}">
-                                                <img src="{{ $portales->imagen }}" alt="">
+                                                <img src="{{ asset('images/logos/'.$portales->imagen) }}" alt="">
                                             </a>
                                         </div>
 

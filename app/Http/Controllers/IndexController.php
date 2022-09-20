@@ -45,6 +45,13 @@ class IndexController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
+        // $empresa = User::join('empresas', 'empresas.id', '=' , 'users.business_id')
+        // ->select('empresas.nombre')
+        // ->where('empresas.estado', '1')
+        // ->get();
+
+
+
         //Fechas
 
         $now = Carbon::now();
@@ -52,20 +59,26 @@ class IndexController extends Controller
 
 
 
-        $cumple = User::get();
+        $cumple = User::join('empresas', 'empresas.id', '=' , 'users.business_id')
+        ->select('users.nombre as nombre' , 'empresas.nombre as empresa', 'users.foto as foto', 'users.cargo as cargo')
+        ->where('empresas.estado', '1')
+        ->get();
+
+        LOG::alert($cumple);
+
         $lista = [];
         foreach($cumple as $cmp) {
             $data = [];
             $convert = strtotime($cmp['birthday_date']);
             $formato = date('m-d',$convert);
             $now = date('m-d', time());
-            Log::info("fecha BD es :".$formato);
-            Log::info("fecha actual es :".$now);
+
 
             if($formato == $now) {
                 $data["nombre"] = $cmp['nombre'];
                 $data["foto"] = $cmp['foto'];
                 $data["cargo"] = $cmp['cargo'];
+                $data["empresa"] = $cmp['empresa'];
                 Log::alert('coincidencia');
                 array_push($lista, $data);
             }
