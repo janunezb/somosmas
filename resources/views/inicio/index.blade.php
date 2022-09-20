@@ -113,7 +113,7 @@
 
                                             <p style="color: #ff0083">
                                                 <strong>
-
+                                                    {{ $fecha['empresa'] }}
                                                 </strong>
 
                                             </p>

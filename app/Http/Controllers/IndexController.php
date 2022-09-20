@@ -45,26 +45,13 @@ class IndexController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        // $empresa = User::join('empresas', 'empresas.id', '=' , 'users.business_id')
-        // ->select('empresas.nombre')
-        // ->where('empresas.estado', '1')
-        // ->get();
-
-
-
-        //Fechas
-
         $now = Carbon::now();
         $currentDate = $now->toDateString();
 
-
-
         $cumple = User::join('empresas', 'empresas.id', '=' , 'users.business_id')
-        ->select('users.nombre as nombre' , 'empresas.nombre as empresa', 'users.foto as foto', 'users.cargo as cargo')
+        ->select('users.nombre as nombre' , 'empresas.nombre as empresa', 'users.foto as foto', 'users.cargo as cargo', 'users.birthday_date')
         ->where('empresas.estado', '1')
         ->get();
-
-        LOG::alert($cumple);
 
         $lista = [];
         foreach($cumple as $cmp) {
@@ -72,20 +59,15 @@ class IndexController extends Controller
             $convert = strtotime($cmp['birthday_date']);
             $formato = date('m-d',$convert);
             $now = date('m-d', time());
-
-
+            
             if($formato == $now) {
                 $data["nombre"] = $cmp['nombre'];
                 $data["foto"] = $cmp['foto'];
                 $data["cargo"] = $cmp['cargo'];
-                $data["empresa"] = $cmp['empresa'];
-                Log::alert('coincidencia');
+                $data["empresa"] = $cmp['empresa'];                
                 array_push($lista, $data);
             }
         }
-
-        LOG::alert($lista);
-
 
         return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'now', 'lista' ,'currentDate'));
     }
