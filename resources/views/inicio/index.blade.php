@@ -97,7 +97,7 @@
                                             @if ($fecha['foto'])
                                                 <img src="{{ $fecha['foto'] }}" alt="">
                                             @else
-                                                <img src="{{ asset('https://p16-va-default.akamaized.net/img/musically-maliva-obj/1665282759496710~c5_720x720.jpeg') }}"
+                                                <img src="{{ asset('images/fotonone.jpeg') }}"
                                                     alt="">
                                             @endif
 
@@ -113,7 +113,6 @@
 
                                             <p style="color: #ff0083">
                                                 <strong>
-
 
                                                 </strong>
 
