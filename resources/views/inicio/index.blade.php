@@ -95,7 +95,8 @@
                                     <div class="card" style="">
                                         <div class="tamaño">
                                             @if ($fecha['foto'])
-                                                <img src="{{ $fecha['foto'] }}" alt="">
+                                                <img src="{{env('FOTO_FUNCIONARIOS') .$fecha['foto']}}" alt="">
+
                                             @else
                                                 <img src="{{ asset('images/fotonone.jpeg') }}"
                                                     alt="">

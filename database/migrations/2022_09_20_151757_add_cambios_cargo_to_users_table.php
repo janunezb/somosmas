@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCargoToUsersTable extends Migration
+class AddCambiosCargoToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,13 @@ class AddCargoToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('cargo')->nullable()->after('business_id');
+            $table->string('documento')->after('id');
+            $table->date('fecha_nacimiento')->nullable()->after('nombre');
+            $table->string('empresa_id')->nullable()->after('fecha_nacimiento');
+            $table->string('cargo')->nullable()->after('empresa_id');
+            $table->string('rol')->nullable()->after('password');
+
+
         });
     }
 
@@ -26,7 +32,7 @@ class AddCargoToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('cargo');
+            $table->dropColumn('documento', 'fecha_nacimiento', 'empresa_id', 'cargo','rol');
         });
     }
 }

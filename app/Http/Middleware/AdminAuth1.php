@@ -17,7 +17,7 @@ class AdminAuth1
     public function handle(Request $request, Closure $next)
     {
         if (auth()->check()){
-            if(auth()->user()->business_id == '2') {
+            if(auth()->user()->empresa_id == '2') {
             return $next($request);
             }
         }

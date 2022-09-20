@@ -48,23 +48,23 @@ class IndexController extends Controller
         $now = Carbon::now();
         $currentDate = $now->toDateString();
 
-        $cumple = User::join('empresas', 'empresas.id', '=' , 'users.business_id')
-        ->select('users.nombre as nombre' , 'empresas.nombre as empresa', 'users.foto as foto', 'users.cargo as cargo', 'users.birthday_date')
+        $cumple = User::join('empresas', 'empresas.id', '=' , 'users.empresa_id')
+        ->select('users.nombre as nombre' , 'empresas.nombre as empresa', 'users.foto as foto', 'users.cargo as cargo', 'users.fecha_nacimiento')
         ->where('empresas.estado', '1')
         ->get();
 
         $lista = [];
         foreach($cumple as $cmp) {
             $data = [];
-            $convert = strtotime($cmp['birthday_date']);
+            $convert = strtotime($cmp['fecha_nacimiento']);
             $formato = date('m-d',$convert);
             $now = date('m-d', time());
-            
+
             if($formato == $now) {
                 $data["nombre"] = $cmp['nombre'];
                 $data["foto"] = $cmp['foto'];
                 $data["cargo"] = $cmp['cargo'];
-                $data["empresa"] = $cmp['empresa'];                
+                $data["empresa"] = $cmp['empresa'];
                 array_push($lista, $data);
             }
         }

@@ -100,7 +100,7 @@
                 </div>
 
                 <div class="pr-3">
-                     <img src="{{ auth()->user()->foto}}" alt="" class="usuario">
+                     <img src="{{env('FOTO_FUNCIONARIOS') .auth()->user()->foto}}" alt="" class="usuario">
                 </div>
 
 

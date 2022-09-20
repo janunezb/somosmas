@@ -27,12 +27,23 @@
                         @foreach ($portal as $portales)
 
 
-                            <div class="col-6 pl-4 pb-4 posicion">
+                            <div class="col-4 pl-4 pb-4 posicion">
                                 <article class="card h-100">
                                     <div class="card-body">
                                         <div class="d-flex mb-3 posicion">
                                             <a href="{{ route($portales->direccionamiento)}}">
+
+                                                @if ($portales->imagen)
+
                                                 <img src="{{ asset('images/logos/'.$portales->imagen) }}" alt="">
+
+                                                @else
+
+                                                <img src="{{asset('images/logos/Imagen_no_disponible.png')}}"  alt="">
+
+                                                @endif
+
+
                                             </a>
                                         </div>
 
