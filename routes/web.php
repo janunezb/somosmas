@@ -41,17 +41,20 @@ Route::get('inicio/portales/portal-liwa', [AdminController::class, 'index'])
 ->middleware('auth.admin')
 -> name('admin.index');
 
-Route::get('inicio/portales/portal-navega', [AdminController::class, 'navega'])
+Route::get('inicio/portales/portal-sunco', [AdminController::class, 'sunco'])
 ->middleware('auth.admin1')
--> name('admin.navega');
+-> name('admin.sunco');
 
 Route::get('inicio/portales/portal-libre', [AdminController::class, 'libre'])
 ->middleware('auth.admin2')
 -> name('admin.libre');
 
-Route::get('inicio/portales/portal-sunco', [AdminController::class, 'sunco'])
+Route::get('inicio/portales/portal-navega', [AdminController::class, 'navega'])
 ->middleware('auth.admin3')
--> name('admin.sunco');
+-> name('admin.navega');
+
+
+
 
 
 

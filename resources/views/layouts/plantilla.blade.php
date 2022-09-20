@@ -100,7 +100,15 @@
                 </div>
 
                 <div class="pr-3">
-                     <img src="{{env('FOTO_FUNCIONARIOS') .auth()->user()->foto}}" alt="" class="usuario">
+                    @if (auth()->user()->foto)
+                    <img src="{{env('FOTO_FUNCIONARIOS') .auth()->user()->foto}}" alt="" class="usuario">
+
+                    @else   <img src="{{asset('images/fotonone.jpeg')}}" class="usuario" alt="">
+
+
+
+                    @endif
+
                 </div>
 
 
