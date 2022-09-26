@@ -17,9 +17,19 @@ class AdminAuth
     public function handle(Request $request, Closure $next)
     {
         if (auth()->check()){
-            if(auth()->user()->empresa_id == '1') {
+            if(auth()->user()->empresa_id == '1')
+            {
             return $next($request);
             }
+
+        }
+
+        if (auth()->check()){
+            if(auth()->user()->empresa_id == '0')
+            {
+            return $next($request);
+            }
+
         }
 
         return redirect()->route('inicio.portales', array ('somosmas'=>'Not found'));

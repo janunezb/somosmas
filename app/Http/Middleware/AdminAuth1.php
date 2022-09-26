@@ -22,6 +22,12 @@ class AdminAuth1
             }
         }
 
+        if (auth()->check()){
+            if(auth()->user()->empresa_id == '0') {
+            return $next($request);
+            }
+        }
+
         return redirect()->route('inicio.portales', array ('somosmas'=>'Not found'));
     }
 }

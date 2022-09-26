@@ -11,6 +11,8 @@ use Carbon\Carbon;
 
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Log;
 
@@ -48,19 +50,21 @@ class IndexController extends Controller
         $now = Carbon::now();
         $currentDate = $now->toDateString();
 
-        $cumple = User::join('empresas', 'empresas.id', '=' , 'users.empresa_id')
-        ->select('users.nombre as nombre' , 'empresas.nombre as empresa', 'users.foto as foto', 'users.cargo as cargo', 'users.fecha_nacimiento')
-        ->where('empresas.estado', '1')
-        ->get();
+        $cumple = User::join('empresas', 'empresas.id', '=', 'users.empresa_id')
+            ->select('users.nombre as nombre', 'empresas.nombre as empresa', 'users.foto as foto', 'users.cargo as cargo', 'users.fecha_nacimiento')
+            ->where('empresas.estado', '1')
+            ->get();
+
+        //Fecha Cumpleaños
 
         $lista = [];
-        foreach($cumple as $cmp) {
+        foreach ($cumple as $cmp) {
             $data = [];
             $convert = strtotime($cmp['fecha_nacimiento']);
-            $formato = date('m-d',$convert);
+            $formato1 = date('m-d', $convert);
             $now = date('m-d', time());
 
-            if($formato == $now) {
+            if ($formato1 == $now) {
                 $data["nombre"] = $cmp['nombre'];
                 $data["foto"] = $cmp['foto'];
                 $data["cargo"] = $cmp['cargo'];
@@ -69,7 +73,50 @@ class IndexController extends Controller
             }
         }
 
-        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'now', 'lista' ,'currentDate'));
+        //FECHA INICIO
+
+        $fecha_ingreso = Carbon::now();
+
+        $ingreso = $fecha_ingreso->createFromDate(
+            Auth()->user()->fecha_ingreso
+        )->age;
+
+
+        $cumplep = User::join('empresas', 'empresas.id', '=', 'users.empresa_id')
+            ->select('users.nombre as nombre', 'empresas.nombre as empresa', 'users.foto as foto', 'users.cargo as cargo', 'users.fecha_nacimiento', 'users.fecha_ingreso', 'users.fecha_ingreso as inicio')
+            ->where('empresas.estado', '1')
+            ->get();
+
+        $listap = [];
+        foreach ($cumplep as $cmp) {
+            $data = [];
+            $convert = strtotime($cmp['fecha_ingreso']);
+            $formato = date('m-d', $convert);
+            $fecha_ingreso = date('m-d', time());
+
+            if ($formato == $fecha_ingreso) {
+                $data["nombre"] = $cmp['nombre'];
+                $data["foto"] = $cmp['foto'];
+                $data["cargo"] = $cmp['cargo'];
+                $data["empresa"] = $cmp['empresa'];
+                $data["inicio"] = $cmp['inicio'];
+                array_push($listap, $data);
+            }
+        }
+
+        $fecha_hoy = Carbon::now();
+        $fecha_hoy = $fecha_hoy->format('m-d');
+
+        $formatos = $formato == $formato1;
+
+
+
+
+
+
+
+
+        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'ingreso', 'listap', 'lista', 'formato1', 'formato', 'fecha_hoy', 'formatos'));
     }
 
     public function cultura()

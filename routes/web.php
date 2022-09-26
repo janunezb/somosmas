@@ -37,6 +37,8 @@ Route::get('/logut', [SessionsController::class, 'destroy'])
 
 //permisos
 
+
+
 Route::get('inicio/portales/portal-liwa', [AdminController::class, 'index'])
 ->middleware('auth.admin')
 -> name('admin.index');
