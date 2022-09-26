@@ -51,8 +51,6 @@
     <main class="container d-flex justify-content-center align-items-center p-5 pr-10">
         <div class="row">
             <div class="col-12">
-
-                @if ($fecha_hoy == ($formato1 == $formato))
                   <section id="aniversario_cumpleaños" class="">
 
                     <div class="contenedores">
@@ -114,8 +112,15 @@
 
                                                         <p style="color: #ff0083">
                                                             <strong>
-                                                                {{ $ingreso }} años en
-                                                                {{ $new['empresa'] }}
+                                                                {{ $ingreso }}
+                                                    @if ($ingreso <= 1)
+                                                        año
+
+                                                    @else años
+
+                                                    @endif
+                                                    en
+                                                    {{ $new['empresa'] }}
                                                             </strong>
                                                         </p>
                                                         <p>
@@ -206,7 +211,7 @@
                         </div>
                     </div>
                   </section>
-                @endif
+
 
                 <section id="cumpleaños" class="">
 
