@@ -23,9 +23,9 @@
                     <img src="{{ $banner->imagen }}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <!--h5 style="color: black">{{ $banner->nombre }}</h5>
-                                                                        <p style="color : black">
-                                                                            {{ $banner->titulo }}
-                                                                        </p-->
+                                                                            <p style="color : black">
+                                                                                {{ $banner->titulo }}
+                                                                            </p-->
                     </div>
                 </div>
             @endforeach
@@ -52,8 +52,8 @@
         <div class="row">
             <div class="col-12">
 
-                @if ($fecha_hoy == ($formato1 == $formato))
-                  <section id="aniversario_cumpleaños" class="">
+                @if(!@empty($listap) && !@empty($lista))
+                <section id="aniversario_cumpleaños" class="">
 
                     <div class="contenedores">
                         <div class="col-12 pasti">
@@ -79,7 +79,7 @@
                                                 document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f
                                                     .getFullYear());
                                             </script>
-                                            estan cumpliendo su aniversario.
+                                            están cumpliendo su aniversario.
                                             {{-- CAmbiar el texto bien --}}
                                         </p>
                                     </div>
@@ -114,7 +114,7 @@
 
                                                         <p style="color: #ff0083">
                                                             <strong>
-                                                                {{ $ingreso }} años en
+                                                                {{ $new['ann'] }} años en
                                                                 {{ $new['empresa'] }}
                                                             </strong>
                                                         </p>
@@ -205,9 +205,10 @@
 
                         </div>
                     </div>
-                  </section>
+                </section>
                 @endif
 
+                @if(!@empty($lista) && @empty($listap))
                 <section id="cumpleaños" class="">
 
                     @empty($lista)
@@ -284,7 +285,9 @@
 
 
                 </section>
+                @endif
 
+                @if(!@empty($listap) && @empty($lista))
                 <section id="aniversario" class="">
 
                     @empty($listap)
@@ -343,9 +346,8 @@
                                                     {{ $ingreso }}
                                                     @if ($ingreso <= 1)
                                                         año
-
-                                                    @else años
-
+                                                    @else
+                                                        años
                                                     @endif
                                                     en
                                                     {{ $new['empresa'] }}
@@ -353,7 +355,7 @@
                                             </p>
 
                                             <p>
-                                                {{$new['inicio']}}
+                                                {{ $new['inicio'] }}
                                             </p>
 
                                         </div>
@@ -361,19 +363,12 @@
                                 </div>
                             @endforeach
                         </div>
-
-
-
-
-
                         <p>
                             <hr>
                         </p>
-
                     @endempty
-
-
                 </section>
+                @endif
 
 
                 <section id="NoticiaDestacada" class="pt-4">

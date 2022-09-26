@@ -100,6 +100,7 @@ class IndexController extends Controller
                 $data["cargo"] = $cmp['cargo'];
                 $data["empresa"] = $cmp['empresa'];
                 $data["inicio"] = $cmp['inicio'];
+                $data["ann"] = Carbon::now()->createFromDate($cmp['fecha_ingreso'])->age;
                 array_push($listap, $data);
             }
         }
