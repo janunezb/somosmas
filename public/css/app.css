@@ -907,7 +907,16 @@ nuevaa{
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
-    /* justify-content: center; */
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding-top: 15px;
+    border-left:2px solid #ff0083;
+    margin-right: 10px;
+
+    margin-right: 10px;
+
+
 
 }
 
@@ -947,19 +956,21 @@ nuevaa{
 }
 
 
-.contenedores{
-
-    display: flex;
-    flex-wrap: wrap;
-
-}
 
 .carrusel-itemsssn{
     width: 100%;
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
-    /* justify-content: center; */
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding-top: 15px;
+    border-right:2px solid #ff0083;
+    margin-right: 10px;
+
+
+
 
 }
 
@@ -986,6 +997,10 @@ nuevaa{
 
 
 
+
+
+
+
 }
 
 .carrusel-itemmmsn img {
@@ -1003,3 +1018,11 @@ nuevaa{
     text-align: center;
     justify-content: center;
 }
+
+
+
+.aniversario {
+    color: #ff0083;
+    font-size: larger;
+}
+

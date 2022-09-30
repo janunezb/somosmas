@@ -23,9 +23,9 @@
                     <img src="{{ $banner->imagen }}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <!--h5 style="color: black">{{ $banner->nombre }}</h5>
-                                                                        <p style="color : black">
-                                                                            {{ $banner->titulo }}
-                                                                        </p-->
+                                                                            <p style="color : black">
+                                                                                {{ $banner->titulo }}
+                                                                            </p-->
                     </div>
                 </div>
             @endforeach
@@ -51,10 +51,12 @@
     <main class="container d-flex justify-content-center align-items-center p-5 pr-10">
         <div class="row">
             <div class="col-12">
-                  <section id="aniversario_cumpleaños" class="">
+
+                @if(!@empty($listap) && !@empty($lista))
+                <section id="aniversario_cumpleaños" class="">
 
                     <div class="contenedores">
-                        <div class="col-12 pasti">
+                        <div class="col-12 pasti h5">
                             <p> <strong>Felicitamos a los colaboradores que hoy están cumpliendo una fecha especial</strong>
                             </p>
                         </div>
@@ -67,18 +69,10 @@
                                 @empty($listap)
                                 @else
                                     <div class="col-12">
-                                        <p class="texto">
-                                            Felicitamos a los colaboradores que el dia de hoy
-                                            <script>
-                                                var meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
-                                                    "Octubre", "Noviembre", "Diciembre");
-                                                var diasSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
-                                                var f = new Date();
-                                                document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f
-                                                    .getFullYear());
-                                            </script>
-                                            estan cumpliendo su aniversario.
-                                            {{-- CAmbiar el texto bien --}}
+                                        <p class="aniversario" style="text-align: center; ">
+                                           <strong>
+                                            Aniversario
+                                           </strong>
                                         </p>
                                     </div>
 
@@ -110,21 +104,24 @@
                                                             {{ $new['cargo'] }}
                                                         </p>
 
+
                                                         <p style="color: #ff0083">
                                                             <strong>
-                                                                {{ $ingreso }}
-                                                    @if ($ingreso <= 1)
-                                                        año
-
-                                                    @else años
-
-                                                    @endif
-                                                    en
-                                                    {{ $new['empresa'] }}
+                                                                {{ $new['empresa'] }}
                                                             </strong>
+
                                                         </p>
-                                                        <p>
-                                                            {{ $new['inicio'] }}
+                                                        <p style="color: #ff0083">
+                                                            <strong>
+                                                                {{ $new['ann'] }}
+                                                                @if ($new['ann'] <= 1)
+                                                                    año
+                                                                @else
+                                                                    años
+                                                                @endif
+
+
+                                                            </strong>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -134,31 +131,21 @@
                                 @endempty
                             </div>
 
+
                             {{-- Cumpleaños --}}
 
                             <div class="col-6">
 
                                 @empty($lista)
                                 @else
+
                                     <div class="col-12">
-                                        <p class="texto">
-                                            Felicitamos a los colaboradores que hoy
-                                            <script>
-                                                var meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
-                                                    "Octubre", "Noviembre", "Diciembre");
-                                                var diasSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
-                                                var f = new Date();
-                                                document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f
-                                                    .getFullYear());
-                                            </script>
-                                            están cumpliendo años.
+                                        <p class="aniversario" style="text-align: center; ">
+                                            <strong>
+                                                Cumpleaños
+                                            </strong>
                                         </p>
                                     </div>
-
-
-
-
-
 
                                     <div class="carrusel-itemsss">
                                         @foreach ($lista as $fecha)
@@ -176,43 +163,36 @@
                                                     </div>
 
                                                     <div class="card-body pt-0">
-                                                        <p class="card-title" style="font-size:medium;">
+                                                        <p class="card-title p-2" style="font-size:medium;">
                                                             <strong>{{ $fecha['nombre'] }}</strong>
                                                         </p>
 
-                                                        <p style="color: #707b7c" class="tam">
+                                                        <p style="color: #707b7c" class="tam p-2">
                                                             {{ $fecha['cargo'] }}
                                                         </p>
 
-                                                        <p style="color: #ff0083">
+                                                        <p style="color: #ff0083" class="p-1">
                                                             <strong>
                                                                 {{ $fecha['empresa'] }}
                                                             </strong>
 
                                                         </p>
-
-
                                                     </div>
                                                 </div>
                                             </div>
                                         @endforeach
                                     </div>
-
-
                                 @endempty
                             </div>
-
-
-
-                            <p>
+                            {{-- <p>
                                 <hr>
-                            </p>
-
+                            </p> --}}
                         </div>
                     </div>
-                  </section>
+                </section>
+                @endif
 
-
+                @if(!@empty($lista) && @empty($listap))
                 <section id="cumpleaños" class="">
 
                     @empty($lista)
@@ -276,11 +256,6 @@
                                 </div>
                             @endforeach
                         </div>
-
-
-
-
-
                         <p>
                             <hr>
                         </p>
@@ -289,7 +264,9 @@
 
 
                 </section>
+                @endif
 
+                @if(!@empty($listap) && @empty($lista))
                 <section id="aniversario" class="">
 
                     @empty($listap)
@@ -339,46 +316,33 @@
                                                 <strong>{{ $new['nombre'] }}</strong>
                                             </p>
 
-                                            <p style="color: #707b7c" class="tam">
-                                                {{ $new['cargo'] }}
-                                            </p>
-
                                             <p style="color: #ff0083">
                                                 <strong>
-                                                    {{ $ingreso }}
-                                                    @if ($ingreso <= 1)
-                                                        año
-
-                                                    @else años
-
-                                                    @endif
-                                                    en
                                                     {{ $new['empresa'] }}
                                                 </strong>
-                                            </p>
 
-                                            <p>
-                                                {{$new['inicio']}}
                                             </p>
-
+                                            <p style="color: #ff0083">
+                                                <strong>
+                                                    {{ $new['ann'] }}
+                                                    @if ($new['ann'] <= 1)
+                                                        año
+                                                    @else
+                                                        años
+                                                    @endif
+                                                </strong>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
                         </div>
-
-
-
-
-
                         <p>
                             <hr>
                         </p>
-
                     @endempty
-
-
                 </section>
+                @endif
 
 
                 <section id="NoticiaDestacada" class="pt-4">
@@ -925,24 +889,8 @@
         </div>
     </main>
 
-
-
-
-
     <script src="{{-- asset('js/modal.js') --}}"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="{{ asset('js/new.js') }}"></script>
-
-
-
-
-
-
-
-
-
-
-
-
 
 @endsection

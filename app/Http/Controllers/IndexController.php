@@ -77,10 +77,6 @@ class IndexController extends Controller
 
         $fecha_ingreso = Carbon::now();
 
-        $ingreso = $fecha_ingreso->createFromDate(
-            Auth()->user()->fecha_ingreso
-        )->age;
-
 
         $cumplep = User::join('empresas', 'empresas.id', '=', 'users.empresa_id')
             ->select('users.nombre as nombre', 'empresas.nombre as empresa', 'users.foto as foto', 'users.cargo as cargo', 'users.fecha_nacimiento', 'users.fecha_ingreso', 'users.fecha_ingreso as inicio')
@@ -100,6 +96,7 @@ class IndexController extends Controller
                 $data["cargo"] = $cmp['cargo'];
                 $data["empresa"] = $cmp['empresa'];
                 $data["inicio"] = $cmp['inicio'];
+                $data["ann"] = Carbon::now()->createFromDate($cmp['fecha_ingreso'])->age;
                 array_push($listap, $data);
             }
         }
@@ -116,7 +113,7 @@ class IndexController extends Controller
 
 
 
-        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'ingreso', 'listap', 'lista', 'formato1', 'formato', 'fecha_hoy', 'formatos'));
+        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'listap', 'lista', 'formato1', 'formato', 'fecha_hoy', 'formatos'));
     }
 
     public function cultura()
