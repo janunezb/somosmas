@@ -63,6 +63,8 @@ Route::get('inicio/portales/portal-navega', [AdminController::class, 'navega'])
 
 
 
+
+
 //Interfaz De Inicio
 
 Route::get('inicio', [IndexController::class, 'index'])
@@ -88,6 +90,14 @@ Route::get('inicio/portales', [IndexController::class, 'portales'])
 Route::get('inicio/noticia', [IndexController::class, 'noticia'])
     ->middleware('auth')
     ->name('inicio.noticia');
+    
+Route::get('inicio/import-users', [IndexController::class, 'importUsers'])
+    ->middleware('auth')
+    ->name('inicio.import');
+
+Route::post('inicio/import-users', [IndexController::class, 'uploadUsers'])
+    ->middleware('auth')
+    ->name('inicio.import');
 
 
 

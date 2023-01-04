@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use App\Models\Content;
 use App\Models\User;
 use App\Models\Empresa;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\UsersImport;
 
 use Carbon\Carbon;
 
@@ -253,4 +255,17 @@ class IndexController extends Controller
     {
         return view('admin.etapa20s');
     }
+  
+    public function importUsers()
+    {
+        return view('inicio.import');
+    }
+
+    public function uploadUsers(Request $request)
+    {
+        Excel::import(new UsersImport, $request->file);
+        
+        return redirect()->route('inicio.import')->with('success', 'User Imported Successfully');
+    }
+
 }
