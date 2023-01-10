@@ -37,7 +37,8 @@
                             class="form-control form-control-user @error('file') is-invalid @enderror" 
                             id="exampleFile"
                             name="file" 
-                            value="{{ old('file') }}">
+                            value="{{ old('file') }}"
+                            accept=".csv">
 
                         @error('file')
                             <span class="text-danger">{{$message}}</span>

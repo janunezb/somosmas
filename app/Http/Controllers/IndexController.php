@@ -6,8 +6,10 @@ namespace App\Http\Controllers;
 use App\Models\Content;
 use App\Models\User;
 use App\Models\Empresa;
+use Illuminate\Support\Facades\Redirect;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
+use Illuminate\Http\RedirectResponse;
 
 use Carbon\Carbon;
 
@@ -263,9 +265,28 @@ class IndexController extends Controller
 
     public function uploadUsers(Request $request)
     {
-        Excel::import(new UsersImport, $request->file);
-        
-        return redirect()->route('inicio.import')->with('success', 'User Imported Successfully');
+        $validatedData = $request->validate(
+            [
+                'file' => 'required',
+            ]);
+        try {
+            $file = $request->file('file');
+            (new UsersImport)->import($file, null, \Maatwebsite\Excel\Excel::XLSX);
+            //dd('Row count: ' . $file->getRowCount());
+            return Redirect::back()->withErrors(['msg' => 'Usuarios importado con éxito']);
+        }
+        catch(\Throwable $th){
+            Log::error(
+                "¡¡ERROR!!. Proceso de importación no completado. Error: "
+                . $th->getMessage()
+            );
+            return Redirect::back()->with(
+                'error', 'Error de importación. Contacte con el administador del sistema. '
+                . $th->getMessage()
+            );
+
+        }
     }
 
 }
+    

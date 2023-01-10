@@ -22,15 +22,19 @@
                     
                     <div class="col-sm-12 mb-3 mt-3 mb-sm-0">
                         <span style="color:red;">*</span>Entrada de archivo (hoja de datos)</label>
+                        @if($errors->any())
+                            <h4>{{$errors->first()}}</h4>
+                        @endif
                         <input 
                             type="file" 
                             class="form-control form-control-user @error('file') is-invalid @enderror" 
                             id="exampleFile"
                             name="file" 
-                            value="{{ old('file') }}">
+                            value="{{ old('file') }}"
+                            accept=".xlsx">
 
                         @error('file')
-                            <span class="text-danger">{{$message}}</span>
+                            <span style="color:red;" class="text-danger">{{$message}}</span>
                         @enderror
                     </div>
 

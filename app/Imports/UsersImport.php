@@ -3,35 +3,81 @@
 namespace App\Imports;
 
 use App\Models\User;
+use Illuminate\Validation\Rule;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Illuminate\Support\Facades\Log;
+use DateTime;
+use Maatwebsite\Excel\Concerns\Importable;
+use Maatwebsite\Excel\Concerns\SkipsOnError;
+use Maatwebsite\Excel\Concerns\WithValidation;
+use PhpOffice\PhpSpreadsheet\Shared\Date;
 
-class UsersImport implements ToModel, WithHeadingRow
+
+class UsersImport implements ToModel, WithHeadingRow,
+// ,SkipsOnError,
+ WithValidation
 {
+    use Importable;
     /**
-    * @param array $row
-    *
+    *@param array $row;
+   
     * @return \Illuminate\Database\Eloquent\Model|null
     */
-    public function model(array $row)
-    {
-        Log::info(gettype($row));
+    private $rows = 0;      
+    public function model(array $row){        
+        
+        ++$this->rows;
+
 
         return new User([
-            Log::info($row),
-            'documento' => $row[0],
+
+            'documento' => $row['documento'],
             'nombre' => $row['nombre'],
-            //'fecha_nacimiento' => $row['fecha_nacimiento'],
-            // "empresa_id" => $row['empresa_id'],
-            // "cargo" => $row['cargo'],
-            // "fecha_ingreso" => $row['fecha_ingreso'],
-            'password' => Hash::make('password'),
-            // "rol" => $row['rol'],
-            // "role_id" => 2, // User Type User
-            // "status" => 1,
+            'fecha_nacimiento' => Date::excelToDateTimeObject($row['fecha_nacimiento'])->format('Y-m-d'),
+            'fecha_ingreso' => Date::excelToDateTimeObject($row['fecha_ingreso'])->format('Y-m-d'),
+            //'empresa_id' => $row['empresa_id'],
+            //'email' => $row['email'],
+            'cargo' => $row['cargo'],
+            'password' => Hash::make('documento'),
+            //"rol" => $row['rol'],  
             
         ]);
     }
+    public function getRowCount(): int
+    {
+        return $this->rows;
+    }
+    public function rules(): array{
+        
+        return [
+            '*.documento' => [
+                'integer',
+                'required'        
+            ],
+            'documento' => Rule::unique('Users', 'documento'),
+
+            '*.nombre' => [
+                'string',
+                'required'        
+            ],
+            'nombre' => Rule::unique('Users', 'nombre')
+            
+
+        ];
+        
+    }
+    public function customValidationMessages()
+{
+    return [
+        'documento.unique' => 'documento',
+    ];
+}
+	// /**
+	//  * @param \Throwable $e
+	//  * @return mixed
+	//  */
+	// public function onError(\Throwable $e) {
+	// }
 }
