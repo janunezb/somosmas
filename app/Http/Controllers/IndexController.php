@@ -9,7 +9,11 @@ use App\Models\Empresa;
 use Illuminate\Support\Facades\Redirect;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
+use App\Models\Noticia;
 use Illuminate\Http\RedirectResponse;
+
+use Genert\BBCode\BBCode;
+
 
 use Carbon\Carbon;
 
@@ -34,11 +38,23 @@ class IndexController extends Controller
             ->orderBy('orden', 'asc')
             ->get();
 
-        $noticia = Content::where('estado', '1')
-            ->where('categoria_id', '4')
-            ->orderBy('created_at', 'desc')
-            ->Limit('1')
-            ->get();
+        // $noticia = Content::where('estado', '1')
+        //     ->where('categoria_id', '4')
+        //     ->orderBy('created_at', 'desc')
+        //     ->Limit('1')
+        //     ->get();
+        
+        $noticia = Noticia::where('estado', '1')
+        ->Limit('1')
+        ->get();
+        
+        $bbCode = new BBCode();
+        $noti = Noticia::all();
+
+        $notbb=$bbCode->convertFromHtml($noticia);
+        Log::info($noticia);
+        Log::info(gettype($noticia));
+        // return $noticia;
 
         $card = Content::where('estado', '1')
             ->where('categoria_id', '3')
@@ -144,7 +160,6 @@ class IndexController extends Controller
 
     public function noticia()
     {
-
         $pag = env('PAGINATION');
 
         //$not = Content::paginate();
@@ -152,7 +167,7 @@ class IndexController extends Controller
             ->where('categoria_id', '2')
             ->orderBy('id', 'desc')
             ->Paginate($pag);
-
+        
         return view('inicio.noticia', compact('not'));
     }
 

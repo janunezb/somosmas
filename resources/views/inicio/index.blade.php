@@ -354,16 +354,13 @@
 
                                 <h1>{{ $noticias->titulo }}</h1>
                                 <div>
-
-
                                     <p class="nuevaa">
-                                        {{ Str::limit($noticias->cuerpo, 800, '...') }}
+                                    {{Str::limit($noticias->contenido, 800, '...')}}
+                                    {{-- {!!$noticias->cuerpo!!} --}}
                                     </p>
-
-
                                     <div class="row">
 
-                                        @if (strlen($noticias->cuerpo) > 800)
+                                        @if (strlen($noticias->contenido) > 800)
                                             <div class="col-3">
                                                 <button type="button" class="ctn" data-toggle="modal"
                                                     data-target="#myModal<?php echo $cant; ?>">Ver más</button>
@@ -376,21 +373,21 @@
                                                             <div class="modal-header">
 
                                                                 <header style="" class="h2">
-                                                                    {{ $noticias->titulo }}</header>
+                                                                    {{{ $noticias->titulo }}}</header>
                                                                 <button type="button" class="close"
                                                                     data-dismiss="modal">&times;</button>
                                                             </div>
                                                             <div class="contenido">
                                                                 <div class="row pt-2">
                                                                     <div class="" style="float: left">
-                                                                        <img src="{{ $noticias->imagen }}"
+                                                                        <img src="{{ $noticias->imagenes }}"
                                                                             class="img-fluid" alt="">
                                                                     </div>
                                                                     <div class="pb-5" style="padding-right: 1px;">
                                                                         <div>
                                                                             <p class="nuevaa"
                                                                                 style="background-color: #FAFAFA">
-                                                                                {{ $noticias->cuerpo }}
+                                                                                {{ $noticias->contenido }}
                                                                             </p>
 
                                                                         </div>
@@ -429,7 +426,7 @@
                                 </div>
                             </div>
                             <div class="col-6 noticia">
-                                <img src="{{ $noticias->imagen }}" class="" alt="">
+                                <img src="{{ $noticias->imagenes }}" class="" alt="">
                             </div>
 
                         </div>
