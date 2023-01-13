@@ -43,29 +43,26 @@ class IndexController extends Controller
         //     ->orderBy('created_at', 'desc')
         //     ->Limit('1')
         //     ->get();
+
         
         $noticia = Noticia::where('estado', '1')
         ->Limit('1')
         ->get();
-        
-        $bbCode = new BBCode();
-        $noti = Noticia::all();
 
-        $notbb=$bbCode->convertFromHtml($noticia);
-        Log::info($noticia);
-        Log::info(gettype($noticia));
-        // return $noticia;
+        
 
         $card = Content::where('estado', '1')
             ->where('categoria_id', '3')
             ->where('nombre', 'card')
             ->where('orden', '1')
             ->get();
+        
 
         $formacion = Content::where('estado', '1')
             ->where('categoria_id', '3')
             ->orderBy('created_at', 'desc')
             ->get();
+        
 
         $now = Carbon::now();
         $currentDate = $now->toDateString();

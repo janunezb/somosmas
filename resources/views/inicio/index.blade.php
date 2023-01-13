@@ -355,8 +355,7 @@
                                 <h1>{{ $noticias->titulo }}</h1>
                                 <div>
                                     <p class="nuevaa">
-                                    {{Str::limit($noticias->contenido, 800, '...')}}
-                                    {{-- {!!$noticias->cuerpo!!} --}}
+                                    {!!Str::limit($noticias->contenido, 800, '...')!!}                                
                                     </p>
                                     <div class="row">
 
@@ -373,7 +372,7 @@
                                                             <div class="modal-header">
 
                                                                 <header style="" class="h2">
-                                                                    {{{ $noticias->titulo }}}</header>
+                                                                    {{ $noticias->titulo }}</header>
                                                                 <button type="button" class="close"
                                                                     data-dismiss="modal">&times;</button>
                                                             </div>
@@ -389,14 +388,9 @@
                                                                                 style="background-color: #FAFAFA">
                                                                                 {{ $noticias->contenido }}
                                                                             </p>
-
                                                                         </div>
                                                                     </div>
-
                                                                 </div>
-
-
-
                                                             </div>
                                                         </div>
 
@@ -425,11 +419,19 @@
                                             class="bi bi-arrow-right-square"></i> </a>
                                 </div>
                             </div>
+            {{-- imagenes noticias --}}
                             <div class="col-6 noticia">
-                                <img src="{{ $noticias->imagenes }}" class="" alt="">
-                            </div>
-
-                        </div>
+                                <section class="splide" aria-label="Splide Basic HTML Example">
+                                    <div class="splide__track">                                        
+                                          <ul class="splide__list"> 
+                                            <?php
+                                                $porciones = explode(",", $noticias->imagenes);
+                                                foreach($porciones as $porcion){?>                                      
+                                                    <li class="splide__slide"><img src="images/noticias/<?php echo $porcion?>.jpg" class="" alt=""></li>
+                                                <?php } ?>
+                                          </ul>
+                                    </div>
+                                </section>
                     @endforeach
 
                 </section>

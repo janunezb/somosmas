@@ -24,6 +24,11 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    {{-- splider js --}}
+    {{-- <link rel="stylesheet" href="url-to-cdn/splide.min.css"> --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.6/dist/css/themes/splide-skyblue.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    {{-- ********************************** --}}
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -90,10 +95,6 @@
 
                 </ul>
 
-
-
-
-
                 <div class="pr-2">
                     <a class="pr-2 text-white" style="text-decoration: none">Bienvenido: <b>
                             {{ auth()->user()->nombre }}</b></a>
@@ -104,8 +105,6 @@
                     <img src="{{env('FOTO_FUNCIONARIOS') .auth()->user()->foto}}" alt="" class="usuario">
 
                     @else   <img src="{{asset('images/fotonone.jpeg')}}" class="usuario" alt="">
-
-
 
                     @endif
 
@@ -198,6 +197,7 @@
                         Oficina Libre Fusagasugá: 8676736 / 311 5853577</p>
                 </div>
 
+                
 
 
             </div>

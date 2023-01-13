@@ -31,3 +31,19 @@ var swiper = new Swiper('.swiper-container', {
 	  },
 	}
     });
+
+
+	var splide = new Splide( '.splide', {
+		type    : 'loop',
+		arrows: false,
+		perPage: number = 1,
+		autoplay: true,
+		pagination: false,
+		width: '70%',
+		height: '70%',
+		snap:  false,		
+		// gap El espacio entre diapositivas
+  		// gap        : '1rem',
+	  } );
+	  
+	  splide.mount();
