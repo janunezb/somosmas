@@ -6295,7 +6295,7 @@ fieldset:disabled .btn {
   height: calc(100% - 1rem);
 }
 
-.modal-dialog-scrollable .modal-content {
+.modal-dialog-scrollable {
   max-height: 100%;
   overflow: hidden;
 }
@@ -6314,22 +6314,7 @@ fieldset:disabled .btn {
   min-height: calc(100% - 1rem);
 }
 
-.modal-content {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  pointer-events: auto;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.3rem;
-  outline: 0;
+
 }
 
 .modal-backdrop {

@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Content;
+
 use App\Models\User;
 use App\Models\Empresa;
 use Illuminate\Support\Facades\Redirect;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
 use App\Models\Noticia;
+use App\Models\Noticia_destacada;
 use Illuminate\Http\RedirectResponse;
 
 use Genert\BBCode\BBCode;
@@ -29,27 +31,20 @@ class IndexController extends Controller
 
     public function index()
     {
-
-
-
-
         $contenido = Content::where('estado', '1')
             ->where('categoria_id', '1')
             ->orderBy('orden', 'asc')
             ->get();
 
-        // $noticia = Content::where('estado', '1')
-        //     ->where('categoria_id', '4')
-        //     ->orderBy('created_at', 'desc')
-        //     ->Limit('1')
-        //     ->get();
+        $id_noti_des = Noticia_destacada::where('id', '1')
+        ->first()
+        ->noticias_id;
+                
 
-        
-        $noticia = Noticia::where('estado', '1')
+        $noticia = Noticia::where('id', $id_noti_des)
         ->Limit('1')
         ->get();
-
-        
+         
 
         $card = Content::where('estado', '1')
             ->where('categoria_id', '3')
@@ -124,12 +119,6 @@ class IndexController extends Controller
         $formatos = $formato == $formato1;
 
 
-
-
-
-
-
-
         return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'listap', 'lista', 'formato1', 'formato', 'fecha_hoy', 'formatos'));
     }
 
@@ -157,13 +146,17 @@ class IndexController extends Controller
 
     public function noticia()
     {
-        $pag = env('PAGINATION');
+        // $pag = env('PAGINATION');
 
-        //$not = Content::paginate();
-        $not = Content::where('estado', '1')
-            ->where('categoria_id', '2')
-            ->orderBy('id', 'desc')
-            ->Paginate($pag);
+        $not = Content::paginate();
+        // $not = Content::where('estado', '1')
+        //     ->where('categoria_id', '2')
+        //     ->orderBy('id', 'desc')
+        //     ->Paginate($pag);
+
+        $not = Noticia::where('estado', '1')
+        ->get();
+        // return $not;
         
         return view('inicio.noticia', compact('not'));
     }

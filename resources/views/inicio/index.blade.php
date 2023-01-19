@@ -87,7 +87,7 @@
                                                 <div class="card" style="">
                                                     <div class="tamaño">
                                                         @if ($new['foto'])
-                                                            <img src="{{ env('FOTO_FUNCIONARIOS') . $fecha['foto'] }}"
+                                                            <img src="{{ env('FOTO_FUNCIONARIOS') . $new['foto'] }}"
                                                                 alt="">
                                                         @else
                                                             <img src="{{ asset('images/fotonone.jpeg') }}" alt="">
@@ -292,11 +292,6 @@
                                 {{-- CAmbiar el texto bien --}}
                             </p>
                         </div>
-
-
-
-
-
                         <div class="carrusel-itemss">
                             @foreach ($listap as $new)
                                 <div class="carrusel-itemms">
@@ -351,56 +346,72 @@
                         @php $cant = $cant+1; @endphp
                         <div class="row">
                             <div class="col-6 " style="padding-right: 1px;">
-
                                 <h1>{{ $noticias->titulo }}</h1>
                                 <div>
                                     <p class="nuevaa">
                                     {!!Str::limit($noticias->contenido, 800, '...')!!}                                
                                     </p>
                                     <div class="row">
-
                                         @if (strlen($noticias->contenido) > 800)
                                             <div class="col-3">
-                                                <button type="button" class="ctn" data-toggle="modal"
-                                                    data-target="#myModal<?php echo $cant; ?>">Ver más</button>
+                                                <!-- Large modal -->
+                                                            <button type="button" class="ctn" data-toggle="modal" data-target="#myModal<?php echo $cant; ?>">Ver más</button>
 
-                                                <div class="modal fade" id="myModal<?php echo $cant; ?>" role="dialog">
-                                                    <div class="modal-dialog">
-
-                                                        <!-- Modal content-->
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-
-                                                                <header style="" class="h2">
-                                                                    {{ $noticias->titulo }}</header>
-                                                                <button type="button" class="close"
-                                                                    data-dismiss="modal">&times;</button>
-                                                            </div>
-                                                            <div class="contenido">
-                                                                <div class="row pt-2">
-                                                                    <div class="" style="float: left">
-                                                                        <img src="{{ $noticias->imagenes }}"
-                                                                            class="img-fluid" alt="">
-                                                                    </div>
-                                                                    <div class="pb-5" style="padding-right: 1px;">
-                                                                        <div>
-                                                                            <p class="nuevaa"
-                                                                                style="background-color: #FAFAFA">
-                                                                                {{ $noticias->contenido }}
-                                                                            </p>
+                                                            <div class="modal fade bd-example-modal-lg"  id="myModal<?php echo $cant; ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-xl">
+                                                                        <div class="modal-content">
+                                                                        {{-- contenido --}}
+                                                                            {{-- TITULO MODAL --}}
+                                                                            <div class="modal-header">                                                                            
+                                                                                <header style="" class="h2">
+                                                                                    {{ $noticias->titulo }}</header>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal">&times;</button>
+                                                                            </div>
+                                                                            {{-- ************* --}}
+                                                                        <div class="modal-body">
+                                                                            <div class="row">
+                                                                                <div class="col-auto">                    
+                                                                                    <div class="row">
+                                                                                        {{-- CUERPO MODAL --}}
+                                                                                        <div class="col-md-8">
+                                                                                            <div>
+                                                                                                <p class="nuevaa"
+                                                                                                    style="background-color: #FAFAFA">
+                                                                                                    {!! $noticias->contenido !!}
+                                                                                                </p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        {{-- ************ --}}
+                                                                                        {{-- IMAGEN MODAL --}}
+                                                                                        <div class="col">
+                                                                                            <div class="col-img-noti">
+                                                                                                <section class="splide slider1">
+                                                                                                    <div class="splide__track">                                        
+                                                                                                        <ul class="splide__list"> 
+                                                                                                            <?php $imgs = explode(",", $noticias->imagenes);
+                                                                                                                foreach($imgs as $img){
+                                                                                                                    Log::info($img);?>                                      
+                                                                                                                    <li class="splide__slide">
+                                                                                                                        <img src="images/noticias/<?php echo $img?>.jpg" alt="">
+                                                                                                                    </li>
+                                                                                                            <?php } ?>
+                                                                                                        </ul>
+                                                                                                    </div>
+                                                                                                </section>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        {{-- ************ --}}
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
+                                                                        {{-- /contenido --}}
+                                                                        </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
                                             </div>
                                         @endif
-
-
-
                                         @if ($noticias->adjunto)
                                             <div class="col-3">
                                                 <div class="">
@@ -409,8 +420,6 @@
                                                 </div>
                                             </div>
                                         @endif
-
-
                                     </div>
 
                                 </div>
@@ -421,18 +430,25 @@
                             </div>
             {{-- imagenes noticias --}}
                             <div class="col-6 noticia">
-                                <section class="splide" aria-label="Splide Basic HTML Example">
-                                    <div class="splide__track">                                        
-                                          <ul class="splide__list"> 
-                                            <?php
-                                                $porciones = explode(",", $noticias->imagenes);
-                                                foreach($porciones as $porcion){?>                                      
-                                                    <li class="splide__slide"><img src="images/noticias/<?php echo $porcion?>.jpg" class="" alt=""></li>
-                                                <?php } ?>
-                                          </ul>
+                                <div class="col-img-noti">
+                                    <div class="splide slider2"  aria-labelledby="carousel-heading">
+                                        <div class="splide__slider">
+                                            <div class="splide__track">
+                                                <ul class="splide__list"> 
+                                                    <?php $porciones = explode(",", $noticias->imagenes);
+                                                        foreach($porciones as $porcion){?>                                      
+                                                            <li class="splide__slide">
+                                                                <img src="images/noticias/<?php echo $porcion?>.jpg" alt="">
+                                                            </li>
+                                                    <?php } ?>
+                                                </ul>
+                                            </div>    
+                                        </div>
                                     </div>
-                                </section>
-                    @endforeach
+                                </div>
+                            </div>
+                       
+                     @endforeach
 
                 </section>
 
