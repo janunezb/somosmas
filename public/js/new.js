@@ -50,6 +50,7 @@ var swiper = new Swiper('.swiper-container', {
 		
 	} ).mount();
 	new Splide( '.slider2',{
+		
 		perPage: 1,
 		focus  : 0,
 		omitEnd: true,
@@ -60,10 +61,11 @@ var swiper = new Swiper('.swiper-container', {
 		snap:  false,
 		
 		
+		
 	} ).mount();
 	new Splide( '.slider3' ).mount();
-	
-	
+
+
 	
 	
 	

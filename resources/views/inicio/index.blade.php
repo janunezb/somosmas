@@ -390,7 +390,7 @@
                                                                                                 <?php $imgs = explode(",", $noticias->imagenes);
                                                                                                 $var=(count($imgs));?>
                                                                                                 @if($var > 1)
-                                                                                                    <section class="splide slider1">
+                                                                                                    <section class="splide slider1" data-splide='{"type":"loop","perPage":3,"arrows":true,"autoplay":true,"pagination":false,"height":"40rem","direction":"ttb"}'>
                                                                                                         <div class="splide__track">                                        
                                                                                                             <ul class="splide__list"> 
                                                                                                                     <?php foreach($imgs as $img){?>                                      
@@ -440,7 +440,7 @@
                                 <div class="col-img-noti">
                                     @if($var>1)
                                    
-                                    <div class="splide slider2"  aria-labelledby="carousel-heading">
+                                    <div class="splide slider2" >
                                         <div class="splide__slider">
                                             <div class="splide__track">
                                                 <ul class="splide__list"> 
