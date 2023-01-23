@@ -266,7 +266,7 @@ class IndexController extends Controller
         return view('inicio.import');
     }
 
-    public function uploadUsers(Request $request)
+    /*public function uploadUsers(Request $request)
     {
         $validatedData = $request->validate(
             [
@@ -289,7 +289,7 @@ class IndexController extends Controller
             );
 
         }
-    }
+    }*/
 
 }
     

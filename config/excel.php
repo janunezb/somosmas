@@ -1,6 +1,6 @@
 <?php
 
-use Maatwebsite\Excel\Excel;
+//use Maatwebsite\Excel\Excel;
 
 return [
     'exports' => [
@@ -161,7 +161,9 @@ return [
     | needs to guess the correct type based on the extension alone.
     |
     */
+    
     'extension_detector' => [
+        /*
         'xlsx'     => Excel::XLSX,
         'xlsm'     => Excel::XLSX,
         'xltx'     => Excel::XLSX,
@@ -177,6 +179,7 @@ return [
         'html'     => Excel::HTML,
         'csv'      => Excel::CSV,
         'tsv'      => Excel::TSV,
+        */
 
         /*
         |--------------------------------------------------------------------------
@@ -187,7 +190,7 @@ return [
         | Available options: Excel::MPDF | Excel::TCPDF | Excel::DOMPDF
         |
         */
-        'pdf'      => Excel::DOMPDF,
+        //'pdf'      => Excel::DOMPDF,
     ],
 
     /*
