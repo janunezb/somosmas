@@ -13,8 +13,15 @@
     </div>
     <div class="container-3">
         @php $cant = 0; @endphp
+        @php $grid = 0; @endphp
         @foreach ($not as $noticias)
-            @php $cant = $cant+1; @endphp
+        @php $cant = $cant+1; @endphp
+        
+       
+        
+        <?php $imgs = explode(",", $noticias->imagenes);
+        
+            $var=(count($imgs));?>
             
             <div class="row pb-4 card-3">
                 <div class="col-6 pb-5" style="padding-right: 1px;">
@@ -56,20 +63,27 @@
                                                         {{-- ************ --}}
                                                         {{-- IMAGEN MODAL --}}
                                                         <div class="col">
+                                                            
                                                                 <div class="col-img-noti">
-                                                                    <section class="splide"  data-splide='{"type":"loop","perPage":3,"arrows":false,"autoplay":true,"pagination":false,"height":"40rem","direction":"ttb"}'>
-                                                                        <div class="splide__track">                                        
-                                                                            <ul class="splide__list"> 
-                                                                                <?php $imgs = explode(",", $noticias->imagenes);
-                                                                                    foreach($imgs as $img){
-                                                                                        Log::info($img);?>                                      
-                                                                                        <li class="splide__slide">
-                                                                                            <img src="../images/noticias/<?php echo $img?>.jpg" alt="">
-                                                                                        </li>
-                                                                                <?php } ?>
-                                                                            </ul>
+                                                                    
+                                                                    @if($var > 1)
+                                                                    
+                                                                        <section class="splide"  data-splide='{"type":"loop","perPage":3,"arrows":true,"autoplay":true,"pagination":false,"height":"40rem","direction":"ttb"}'>
+                                                                            <div class="splide__track">                                        
+                                                                                <ul class="splide__list"> 
+                                                                                    <?php foreach($imgs as $img){?>                                      
+                                                                                            <li class="splide__slide">
+                                                                                                <img src="../images/noticias/<?php echo $img?>" alt="">
+                                                                                            </li>
+                                                                                    <?php } ?>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </section>
+                                                                    @else
+                                                                        <div class="dos">
+                                                                            <img src="../images/noticias/{{$noticias->imagenes}}" alt="">
                                                                         </div>
-                                                                    </section>
+                                                                    @endif    
                                                                 </div>
                                                         </div>
                                                         {{-- ************ --}}
@@ -102,33 +116,29 @@
                     </div> --}}
 
             </div>
+                
                 <div class="col-6 noticiaa">
                     
-                    <div class="grid grid-<?php echo $cant?>" >
-                        <?php $porciones = explode(",", $noticias->imagenes);
-                                    foreach($porciones as $porcion){?>      
-                        <div class="item">
-                          <div class="item-content">
-                            <img src="../images/noticias/<?php echo $porcion?>.jpg" class="" alt="">
-                          </div>
-                        </div>
-                        <?php } ?>
-                        
-                       
-                      </div>
-                    {{-- <section class="splide slider1">
-                        <div class="splide__track">                                        
-                            <ul class="splide__list">
-                                <?php $porciones = explode(",", $noticias->imagenes);
-                                    foreach($porciones as $porcion){?>                                      
-                                        <li class="splide__slide">
-                                            <img src="../images/noticias/<?php echo $porcion?>.jpg" class="" alt="">
-                                        </li>
-                                <?php } ?>
-                            </ul>  
-                        </div>
-                    </section> --}}
-        </div>
+                        @if($var>1)
+                            <section class="splide slider1" data-splide='{"type":"loop","perPage":1,"arrows":true,"pagination":false}'>
+                                
+                                <div class="splide__track">                                        
+                                    <ul class="splide__list">
+                                        <?php $porciones = explode(",", $noticias->imagenes);
+                                            foreach($porciones as $porcion){?>                                      
+                                                <li class="splide__slide">
+                                                    <img src="../images/noticias/<?php echo $porcion?>" class="" alt="">
+                                                </li>
+                                        <?php } ?>
+                                    </ul>  
+                                </div>
+                            </section>
+                        @else
+                            <div class="una">
+                                <img class="img_noticia"src="../images/noticias/{{$noticias->imagenes}}" alt="">
+                            </div>
+                        @endif
+                </div>
 
                 <span><hr></span>
 

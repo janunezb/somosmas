@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Banner;
 use App\Models\Content;
 
+use App\Models\Formacion;
 use App\Models\User;
 use App\Models\Empresa;
 use Illuminate\Support\Facades\Redirect;
@@ -31,10 +33,9 @@ class IndexController extends Controller
 
     public function index()
     {
-        $contenido = Content::where('estado', '1')
-            ->where('categoria_id', '1')
-            ->orderBy('orden', 'asc')
-            ->get();
+        $contenido = Banner::where('estado', '1')
+        ->get();
+        // return $contenido;
 
         $id_noti_des = Noticia_destacada::where('id', '1')
         ->first()
@@ -46,18 +47,19 @@ class IndexController extends Controller
         ->get();
          
 
-        $card = Content::where('estado', '1')
+        $card = Formacion::where('estado', '1')
             ->where('categoria_id', '3')
             ->where('nombre', 'card')
             ->where('orden', '1')
             ->get();
         
 
-        $formacion = Content::where('estado', '1')
+        $formacion = Formacion::where('estado', '1')
             ->where('categoria_id', '3')
             ->orderBy('created_at', 'desc')
             ->get();
-        
+
+       
 
         $now = Carbon::now();
         $currentDate = $now->toDateString();
@@ -140,7 +142,7 @@ class IndexController extends Controller
 
         $portal = Empresa::where('estado', '1')
             ->get();
-
+        // return $portal;
         return view('inicio.portales', compact(('portal')));
     }
 
@@ -148,11 +150,7 @@ class IndexController extends Controller
     {
         // $pag = env('PAGINATION');
 
-        $not = Content::paginate();
-        // $not = Content::where('estado', '1')
-        //     ->where('categoria_id', '2')
-        //     ->orderBy('id', 'desc')
-        //     ->Paginate($pag);
+        
 
         $not = Noticia::where('estado', '1')
         ->get();

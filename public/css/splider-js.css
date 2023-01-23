@@ -1,16 +1,17 @@
   .col {
-    /* display: flex; */
+    display: inline-block;
     align-items: center;
     justify-content: center;
 
   }
 
   .col-img-noti {
-    /* display: flex; */
+    display: inline-block;
     align-items: center;
     justify-content: center;
     min-height: 50vh;
   }
+ 
 
   .splider{
     overflow:hidden ;
@@ -28,10 +29,36 @@
     height: 100%;
     object-fit: cover;
   }
+  .splide__arrows path{
+    opacity: 1;
+    fill: #707070;
+ 
+   }
+
+  .una{
+  display: inline-block;
+  position: absolute;
+  width: 70%;
+  height: 60%;
+  top: 40%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  }
+  .dos{
+  display: inline-block;
+  position: absolute;
+  
+    
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+  
 
   .nuevaa{
     text-align: justify;
   }
+  
    /* ***************************Muuri************************** */
    /* .grid {
     opacity: 0;

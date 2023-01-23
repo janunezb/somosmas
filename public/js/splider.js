@@ -4,37 +4,37 @@ var hi = document.getElementsByClassName( 'splide' );
 		new Splide( hi[ i ] ).mount();
 		}
 var grid1 = new Muuri('.grid-1', {
-    dragEnabled: true,
+    dragEnabled: false,
     layout: {
     fillGaps: true
     }
  });
  var grid2 = new Muuri('.grid-2', {
-    dragEnabled: true,
+    dragEnabled: false,
     layout: {
     fillGaps: true
     }
  });
  var grid3 = new Muuri('.grid-3', {
-    dragEnabled: true,
+    dragEnabled: false,
     layout: {
     fillGaps: true
     }
  });
  var grid4 = new Muuri('.grid-4', {
-    dragEnabled: true,
+    dragEnabled: false,
     layout: {
     fillGaps: true
     }
  });
  var grid5 = new Muuri('.grid-5', {
-    dragEnabled: true,
+    dragEnabled: false,
     layout: {
     fillGaps: true
     }
  });
  var grid6 = new Muuri('.grid-6', {
-    dragEnabled: true,
+    dragEnabled: false,
     layout: {
     fillGaps: true
     }

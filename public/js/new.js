@@ -31,29 +31,38 @@ var swiper = new Swiper('.swiper-container', {
 	  },
 	}
     });
+	
 	// ***************************splider**************************
+	
 	new Splide( '.slider1',{
-		perPage: 1,
+		perPage: 3,
 		focus  : 0,
 		omitEnd: true,
 		type    : 'loop',
-		arrows: false,
+		arrows: true,
 		autoplay: true,
 		pagination: false,
 		snap:  false,
+		template :'default',
+		height: '40rem',
+		direction:"ttb",
+		
+		
 	} ).mount();
 	new Splide( '.slider2',{
 		perPage: 1,
 		focus  : 0,
 		omitEnd: true,
 		type    : 'loop',
-		arrows: false,
+		arrows: true,
 		autoplay: true,
 		pagination: false,
 		snap:  false,
+		
+		
 	} ).mount();
 	new Splide( '.slider3' ).mount();
-
+	
 	
 	
 	

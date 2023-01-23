@@ -20,7 +20,7 @@
         <div class="carousel-inner">
             @foreach ($contenido as $banner)
                 <div class="carousel-item @if ($loop->index == 0) active @endif" data-bs-interval="4000">
-                    <img src="{{ $banner->imagen }}" class="d-block w-100" alt="...">
+                    <img src="images/banners/{{ $banner->ruta }}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <!--h5 style="color: black">{{ $banner->nombre }}</h5>
                                                                             <p style="color : black">
@@ -384,21 +384,28 @@
                                                                                         </div>
                                                                                         {{-- ************ --}}
                                                                                         {{-- IMAGEN MODAL --}}
+                                                                                        <link rel="stylesheet" href="url-to-cdn/splide.min.css">
                                                                                         <div class="col">
                                                                                             <div class="col-img-noti">
-                                                                                                <section class="splide slider1">
-                                                                                                    <div class="splide__track">                                        
-                                                                                                        <ul class="splide__list"> 
-                                                                                                            <?php $imgs = explode(",", $noticias->imagenes);
-                                                                                                                foreach($imgs as $img){
-                                                                                                                    Log::info($img);?>                                      
-                                                                                                                    <li class="splide__slide">
-                                                                                                                        <img src="images/noticias/<?php echo $img?>.jpg" alt="">
-                                                                                                                    </li>
-                                                                                                            <?php } ?>
-                                                                                                        </ul>
+                                                                                                <?php $imgs = explode(",", $noticias->imagenes);
+                                                                                                $var=(count($imgs));?>
+                                                                                                @if($var > 1)
+                                                                                                    <section class="splide slider1">
+                                                                                                        <div class="splide__track">                                        
+                                                                                                            <ul class="splide__list"> 
+                                                                                                                    <?php foreach($imgs as $img){?>                                      
+                                                                                                                        <li class="splide__slide">
+                                                                                                                            <img src="images/noticias/<?php echo $img?>" alt=""> 
+                                                                                                                        </li>
+                                                                                                                    <?php } ?>
+                                                                                                            </ul>
+                                                                                                        </div>
+                                                                                                    </section>
+                                                                                                @else
+                                                                                                    <div class="dos">
+                                                                                                        <img src="images/noticias/{{$noticias->imagenes}}" alt="">
                                                                                                     </div>
-                                                                                                </section>
+                                                                                                @endif
                                                                                             </div>
                                                                                         </div>
                                                                                         {{-- ************ --}}
@@ -431,6 +438,8 @@
             {{-- imagenes noticias --}}
                             <div class="col-6 noticia">
                                 <div class="col-img-noti">
+                                    @if($var>1)
+                                   
                                     <div class="splide slider2"  aria-labelledby="carousel-heading">
                                         <div class="splide__slider">
                                             <div class="splide__track">
@@ -438,13 +447,19 @@
                                                     <?php $porciones = explode(",", $noticias->imagenes);
                                                         foreach($porciones as $porcion){?>                                      
                                                             <li class="splide__slide">
-                                                                <img src="images/noticias/<?php echo $porcion?>.jpg" alt="">
+                                                                <img src="images/noticias/<?php echo $porcion?>" alt="">
+                                                               
                                                             </li>
                                                     <?php } ?>
                                                 </ul>
                                             </div>    
                                         </div>
                                     </div>
+                                    @else
+                                        <div class="una">
+                                            <img class="img_noticia"src="images/noticias/{{$noticias->imagenes}}" alt="">
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                        
