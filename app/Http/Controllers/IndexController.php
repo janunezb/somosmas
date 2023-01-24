@@ -35,7 +35,7 @@ class IndexController extends Controller
     {
         $contenido = Banner::where('estado', '1')
         ->get();
-        // return $contenido;
+       
 
         $id_noti_des = Noticia_destacada::where('id', '1')
         ->first()
@@ -65,7 +65,11 @@ class IndexController extends Controller
         $currentDate = $now->toDateString();
 
         $cumple = User::join('empresas', 'empresas.id', '=', 'users.empresa_id')
-            ->select('users.nombre as nombre', 'empresas.nombre as empresa', 'users.foto as foto', 'users.cargo as cargo', 'users.fecha_nacimiento')
+            ->select('users.nombre as nombre',
+            'empresas.nombre as empresa',
+            'users.foto as foto',
+            'users.cargo as cargo',
+            'users.fecha_nacimiento')
             ->where('empresas.estado', '1')
             ->get();
 
@@ -93,7 +97,13 @@ class IndexController extends Controller
 
 
         $cumplep = User::join('empresas', 'empresas.id', '=', 'users.empresa_id')
-            ->select('users.nombre as nombre', 'empresas.nombre as empresa', 'users.foto as foto', 'users.cargo as cargo', 'users.fecha_nacimiento', 'users.fecha_ingreso', 'users.fecha_ingreso as inicio')
+            ->select('users.nombre as nombre',
+             'empresas.nombre as empresa', 
+             'users.foto as foto',
+             'users.cargo as cargo', 
+             'users.fecha_nacimiento', 
+             'users.fecha_ingreso', 
+             'users.fecha_ingreso as inicio')
             ->where('empresas.estado', '1')
             ->get();
 
@@ -121,7 +131,8 @@ class IndexController extends Controller
         $formatos = $formato == $formato1;
 
 
-        return view('inicio.index', compact('contenido', 'noticia', 'card', 'formacion', 'listap', 'lista', 'formato1', 'formato', 'fecha_hoy', 'formatos'));
+        return view('inicio.index', compact('contenido', 'noticia', 'card',
+         'formacion', 'listap', 'lista', 'formato1', 'formato', 'fecha_hoy', 'formatos'));
     }
 
     public function cultura()
@@ -142,20 +153,14 @@ class IndexController extends Controller
 
         $portal = Empresa::where('estado', '1')
             ->get();
-        // return $portal;
         return view('inicio.portales', compact(('portal')));
     }
 
     public function noticia()
     {
-        // $pag = env('PAGINATION');
-
-        
-
+       
         $not = Noticia::where('estado', '1')
         ->get();
-        // return $not;
-        
         return view('inicio.noticia', compact('not'));
     }
 

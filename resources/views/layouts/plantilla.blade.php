@@ -57,34 +57,40 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('inicio.index') }}"><strong style="color: #ff0080">Somos
-                </strong>Más</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <a class="navbar-brand" href="{{ route('inicio.index') }}">
+                <strong style="color: #ff0080">Somos</strong>Más</a>
+    {{-- ********************revisar boton james 24/01/2023 ************************ --}}
+            {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <span class="navbar-toggler-icon">hola</span>
+            </button> --}}
+    
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    {{-- *********** menu desplegable ***********************--}}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown"
+                         role="button"data-bs-toggle="dropdown" aria-expanded="false">
                             Tu SGSST
                         </a>
                         <ul class="dropdown-menu bg" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" style="" href="#induccion">Programa De Formacion</a></li>
-                            <li><a class="dropdown-item" style="" href="#medicina">Medicina Preventiva</a></li>
-                            <li><a class="dropdown-item" style="" href="#seguridadindustrial">Seguridad
-                                    Industrial</a></li>
-                            <li><a class="dropdown-item" style="" href="#seguridadvial">Seguridad Vial</a></li>
-                            <li><a class="dropdown-item" style="" href="{{ route('inicio.actividad') }}">Actividad
-                                    Del Mes</a></li>
+                            <li><a class="dropdown-item" style="" href="#induccion">
+                                Programa De Formacion</a></li>
+                            <li><a class="dropdown-item" style="" href="#medicina">
+                                Medicina Preventiva</a></li>
+                            <li><a class="dropdown-item" style="" href="#seguridadindustrial">
+                                SeguridadIndustrial</a></li>
+                            <li><a class="dropdown-item" style="" href="#seguridadvial">
+                                Seguridad Vial</a></li>
+                            <li><a class="dropdown-item" style="" href="{{ route('inicio.actividad') }}">
+                                ActividadDel Mes</a></li>
                             <li><a class="dropdown-item" style="" href="#avance">Avance Del SGSST</a></li>
-                            <li><a class="dropdown-item" style="" href="{{ route('inicio.portales') }}">Portales
-                                    SGSST</a></li>
-
+                            <li><a class="dropdown-item" style="" href="{{ route('inicio.portales') }}">
+                                PortalesSGSST</a></li>
                         </ul>
                     </li>
+                    {{-- *********** fin  menu desplegable ***********************--}}
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{ route('inicio.cultura') }}">Cultura</a>
                     </li>
@@ -102,12 +108,13 @@
                             {{ auth()->user()->nombre }}</b></a>
                 </div>
 
+                
                 <div class="pr-3">
                     @if (auth()->user()->foto)
-                    <img src="{{env('FOTO_FUNCIONARIOS') .auth()->user()->foto}}" alt="" class="usuario">
+                    <img src="images/fotos/{{auth()->user()->foto}}" alt="" class="usuario">
 
-                    @else   <img src="{{asset('images/fotonone.jpeg')}}" class="usuario" alt="">
-
+                    @else   
+                    <img src="{{asset('images/fotonone.jpg')}}" class="usuario" alt="">
                     @endif
 
                 </div>
@@ -120,6 +127,7 @@
 
                 </form>
             </div>
+   
 
             <a href="https://api.whatsapp.com/send?phone=57{{ env('NUMBER_WHASTAPP') }}" class="bt-wsp"
                 target="_blank">

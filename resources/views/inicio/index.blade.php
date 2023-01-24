@@ -57,7 +57,8 @@
 
                     <div class="contenedores">
                         <div class="col-12 pasti h5">
-                            <p> <strong>Felicitamos a los colaboradores que hoy están cumpliendo una fecha especial</strong>
+                            <p> <strong>Felicitamos a los colaboradores que 
+                            hoy están cumpliendo una fecha especial</strong>
                             </p>
                         </div>
 
@@ -87,7 +88,7 @@
                                                 <div class="card" style="">
                                                     <div class="tamaño">
                                                         @if ($new['foto'])
-                                                            <img src="{{ env('FOTO_FUNCIONARIOS') . $new['foto'] }}"
+                                                            <img src="images/fotos/{{$new['foto'] }}"
                                                                 alt="">
                                                         @else
                                                             <img src="{{ asset('images/fotonone.jpeg') }}" alt="">
@@ -154,7 +155,7 @@
                                                 <div class="card" style="">
                                                     <div class="tamaño">
                                                         @if ($fecha['foto'])
-                                                            <img src="{{ env('FOTO_FUNCIONARIOS') . $fecha['foto'] }}"
+                                                            <img src="images/fotos/{{$fecha['foto'] }}"
                                                                 alt="">
                                                         @else
                                                             <img src="{{ asset('images/fotonone.jpeg') }}" alt="">
@@ -229,7 +230,7 @@
                                     <div class="card" style="">
                                         <div class="tamaño">
                                             @if ($fecha['foto'])
-                                                <img src="{{ env('FOTO_FUNCIONARIOS') . $fecha['foto'] }}" alt="">
+                                                <img src="images/fotos/{{$fecha['foto'] }}" alt="">
                                             @else
                                                 <img src="{{ asset('images/fotonone.jpeg') }}" alt="">
                                             @endif
@@ -299,7 +300,7 @@
                                     <div class="card" style="">
                                         <div class="tamaño">
                                             @if ($new['foto'])
-                                                <img src="{{ env('FOTO_FUNCIONARIOS') . $new['foto'] }}" alt="">
+                                                <img src="images/fotos/{{$new['foto'] }}" alt="">
                                             @else
                                                 <img src="{{ asset('images/fotonone.jpeg') }}" alt="">
                                             @endif
