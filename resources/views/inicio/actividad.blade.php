@@ -1,9 +1,15 @@
-@extends('layouts.nav')
+@extends('layouts.plantilla')
 
 @section('title', 'Actividad del mes')
 
-@section('content')
+@section('content1')
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-white" href="{{route('inicio.index')}}" id="navbarDropdown"
+    role="button" aria-expanded="false">
+    Tu SGSST</a>
+@endsection
 
+@section('content')
         <section id="actividad" class="">
             <div class="pt-3 col-4 offset-4">
                 <h1 class="titulo">Actividad del mes</h1>
