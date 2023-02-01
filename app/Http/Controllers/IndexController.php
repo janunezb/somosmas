@@ -171,13 +171,20 @@ class IndexController extends Controller
         return view('inicio.contrasena');
     }
 
-    public function cambiocontrasena(Request $request){
+    public function cambiocontrasena(Request $request) {
         $user           = Auth::user();
         $userId         = $user->id;
         $userPassword   = $user->password;
         
         $NewPass        = $request->password;
         $confirPass     = $request->confirm_password;
+        $confirmActual = sha1($request->password_actual);
+
+        Log::info("Entra a cambio contraseña");
+        Log::info("Usuario:" . $userPassword);
+        Log::info("Ingreso actual:" . $confirmActual);
+
+        ($userPassword == $confirmActual) ?  Log::info("Las contraseñas coinciden") :  Log::info("La contraseña es diferente");
             
 
             //verifica si la clave actual es la misma del usuario en sesión
