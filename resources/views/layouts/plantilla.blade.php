@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/72557239af.js" crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,7 +20,7 @@
     <link rel="stylesheet" href="{{ asset('css/swiper_noti.css') }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     {{-- splider js --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.6/dist/css/themes/splide-skyblue.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
@@ -39,31 +34,14 @@
     {{-- ********************************** --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
-    </script>
-
-
-
-
-
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
-
-
 </head>
 
 <body>
-
-
-
-
-
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('inicio.index') }}">
@@ -74,32 +52,10 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">hola</span>
             </button> --}}
-    
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                    {{-- *********** menu desplegable ***********************--}}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown"
-                         role="button"data-bs-toggle="dropdown" aria-expanded="false">
-                            Tu SGSST
-                        </a>
-                        <ul class="dropdown-menu bg" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" style="" href="#induccion">
-                                Programa De Formacion</a></li>
-                            <li><a class="dropdown-item" style="" href="#medicina">
-                                Medicina Preventiva</a></li>
-                            <li><a class="dropdown-item" style="" href="#seguridadindustrial">
-                                SeguridadIndustrial</a></li>
-                            <li><a class="dropdown-item" style="" href="#seguridadvial">
-                                Seguridad Vial</a></li>
-                            <li><a class="dropdown-item" style="" href="{{ route('inicio.actividad') }}">
-                                ActividadDel Mes</a></li>
-                            <li><a class="dropdown-item" style="" href="#avance">Avance Del SGSST</a></li>
-                            <li><a class="dropdown-item" style="" href="{{ route('inicio.portales') }}">
-                                PortalesSGSST</a></li>
-                        </ul>
-                    </li>
-                    {{-- *********** fin  menu desplegable ***********************--}}
+                    @yield('content1')
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{ route('inicio.cultura') }}">Cultura</a>
                     </li>
@@ -110,7 +66,7 @@
                         <a class="nav-link text-white" href="#redapoyo">Red De Apoyo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('inicio.galeria') }}">Galeria</a>
+                        <a class="nav-link text-white" href="{{ route('inicio.galeria') }}">Galería de fotos</a>
                     </li>
 
                 </ul>
@@ -119,38 +75,25 @@
                     <a class="pr-2 text-white" style="text-decoration: none">Bienvenido: <b>
                             {{ auth()->user()->nombre }}</b></a>
                 </div>
-
-                
                 <div class="pr-3">
                     @if (auth()->user()->foto)
                     <img src="../images/fotos/{{auth()->user()->foto}}" alt="" class="usuario">
-
                     @else   
                     <img src="{{asset('images/fotonone.jpeg')}}" class="usuario" alt="">
                     @endif
-
                 </div>
-
-
                 <form class="d-flex">
-
                     <a class="btn btn-danger" href="{{ route('login.destroy') }}" role="button">Cerrar Sesión</a>
-
-
                 </form>
             </div>
-   
 
             <a href="https://api.whatsapp.com/send?phone=57{{ env('NUMBER_WHASTAPP') }}" class="bt-wsp"
                 target="_blank">
                 <i class="bi bi-whatsapp"></i>
             </a>
 
-
         </div>
     </nav>
-
-
 
     <script>
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
@@ -159,9 +102,11 @@
         })
     </script>
 
-@yield('content')
+@yield('content') 
 
-    <section id="redapoyo" class="d-flex justify-content-center align-items-center rounded">
+</body>
+
+<section id="redapoyo" class="d-flex justify-content-center align-items-center rounded">
         <div class="footer bg-dark text-color:white">
             <div class="row p-5">
                 <div class="col-4">
@@ -171,8 +116,8 @@
                         Estamos para servirte cuenta con nosotros
                         WhatsApp profesionales HSE: Chia-Fusagasuga-Bogota</p>
 
-                    <a href="https://wa.me/573118076877" data-bs-toggle="tooltip" data-placement="top" title="Chía" class="btn btn-success"
-                        target="_blank"> <i class="bi bi-whatsapp"></i></a>
+                    <a href="https://wa.me/573118076877" data-bs-toggle="tooltip" data-placement="top" title="Chía"
+                        class="btn btn-success" target="_blank"> <i class="bi bi-whatsapp"></i></a>
                     <a href="https://wa.me/573016373640" data-bs-toggle="tooltip" data-placement="top" title="Chía"
                         class="btn btn-success" target="_blank"><i class="bi bi-whatsapp"></i></a>
                     <a href="https://wa.me/57{{ env('FUSA_WHASTAPP') }}"
@@ -219,14 +164,8 @@
                         Oficina Libre Fusagasugá: 8676736 / 311 5853577</p>
                 </div>
 
-                
-
-
             </div>
         </div>
 
         </div>
     </section>
-
-</body>
-

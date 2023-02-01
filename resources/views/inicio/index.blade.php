@@ -2,11 +2,34 @@
 
 @section('title', 'Somos Más')
 
+@section('content1')
+{{-- *********** menu desplegable ***********************--}}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown"
+                         role="button"data-bs-toggle="dropdown" aria-expanded="false">
+                            Tu SGSST
+                        </a>
+                        <ul class="dropdown-menu bg" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" style="" href="#induccion">
+                                Programa De Formacion</a></li>
+                            <li><a class="dropdown-item" style="" href="#medicina">
+                                Medicina Preventiva</a></li>
+                            <li><a class="dropdown-item" style="" href="#seguridadindustrial">
+                                Seguridad Industrial</a></li>
+                            <li><a class="dropdown-item" style="" href="#seguridadvial">
+                                Seguridad Vial</a></li>
+                            <li><a class="dropdown-item" style="" href="#avance">
+                                Avance Del SGSST</a></li>
+                            <li><a class="dropdown-item" style="" href="{{ route('inicio.actividad') }}">
+                                Actividad Del Mes</a></li>
+                            <li><a class="dropdown-item" style="" href="{{ route('inicio.portales') }}">
+                                Portales SGSST</a></li>
+                        </ul>
+                    </li>
+                    {{-- *********** fin  menu desplegable ***********************--}}
+@endsection
+
 @section('content')
-
-
-
-
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             @foreach ($contenido as $banner)
