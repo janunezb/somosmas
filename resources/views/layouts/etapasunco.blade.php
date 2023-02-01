@@ -60,7 +60,7 @@
 
             <div class="pr-3">
                 @if (auth()->user()->foto)
-                <img src="images/fotos/{{auth()->user()->foto}}" alt="" class="usuario">
+                <img src="../images/fotos/{{auth()->user()->foto}}" alt="" class="usuario">
 
                 @else   <img src="{{asset('images/fotonone.jpeg')}}" class="usuario" alt="">
 

@@ -23,9 +23,9 @@
                     <img src="images/banners/{{ $banner->ruta }}" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <!--h5 style="color: black">{{ $banner->nombre }}</h5>
-                                                                            <p style="color : black">
-                                                                                {{ $banner->titulo }}
-                                                                            </p-->
+                        <p style="color : black">
+                        {{ $banner->titulo }}
+                        </p-->
                     </div>
                 </div>
             @endforeach
@@ -41,12 +41,6 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
-
-
-
-
-
     {{-- Contenido Principal --}}
     <main class="container d-flex justify-content-center align-items-center p-5 pr-10">
         <div class="row">
@@ -356,52 +350,64 @@
                                         @if (strlen($noticias->contenido) > 800)
                                             <div class="col-3">
                                                 <!-- Large modal -->
-                                                            <button type="button" class="ctn" data-toggle="modal" data-target="#myModal<?php echo $cant; ?>">Ver más</button>
+                                                <button type="button" class="ctn" data-toggle="modal"
+                                                data-target="#myModal<?php echo $cant; ?>">Ver más</button>
 
-                                                            <div class="modal fade bd-example-modal-lg"  id="myModal<?php echo $cant; ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                                                <div class="modal-dialog modal-xl">
-                                                                        <div class="modal-content">
-                                                                        {{-- contenido --}}
-                                                                            {{-- TITULO MODAL --}}
-                                                                            <div class="modal-header">                                                                            
-                                                                                <header style="" class="h2">
-                                                                                    {{ $noticias->titulo }}</header>
-                                                                                <button type="button" class="close"
-                                                                                    data-dismiss="modal">&times;</button>
-                                                                            </div>
+                                                <div class="modal fade bd-example-modal-lg"
+                                                id="myModal<?php echo $cant; ?>"
+                                                tabindex="-1" role="dialog"
+                                                aria-hidden="true">
+                                                    <div class="modal-dialog modal-xl">
+                                                        <div class="modal-content">
+                                                            {{-- contenido --}}
+                                                            {{-- TITULO MODAL --}}
+                                                            <div class="modal-header">
+                                                                <header class="h2">
+                                                                    {{ $noticias->titulo }}
+                                                                </header>
+                                                                <button type="button" class="close"
+                                                                data-dismiss="modal">
+                                                                &times;</button>
+                                                            </div>
                                                                             {{-- ************* --}}
-                                                                        <div class="modal-body">
-                                                                            <div class="row">
-                                                                                <div class="col-auto">                    
-                                                                                    <div class="row">
-                                                                                        {{-- CUERPO MODAL --}}
-                                                                                        <div class="col-md-8">
-                                                                                            <div>
-                                                                                                <p class="nuevaa"
-                                                                                                    style="background-color: #FAFAFA">
-                                                                                                    {!! $noticias->contenido !!}
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </div>
+                                                            <div class="modal-body">
+                                                                <div class="row">
+                                                                    <div class="col-auto">
+                                                                        <div class="row">
+                                                                            {{-- CUERPO MODAL --}}
+                                                                            <div class="col-md-8">
+                                                                                <div>
+                                                                                    <p class="nuevaa"style="background-
+                                                                                    color:#FAFAFA">
+                                                                                        {!! $noticias->contenido !!}
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
                                                                                         {{-- ************ --}}
                                                                                         {{-- IMAGEN MODAL --}}
-                                                                                        <link rel="stylesheet" href="url-to-cdn/splide.min.css">
-                                                                                        <div class="col">
-                                                                                            <div class="col-img-noti">
-                                                                                                <?php $imgs = explode(",", $noticias->imagenes);
-                                                                                                $var=(count($imgs));?>
-                                                                                                @if($var > 1)
-                                                                                                    <section class="splide slider1" data-splide='{"type":"loop","perPage":3,"arrows":true,"autoplay":true,"pagination":false,"height":"40rem","direction":"ttb"}'>
-                                                                                                        <div class="splide__track">                                        
-                                                                                                            <ul class="splide__list"> 
-                                                                                                                    <?php foreach($imgs as $img){?>                                      
-                                                                                                                        <li class="splide__slide">
-                                                                                                                            <img src="images/noticias/<?php echo $img?>" alt=""> 
-                                                                                                                        </li>
-                                                                                                                    <?php } ?>
-                                                                                                            </ul>
-                                                                                                        </div>
-                                                                                                    </section>
+                                                                            <div class="col">
+                                                                                <div class="col-img-noti">
+                                                                                    <?php $imgs=explode(",",$noticias->imagenes);
+                                                                                    $var=(count($imgs));?>
+                                                                                    @if($var > 1)
+                                                                                        <section class="splide slider1" data-splide='{"type":"loop",
+                                                                                        "perPage":3,
+                                                                                        "arrows":true,
+                                                                                        "autoplay":true,
+                                                                                        "pagination":false,
+                                                                                        "height":"40rem",
+                                                                                        "direction":"ttb"}'>
+                                                                                         <div class="splide__track">
+                                                                                            <ul class="splide__list">
+                                                                                            <?php foreach($imgs as $img){?>
+                                                                                                <li class="splide__slide">
+                                                                                                    <img src="images/noticias/<?php echo $img?>"
+                                                                                                    alt="">
+                                                                                                </li>
+                                                                                            <?php } ?>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                        </section>
                                                                                                 @else
                                                                                                     <div class="dos">
                                                                                                         <img src="images/noticias/{{$noticias->imagenes}}" alt="">
@@ -436,32 +442,31 @@
                                             class="bi bi-arrow-right-square"></i> </a>
                                 </div>
                             </div>
-            {{-- imagenes noticias --}}
+                                {{-- imagenes noticias --}}
                             <div class="col-6 noticia">
-                                <div class="col-img-noti">
-                                    @if($var>1)
-                                   
-                                    <div class="splide slider2" >
-                                        <div class="splide__slider">
-                                            <div class="splide__track">
-                                                <ul class="splide__list"> 
-                                                    <?php $porciones = explode(",", $noticias->imagenes);
-                                                        foreach($porciones as $porcion){?>                                      
-                                                            <li class="splide__slide">
-                                                                <img src="images/noticias/<?php echo $porcion?>" alt="">
-                                                               
-                                                            </li>
-                                                    <?php } ?>
-                                                </ul>
-                                            </div>    
+                                @if($var>1)
+                                    <div class="james">
+                                        <div class="swiper mySwiper">
+                                            <div class="swiper-wrapper">
+                                                <?php $porciones = explode(",", $noticias->imagenes);?>
+                                                @foreach($porciones as $porcion)
+                                                    <div class="swiper-slide">
+                                                        <img src="images/noticias/<?php echo $porcion?>" alt=""
+                                                        class="responsive-img materialboxed">
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                            {{-- <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div> --}}
                                         </div>
                                     </div>
                                     @else
                                         <div class="una">
-                                            <img class="img_noticia"src="images/noticias/{{$noticias->imagenes}}" alt="">
+                                            <img class="img_noticia"src="images/noticias/{{$noticias->imagenes}}"
+                                            alt=""class="responsive-img materialboxed">
                                         </div>
                                     @endif
-                                </div>
+                                
                             </div>
                        
                      @endforeach
@@ -920,8 +925,13 @@
         </div>
     </main>
 
-    <script src="{{-- asset('js/modal.js') --}}"></script>
+    
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="{{ asset('js/new.js') }}"></script>
+    <script src="{{ asset('js/swiper.js') }}"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 
 @endsection

@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Banner;
 use App\Models\Content;
-
 use App\Models\Formacion;
 use App\Models\User;
 use App\Models\Empresa;
+use App\Models\Galeria;
 use Illuminate\Support\Facades\Redirect;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
@@ -131,7 +131,7 @@ class IndexController extends Controller
         $formatos = $formato == $formato1;
 
 
-        return view('inicio.index', compact('contenido', 'noticia', 'card',
+        return view('inicio.index',compact('contenido','noticia', 'card',
          'formacion', 'listap', 'lista', 'formato1', 'formato', 'fecha_hoy', 'formatos'));
     }
 
@@ -158,12 +158,34 @@ class IndexController extends Controller
 
     public function noticia()
     {
-       
         $not = Noticia::where('estado', '1')
         ->get();
+        Log::info(gettype($not));
         return view('inicio.noticia', compact('not'));
     }
 
+
+    public function galeria()
+    {
+        $galeria = Galeria::where('estado', '1')
+        ->orderBy('updated_at', 'desc')
+        ->get();
+
+        $imagen = Galeria::where('estado', '1')
+        ->select('imagenes')
+        ->orderBy('updated_at', 'desc')
+        ->get();
+        
+        $foto =[];
+        foreach ($imagen as $imagenes)
+        {
+           $a=explode(",", $imagenes->imagenes);
+           $b=$a[0];
+           array_push($foto,$b);
+        }
+       
+        return view('inicio.galeria', compact('galeria','foto'));
+    }
 
 
     /*vistas portales */

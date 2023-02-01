@@ -1,4 +1,4 @@
-@extends('layouts.nav')
+@extends('layouts.plantilla')
 
 @section('title', 'Noticias')
 
@@ -40,7 +40,7 @@
                                         <div class="modal-content">
                                         {{-- contenido --}}
                                             {{-- TITULO MODAL --}}
-                                            <div class="modal-header">                                                                            
+                                            <div class="modal-header">
                                                 <header style="" class="h2">
                                                     {{ $noticias->titulo }}</header>
                                                 <button type="button" class="close"
@@ -48,8 +48,8 @@
                                             </div>
                                             {{-- ************* --}}
                                         <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-auto">                    
+                                            
+                                                <div class="col-auto">
                                                     <div class="row">
                                                         {{-- CUERPO MODAL --}}
                                                         <div class="col-md-8">
@@ -63,33 +63,42 @@
                                                         {{-- ************ --}}
                                                         {{-- IMAGEN MODAL --}}
                                                         <div class="col">
-                                                            
-                                                                <div class="col-img-noti">
-                                                                    
-                                                                    @if($var > 1)
-                                                                    
-                                                                        <section class="splide"  data-splide='{"type":"loop","perPage":3,"arrows":true,"autoplay":true,"pagination":false,"height":"40rem","direction":"ttb"}'>
-                                                                            <div class="splide__track">                                        
-                                                                                <ul class="splide__list"> 
-                                                                                    <?php foreach($imgs as $img){?>                                      
-                                                                                            <li class="splide__slide">
-                                                                                                <img src="../images/noticias/<?php echo $img?>" alt="">
-                                                                                            </li>
-                                                                                    <?php } ?>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </section>
-                                                                    @else
-                                                                        <div class="dos">
-                                                                            <img src="../images/noticias/{{$noticias->imagenes}}" alt="">
+                                                                @if($var > 1)
+                                                                    <section class="splide"
+                                                                    data-splide='{
+                                                                            "type":"loop",
+                                                                            "perPage":3,
+                                                                            "arrows":true,
+                                                                            "autoplay":true,
+                                                                            "pagination":false,
+                                                                            "height":"40rem",
+                                                                            "direction":"ttb"}'>
+                                                                        <div class="splide__track">
+                                                                            <ul class="splide__list">
+                                                                                @foreach($imgs as $img)
+                                                                                    <li class="splide__slide">
+                                                                                        <img
+                                                                                        src="../images/noticias/<?php echo$img?>"
+                                                                                        alt="">
+                                                                                    </li>
+                                                                                @endforeach
+                                                                            </ul>
                                                                         </div>
-                                                                    @endif    
-                                                                </div>
+                                                                    </section>
+                                                                @else
+                                                                    <div class="dos">
+                                                                        <img style="max-width: 100%;
+                                                                        max-height: 100%;"
+                                                                        src="../images/noticias/{{$noticias->imagenes}}"
+                                                                         alt="">
+                                                                    </div>
+                                                                @endif
                                                         </div>
                                                         {{-- ************ --}}
                                                     </div>
                                                 </div>
-                                            </div>
+
+                                            
                                         </div>
                                         {{-- /contenido --}}
                                         </div>
@@ -108,34 +117,27 @@
                     <div class="vermaa" style="padding-top: 10%; padding-left:76%">
                         {{$noticias->updated_at}}
                     </div>
-
-                    {{-- <div>
-                        <p>
-                            {{$noticias->updated_at}}
-                        </p>
-                    </div> --}}
-
             </div>
-                
-                <div class="col-6 noticiaa">
-                    
+                <div class="col-6 noticia">
                         @if($var>1)
-                            <section class="splide slider1" data-splide='{"type":"loop","perPage":1,"arrows":true,"pagination":false}'>
-                                
-                                <div class="splide__track">                                        
-                                    <ul class="splide__list">
-                                        <?php $porciones = explode(",", $noticias->imagenes);
-                                            foreach($porciones as $porcion){?>                                      
-                                                <li class="splide__slide">
-                                                    <img src="../images/noticias/<?php echo $porcion?>" class="" alt="">
-                                                </li>
-                                        <?php } ?>
-                                    </ul>  
+                            <div class="james">
+                                <div class="swiper mySwiper">
+                                    <div class="swiper-wrapper">
+                                        @php $porciones = explode(",", $noticias->imagenes);@endphp
+                                        @foreach($porciones as $porcion)
+                                            <div class="swiper-slide">
+                                                <img  src="../images/noticias/<?php echo $porcion?>"
+                                                alt=""class="responsive-img materialboxed">
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                    {{-- <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div> --}}
                                 </div>
-                            </section>
+                            </div>
                         @else
-                            <div class="una">
-                                <img class="img_noticia"src="../images/noticias/{{$noticias->imagenes}}" alt="">
+                            <div class="una" >
+                                <img src="../images/noticias/{{$noticias->imagenes}}" alt="">
                             </div>
                         @endif
                 </div>
@@ -161,7 +163,20 @@
             return new bootstrap.Tooltip(tooltipTriggerEl)
         })
     </script>
-    <script src="{{ asset('../js/splider.js') }}"></script>
-    <script src="{{ asset('../js/new.js') }}"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{{ asset('js/swiper_noti.js') }}"></script>
+    <script src="{{ asset('js/splider.js') }}"></script>
+    <script src="{{ asset('js/swiper.js') }}"></script> --}}
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{{ asset('js/new.js') }}"></script>
+    <script src="{{ asset('js/swiper.js') }}"></script>
+    <script src="{{ asset('js/splider.js') }}"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
 
 @endsection

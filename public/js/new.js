@@ -49,21 +49,7 @@ var swiper = new Swiper('.swiper-container', {
 		
 		
 	} ).mount();
-	new Splide( '.slider2',{
-		
-		perPage: 1,
-		focus  : 0,
-		omitEnd: true,
-		type    : 'loop',
-		arrows: true,
-		autoplay: true,
-		pagination: false,
-		snap:  false,
-		
-		
-		
-	} ).mount();
-	new Splide( '.slider3' ).mount();
+	
 
 
 	

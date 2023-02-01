@@ -22,13 +22,20 @@
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/splider-js.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/swiper_noti.css') }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     {{-- splider js --}}
-    {{-- <link rel="stylesheet" href="url-to-cdn/splide.min.css"> --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.6/dist/css/themes/splide-skyblue.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
+    {{-- ********************************** --}}
+    {{-- swiper js --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    {{-- ********************************** --}}
+    {{-- overlay --}}
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> --}}
     {{-- ********************************** --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -44,6 +51,8 @@
 
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
 
 
 </head>
@@ -100,6 +109,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#redapoyo">Red De Apoyo</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ route('inicio.galeria') }}">Galeria</a>
+                    </li>
 
                 </ul>
 
@@ -111,7 +123,7 @@
                 
                 <div class="pr-3">
                     @if (auth()->user()->foto)
-                    <img src="images/fotos/{{auth()->user()->foto}}" alt="" class="usuario">
+                    <img src="../images/fotos/{{auth()->user()->foto}}" alt="" class="usuario">
 
                     @else   
                     <img src="{{asset('images/fotonone.jpg')}}" class="usuario" alt="">

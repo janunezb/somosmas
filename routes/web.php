@@ -97,6 +97,10 @@ Route::post('inicio/import-users', [IndexController::class, 'uploadUsers'])
     ->middleware('auth')
     ->name('inicio.import');
 
+Route::get('inicio/galeria', [IndexController::class, 'galeria'])
+->middleware('auth')
+->name('inicio.galeria');
+
 
 
 
