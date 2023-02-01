@@ -104,6 +104,11 @@ Route::get('inicio/contrasena', [IndexController::class, 'contrasena'])
 Route::post('inicio/cambiocontrasena', [IndexController::class, 'cambiocontrasena'])
     ->middleware('auth')
     ->name('inicio.cambiocontrasena');
+    
+Route::get('inicio/galeria', [IndexController::class, 'galeria'])
+->middleware('auth')
+->name('inicio.galeria');
+
 
 
 

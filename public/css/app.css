@@ -677,17 +677,22 @@ nuevaa{
 }
 
 .noticia img{
-    
     text-align: center;
     align-items: center;
     border-radius: 10px;
     object-fit: cover;
-    width: 100%;
-    height: 100%;
-
-
+    max-width: 500px;
+    max-height: 500px; 
+    
 }
-
+@supports(object-fit: cover){
+    .noticia img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    
+    }
+  }
 
 .model-content{
     opacity: 0;
@@ -773,10 +778,29 @@ nuevaa{
 }
 
 .carrusel-itemm img {
-    width: 100%;
-    height: 100%;
+    
+    max-width: 100%;
+    max-height: 100%;
     object-fit: cover;
 
+}
+
+.card_img{
+
+    height: 200px;
+
+}
+.card_img img{
+    width: 100%;
+    height: auto;
+  }
+@supports(object-fit: cover){
+    .card img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    
+    }
 }
 
 .carrusel-itemms{
