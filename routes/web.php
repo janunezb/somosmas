@@ -97,6 +97,13 @@ Route::post('inicio/import-users', [IndexController::class, 'uploadUsers'])
     ->middleware('auth')
     ->name('inicio.import');
 
+Route::get('inicio/contrasena', [IndexController::class, 'contrasena'])
+    ->middleware('auth')
+    ->name('inicio.contrasena');
+
+Route::post('inicio/cambiocontrasena', [IndexController::class, 'cambiocontrasena'])
+    ->middleware('auth')
+    ->name('inicio.cambiocontrasena');
 
 
 

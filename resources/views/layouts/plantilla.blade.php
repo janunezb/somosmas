@@ -29,6 +29,7 @@
     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"> </script>
 </head>
 
 <body>
@@ -57,10 +58,14 @@
                     </li>
                 </ul>
 
+            
                 <div class="pr-2">
-                    <a class="pr-2 text-white" style="text-decoration: none">Bienvenido: <b>
+                
+                    <a class="text-white" style="text-decoration: none">Bienvenido: <b>
                             {{ auth()->user()->nombre }}</b></a>
+                            
                 </div>
+                
                 <div class="pr-3">
                     @if (auth()->user()->foto)
                     <img src="../images/fotos/{{auth()->user()->foto}}" alt="" class="usuario">
@@ -68,11 +73,19 @@
                     <img src="{{asset('images/fotonone.jpeg')}}" class="usuario" alt="">
                     @endif
                 </div>
-                <form class="d-flex">
-                    <a class="btn btn-danger" href="{{ route('login.destroy') }}" role="button">Cerrar Sesión</a>
-                </form>
-            </div>
 
+                <li class="nav-link dropdown">
+                    <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none"></a>
+                        <ul class="dropdown-menu bg" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" style="" href="{{ route('inicio.contrasena') }}">
+                            Cambiar Contraseña</a></li>
+                            <li><a class="dropdown-item" id="sesion" style="" href="{{ route('login.destroy') }}">
+                            Cerrar Sesión</a></li>
+                        </ul>
+                </li>
+
+            </div>
+            
             <a href="https://api.whatsapp.com/send?phone=57{{ env('NUMBER_WHASTAPP') }}" class="bt-wsp"
                 target="_blank">
                 <i class="bi bi-whatsapp"></i>

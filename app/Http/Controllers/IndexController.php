@@ -24,9 +24,11 @@ use Carbon\Carbon;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Log;
+
 
 class IndexController extends Controller
 {
@@ -164,6 +166,43 @@ class IndexController extends Controller
         return view('inicio.noticia', compact('not'));
     }
 
+    public function contrasena()
+    {
+        return view('inicio.contrasena');
+    }
+
+    public function cambiocontrasena(Request $request){
+        $user           = Auth::user();
+        $userId         = $user->id;
+        $userPassword   = $user->password;
+        
+        $NewPass        = $request->password;
+        $confirPass     = $request->confirm_password;
+            
+
+            //verifica si la clave actual es la misma del usuario en sesión
+            if (Hash::check($request->password_actual, $userPassword)){
+
+                //valida que la nueva contraseña 1 y 2 sean iguales
+                if ($NewPass == $confirPass){
+                    //valido que la clave no sea menor a 8 digitos FALTA MENOR A 15
+                    if(strlen($NewPass) >=8){
+                        $user->password = Hash::make($request->password);
+                        $sqlBD = DB::table('users')
+                            ->where('id', $user->id)
+                            ->update(['password' => $user->password]);
+                        
+                        return redirect()->back()->with('updateClave','La clave fue cambiada correctamente.');
+                    }else{
+                        return redirect()->back()->with('clavemenor','Recuerda: La clave debe ser mayor a 8 digitos.');
+                    }
+                }else{
+                    return redirect()->back()->with('claveIncorrecta','Por favor verifica: Las claves no coinciden.');
+                }
+            }else{
+                return back()->withErrors(['password_actual'=>'Por favor verifica: La clave actual no coincide']);
+            }
+    }
 
 
     /*vistas portales */
