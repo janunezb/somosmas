@@ -20,7 +20,7 @@
         <div class="form-body">
             <div class="single-input-item">
             <label name="form" for="password_actual" class="required">Contraseña Actual</label>
-                <input type="password" id="_passwordactual" name="password_actual" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white @error('password_actual') is-invalid @enderror" required>
+                <input type="password" id="_passwordactual" maxlength="15" name="password_actual" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white @error('password_actual') is-invalid @enderror" required>
                 @error('password_actual')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -30,7 +30,7 @@
 
             <div class="single-input-item">
             <label for="new_password" class="required">Nueva Contraseña</label>
-                <input type="password" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white @error('password') is-invalid @enderror" id="_password" name="password" required>
+                <input type="password" maxlength="15" minlength="8" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white @error('password') is-invalid @enderror" id="_password" name="password" required>
                 <p class="caracteres">Min 8 caracteres - Max 15 caracteres - sin espacios</p>
                 @error('password')
                 <span class="invalid-feedback" role="alert">
@@ -41,7 +41,7 @@
 
             <div class="single-input-item">
             <label for="confirm_password" class="required">Confirma tu Nueva Contraseña</label>
-                <input type="password" class="border border-gray-00 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white @error('confirm_password') is-invalid @enderror" id="_confirm_password" name="confirm_password" required>
+                <input type="password" maxlength="15" minlength="8" class="border border-gray-00 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white @error('confirm_password') is-invalid @enderror" id="_confirm_password" name="confirm_password" required>
                 @error('confirm_password')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
