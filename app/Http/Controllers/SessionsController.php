@@ -20,6 +20,7 @@ class SessionsController extends Controller
 
         $user = User::where('documento', $request->documento)->first();
 
+
         if ($user->password === sha1($request->password)) {
             Auth::login($user);
 

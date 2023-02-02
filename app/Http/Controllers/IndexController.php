@@ -188,7 +188,7 @@ class IndexController extends Controller
             
 
             //verifica si la clave actual es la misma del usuario en sesión
-            if (Hash::check($request->password_actual, $userPassword)){
+            if (sha1($request->$confirmActual, $userPassword)){
 
                 //valida que la nueva contraseña 1 y 2 sean iguales
                 if ($NewPass == $confirPass){
