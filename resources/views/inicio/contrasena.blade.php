@@ -19,7 +19,7 @@
         </div>
         <div class="form-body">
             <div class="single-input-item">
-            <label for="password_actual" class="required">Contraseña Actual</label>
+            <label name="form" for="password_actual" class="required">Contraseña Actual</label>
                 <input type="password" id="_passwordactual" name="password_actual" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white @error('password_actual') is-invalid @enderror" required>
                 @error('password_actual')
                 <span class="invalid-feedback" role="alert">
@@ -53,6 +53,10 @@
         </div>
     </form>
     <script>
+        $("#_passwordactual").keyup(function(){
+            let string = $("#_passwordactual").val();
+            $("#_passwordactual").val(string.replace(/ /g, ""))
+        })
         $("#_password").keyup(function(){
             let string = $("#_password").val();
             $("#_password").val(string.replace(/ /g, ""))

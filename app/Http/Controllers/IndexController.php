@@ -178,36 +178,45 @@ class IndexController extends Controller
         
         $NewPass        = $request->password;
         $confirPass     = $request->confirm_password;
-        $confirmActual = sha1($request->password_actual);
+        $confirmActual  = sha1($request->password_actual);
 
-        Log::info("Entra a cambio contraseña");
-        Log::info("Usuario:" . $userPassword);
-        Log::info("Ingreso actual:" . $confirmActual);
+        // Log::info("Entra a cambio contraseña");
+        // Log::info("Usuario:" . $userPassword);
+        // Log::info("Ingreso actual:" . $confirmActual);
 
-        ($userPassword == $confirmActual) ?  Log::info("Las contraseñas coinciden") :  Log::info("La contraseña es diferente");
+        // ($userPassword == $confirmActual) ?  Log::info("Las contraseñas coinciden") :  Log::info("La contraseña es diferente");
             
 
-            //verifica si la clave actual es la misma del usuario en sesión
-            if (sha1($request->$confirmActual, $userPassword)){
-
+            //valida si la clave actual es la misma del usuario en sesión
+            if ($confirmActual == $userPassword){
+                
                 //valida que la nueva contraseña 1 y 2 sean iguales
                 if ($NewPass == $confirPass){
-                    //valido que la clave no sea menor a 8 digitos FALTA MENOR A 15
-                    if(strlen($NewPass) >=8){
-                        $user->password = Hash::make($request->password);
-                        $sqlBD = DB::table('users')
+                    
+                    //valida que la clave no sea menor a 8 digitos
+                    if(strlen($NewPass) >=8) {
+
+                        //valida que la clave no sea mayor a 15 digitos     
+                        if(strlen($NewPass) <=15){
+                           
+                            $user->password = ($request->password);
+                            $sqlBD = DB::table('users')
                             ->where('id', $user->id)
                             ->update(['password' => $user->password]);
-                        
-                        return redirect()->back()->with('updateClave','La clave fue cambiada correctamente.');
+                            return back()->withErrors(['password_actual'=>'Felicitaciones, tu clave ha sido cambiada exitosamente.']);
+
+                        }else{
+
+                        }return back()->withErrors(['password'=>'Por favor verifica: La clave nueva deben tener máximo 15 dígitos.']);
+
                     }else{
-                        return redirect()->back()->with('clavemenor','Recuerda: La clave debe ser mayor a 8 digitos.');
+                        return back()->withErrors(['password'=>'Por favor verifica: La clave nueva deben tener mínimo 8 dígitos.']);
                     }
                 }else{
-                    return redirect()->back()->with('claveIncorrecta','Por favor verifica: Las claves no coinciden.');
+                    return back()->withErrors(['password'=>'Por favor verifica: La claves nuevas no coinciden.']);
                 }
             }else{
-                return back()->withErrors(['password_actual'=>'Por favor verifica: La clave actual no coincide']);
+                return back()->withErrors(['password_actual'=>'Por favor verifica: La clave actual no coincide.']);
             }
     }
 
