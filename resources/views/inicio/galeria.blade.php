@@ -41,26 +41,44 @@
                 <div class="modal fade bd-example-modal-xl" id="myModal<?php echo $cant; ?>" tabindex="-1" role="dialog"
                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-xl">
-                        <div class="modal-content justify-content-center">
-                            <div class="modal-header">
+                        <div class="modal-content justify-content-center" style="background-color:rgba(0,0,0,0);">
+                            <!--div class="modal-header">
                                 <header class="h2">
                                     {{ $galerias->titulo }}
                                 </header>
                                 <button type="button" class="close" data-dismiss="modal">
                                     &times;</button>
-                            </div>
-
-                            <div class="swiper-container swiper">
-                                <div class="swiper-wrapper">
-                                    @foreach ($imgs as $img)
-                                        <div class="swiper-slide"
-                                            style=" display:flex; justify-content: center; align-items: center;">
-                                            <img src="../images/galeria1/<?php echo $img; ?>"
-                                                alt=""class="responsive-img materialboxed">
-                                        </div>
-                                    @endforeach
+                            </div-->
+                            <div style=" display:flex; justify-content:
+                                center; align-items: center;
+                                padding:20px; height: 800px;">
+                                <div id="carouselExampleControls{{ $galerias->id }}"
+                                    class="carousel slide col-6 noticia" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                            <?php $porciones = explode(',', $galerias->imagenes); ?>
+                                            @for ($i = 0; $i < count($porciones); $i++)
+                                                <div class="{{ $i == 0 ? 'active' : '' }}  carousel-item">
+                                                    <img class="d-block w-100"
+                                                    src="../images/galeria1//{{ $imgs[$i] }}"
+                                                    class="pl-4" style="max-height: 750px" alt="">
+                                                </div>
+                                            @endfor
+                                            <a class="carousel-control-prev"
+                                            href="#carouselExampleControls{{ $galerias->id }}"
+                                                role="button"
+                                                data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next"
+                                                href="#carouselExampleControls{{ $galerias->id }}"
+                                                 role="button"
+                                                data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                    </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
