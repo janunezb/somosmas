@@ -21,8 +21,8 @@
         <div class="form-body">
             <div class="single-input-item">
             <label for="password_actual" class="required">Contraseña Actual</label>
-                <span class="icon-eye"><i class="fa-solid fa-eye-slash"></i></span>
-                <input type="password" id="_passwordactual" maxlength="15" name="password_actual" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white @error('password_actual') is-invalid @enderror" value="{{ old('password_actual')}}" >
+                <span class="icon-eye1"><i class="fa-solid fa-eye-slash"></i></span>
+                <input type="password" id="_passwordactual" maxlength="15" name="password_actual" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white @error('password_actual') is-invalid @enderror" required>
                 
             </div>
     

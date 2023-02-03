@@ -178,7 +178,13 @@ class IndexController extends Controller
         
         $NewPass        = $request->password;
         $confirPass     = $request->confirm_password;
-        $confirmActual  = sha1($request->password_actual);            
+        $confirmActual  = sha1($request->password_actual); 
+
+        // Log::info("Entra a cambio contraseña");
+        // Log::info("Usuario:" . $userPassword);
+        // Log::info("Ingreso actual:" . $confirmActual);
+
+        // ($userPassword == $confirmActual) ?  Log::info("Las contraseñas coinciden") :  Log::info("La contraseña es diferente");           
 
             //valida si la clave actual es la misma del usuario en sesión
             if ($confirmActual == $userPassword){

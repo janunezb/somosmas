@@ -3086,7 +3086,7 @@ textarea.form-control-lg {
   position: relative;
 }
 
-.icon-eye{
+.icon-eye1{
   position: absolute;
   right: 20px;
   top: 67%;
@@ -3095,7 +3095,7 @@ textarea.form-control-lg {
   transition: 0.4s ease all;
 }
 
-.icon-eye:hover{
+.icon-eye1:hover{
   color: #ff0080;
 }
 
@@ -3125,6 +3125,18 @@ textarea.form-control-lg {
   color: #ff0080;
 }
 
+.icon-eye{
+  position: absolute;
+  right: 20px;
+  top: 67%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: 0.4s ease all;
+}
+
+.icon-eye:hover{
+  color: #ff0080;
+}
 
 
 

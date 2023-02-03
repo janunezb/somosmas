@@ -15,22 +15,25 @@ class SessionsController extends Controller
         return view('auth.login');
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request){
 
-        $user = User::where('documento', $request->documento)->first();
+        if($user = User::where('documento', $request->documento)->first()){
 
-
-        if ($user->password === sha1($request->password)) {
-            Auth::login($user);
-
-            return redirect()->to('inicio');
+            if ($user->password === sha1($request->password)) {
+                Auth::login($user);
+                return redirect()->to('inicio');
+            }else{
+                return back()->withErrors(['message' => 'Por favor verifica: Contraseña no coincide con tu usuario ']);
+            }
+        }else{
+            return back()->withErrors(['message' => 'Por favor verifica: Cédula no existe ']);
         }
-        return back()->withErrors([
-            'message' => 'La cédula no existe.'
-        ]);
+        
     }
+       
+        
 
+   
 
 
     public function destroy()
