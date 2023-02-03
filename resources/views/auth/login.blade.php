@@ -11,10 +11,17 @@
     <form action="" class="mt-4" method="POST">
 
     @csrf
-    
-        <input type="text" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Número de cédula" id="cedula" name="documento">
-        
-        <input type="password" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Ingresa tu contraseña" id="password" name="password">
+    <div class="">
+        <div class="single-input-item">
+            <label for="cedula" >Usuario</label>
+            <input type="text" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Número de cédula" id="cedula" name="documento">
+        </div>
+        <br>
+        <div class="single-input-item">
+            <label for="cedula" >Contraseña</label>
+            <span class="icon-eye3"><i class="fa-solid fa-eye-slash"></i></span>
+            <input type="password" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Ingresa tu contraseña" id="password" name="password">
+        </div>
     
     @error('message')
     <p class="border border-red-500 rounded-md bg-red-100 w-full text-red-600 p-2 my-2">
