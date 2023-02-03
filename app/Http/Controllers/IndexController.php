@@ -178,14 +178,7 @@ class IndexController extends Controller
         
         $NewPass        = $request->password;
         $confirPass     = $request->confirm_password;
-        $confirmActual  = sha1($request->password_actual);
-
-        // Log::info("Entra a cambio contraseña");
-        // Log::info("Usuario:" . $userPassword);
-        // Log::info("Ingreso actual:" . $confirmActual);
-
-        // ($userPassword == $confirmActual) ?  Log::info("Las contraseñas coinciden") :  Log::info("La contraseña es diferente");
-            
+        $confirmActual  = sha1($request->password_actual);            
 
             //valida si la clave actual es la misma del usuario en sesión
             if ($confirmActual == $userPassword){
@@ -196,24 +189,17 @@ class IndexController extends Controller
                     //valida que la clave no sea menor a 8 digitos
                     if(strlen($NewPass) >=8) {
 
-                        //valida que la clave no sea mayor a 15 digitos     
-                        if(strlen($NewPass) <=15){
-                           
                             $user->password = ($request->password);
                             $sqlBD = DB::table('users')
                             ->where('id', $user->id)
                             ->update(['password' => $user->password]);
-                            return back()->withErrors(['password_actual'=>'Felicitaciones, tu clave ha sido cambiada exitosamente.']);
-
-                        }else{
-
-                        }return back()->withErrors(['password'=>'Por favor verifica: La clave nueva deben tener máximo 15 dígitos.']);
+                            return back()->withErrors(['cambio'=>'Felicitaciones, tu clave ha sido cambiada exitosamente.']);
 
                     }else{
-                        return back()->withErrors(['password'=>'Por favor verifica: La clave nueva deben tener mínimo 8 dígitos.']);
+                        return back()->withErrors(['confirm_password'=>'Por favor verifica: Las claves nuevas deben tener mínimo 8 dígitos.']);
                     }
                 }else{
-                    return back()->withErrors(['password'=>'Por favor verifica: La claves nuevas no coinciden.']);
+                    return back()->withErrors(['confirm_password'=>'Por favor verifica: La claves nuevas no coinciden.']);
                 }
             }else{
                 return back()->withErrors(['password_actual'=>'Por favor verifica: La clave actual no coincide.']);

@@ -267,7 +267,8 @@
 
 .caracteres{
     font-size: 10px;
-    color: black;
+    color: rgb(168, 162, 162);
+    margin: 0px 0px 0px;
 }
 
 #sesion{
@@ -285,6 +286,4 @@
     width: 400px;
  }
 
- body {
-    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
-  }
+ 
