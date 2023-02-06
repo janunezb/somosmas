@@ -23,10 +23,10 @@ class SessionsController extends Controller
                 Auth::login($user);
                 return redirect()->to('inicio');
             }else{
-                return back()->withErrors(['message' => 'Por favor verifica: Contraseña no coincide con tu usuario ']);
+                return back()->withErrors(['message' => 'El usuario y/o contraseña son incorrectos.']);
             }
         }else{
-            return back()->withErrors(['message' => 'Por favor verifica: Cédula no existe ']);
+            return back()->withErrors(['message' => 'Usuario no encontrado, contacta al administrador.']);
         }
         
     }
