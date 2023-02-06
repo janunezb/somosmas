@@ -25,7 +25,8 @@ Route::post('/register', [RegisterController::class, 'store'])
 //Interfaz Login
 
 Route::get('/login', [SessionsController::class, 'create'])
-        -> name('login.index');
+        -> name('login.index')
+        ->middleware('guest');
 
 Route::post('/login', [SessionsController::class, 'store'])
         -> name('login.store');
@@ -39,6 +40,7 @@ Route::get('/logut', [SessionsController::class, 'destroy'])
 
 Route::get('inicio/portales/portal-liwa', [AdminController::class, 'index'])
 ->middleware('auth.admin')
+
 -> name('admin.index');
 
 Route::get('inicio/portales/portal-sunco', [AdminController::class, 'sunco'])
