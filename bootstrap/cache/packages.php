@@ -28,6 +28,13 @@
       'Invoice' => 'Genert\\BBCode\\Facades\\BBCode',
     ),
   ),
+  'jeroennoten/laravel-adminlte' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'JeroenNoten\\LaravelAdminLte\\AdminLteServiceProvider',
+    ),
+  ),
   'laravel/sail' => 
   array (
     'providers' => 
