@@ -15,17 +15,18 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'home'])
         -> name('home');
 
-Route::get('/register', [RegisterController::class, 'create'])
-        -> name('register.index');
+// Route::get('/register', [RegisterController::class, 'create'])
+//         -> name('register.index');
 
-Route::post('/register', [RegisterController::class, 'store'])
-        -> name('register.store');
+// Route::post('/register', [RegisterController::class, 'store'])
+//         -> name('register.store');
 
 
 //Interfaz Login
 
 Route::get('/login', [SessionsController::class, 'create'])
-        -> name('login.index');
+        -> name('login.index')
+        ->middleware('guest');
 
 Route::post('/login', [SessionsController::class, 'store'])
         -> name('login.store');
@@ -33,12 +34,15 @@ Route::post('/login', [SessionsController::class, 'store'])
 Route::get('/logut', [SessionsController::class, 'destroy'])
         -> name('login.destroy');
 
+
+
 //permisos
 
 
 
 Route::get('inicio/portales/portal-liwa', [AdminController::class, 'index'])
 ->middleware('auth.admin')
+
 -> name('admin.index');
 
 Route::get('inicio/portales/portal-sunco', [AdminController::class, 'sunco'])
@@ -56,7 +60,11 @@ Route::get('inicio/portales/portal-navega', [AdminController::class, 'navega'])
 
 
 
+//Interfaz Admin
 
+Route::get('/admin', [AdminController::class, 'index'])
+    ->middleware('auth')        
+    ->name('admin.dashboard');
 
 
 
@@ -106,8 +114,8 @@ Route::post('inicio/cambiocontrasena', [IndexController::class, 'cambiocontrasen
     ->name('inicio.cambiocontrasena');
     
 Route::get('inicio/galeria', [IndexController::class, 'galeria'])
-->middleware('auth')
-->name('inicio.galeria');
+    ->middleware('auth')
+    ->name('inicio.galeria');
 
 
 
@@ -133,19 +141,19 @@ Route::get('inicio/portales/portal-liwa/etapa20', [IndexController::class, 'etap
 // Vistas Portal navega
 
 Route::get('inicio/portales/portal-navega/etapa5n', [IndexController::class, 'etapa5navega'])
-->middleware('auth.admin1')
+->middleware('auth')
 ->name('admin.etapa5navega');
 
 Route::get('inicio/portales/portal-navega/etapa10n', [IndexController::class, 'etapa10navega'])
-->middleware('auth.admin1')
+->middleware('auth')
 ->name('admin.etapa10navega');
 
 Route::get('inicio/portales/portal-navega/etapa15n', [IndexController::class, 'etapa15navega'])
-->middleware('auth.admin1')
+->middleware('auth')
 ->name('admin.etapa15navega');
 
 Route::get('inicio/portales/portal-navega/etapa20n', [IndexController::class, 'etapa20navega'])
-->middleware('auth.admin1')
+->middleware('auth')
 ->name('admin.etapa20navega');
 
 // Vistas Portal libre
