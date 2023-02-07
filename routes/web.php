@@ -66,6 +66,11 @@ Route::get('/admin', [AdminController::class, 'index'])
     ->middleware('auth')        
     ->name('admin.dashboard');
 
+Route::get('/admin/users', [AdminController::class, 'users'])
+    ->middleware('auth')        
+    ->name('admin.users');
+
+
 
 
 
