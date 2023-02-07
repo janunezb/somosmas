@@ -6,31 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
 
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-icons.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.icons-1.8.css')}}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/splider-js.css') }}">
     <link rel="stylesheet" href="{{ asset('css/swiper_noti.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min-5.2.css')}}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min-4.6.css')}}">
     <link rel="stylesheet" href="{{ asset('css/splide-skyblue.min.css') }}">
-
-    <!-- INICIO  -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/swiper-9.0.bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.icons-1.10.css')}}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/materialize.min.css') }}"> --}}
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"> </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <!-- FIN  -->
-
-    <script src="{{ asset('js/sweetalert.js') }}"></script>
-    <script src="{{ asset('js/iconify.min.js') }}"></script>
+    
+    <script src="{{ asset('js/swiper.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/splide.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-5.1.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.slim.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"> </script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/fontawesome.js') }}"></script>
+    <script src="{{ asset('js/iconify.min.js') }}"></script>
+    <script src="{{ asset('js/sweetalert.js') }}"></script>
+
 </head>
 
 <body>
@@ -82,11 +82,11 @@
                 <li class="nav-link dropdown p-0">
                     <a class="nav-link dropdown-toggle text-white mr-5 pt-2 mt-2" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none"></a>
                         <ul class="dropdown-menu bg" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" style="" href="{{ route('inicio.contrasena') }}">
+                            <li><a class="dropdown-item mr-3" style="" href="{{ route('inicio.contrasena') }}">
                             Cambiar Contraseña</a></li>
                             <li><a class="dropdown-item" id="sesion" style="" href="{{ route('login.destroy') }}">
                             Cerrar Sesión</a></li>
-                        </ul>
+                        </ul>   
                 </li>
 
             </div>

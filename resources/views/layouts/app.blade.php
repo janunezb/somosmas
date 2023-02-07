@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/splider-js.css') }}">
     <link rel="stylesheet" href="{{ asset('css/swiper_noti.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/swiper-9.0.bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.icons-1.10.css') }}">
     
     <script src="{{ asset('js/iconify.min.js') }}"></script>
     <script src="{{ asset('js/fontawesome.js') }}"></script>
