@@ -954,13 +954,13 @@ nuevaa{
 
 .carrusel-itemsss::-webkit-scrollbar-thumb {
     background-color: #FF0083;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .carrusel-itemmms{
-    padding: 10px;
-    min-width: 40%;
-    max-width: 40%;
+    padding: 5px;
+    min-width: 33%;
+    max-width: 35%;
     text-align: center;
     color: #000;
     font-size: medium;
@@ -989,14 +989,10 @@ nuevaa{
     overflow-x: scroll;
     align-items: center;
     align-content: center;
-    justify-content: center;
+    /* justify-content: center; */
     padding-top: 15px;
-    border-right:2px solid #ff0083;
+    /* border-right:2px solid #ff0083; */
     margin-right: 10px;
-
-
-
-
 }
 
 
@@ -1009,22 +1005,19 @@ nuevaa{
 .carrusel-itemsssn::-webkit-scrollbar-thumb {
     background-color: #FF0083;
     border-radius: 10px;
+    max-height: 2px;
 }
-
+.carrusel-itemsssn::-webkit-scrollbar {
+    height: 6px;
+}
 .carrusel-itemmmsn{
-    padding: 10px;
-    min-width: 40%;
+    padding: 5px;
+    min-width: 35%;
     max-width: 40%;
     text-align: center;
     color: #000;
     font-size: medium;
     display: flex;
-
-
-
-
-
-
 
 }
 
