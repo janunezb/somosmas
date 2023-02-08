@@ -93,7 +93,7 @@
                                         @foreach ($listap as $new)
                                             <div class="carrusel-itemmms">
 
-                                                <div class="card" style="height: 28rem;">
+                                                <div class="card" style="height: 28em;">
                                                     <div class="tamaño">
                                                         @if (is_file('images/fotos/'.$new['foto']))
                                                             <img src="images/fotos/{{ $new['foto'] }}" alt="">
