@@ -109,8 +109,9 @@ Route::get('inicio/galeria', [IndexController::class, 'galeria'])
 ->middleware('auth')
 ->name('inicio.galeria');
 
-
-
+Route::put('inicio/update-foto', [IndexController::class, 'cambiofoto'])
+    ->middleware('auth')
+    ->name('inicio.update-foto');
 
 // Vistas Portal Liwa
 

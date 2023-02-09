@@ -25,6 +25,7 @@ use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Log;
@@ -212,6 +213,43 @@ class IndexController extends Controller
             }
     }
 
+    public function cambiofoto(Request $request) {
+
+        $user           = Auth::user();
+        $userId         = $user->id;
+        $userFoto       = $user->foto;
+        $userDoc        = $user->documento;
+
+        $NewFoto        = $request->foto;
+
+        // Log::info($NewFoto);
+
+        $request->validate([
+            'foto' => "image|mimes:jpeg,jpg,png|max:150|"
+        ]);
+
+        if($request->hasfile('foto')){
+            $destino = '../public/images/fotos/'.$userFoto;
+
+            if(File::exists($destino)){
+                File::delete($destino);
+            }
+            $archivo = $request->file('foto');
+            $extension = $archivo ->getClientOriginalExtension();
+            $nombrearchivo = $userDoc.'.'.$extension;
+            $archivo->move('../public/images/fotos/', $nombrearchivo);
+            $userFoto = $nombrearchivo;
+            
+            $sqlBD = DB::table('users')
+            ->where('id', $userId)
+            ->update(['foto' => $userFoto]);
+            return back()->withErrors(['foto1'=>'Felicitaciones, tu foto ha sido cambiada exitosamente.']);
+        }else{
+            return back()->withErrors(['foto2'=>'No ha seleccionado ningún archivo']);
+        }
+        
+    }
+    
     public function galeria()
     {
         $galeria = Galeria::where('estado', '1')

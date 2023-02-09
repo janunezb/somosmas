@@ -234,11 +234,11 @@
     
     text-align: left;
     padding: 20px;
-    width: 500px;
+    width: 400px;
     min-width: 300px;
     border-radius: 10px;
     border: solid 1px;
-    margin: 10px;
+    margin: 20px;
     display: block;
     margin: auto;
     margin-bottom: 50px;
@@ -246,7 +246,7 @@
 }
 
 .form-body input{
-    width: 450px;
+    width: 350px;
     text-align: center;
 }
 
@@ -278,7 +278,17 @@
 .titulo2{
     display: block;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #ff0080;
+    color: white;
+    border-radius: 50px;
+    width: 400px;
+ }
+
+ .titulo3{
+        
+    margin-top: -175px;
     text-align: center;
     background-color: #ff0080;
     color: white;

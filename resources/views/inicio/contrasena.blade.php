@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Cambio de Contraseña')
+@section('title', 'Perfil')
 
 
 @section('content1')
@@ -12,10 +12,10 @@
 
 @section('content')
 
-<div class="block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200 rounded-lg shadow-">
+<div class="container d-flex justify-content-center align-items-center p-5 pr-10">
     <form action="{{ route('inicio.cambiocontrasena')}}" class="needs-validation" method="POST" novalidate>
         @csrf
-        <div class="col-6 offset-3">
+        <div class="col-4">
             <h2 class="titulo2">Cambio de Contraseña</h2>
         </div>
         <div class="form-body">
@@ -67,6 +67,46 @@
             <button type="submit" class="text-white p-2 my-3">Guardar</button>
         </div>
     </form>
+
+    
+    <form action="{{ url('inicio/update-foto/')}}" class="" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
+
+        <div class="col-4">
+            <h2 class="titulo3">Cambio de Foto</h2>
+        </div>
+
+        <div class="form-body">
+            
+            <div class="single-input-item">
+            <label for="foto" class="caracteres">Recuerda: Solo se admiten formato jpg. jpeg. .png y peso menos de 150kb</label>
+                <input type="file" class="border border-gray-00 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white @error('foto') is-invalid @enderror" id="" name="foto">
+                @error('foto')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror               
+            </div>
+
+            <div>
+                <div name="foto1" id="" class="@error('foto1') is-invalid @enderror"></div>
+                @error('foto1')
+                <span class="invalid-feedback" id="cambio" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+
+                <div name="foto2" id="" class="@error('foto2') is-invalid @enderror"></div>
+                @error('foto2')
+                <span class="invalid-feedback" id="" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror                
+            </div>
+
+            <button type="submit" class="text-white p-2 my-3">Guardar</button>
+        </div>
+    </form>
+</div>
     <script>
         $("#_passwordactual").keyup(function(){
             let string = $("#_passwordactual").val();
