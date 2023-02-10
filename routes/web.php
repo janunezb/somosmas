@@ -7,7 +7,7 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\Admin\UserController;
 // Route::get('/', function () {
 //     return view('home');
 // })->middleware('auth');
@@ -62,13 +62,13 @@ Route::get('inicio/portales/portal-navega', [AdminController::class, 'navega'])
 
 //Interfaz Admin
 
-Route::get('/admin', [AdminController::class, 'index'])
-    ->middleware('auth')        
-    ->name('admin.dashboard');
+Route::get('admin', [AdminController::class, 'index'])
+->middleware('auth')
+-> name('admin');
 
-Route::get('/admin/users', [AdminController::class, 'users'])
+Route::resource('admin/users',UserController::class)
     ->middleware('auth')        
-    ->name('admin.users');
+    ->names('admin.users');
 
 
 

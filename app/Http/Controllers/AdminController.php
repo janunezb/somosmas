@@ -11,16 +11,13 @@ class AdminController extends Controller
 
 
     public function index() {
-
-        $usuarios  = User::get();
-
-        return view ('admin.dashboard',compact('usuarios'));
+        return view ('admin.dashboard');
     }
     public function users() {
 
-        $usuarios  = User::get();
+        
 
-        return view ('admin.users',compact('usuarios'));
+        return view ('admin.users');
     }
 
     public function navega() {

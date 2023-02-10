@@ -4,10 +4,12 @@
 
 @section('content_header')
     <h1>Colaboradores</h1>
+    @livewireStyles
 @stop
 
 @section('content')
-    <p>Lista de Colaboradores.</p>
+    
+    <p>@livewire('admin.users-index')</p>
 @stop
 
 @section('css')
@@ -15,5 +17,6 @@
 @stop
 
 @section('js')
+    @livewireScripts
     <script></script>
 @stop
