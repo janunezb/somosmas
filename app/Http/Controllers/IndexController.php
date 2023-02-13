@@ -167,15 +167,22 @@ class IndexController extends Controller
         return view('inicio.noticia', compact('not'));
     }
 
-    public function contrasena()
+    public function editar_perfil()
     {
-        return view('inicio.contrasena');
+        return view('inicio.editar_perfil');
+    }
+
+    public function cambio_foto()
+    {
+        return view('inicio.cambio_foto');
     }
 
     public function cambiocontrasena(Request $request) {
+        
         $user           = Auth::user();
         $userId         = $user->id;
         $userPassword   = $user->password;
+        $userEmpresa    = $user->empresa_id;
         
         $NewPass        = $request->password;
         $confirPass     = $request->confirm_password;
@@ -183,7 +190,7 @@ class IndexController extends Controller
 
         // Log::info("Entra a cambio contraseña");
         // Log::info("Usuario:" . $userPassword);
-        // Log::info("Ingreso actual:" . $confirmActual);
+        // Log::info($userEmpresa);
 
         // ($userPassword == $confirmActual) ?  Log::info("Las contraseñas coinciden") :  Log::info("La contraseña es diferente");           
 
@@ -200,29 +207,27 @@ class IndexController extends Controller
                             $sqlBD = DB::table('users')
                             ->where('id', $user->id)
                             ->update(['password' => $user->password]);
-                            return back()->withErrors(['cambio'=>'Felicitaciones, tu clave ha sido cambiada exitosamente.']);
+                            return back()->withErrors(['cambio'=>'Tu clave ha sido cambiada exitosamente.']);
 
                     }else{
-                        return back()->withErrors(['confirm_password'=>'Por favor verifica: Las claves nuevas deben tener mínimo 8 dígitos.']);
+                        return back()->withErrors(['confirm_password'=>'Las claves nuevas deben tener mínimo 8 dígitos.']);
                     }
                 }else{
-                    return back()->withErrors(['confirm_password'=>'Por favor verifica: La claves nuevas no coinciden.']);
+                    return back()->withErrors(['confirm_password'=>'La claves nuevas no coinciden.']);
                 }
             }else{
-                return back()->withErrors(['password_actual'=>'Por favor verifica: La clave actual no coincide.']);
+                return back()->withErrors(['password_actual'=>'La clave actual no coincide.']);
             }
     }
 
     public function cambiofoto(Request $request) {
-
+        
         $user           = Auth::user();
         $userId         = $user->id;
         $userFoto       = $user->foto;
         $userDoc        = $user->documento;
 
-        $NewFoto        = $request->foto;
-
-        // Log::info($NewFoto);
+        // Log::info($UserDoc);
 
         $request->validate([
             'foto' => "image|mimes:jpeg,jpg,png|max:150|"
@@ -245,10 +250,31 @@ class IndexController extends Controller
             ->update(['foto' => $userFoto]);
             return back()->withErrors(['foto1'=>'Felicitaciones, tu foto ha sido cambiada exitosamente.']);
         }else{
-            return back()->withErrors(['foto2'=>'No ha seleccionado ningún archivo']);
+            return back()->withErrors(['foto2'=>'No se ha seleccionado ningún archivo']);
         }
         
     }
+
+    // public function cambiodatos(Request $request) {
+        
+    //     $user           = Auth::user();
+    //     $userId         = $user->id;
+    //     $userNombre     = $user->nombre;
+    //     $userDoc        = $user->documento;
+    //     $userNacimiento = $user->fecha_nacimiento;
+    //     $userIngreso    = $user->fecha_ingreso;
+    //     $userCargo      = $user->cargo;
+
+    //     // Log::info($request);
+
+    //     $user->nombre = $request->get('nombre');
+    //     $user->documento = $request->get('documento');
+    //     $user->fecha_nacimiento = $request->get('fecha_nacimiento');
+    //     $user->fecha_ingreso = $request->get('fecha_ingreso');
+    //     $user->save();
+
+    //     return back()->withErrors(['fecha_ingreso'=>'Tus datos han sido actualizado correctamente']);
+    // }
     
     public function galeria()
     {

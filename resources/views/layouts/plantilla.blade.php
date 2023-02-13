@@ -82,8 +82,8 @@
                 <li class="nav-link dropdown p-0">
                     <a class="nav-link dropdown-toggle text-white mr-5 pt-2 mt-2" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none"></a>
                         <ul class="dropdown-menu bg" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item mr-3" style="" href="{{ route('inicio.contrasena') }}">
-                            Editar Perfil</a></li>
+                            <li><a class="dropdown-item mr-3" style="" href="{{ route('inicio.editar_perfil') }}">
+                            Mi Perfil</a></li>
                             <li><a class="dropdown-item" id="sesion" style="" href="{{ route('login.destroy') }}">
                             Cerrar Sesión</a></li>
                         </ul>   

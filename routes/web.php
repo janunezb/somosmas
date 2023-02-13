@@ -97,21 +97,29 @@ Route::post('inicio/import-users', [IndexController::class, 'uploadUsers'])
     ->middleware('auth')
     ->name('inicio.import');
 
-Route::get('inicio/contrasena', [IndexController::class, 'contrasena'])
+Route::get('inicio/editar_perfil', [IndexController::class, 'editar_perfil'])
     ->middleware('auth')
-    ->name('inicio.contrasena');
+    ->name('inicio.editar_perfil');
+
+Route::get('inicio/cambio_foto', [IndexController::class, 'cambio_foto'])
+    ->middleware('auth')
+    ->name('inicio.cambio_foto');
 
 Route::post('inicio/cambiocontrasena', [IndexController::class, 'cambiocontrasena'])
     ->middleware('auth')
     ->name('inicio.cambiocontrasena');
     
 Route::get('inicio/galeria', [IndexController::class, 'galeria'])
-->middleware('auth')
-->name('inicio.galeria');
+    ->middleware('auth')
+    ->name('inicio.galeria');
 
 Route::put('inicio/update-foto', [IndexController::class, 'cambiofoto'])
     ->middleware('auth')
     ->name('inicio.update-foto');
+
+Route::put('inicio/update-datos', [IndexController::class, 'cambiodatos'])
+    ->middleware('auth')
+    ->name('inicio.update-datos');
 
 // Vistas Portal Liwa
 

@@ -333,6 +333,7 @@ th {
 
 label {
   display: inline-block;
+  font-weight: 600;
 }
 
 button {
@@ -3080,6 +3081,7 @@ textarea.form-control-lg {
   height: 0px;
 }
 
+
 .single-input-item{
   width: 100%;
   min-height: 50px;
@@ -3088,11 +3090,12 @@ textarea.form-control-lg {
 
 .icon-eye1{
   position: absolute;
-  right: 20px;
+  left: 320px;
   top: 67%;
   transform: translateY(-50%);
   cursor: pointer;
   transition: 0.4s ease all;
+  color: black;
 }
 
 .icon-eye1:hover{
@@ -3101,11 +3104,12 @@ textarea.form-control-lg {
 
 .icon-eye2{
   position: absolute;
-  right: 20px;
+  left: 320px;
   top: 72%;
   transform: translateY(-50%);
   cursor: pointer;
   transition: 0.4s ease all;
+  color: black;
 }
 
 .icon-eye2:hover{
@@ -3114,11 +3118,12 @@ textarea.form-control-lg {
 
 .icon-eye3{
   position: absolute;
-  right: 20px;
+  left: 320px;
   top: 67%;
   transform: translateY(-50%);
   cursor: pointer;
   transition: 0.4s ease all;
+  color: black;
 }
 
 .icon-eye3:hover{
@@ -3138,7 +3143,27 @@ textarea.form-control-lg {
   color: #ff0080;
 }
 
-
+.form {
+  display: block;
+  width: 100%;
+  
+ }
+ 
+ .input {
+  background-color: #f9ddeb;
+  margin: 0px 0px 0px 50px;
+  padding: 0px;
+  width: 100px;
+  border-radius: 5px;
+ }
+ 
+ .label {
+  margin: 10px 0px 0px 50px;
+  display: block;
+  padding:0px;
+  border-radius: 20px;
+  color: black;
+ }
 
 .invalid-tooltip {
   position: absolute;

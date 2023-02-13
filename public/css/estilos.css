@@ -229,12 +229,35 @@
     color: gray;
 }
 
+.box1{
+    float: left;
+    margin-top: 20px;
+}
+
+.box2{
+    float: right;
+    margin-right: 50px;
+    margin-top: 6px;
+    margin-bottom: 50px;
+}
+
+
 
 .form-body{
-    
+    float: left;
+    padding: 0px;
+    width: 800px;
+    min-width: 300px;
+    border-radius: 10px;
+    border: solid 1px; color: #ff0080;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.form-body2{
     text-align: left;
     padding: 20px;
-    width: 400px;
+    width: 450px;
     min-width: 300px;
     border-radius: 10px;
     border: solid 1px;
@@ -246,7 +269,12 @@
 }
 
 .form-body input{
-    width: 350px;
+    width: 300px;
+    text-align: center;
+}
+
+.form-body2 input{
+    width: 400px;
     text-align: center;
 }
 
@@ -261,24 +289,63 @@
     margin: auto;
 }
 
+.form-body2 button{
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    background-color: #FF0083;
+    font-weight: 500;
+    display: block;
+    margin: auto;
+}
+
 .form-body button:hover{
     background-color: #a7095b;
 }
 
 .caracteres{
+    margin-top: 10px;
+    margin-left: 12px;
     font-size: 10px;
     color: rgb(168, 162, 162);
-    margin: 0px 0px 0px;
+}
+
+.caracteres1{
+    margin: 0;
+    font-size: 10px;
+    color: rgb(168, 162, 162);
+}
+
+.caracteres2{
+    margin-bottom: 0px;
+    margin-left: 45px;
+    font-size: 10px;
+    color: rgb(168, 162, 162);
 }
 
 #sesion{
     color: red;
 }
 
+.atras{
+    display: block;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    color: #ff0080;
+    border-radius: 50px;
+    width: 200px;
+}
+
+.atras:hover{
+    text-decoration: none;
+    color: #ff0080;
+}
+
 .titulo2{
     display: block;
     margin: auto;
-    margin-top: 20px;
+    margin-top: -250px;
     text-align: center;
     background-color: #ff0080;
     color: white;
@@ -288,7 +355,7 @@
 
  .titulo3{
         
-    margin-top: -175px;
+    margin-top: -383px;
     text-align: center;
     background-color: #ff0080;
     color: white;
@@ -296,4 +363,43 @@
     width: 400px;
  }
 
+ .titulo4{
+    margin-left: 200px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: xx-large;
+    background-color: #ff0080;
+    color: white;
+    border-radius: 50px;
+    width: 400px;
+ }
+
+ .cambiarfoto{
+    width: 110px;
+    display: block;
+    color: #ff0080;
+    font-weight: 800;
+    margin-left: 20px;
+ }
+
+ .cambiarfoto:hover{
+    color: #ff0080;
+ }
  
+ .inputfoto{
+    margin-left: 25px;
+ }
+
+ .guardar{
+    margin-left: 130px;
+    width: 100px;
+    text-align: center;
+    background-color: #ff0080;
+    color: white;
+    border-radius: 50px;
+    border-color: white;
+ }
+
+ .alert-pass{
+    margin-left: 50px;
+ }

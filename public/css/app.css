@@ -926,10 +926,17 @@ nuevaa{
     height: 50px;
     border: 1px solid; color: #FFf;
     border-radius: 50%;
-
 }
 
-
+.usuariofoto {
+    margin-top: 30px;
+    margin-right: 70px;
+    margin-bottom: 30px;
+    width: 150px;
+    height: 180px;
+    border: 1px solid; color: #ff0080;
+    border-radius: 50%;
+}
 
 .carrusel-itemsss{
     width: 100%;
