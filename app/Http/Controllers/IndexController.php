@@ -182,11 +182,19 @@ class IndexController extends Controller
         $user           = Auth::user();
         $userId         = $user->id;
         $userPassword   = $user->password;
-        $userEmpresa    = $user->empresa_id;
         
         $NewPass        = $request->password;
         $confirPass     = $request->confirm_password;
         $confirmActual  = sha1($request->password_actual); 
+
+        $empresas = DB::table('empresas')
+            ->join('users', 'users.id', '=', 'empresas.id')
+            ->select('empresas.nombre')
+            ->get();
+
+            // log::info($empresas);
+        
+            
 
         // Log::info("Entra a cambio contraseña");
         // Log::info("Usuario:" . $userPassword);
@@ -248,12 +256,16 @@ class IndexController extends Controller
             $sqlBD = DB::table('users')
             ->where('id', $userId)
             ->update(['foto' => $userFoto]);
+            
             return back()->withErrors(['foto1'=>'Felicitaciones, tu foto ha sido cambiada exitosamente.']);
+            // return view('inicio.editar_perfil');
         }else{
             return back()->withErrors(['foto2'=>'No se ha seleccionado ningún archivo']);
         }
         
     }
+
+    
 
     // public function cambiodatos(Request $request) {
         

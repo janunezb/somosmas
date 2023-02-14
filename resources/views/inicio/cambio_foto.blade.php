@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-<form action="{{ url('inicio/update-foto/')}}" class="" method="POST" enctype="multipart/form-data">
+<form action="{{ url('inicio/update-foto/')}}" class="" method="POST" enctype="multipart/form-data" id="formulario">
         @csrf
         @method('PUT')
 
@@ -24,7 +24,7 @@
             <div class="single-input-item">
                 <p class="caracteres">Recuerda: Solo se admiten formato jpg. jpeg. .png y peso menos de 150kb</p>
             <label for="foto"></label>
-                <input type="file" class="border border-gray-00 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white @error('foto') is-invalid @enderror" id="" name="foto">
+                <input type="file" class="border border-gray-00 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white @error('foto') is-invalid @enderror" id="foto" name="foto">
                 @error('foto')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror               
@@ -46,13 +46,13 @@
                 @enderror                
             </div>
 
-            <button type="submit" class="text-white p-2 my-3">Guardar</button>
+            <button type="submit" class="text-white p-2 my-3" name="guardar">Guardar</button>
             <a class="atras" href="{{route('inicio.editar_perfil')}}">Atrás</a>
         </div>
     </form>
 
-
-
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="{{ asset('js/alerta2.js') }}"></script> -->
 
 
 @endsection

@@ -20,6 +20,15 @@
         @endif
 
         <a class="cambiarfoto" href="{{route('inicio.cambio_foto')}}">Cambiar Foto</a>
+
+        <!-- <label for="file-upload" class="custom-file-upload">
+            Cambiar Foto
+        </label>
+        <input id="file-upload" type="file"/>
+
+
+        <button class="cambiarfoto">Cambiar Foto</button> -->
+
     </div>
 
     <div class="form-body">
@@ -132,5 +141,5 @@
         })
     </script>
     <script type="text/javascript" src="{{ asset('js/password.js') }}"></script>
-
+    
 @endsection
