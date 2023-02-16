@@ -27,7 +27,7 @@
         <input id="file-upload" type="file"/>
 
 
-        <button class="cambiarfoto">Cambiar Foto</button> -->
+        <button class="cambiarfoto">Cambiar Foto</button> --> 
 
     </div>
 
@@ -53,10 +53,16 @@
                         <label class="label" for="fecha_nacimiento" class="required">Fecha de Nacimiento</label>
                         <input disabled type="text" value="{{ auth()->user()->fecha_nacimiento }}" class="input border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-1 my-1" id="fecha_nacimiento" name="fecha_nacimiento">                
                         </div>
-                    
+                        <?php 
+                                $empresas = DB::table('users')
+                                ->join('empresas', 'empresas.id', '=', 'users.id')
+                                ->select('empresas.nombre')
+                                
+                                ->get();                     
+                        ?>
                         <div class="single-input-item">
                         <label class="label" for="empresa">Empresa</label>
-                            <input disabled type="text" value="{{ auth()->user()->empresa_id }}" class="input border border-gray-00 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-1 my-1" name="empresa">                
+                            <input disabled type="text" value="{{ $empresas }}" class="input border border-gray-00 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-1 my-1" name="empresa">                
                         </div>
 
                         <div class="single-input-item">
@@ -141,5 +147,5 @@
         })
     </script>
     <script type="text/javascript" src="{{ asset('js/password.js') }}"></script>
-    
+
 @endsection

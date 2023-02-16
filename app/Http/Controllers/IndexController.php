@@ -187,15 +187,6 @@ class IndexController extends Controller
         $confirPass     = $request->confirm_password;
         $confirmActual  = sha1($request->password_actual); 
 
-        $empresas = DB::table('empresas')
-            ->join('users', 'users.id', '=', 'empresas.id')
-            ->select('empresas.nombre')
-            ->get();
-
-            // log::info($empresas);
-        
-            
-
         // Log::info("Entra a cambio contraseña");
         // Log::info("Usuario:" . $userPassword);
         // Log::info($userEmpresa);
@@ -308,6 +299,11 @@ class IndexController extends Controller
         }
        
         return view('inicio.galeria', compact('galeria','foto'));
+    }
+
+    public function prueba()
+    {
+        return view('inicio.prueba');
     }
 
 

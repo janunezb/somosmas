@@ -117,9 +117,9 @@ Route::put('inicio/update-foto', [IndexController::class, 'cambiofoto'])
     ->middleware('auth')
     ->name('inicio.update-foto');
 
-Route::put('inicio/update-datos', [IndexController::class, 'cambiodatos'])
+Route::get('inicio/prueba', [IndexController::class, 'prueba'])
     ->middleware('auth')
-    ->name('inicio.update-datos');
+    ->name('inicio.prueba');
 
 // Vistas Portal Liwa
 

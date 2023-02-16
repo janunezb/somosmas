@@ -38,12 +38,6 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('inicio.index') }}">
                 <strong style="color: #ff0080">Somos</strong>Más</a>
-    {{-- ********************revisar boton james 24/01/2023 ************************ --}}
-            {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">hola</span>
-            </button> --}}
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
@@ -119,7 +113,7 @@
                         Suncolombia. Recuerde: Número general de emergencias: 123
                         Estamos para servirte cuenta con nosotros
                         WhatsApp profesionales HSE: Chia-Fusagasuga-Bogota</p>
-
+                        
                     <a href="https://wa.me/573118076877" data-bs-toggle="tooltip" data-placement="top" title="Chía"
                         class="btn btn-success" target="_blank"> <i class="bi bi-whatsapp"></i></a>
                     <a href="https://wa.me/573016373640" data-bs-toggle="tooltip" data-placement="top" title="Chía"
@@ -173,3 +167,7 @@
 
         </div>
     </section>
+
+
+
+
