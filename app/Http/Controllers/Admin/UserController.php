@@ -5,80 +5,73 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Intervention\Image\Facades\Image;
+use Spatie\Permission\Models\Role;
 
-class UserController extends Controller
+ class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return view('admin.users');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        return view('admin.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'documento'=>'required|unique:users',
+            'nombre'=>'required',
+            'fecha_nacimiento'=>'required',
+            'fecha_ingreso'=>'required',
+            'cargo'=>'required',
+            // 'email'=>'required',
+            'foto'=>'image'
+        ]);
+
+        // $request->input('');
+        if(){}
+         $nombre_img=$request->input('documento');
+         $extension= $request->file('foto')->getClientOriginalExtension();
+         $nombre_foto=$nombre_img.'.'.$extension;
+
+         Image::make($request->file('foto'))
+         ->resize(1000, null, function ($constraint) {
+            $constraint->aspectRatio();
+         })
+         ->save('images\fotos/'.$nombre_foto);
+        //  return $nombre_foto;
+
+        // $user= User::create($request->all());
+        // return redirect()->route('admin.users.edit',$user);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(User $user)
     {
-        return view ('admin.edit',compact('user'));
+        $roles = Role::all();
+        return view ('admin.edit',compact('user','roles'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         //

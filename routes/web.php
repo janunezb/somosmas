@@ -63,11 +63,11 @@ Route::get('inicio/portales/portal-navega', [AdminController::class, 'navega'])
 //Interfaz Admin
 
 Route::get('admin', [AdminController::class, 'index'])
-->middleware('auth')
+->middleware('can:admin')
 -> name('admin');
 
 Route::resource('admin/users',UserController::class)
-    ->middleware('auth')        
+    ->middleware('can:admin')        
     ->names('admin.users');
 
 
