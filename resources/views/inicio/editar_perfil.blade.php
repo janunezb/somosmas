@@ -55,14 +55,14 @@
                         </div>
                         <?php 
                                 $empresas = DB::table('users')
-                                ->join('empresas', 'empresas.id', '=', 'users.id')
+                                ->join('empresas', 'empresas.id', '=', 'users.empresa_id')
                                 ->select('empresas.nombre')
-                                
+                                ->where('users.documento', auth()->user()->documento)
                                 ->get();                     
                         ?>
                         <div class="single-input-item">
                         <label class="label" for="empresa">Empresa</label>
-                            <input disabled type="text" value="{{ $empresas }}" class="input border border-gray-00 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-1 my-1" name="empresa">                
+                            <input disabled type="text" value="{{ $empresas[0]->nombre }}" class="input border border-gray-00 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-1 my-1" name="empresa">                
                         </div>
 
                         <div class="single-input-item">
