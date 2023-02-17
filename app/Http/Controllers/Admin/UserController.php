@@ -36,7 +36,7 @@ use Spatie\Permission\Models\Role;
         ]);
 
         // $request->input('');
-        if(){}
+
          $nombre_img=$request->input('documento');
          $extension= $request->file('foto')->getClientOriginalExtension();
          $nombre_foto=$nombre_img.'.'.$extension;
