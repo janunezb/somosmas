@@ -23,6 +23,8 @@ class User extends Authenticatable
         'fecha_nacimiento',
         'fecha_ingreso',
         'password',
+        'foto',
+        'empresa_id',
 
     ];
 

@@ -22,7 +22,7 @@
                 @enderror
             </div>
             <div class="form-group col-8">
-                {!! Form::label('nombre', 'Nombre y Apellios') !!}
+                {!! Form::label('nombre', 'Nombre y Apellidos') !!}
                 {!! Form::text('nombre',null, ['class'=>'form-control','placeholder'=>'Ingrese Nombres y Apellidos']) !!}
                 @error('nombre')
                     <span class="text-danger">{{$message }}</span>
@@ -38,9 +38,9 @@
                 @enderror
             </div>
             <div class="form-group col-4">
-                {!! Form::label('foto', 'Foto') !!}
-                {!! Form::file('foto',['accept'=>'image/*'])!!}
-                @error('foto')
+                {!! Form::label('imagen', 'Foto') !!}
+                {!! Form::file('imagen',['accept'=>'image/*'])!!}
+                @error('imagen')
                 <span class="text-danger">{{$message }}</span>
             @enderror
 
@@ -61,14 +61,13 @@
                 @enderror
             </div>
             <div class="form-group col-4">
-                {!! Form::label('password', 'Contraseña') !!}
-                {!! Form::password('password', ['class'=>'form-control']) !!}
-                @error('password')
-                    <span class="text-danger">{{$message }}</span>
-                @enderror
+                    {!! Form::label('empresa_id', 'Empresa') !!}
+                    {!! Form::select('empresa_id', $empresas
+                        ,null, ['class'=>'form-control','placeholder'=>'Ingrese empresa']) !!}
+                    @error('empresa_id')
+                        <span class="text-danger">{{$message }}</span>
+                    @enderror
             </div>
-
-
         </div>
         <div class="row">
             <div class="form-group col-4">
@@ -79,7 +78,7 @@
                 @enderror
             </div>
             <div class="form-group col-6">
-                {!! Form::label('email', 'Correo Coorporativo') !!}
+                {!! Form::label('email', 'Correo Corporativo') !!}
                 {!! Form::email('email',null, ['class'=>'form-control']) !!}
                 @error('email')
                     <span class="text-danger">{{$message }}</span>
@@ -88,9 +87,12 @@
         </div>
         <div class="row">
             <div class="form-group col-4" >
-                {!! Form::label('role', 'Administrador') !!}
-                {!! Form::checkbox('role', 'value');!!}
-
+                {{-- @foreach ($roles as $role)
+                    {!! Form::checkbox('roles[]',$role->id,null ,['class'=>'mr-1']);!!}
+                    {{$role->name}}
+                 @endforeach --}}
+                 {!! Form::checkbox('roles','1',null ,['class'=>'mr-1']);!!}
+                 {!! Form::label('roles', 'Administrador') !!}
             </div>
         </div>
     </div>

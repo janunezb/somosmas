@@ -67,6 +67,7 @@ Route::get('admin', [AdminController::class, 'index'])
 -> name('admin');
 
 Route::resource('admin/users',UserController::class)
+    ->only('index','edit','create','store','update')
     ->middleware('can:admin')        
     ->names('admin.users');
 

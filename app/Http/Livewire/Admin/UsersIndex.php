@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Log;
 
 class UsersIndex extends Component
 {
@@ -22,7 +23,6 @@ class UsersIndex extends Component
         $users = User::where('nombre','LIKE','%'.$this->search.'%')
         ->orwhere('documento','LIKE','%'.$this->search.'%')
         ->paginate(20);
-
         return view('livewire.admin.users-index', compact('users'));
     }
 }
