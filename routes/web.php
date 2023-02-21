@@ -67,10 +67,13 @@ Route::get('admin', [AdminController::class, 'index'])
 -> name('admin');
 
 Route::resource('admin/users',UserController::class)
-    ->only('index','edit','create','store','update')
-    ->middleware('can:admin')        
+    // ->only('index','edit','create','store','update','desha')
+    ->middleware('can:admin')
     ->names('admin.users');
-
+   
+Route::get('admin/users/desha', [AdminController::class, 'index'])
+    ->middleware('can:admin')
+    -> name('admin.users.desha');
 
 
 

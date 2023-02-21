@@ -9,12 +9,18 @@ use App\Models\User;
 use Intervention\Image\Facades\Image;
 use Spatie\Permission\Models\Role;
 
+use Illuminate\Support\Facades\Log;
+use PhpParser\Node\Stmt\Return_;
+
  class UserController extends Controller
 {
 
     public function index()
     {
-        return view('admin.users');
+        $users1= User::where('estado', '0')
+        ->get();
+        
+        return view('admin.users',compact('users1'));
     }
 
 
@@ -36,7 +42,7 @@ use Spatie\Permission\Models\Role;
             'fecha_ingreso'=>'required',
             'cargo'=>'required',
             'empresa_id'=>'required',
-            'imagen'=>'image'
+            'imagen'=>'image|required'
         ]);
        
          $nombre_img=$request->input('documento');
@@ -81,10 +87,14 @@ use Spatie\Permission\Models\Role;
         $user->update($request->all());
         return redirect()->route('admin.users.edit',$user)->with('info','Los datos han sido actualizados');
     }
-
-
-    public function destroy($id)
+    public function show (User $user)
     {
-        //
+        if ($user->estado == 1  ){
+            $user->update(['estado' => '0']);
+        }
+        else{
+            $user->update(['estado' => '1']);
+        }
+        return redirect()->route('admin.users.index',$user)->with('info','Los datos han sido actualizados');
     }
 }

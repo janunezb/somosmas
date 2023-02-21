@@ -91,7 +91,7 @@
                     {!! Form::checkbox('roles[]',$role->id,null ,['class'=>'mr-1']);!!}
                     {{$role->name}}
                  @endforeach --}}
-                 {!! Form::checkbox('roles','1',null ,['class'=>'mr-1']);!!}
+                 {!! Form::checkbox('roles','1',null ,['class'=>'mr-1'])!!}
                  {!! Form::label('roles', 'Administrador') !!}
             </div>
         </div>

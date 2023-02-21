@@ -25,6 +25,7 @@ class User extends Authenticatable
         'password',
         'foto',
         'empresa_id',
+        'estado',
 
     ];
 

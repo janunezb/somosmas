@@ -13,7 +13,10 @@
             <strong>{{session('info')}}</strong>
         </div>
     @endif
-    <p>@livewire('admin.users-index')</p>
+
+    
+
+    <p>@livewire('admin.users-index',['base'=>$users1])</p>
 @stop
 
 
