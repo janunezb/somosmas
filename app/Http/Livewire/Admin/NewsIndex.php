@@ -2,36 +2,25 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Models\User;
 use Livewire\Component;
+use App\Models\Noticia;
 use Livewire\WithPagination;
 
-
-class UsersIndex extends Component
+class NewsIndex extends Component
 {
     use WithPagination;
     public $search;
     protected $paginationTheme = "bootstrap";
-    public $base;
-
-
 
     public function updatingSearch()
     {
         $this->resetPage();
     }
-
     public function render()
-
     {
-
-
-        $users = User::where('nombre','LIKE','%'.$this->search.'%')
-        ->orwhere('documento','LIKE','%'.$this->search.'%')
-        ->paginate(20);
-
-        return view('livewire.admin.users-index', compact('users'));
+        $news = Noticia::where('titulo','LIKE','%'.$this->search.'%')
+        ->orwhere('contenido','LIKE','%'.$this->search.'%')
+        ->paginate(2);
+        return view('livewire.admin.news-index',compact('news'));
     }
-
-
 }

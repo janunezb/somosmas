@@ -327,8 +327,14 @@ return [
             'label_color' => 'success',
 
         ],
+        ['header' => 'Gestor de contenido'],
+        [
+            'text'        => 'Noticias',
+            'route'         => 'admin.news.index',
+            'icon'        => 'fas fa-hands-newspape',
+            'label_color' => 'success',
 
-        // ['header' => 'account_settings'],
+        ],
         // [
         //     'text' => 'profile',
         //     'url'  => 'admin/settings',

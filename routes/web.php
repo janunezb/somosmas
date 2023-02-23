@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\NewController;
 // Route::get('/', function () {
 //     return view('home');
 // })->middleware('auth');
@@ -67,13 +68,15 @@ Route::get('admin', [AdminController::class, 'index'])
 -> name('admin');
 
 Route::resource('admin/users',UserController::class)
-    // ->only('index','edit','create','store','update','desha')
+    ->only('index','edit','create','store','update','show')
     ->middleware('can:admin')
     ->names('admin.users');
-   
-Route::get('admin/users/desha', [AdminController::class, 'index'])
+
+Route::resource('admin/news',NewController::class)
+    ->only('index','edit','create','store','update','show')
     ->middleware('can:admin')
-    -> name('admin.users.desha');
+    ->names('admin.news');
+
 
 
 
@@ -105,7 +108,7 @@ Route::get('inicio/portales', [IndexController::class, 'portales'])
 Route::get('inicio/noticia', [IndexController::class, 'noticia'])
     ->middleware('auth')
     ->name('inicio.noticia');
-    
+
 Route::get('inicio/import-users', [IndexController::class, 'importUsers'])
     ->middleware('auth')
     ->name('inicio.import');
@@ -121,7 +124,7 @@ Route::get('inicio/contrasena', [IndexController::class, 'contrasena'])
 Route::post('inicio/cambiocontrasena', [IndexController::class, 'cambiocontrasena'])
     ->middleware('auth')
     ->name('inicio.cambiocontrasena');
-    
+
 Route::get('inicio/galeria', [IndexController::class, 'galeria'])
     ->middleware('auth')
     ->name('inicio.galeria');

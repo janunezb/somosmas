@@ -1,10 +1,10 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Colaborador')
+@section('title', 'Editar Noticias')
 
 @section('content_header')
-@livewireStyles
-    <h1>Editar Colaboador</h1>
+
+    <h1>Editar Noticia</h1>
 
 
 @stop
@@ -16,11 +16,11 @@
         <strong>{{session('info')}}</strong>
     </div>
 @endif
-{!!Form::model($user,['route'=> ['admin.users.update',$user],'method'=>'put'])!!}
+{!!Form::model($news,['route'=> ['admin.users.update',$news],'method'=>'put'])!!}
 
         <div class="card">
             <div class="card-body" >
-                <h5 class="card-title">DATOS PERSONALES</h5>
+                <h5 class="card-title">{{$news->titulo  }}</h5>
                 <hr>
                 <div class="row">
                     <div class="form-group col-4">
@@ -46,7 +46,7 @@
                             <span class="text-danger">{{$message }}</span>
                         @enderror
                     </div>
-                    <div class="form-group col-2">
+                    {{-- <div class="form-group col-2">
                         <div class="" >
                             @if (is_file('images/fotos/'.$user->foto))
                             <img src="../../../images/fotos/{{$user->foto}}" alt=""style="width:70px" class="brand-xs img-circle elevation-4 img-responsive mx-auto d-block">
@@ -54,7 +54,7 @@
                             <img src="{{asset('../images/fotonone.jpeg')}}" class="usuario mx-auto d-block" alt="" style="width:60px;height:60px border-radius:50%;">
                             @endif
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="form-group col-2">
                         {!! Form::label('imagen', 'Foto') !!}
                         {!! Form::file('imagen',['accept'=>'image/*'])!!}
@@ -77,14 +77,7 @@
                             <span class="text-danger">{{$message }}</span>
                         @enderror
                     </div>
-                    <div class="form-group col-4">
-                        {!! Form::label('empresa_id', 'Empresa') !!}
-                        {!! Form::select('empresa_id', $empresas
-                            ,null, ['class'=>'form-control','placeholder'=>'Ingrese empresa']) !!}
-                        @error('empresa_id')
-                            <span class="text-danger">{{$message }}</span>
-                        @enderror
-                    </div>
+
                 </div>
                 <div class="row">
                     <div class="form-group col-4">
@@ -104,23 +97,12 @@
                 </div>
                 <div class="row">
 
-                    <div class="form-group col-4" >
-                        {{-- @foreach ($roles as $role)
-                            {!! Form::checkbox('roles[]',$role->id,null ,['class'=>'mr-1']);!!}
-                            {{$role->name}}
-                         @endforeach --}}
-                         {!! Form::checkbox('roles','1',null ,['class'=>'mr-1'])!!}
-                         {!! Form::label('roles', 'Administrador') !!}
-                    </div>
+
                 </div>
             </div>
         </div>
 
-{!! Form::submit('Actualizar Colaborador', ['class'=>'btn btn-primary']) !!}
+{!! Form::submit('Actualizar Colaborador', ['class'=>'btn btn-primary'])!!}
 {!!Form::close()!!}
 @stop
 
-@section('js')
-    @livewireScripts
-    <script></script>
-@stop
