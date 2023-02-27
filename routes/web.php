@@ -21,7 +21,6 @@ Route::get('/register', [RegisterController::class, 'create'])
 Route::post('/register', [RegisterController::class, 'store'])
         -> name('register.store');
 
-
 //Interfaz Login
 
 Route::get('/login', [SessionsController::class, 'create'])
@@ -34,8 +33,6 @@ Route::get('/logut', [SessionsController::class, 'destroy'])
         -> name('login.destroy');
 
 //permisos
-
-
 
 Route::get('inicio/portales/portal-liwa', [AdminController::class, 'index'])
 ->middleware('auth.admin')
@@ -52,16 +49,6 @@ Route::get('inicio/portales/portal-libre', [AdminController::class, 'libre'])
 Route::get('inicio/portales/portal-navega', [AdminController::class, 'navega'])
 ->middleware('auth.admin3')
 -> name('admin.navega');
-
-
-
-
-
-
-
-
-
-
 
 //Interfaz De Inicio
 
@@ -117,14 +104,10 @@ Route::put('inicio/update-foto', [IndexController::class, 'cambiofoto'])
     ->middleware('auth')
     ->name('inicio.update-foto');
 
-Route::get('inicio/prueba', [IndexController::class, 'prueba'])
-    ->middleware('auth')
-    ->name('inicio.prueba');
-
 // Vistas Portal Liwa
 
 Route::get('inicio/portales/portal-liwa/etapa5', [IndexController::class, 'etapa5liwa'])
-->middleware('auth.admin')
+->middleware('auth.admin') 
 ->name('admin.etapa5liwa');
 
 Route::get('inicio/portales/portal-liwa/etapa10', [IndexController::class, 'etapa10liwa'])
@@ -192,5 +175,3 @@ Route::get('inicio/portales/portal-sunco/etapa15s', [IndexController::class, 'et
 Route::get('inicio/portales/portal-sunco/etapa20s', [IndexController::class, 'etapa20sunco'])
 ->middleware('auth.admin3')
 ->name('admin.etapa20sunco');
-
-

@@ -11,7 +11,7 @@ body::-webkit-scrollbar{
 
 
 body::-webkit-scrollbar-thumb{
-    background-color: #ff0083;
+    background-color: #FE3EB2;
     border-radius: 10px;
 }
 
@@ -46,7 +46,7 @@ body::-webkit-scrollbar-thumb{
 
  .titulo{
     text-align: center;
-    background-color: #ff0080;
+    background-color: #FE3EB2;
     align-items: center;
     color: white;
     border-radius: 50px;
@@ -55,9 +55,14 @@ body::-webkit-scrollbar-thumb{
 .cuadrado {
     margin: 0px 110px;
     border-radius: 10px;
-    background-color: rgb(243, 51, 115);
+    background-color: #FE3EB2;
     color: white;
     text-align: center;
+}
+
+
+#poldeseguridad{
+    text-align: justify;
 }
 
 .buton{
@@ -68,7 +73,7 @@ body::-webkit-scrollbar-thumb{
     height: 80px;
     background-color: #1c0d02;
     color: black;
-    border:#ff0080;
+    border:#FE3EB2;
     cursor: pointer;
     transition: .3s ease all;
     border-radius: 5px;
@@ -111,7 +116,7 @@ body::-webkit-scrollbar-thumb{
     height: 120px;
     background-color: #1c0d02;
     color: white;
-    border:#ff0080;
+    border:#FE3EB2;
     cursor: pointer;
     transition: .3s ease all;
     border-radius: 5px;
@@ -130,7 +135,7 @@ body::-webkit-scrollbar-thumb{
 .butoon.gordo::after{
     content: "";
     width: 100%;
-    height: 120px;
+    height: 100px;
     background-color: #5564eb;
     position: absolute;
     z-index: 1;
@@ -192,7 +197,9 @@ nuevaa{
     width: 100%;
 }
 
-
+.fondosg{
+    height: 280px;
+}
 
 
 
@@ -205,7 +212,7 @@ nuevaa{
     padding: 30px;
     font-size: 50px;
     transition: .3s ease all;
-    background-color: #FF0083;
+    background-color: #FE3EB2;
 
 };
 
@@ -227,7 +234,7 @@ nuevaa{
     padding: 30px;
     font-size: 50px;
     transition: .3s ease all;
-    background-color: #FF0083;
+    background-color: #FE3EB2;
 
 };
 
@@ -250,7 +257,7 @@ nuevaa{
     padding: 30px;
     font-size: 50px;
     transition: .3s ease all;
-    background-color: #FF0083;
+    background-color: #FE3EB2;
 
 };
 
@@ -272,7 +279,7 @@ nuevaa{
     padding: 30px;
     font-size: 50px;
     transition: .3s ease all;
-    background-color: #FF0083;
+    background-color: #FE3EB2;
 
 };
 
@@ -294,7 +301,7 @@ nuevaa{
     padding: 30px;
     font-size: 50px;
     transition: .3s ease all;
-    background-color: #FF0083;
+    background-color: #FE3EB2;
 
 };
 
@@ -316,7 +323,7 @@ nuevaa{
     padding: 30px;
     font-size: 50px;
     transition: .3s ease all;
-    background-color: #FF0083;
+    background-color: #FE3EB2;
 
 };
 
@@ -338,7 +345,7 @@ nuevaa{
     padding: 30px;
     font-size: 50px;
     transition: .3s ease all;
-    background-color: #FF0083;
+    background-color: #FE3EB2;
 
 };
 
@@ -360,7 +367,7 @@ nuevaa{
     padding: 30px;
     font-size: 50px;
     transition: .3s ease all;
-    background-color: #FF0083;
+    background-color: #FE3EB2;
 
 };
 
@@ -382,7 +389,7 @@ nuevaa{
     padding: 30px;
     font-size: 50px;
     transition: .3s ease all;
-    background-color: #FF0083;
+    background-color: #FE3EB2;
 
 };
 
@@ -409,7 +416,7 @@ nuevaa{
     min-width: 300px;
     max-width: 300px;
     height: 300px;
-    outline: 2px solid #FF0083;
+    outline: 2px solid #FE3EB2;
 
 }
 
@@ -438,7 +445,7 @@ nuevaa{
 }
 
 .carrusel-items1::-webkit-scrollbar-thumb {
-    background-color: #FF0083;
+    background-color: #FE3EB2;
     border-radius: 10px;
 }
 
@@ -449,7 +456,7 @@ nuevaa{
     min-width: 300px;
     max-width: 300px;
     height: 300px;
-    outline: 2px solid #FF0083;
+    outline: 2px solid #FE3EB2;
 
 }
 
@@ -477,7 +484,7 @@ nuevaa{
 
 
 .ref{
-    color: #FF0083;
+    color: #FE3EB2;
 
     text-decoration: none;
 }
@@ -653,15 +660,15 @@ nuevaa{
 }
 
 .contenedor-textos a{
-    color: #FF0083;
+    color: #FE3EB2;
 
 }
 
 .contenedor-textos a:hover{
     transition: 0.3s;
-    background-color: #ff0083;
+    background-color: #FE3EB2;
     color: white;
-    border: #FF0083 solid 0.2px;
+    border: #FE3EB2 solid 0.2px;
     text-decoration: none;
 
 }
@@ -741,7 +748,7 @@ nuevaa{
 
 .modal-header{
     color: white;
-    background-color: #FF0083;
+    background-color: #FE3EB2;
 }
 
 
@@ -750,7 +757,7 @@ nuevaa{
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
-    /* justify-content: center; */
+    justify-content: center;
 
 }
 
@@ -762,7 +769,7 @@ nuevaa{
 }
 
 .carrusel-itemss::-webkit-scrollbar-thumb {
-    background-color: #FF0083;
+    background-color: #FE3EB2;
     border-radius: 10px;
 }
 
@@ -812,9 +819,6 @@ nuevaa{
     color: #000;
     font-size: medium;
     display: flex;
-
-
-
 }
 
 .carrusel-itemms img {
@@ -824,7 +828,7 @@ nuevaa{
     height: 100%;
     object-fit: cover;
     border-radius: 80%;
-
+    margin-bottom: 20px;
 }
 
 .tamaño{
@@ -834,6 +838,7 @@ nuevaa{
     justify-content: center;
     top: 50%;
     left: 50%;
+    margin-left: 15px;
 }
 
 .tam{
@@ -876,8 +881,8 @@ nuevaa{
 }
 
 .container-4 .card-4:hover{
-    background-color: #ff0083;
-    color: #fff;
+    /* background-color: #FE3EB2;
+    color: #fff; */
     transform: translateY(-15px);
     box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.2);
 
@@ -935,7 +940,7 @@ nuevaa{
     margin-bottom: 30px;
     width: 150px;
     height: 150px;
-    border: 1px solid; color: #ff0080;
+    border: 1px solid; color: #FE3EB2;
     border-radius: 50%;
 }
 
@@ -952,7 +957,7 @@ nuevaa{
     align-content: center;
     justify-content: center;
     padding-top: 15px;
-    border-left:2px solid #ff0083;
+    border-left:2px solid #FE3EB2;
     margin-right: 10px;
 }
 
@@ -964,7 +969,7 @@ nuevaa{
 }
 
 .carrusel-itemsss::-webkit-scrollbar-thumb {
-    background-color: #FF0083;
+    background-color: #FE3EB2;
     border-radius: 5px;
 }
 
@@ -1014,7 +1019,7 @@ nuevaa{
 }
 
 .carrusel-itemsssn::-webkit-scrollbar-thumb {
-    background-color: #FF0083;
+    background-color: #FE3EB2;
     border-radius: 10px;
     max-height: 2px;
 }
@@ -1051,7 +1056,7 @@ nuevaa{
 
 
 .aniversario {
-    color: #ff0083;
+    color: #FE3EB2;
     font-size: larger;
 }
 

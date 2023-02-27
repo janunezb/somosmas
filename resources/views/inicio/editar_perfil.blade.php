@@ -42,7 +42,7 @@
                         <div class="single-input-item">
                         <label class="label" for="nombre">Nombre</label>
                         <input disabled type="text" value="{{ auth()->user()->nombre }}" id="nombre" name="nombre" class="input border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-1 my-1">
-                        </div>
+                        </div> 
 
                         <div class="single-input-item">
                         <label class="label" for="documento">Documento</label>
@@ -53,13 +53,7 @@
                         <label class="label" for="fecha_nacimiento" class="required">Fecha de Nacimiento</label>
                         <input disabled type="text" value="{{ auth()->user()->fecha_nacimiento }}" class="input border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-1 my-1" id="fecha_nacimiento" name="fecha_nacimiento">                
                         </div>
-                        <?php 
-                                $empresas = DB::table('users')
-                                ->join('empresas', 'empresas.id', '=', 'users.empresa_id')
-                                ->select('empresas.nombre')
-                                ->where('users.documento', auth()->user()->documento)
-                                ->get();                     
-                        ?>
+                        
                         <div class="single-input-item">
                         <label class="label" for="empresa">Empresa</label>
                             <input disabled type="text" value="{{ $empresas[0]->nombre }}" class="input border border-gray-00 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-1 my-1" name="empresa">                

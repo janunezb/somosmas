@@ -3100,7 +3100,7 @@ textarea.form-control-lg {
 
 
 .icon-eye1:hover{
-  color: #ff0080;
+  color: #FE3EB2;
 }
 
 .icon-eye2{
@@ -3114,7 +3114,7 @@ textarea.form-control-lg {
 }
 
 .icon-eye2:hover{
-  color: #ff0080;
+  color: #FE3EB2;
 }
 
 .icon-eye3{
@@ -3128,7 +3128,7 @@ textarea.form-control-lg {
 }
 
 .icon-eye3:hover{
-  color: #ff0080;
+  color: #FE3EB2;
 }
 
 
@@ -3140,7 +3140,7 @@ textarea.form-control-lg {
  }
  
  .input {
-  background-color: #f9ddeb;
+  background-color: #FE3EB21A;
   margin: 0px 0px 0px 50px;
   padding: 0px;
   width: 100px;
@@ -3244,6 +3244,10 @@ textarea.form-control-lg {
 .input-group .form-select:invalid:focus,
 .input-group .form-select.is-invalid:focus {
   z-index: 3;
+}
+
+.et{
+ width: 560px;
 }
 
 .btn {
@@ -3993,7 +3997,7 @@ fieldset:disabled .btn {
   margin-left: 0;
 }
 
-.dropdown-menu {
+.dropdown-menu { 
   position: absolute;
   z-index: 1000;
   display: none;
@@ -4248,7 +4252,7 @@ fieldset:disabled .btn {
 
 .dropdown-menu.show {
   display: block;
-  margin-left: -90px;
+  margin-left: -60px;
 }
 
 #sesion{
@@ -5246,7 +5250,7 @@ fieldset:disabled .btn {
 }
 
 .card-title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .card-subtitle {
@@ -12034,6 +12038,10 @@ fieldset:disabled .btn {
   }
 }
 /*# sourceMappingURL=custom.css.map */
+
+.bienvenido{
+  margin-right: 15px;
+} 
 
 .navbar-ul {
   display: flex;

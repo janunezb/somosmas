@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Banner;
 use App\Models\Content;
 use App\Models\Formacion;
@@ -14,10 +13,11 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
 use App\Models\Noticia;
 use App\Models\Noticia_destacada;
+use App\Models\Etapa;
+use App\Models\Evidencia;
 use Illuminate\Http\RedirectResponse;
 
 use Genert\BBCode\BBCode;
-
 
 use Carbon\Carbon;
 
@@ -30,7 +30,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Log;
 
-
 class IndexController extends Controller
 {
 
@@ -39,16 +38,13 @@ class IndexController extends Controller
         $contenido = Banner::where('estado', '1')
         ->get();
        
-
         $id_noti_des = Noticia_destacada::where('id', '1')
         ->first()
         ->noticias_id;
                 
-
         $noticia = Noticia::where('id', $id_noti_des)
         ->Limit('1')
         ->get();
-         
 
         $card = Formacion::where('estado', '1')
             ->where('categoria_id', '3')
@@ -56,13 +52,10 @@ class IndexController extends Controller
             ->where('orden', '1')
             ->get();
         
-
         $formacion = Formacion::where('estado', '1')
             ->where('categoria_id', '3')
             ->orderBy('created_at', 'desc')
             ->get();
-
-       
 
         $now = Carbon::now();
         $currentDate = $now->toDateString();
@@ -98,7 +91,6 @@ class IndexController extends Controller
 
         $fecha_ingreso = Carbon::now();
 
-
         $cumplep = User::join('empresas', 'empresas.id', '=', 'users.empresa_id')
             ->select('users.nombre as nombre',
              'empresas.nombre as empresa', 
@@ -133,18 +125,14 @@ class IndexController extends Controller
 
         $formatos = $formato == $formato1;
 
-
         return view('inicio.index',compact('contenido','noticia', 'card',
          'formacion', 'listap', 'lista', 'formato1', 'formato', 'fecha_hoy', 'formatos'));
     }
 
     public function cultura()
     {
-
-
         return view('inicio.cultura');
     }
-
 
     public function actividad()
     {
@@ -153,7 +141,6 @@ class IndexController extends Controller
 
     public function portales()
     {
-
         $portal = Empresa::where('estado', '1')
             ->get();
         return view('inicio.portales', compact(('portal')));
@@ -169,7 +156,14 @@ class IndexController extends Controller
 
     public function editar_perfil()
     {
-        return view('inicio.editar_perfil');
+        
+        $empresas = DB::table('users')
+            ->join('empresas', 'empresas.id', '=', 'users.empresa_id')
+            ->select('empresas.nombre')
+            ->where('users.documento', auth()->user()->documento)
+            ->get();                     
+                      
+        return view('inicio.editar_perfil', compact('empresas'));
     }
 
     public function cambio_foto()
@@ -188,10 +182,8 @@ class IndexController extends Controller
         $confirmActual  = sha1($request->password_actual); 
 
         // Log::info("Entra a cambio contraseña");
-        // Log::info("Usuario:" . $userPassword);
-        // Log::info($userEmpresa);
-
-        // ($userPassword == $confirmActual) ?  Log::info("Las contraseñas coinciden") :  Log::info("La contraseña es diferente");           
+        // Log::info("Usuario:" . $userPassword);php
+        // Log::info($userEmpresa);          
 
             //valida si la clave actual es la misma del usuario en sesión
             if ($confirmActual == $userPassword){
@@ -249,14 +241,11 @@ class IndexController extends Controller
             ->update(['foto' => $userFoto]);
             
             return back()->withErrors(['foto1'=>'Felicitaciones, tu foto ha sido cambiada exitosamente.']);
-            // return view('inicio.editar_perfil');
         }else{
             return back()->withErrors(['foto2'=>'No se ha seleccionado ningún archivo']);
         }
         
     }
-
-    
 
     // public function cambiodatos(Request $request) {
         
@@ -301,11 +290,6 @@ class IndexController extends Controller
         return view('inicio.galeria', compact('galeria','foto'));
     }
 
-    public function prueba()
-    {
-        return view('inicio.prueba');
-    }
-
 
     /*vistas portales */
 
@@ -313,8 +297,6 @@ class IndexController extends Controller
     {
         return view('inicio.portalliwa');
     }
-
-
 
     public function portalsunco()
     {
@@ -335,76 +317,157 @@ class IndexController extends Controller
 
     public function etapa5liwa()
     {
-        return view('admin.etapa5');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view ('admin.etapa5',[
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
+
     public function etapa10liwa()
     {
-        return view('admin.etapa10');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa10', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
     public function etapa15liwa()
     {
-        return view('admin.etapa15');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa15', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
     public function etapa20liwa()
     {
-        return view('admin.etapa20');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa20', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
 
     /*vistas portal navega */
 
     public function etapa5navega()
     {
-        return view('admin.etapa5n');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa5n', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
     public function etapa10navega()
     {
-        return view('admin.etapa10n');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa10n', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
     public function etapa15navega()
     {
-        return view('admin.etapa15n');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa15n', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
     public function etapa20navega()
     {
-        return view('admin.etapa20n');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa20n', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
 
     /*vistas portal Libre */
 
     public function etapa5libre()
     {
-        return view('admin.etapa5l');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa5l', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
     public function etapa10libre()
     {
-        return view('admin.etapa10l');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa10l', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
     public function etapa15libre()
     {
-        return view('admin.etapa15l');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa15l', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
     public function etapa20libre()
     {
-        return view('admin.etapa20l');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa20l', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
 
     /*vistas portal SuncoEnergy */
 
     public function etapa5sunco()
     {
-        return view('admin.etapa5s');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa5s', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
     public function etapa10sunco()
     {
-        return view('admin.etapa10s');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa10s', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
     public function etapa15sunco()
     {
-        return view('admin.etapa15s');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa15s', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
     public function etapa20sunco()
     {
-        return view('admin.etapa20s');
+        $etapas = Etapa::orderBy('grupo', 'asc')->orderby('id','asc')->get();
+        $evidencias = Evidencia::orderBy('etapa_id', 'asc')->get();
+        return view('admin.etapa20s', [
+            'etapas' => $etapas,
+            'evidencias' => $evidencias
+        ]);
     }
   
     public function importUsers()

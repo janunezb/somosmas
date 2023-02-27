@@ -108,28 +108,23 @@
                                                             <strong>{{ $new['nombre'] }}</strong>
                                                         </p>
 
+                                                        <p style="color: #FE3EB2">
+                                                            <strong>{{ $new['empresa'] }}</strong>
+                                                        </p>
+
                                                         <p style="color: #707b7c" class="tam">
-                                                            {{ $new['cargo'] }}
+                                                            <strong>{{ $new['cargo'] }}</strong>
                                                         </p>
 
-
-                                                        <p style="color: #ff0083">
-                                                            <strong>
-                                                                {{ $new['empresa'] }}
-                                                            </strong>
-
-                                                        </p>
-                                                        <p style="color: #ff0083">
-                                                            <strong>
-                                                                {{ $new['ann'] }}
-                                                                @if ($new['ann'] <= 1)
-                                                                    año
-                                                                @else
-                                                                    años
-                                                                @endif
-
-
-                                                            </strong>
+                                                        <p style="color: #FE3EB2">
+                                                        <strong>
+                                                            {{ $new['ann'] }}
+                                                            @if ($new['ann'] <= 1)
+                                                                año
+                                                            @else
+                                                                años
+                                                            @endif
+                                                        </strong>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -234,7 +229,7 @@
                     @foreach ($lista as $fecha)
                         <div class="carrusel-itemms">
 
-                            <div class="card" style="height: 28rem;">
+                            <div class="card" style="height: 26rem;">
                                 <div class="tamaño">
                                     @if ($fecha['foto'])
                                         <img src="images/fotos/{{ $fecha['foto'] }}" alt="">
@@ -249,8 +244,8 @@
                                         <strong>{{ $fecha['nombre'] }}</strong>
                                     </p>
 
-                                    <p style="color: #707b7c" class="tam">
-                                        {{ $fecha['cargo'] }}
+                                    <p style="color: #ff0083" class="tam">
+                                        <strong>{{ $fecha['cargo'] }}</strong>
                                     </p>
 
                                     <p style="color: #ff0083">
@@ -303,7 +298,7 @@
                 @foreach ($listap as $new)
                     <div class="carrusel-itemms">
 
-                        <div class="card" style="height: 28rem;">
+                        <div class="card" style="height: 25rem;">
                             <div class="tamaño">
                                 @if ($new['foto'])
                                     @php Log::info($new['foto']); @endphp
@@ -319,13 +314,19 @@
                                     <strong>{{ $new['nombre'] }}</strong>
                                 </p>
 
-                                <p style="color: #ff0083">
+                                <p style="color: #FE3EB2">
                                     <strong>
                                         {{ $new['empresa'] }}
                                     </strong>
-
                                 </p>
-                                <p style="color: #ff0083">
+
+                                <p style="color: #FE3EB2">
+                                    <strong>
+                                        {{ $new['cargo'] }}
+                                    </strong>
+                                </p>
+
+                                <p style="color: #FE3EB2">
                                     <strong>
                                         {{ $new['ann'] }}
                                         @if ($new['ann'] <= 1)
@@ -346,7 +347,7 @@
         @endempty
     </section>
 @endif
-<hr>
+
 
 <section id="NoticiaDestacada" class="pt-4">
     @php $cant = 0; @endphp

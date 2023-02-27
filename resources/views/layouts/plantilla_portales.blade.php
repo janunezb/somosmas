@@ -20,9 +20,14 @@
 
 </head>
 
-@yield('contenido')
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-3">
+        <div class="container-fluid">
 
- <li class="nav-item">
+@yield('content1')
+
+</li>
+                    <li class="nav-item">
                         <a class="nav-link text-white" href="#redapoyo">Red De Apoyo</a>
                     </li>
                     <li class="nav-item">
@@ -32,12 +37,8 @@
                 </ul>
 
 
-                <div class="pr-2">
-
-                </div>
-
-                <div class="pr-2">
-                    <a class="text-white" style="text-decoration: none">Bienvenido: <b>
+                <div class="pr-3">
+                    <a class="bienvenido text-white" style="text-decoration: none">Bienvenido: <b>
                             {{ auth()->user()->nombre }}</b></a>
                 </div>
 
@@ -51,19 +52,43 @@
 
 
                 <li class="nav-link dropdown p-0">
-                    <a class="nav-link dropdown-toggle text-white mr-2 pt-2 mt-2" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none"></a>
+                    <a class="nav-link dropdown-toggle text-white mr-5 pt-2 mt-2" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none"></a>
                         <ul class="dropdown-menu bg" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item mr-3" style="" href="{{ route('inicio.contrasena') }}">
-                            Cambiar Contraseña</a></li>
+                            <li><a class="dropdown-item mr-3" style="" href="{{ route('inicio.editar_perfil') }}">
+                            Mi Perfil</a></li>
                             <li><a class="dropdown-item" id="sesion" style="" href="{{ route('login.destroy') }}">
                             Cerrar Sesión</a></li>
-                        </ul>
+                        </ul>   
                 </li>
+
             </div>
         </div>
     </nav>
+<div style="background-color: rgb(201, 201, 201)">
+        <main class="container d-flex p-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-8">
+                            <h1 style="color: #007aff">Sistema de gestión de seguridad
+                                y salud en el trabajo.</h1>
+                            <div style="">
+                                <p class="nuevaa h3">
+                                    Desarrollamos nuestras actividades
+                                    pensando en el bienestar de las personas.</p>
+                            </div>
+                            <!-- <br>
+                            <a href="#poldeseguridad" class="btn btn-outline-danger">Comencemos</a>
+                            <br>
+                            <br> -->
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 
-@yield('content')
+@yield('content2') 
 
 </body>
 
@@ -71,7 +96,7 @@
     <div class="footer bg-dark text-color:white">
         <div class="row p-5">
             <div class="col-4">
-                <h2><strong style="color: #ff0080">Red De Apoyo:</strong> </h2>
+                <h2><strong style="color: #FE3EB2">Red De Apoyo:</strong> </h2>
                 <p style="color: white">Red de apoyo en caso de emergencia: Navega, Libre, Liwa, Suncoenergy,
                     Suncolombia. Recuerde: Número general de emergencias: 123
                     Estamos para servirte cuenta con nosotros
@@ -92,14 +117,14 @@
 
             </div>
             <div class="col-4">
-                <h5><strong style="color: #ff0080">Direcciones oficinas: Recuerde número general emergencias: 123/
+                <h5><strong style="color: #FE3EB2">Direcciones oficinas: Recuerde número general emergencias: 123/
                         Numero general Cruz Roja: 132 </strong> </h5>
                 <p style="color: white">Oficina Bogotá de la 127: Barrio tierra linda-Calle 127b bis #49-48.
                     Oficina Navega Centro comercial Vivenza Plaza: Cra 10 # 0-49 Sur Local 148 Chía, Cundinamarca.
                     Oficina Libre Centro comercial Escorial Center: Carrera 6 # 07-36 Local 317 Fusagasugá,
                     Cundinamarca.</p>
 
-                <h5><strong style="color: #ff0080">Clínica más cercanas ARL Sura:</strong></h5>
+                <h5><strong style="color: #FE3EB2">Clínica más cercanas ARL Sura:</strong></h5>
                 <p style="color: white">Oficina Bogotá de la 127: Cruz roja Norte: Autopista norte con calle 145 /
                     Clínica los Nogales Calle 95-23-61 / Clínica Vip calle 97#23-10 /
                     Oficina Navega Chía: Hospital San Antonio de Chía, carrera 10 No. 8-24 Chía-Tel:5140707.
@@ -107,16 +132,16 @@
                     Clínica Belén Fusagasugá: Calle 17 # 12-27</p>
             </div>
             <div class="col-4">
-                <h5><strong style="color: #ff0080">Línea de reporte de AT (ARL Sura):</strong></h5>
+                <h5><strong style="color: #FE3EB2">Línea de reporte de AT (ARL Sura):</strong></h5>
                 <p style="color: white">Oficina Bogotá de la 127: 4055911
                     Oficina Navega Chía : 4055911
                     Oficina Libre Fusagasuga: 4055911</p>
-                <h5><strong style="color: #ff0080">Cuadrantes de la policía. Recuerde número general policía
+                <h5><strong style="color: #FE3EB2">Cuadrantes de la policía. Recuerde número general policía
                         112.</strong></h5>
                 <p style="color: white">Oficina Bogotá de la 127: Cuadrante 3002005460-3002005460
                     Oficina Navega Chía: Caí Guaymaral 313 3490791 / Cuadrantes: 3017791812 - 3212464768
                     Oficina Libre Fusagasugá: Cuadrante: 3212475311</p>
-                <h5><strong style="color: #ff0080">Bomberos. Recuerde número general bomberos 119.</strong></h5>
+                <h5><strong style="color: #FE3EB2">Bomberos. Recuerde número general bomberos 119.</strong></h5>
                 <p style="color: white">Oficina Bogotá de la 127: Estación de bomberos Caobos:
                     6144105-6143290-3822500/ Estación de bomberos Cedritos: 6724913
                     Oficina Navega Chía: Bomberos Chía: 8844595-8844587 / 300 1234567

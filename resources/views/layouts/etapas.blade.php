@@ -1,12 +1,8 @@
-@extends('layouts.plantilla_portales')
+@extends('layouts.plantilla_portales') 
 
-@section('title')
+@section('title', 'Portal Liwa')
 
-@section('contenido')
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-3">
-        <div class="container-fluid">
+@section('content1')
 
             <a class="navbar-brand" href="{{ route('admin.index') }}">Liwa</a>
 
@@ -35,8 +31,10 @@
                             <li><a class="dropdown-item" href="{{ route('admin.etapa20liwa') }}">Etapas 20 a la 22</a>
                             </li>
                         </ul>
-                    </li>
-                    
+                        @endsection
+
+@section('content2')             
+                        
+    @yield('content')
+
 @endsection
-                    
-</body> 

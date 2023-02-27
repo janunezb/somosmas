@@ -147,15 +147,15 @@
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
-    color: #ff0083;
+    color: #FE3EB2;
     background-color: #fff;
 }
 
 .ctn:hover{
     transition: 0.3s;
-    background-color: #ff0083;
+    background-color: #FE3EB2;
     color: white;
-    border: #FF0083 solid 0.2px;
+    border: #FE3EB2 solid 0.2px;
 }
 
 .cta{
@@ -249,7 +249,7 @@
     width: 840px;
     min-width: 300px;
     border-radius: 10px;
-    border: solid 1px; color: #ff0080;
+    border: solid 1px; color: #FE3EB2;
     margin-bottom: 50px;
     margin-top: 30px;
 }
@@ -283,7 +283,7 @@
     width: 150px;
     border: none;
     border-radius: 10px;
-    background-color: #FF0083;
+    background-color: #FE3EB2;
     font-weight: 500;
     display: block;
     margin: auto;
@@ -293,7 +293,7 @@
     width: 150px;
     border: none;
     border-radius: 10px;
-    background-color: #FF0083;
+    background-color: #FE3EB2;
     font-weight: 500;
     display: block;
     margin: auto;
@@ -305,7 +305,7 @@
 
 .caracteres{
     margin-top: 10px;
-    margin-left: 12px;
+    margin-left: 35px;
     font-size: 10px;
     color: rgb(168, 162, 162);
 }
@@ -340,14 +340,14 @@
     margin: auto;
     text-align: center;
     background-color: white;
-    color: #ff0080;
+    color: #FE3EB2;
     border-radius: 50px;
     width: 200px;
 }
 
 .atras:hover{
     text-decoration: none;
-    color: #ff0080;
+    color: #FE3EB2;
 }
 
 .titulo2{
@@ -355,7 +355,7 @@
     margin: auto;
     margin-top: -250px;
     text-align: center;
-    background-color: #ff0080;
+    background-color: #FE3EB2;
     color: white;
     border-radius: 50px;
     width: 400px;
@@ -365,7 +365,7 @@
         
     margin-top: -383px;
     text-align: center;
-    background-color: #ff0080;
+    background-color: #FE3EB2;
     color: white;
     border-radius: 50px;
     width: 400px;
@@ -376,7 +376,7 @@
     margin-top: 30px;
     text-align: center;
     font-size: xx-large;
-    background-color: #ff0080;
+    background-color: #FE3EB2;
     color: white;
     border-radius: 50px;
     width: 400px;
@@ -391,7 +391,7 @@
     padding: 8px 21px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    background-color: #ff0080;
+    background-color: #FE3EB2;
     cursor: pointer;
 }
  
@@ -434,7 +434,7 @@
 } */
 
  .cambiarfoto{
-    color: #ff0080;
+    color: #FE3EB2;
     background-color: transparent;
     border: none;
     margin-left: 25px;
@@ -446,7 +446,7 @@
  }
 
  .cambiarfoto:hover{
-    color: #ff0080;
+    color: #FE3EB2;
     text-decoration: none;
  }
  
@@ -460,7 +460,7 @@
     font-size: 10px;
     width: 60px;
     text-align: center;
-    background-color: #ff0080;
+    background-color: #FE3EB2;
     color: white;
     border-radius: 50px;
     border-color: white;
