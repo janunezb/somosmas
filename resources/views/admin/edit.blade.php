@@ -4,7 +4,8 @@
 
 @section('content_header')
 @livewireStyles
-    <h1>Editar Colaboador</h1>
+<link rel="stylesheet" href="{{ asset('css/swiper_noti.css') }}">
+    <h1>Editar Colaborador</h1>
 
 
 @stop
@@ -16,7 +17,7 @@
         <strong>{{session('info')}}</strong>
     </div>
 @endif
-{!!Form::model($user,['route'=> ['admin.users.update',$user],'method'=>'put'])!!}
+{!!Form::model($user,['route'=> ['admin.users.update',$user],'method'=>'put','id'=>'form2'])!!}
 
         <div class="card">
             <div class="card-body" >
@@ -103,7 +104,6 @@
                     </div>
                 </div>
                 <div class="row">
-
                     <div class="form-group col-4" >
                         {{-- @foreach ($roles as $role)
                             {!! Form::checkbox('roles[]',$role->id,null ,['class'=>'mr-1']);!!}
@@ -113,14 +113,33 @@
                          {!! Form::label('roles', 'Administrador') !!}
                     </div>
                 </div>
+                <div class="row">
+                    <div class="form-group col-3" >
+                        {!! Form::submit('Actualizar Colaborador', ['id'=>'btn2','class'=>'btn btn-primary']) !!}
+                        {!!Form::close()!!}
+                    </div>
+                    <div class="form-group col-3" >
+                        {!! Form::open(['route'=> ['admin.users.restpassword',$user],'method'=>'put','id'=>'form']) !!}
+                            {!! Form::submit('Restablecer contraseña', ['id'=>'btn1','class'=>'btn btn-primary']) !!}
+                        {!! Form::close() !!}
+                    </div>
+                </div>
             </div>
+
         </div>
 
-{!! Form::submit('Actualizar Colaborador', ['class'=>'btn btn-primary']) !!}
-{!!Form::close()!!}
+
+<div class="row">
+
+</div>
+@if (isset($_GET['somosmas']))
+<script type="text/javascript" src="{{ asset('js/alerta.js') }}"></script>
+@endif
 @stop
 
 @section('js')
+    <script src="{{ asset('js/sweetalert.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/alerta_admin.js') }}"></script>
     @livewireScripts
-    <script></script>
+
 @stop

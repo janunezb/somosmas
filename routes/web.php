@@ -64,24 +64,22 @@ Route::get('inicio/portales/portal-navega', [AdminController::class, 'navega'])
 //Interfaz Admin
 
 Route::get('admin', [AdminController::class, 'index'])
-->middleware('can:admin')
--> name('admin');
+    ->middleware('can:admin')
+    -> name('admin');
 
 Route::resource('admin/users',UserController::class)
     ->only('index','edit','create','store','update','show')
     ->middleware('can:admin')
     ->names('admin.users');
 
+Route::put('admin/{user}/edit', [UserController::class, 'restpassword'])
+    ->middleware('can:admin')
+    ->name('admin.users.restpassword');
+
 Route::resource('admin/news',NewController::class)
     ->only('index','edit','create','store','update','show')
     ->middleware('can:admin')
     ->names('admin.news');
-
-
-
-
-
-
 
 //Interfaz De Inicio
 

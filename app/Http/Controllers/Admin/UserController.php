@@ -19,7 +19,7 @@ use PhpParser\Node\Stmt\Return_;
     {
         $users1= User::where('estado', '0')
         ->get();
-        
+
         return view('admin.users',compact('users1'));
     }
 
@@ -34,7 +34,7 @@ use PhpParser\Node\Stmt\Return_;
 
     public function store(Request $request)
     {
-        
+
         $request->validate([
             'documento'=>'required|unique:users',
             'nombre'=>'required',
@@ -44,7 +44,7 @@ use PhpParser\Node\Stmt\Return_;
             'empresa_id'=>'required',
             'imagen'=>'image|required'
         ]);
-       
+
          $nombre_img=$request->input('documento');
          $extension= $request->file('imagen')->getClientOriginalExtension();
          $nombre_foto=$nombre_img.'.'.$extension;
@@ -58,7 +58,7 @@ use PhpParser\Node\Stmt\Return_;
          })
          ->save('images\fotos/'.$nombre_foto);
         User::create($request->all());
-        
+
         return redirect()->route('admin.users.index')->with('info','El colaborador se creó con exito');
     }
 
@@ -82,7 +82,7 @@ use PhpParser\Node\Stmt\Return_;
             'empresa_id'=>'required:',
             "imagen'=>'image:users,imagen,$user->id"
         ]);
-        
+
         $user->roles()->sync($request->roles);
         $user->update($request->all());
         return redirect()->route('admin.users.edit',$user)->with('info','Los datos han sido actualizados');
@@ -96,5 +96,11 @@ use PhpParser\Node\Stmt\Return_;
             $user->update(['estado' => '1']);
         }
         return redirect()->route('admin.users.index',$user)->with('info','Los datos han sido actualizados');
+    }
+
+    public function restpassword ( User $user)
+    {
+        $user->update(['password' => $user->documento]);
+        return redirect()->route('admin.users.edit',$user);
     }
 }

@@ -11,6 +11,7 @@ class UsersIndex extends Component
 {
     use WithPagination;
     public $search;
+    public $estado=1;
     protected $paginationTheme = "bootstrap";
     public $base;
 
@@ -22,12 +23,13 @@ class UsersIndex extends Component
     }
 
     public function render()
-
     {
-
-
-        $users = User::where('nombre','LIKE','%'.$this->search.'%')
-        ->orwhere('documento','LIKE','%'.$this->search.'%')
+        $users = User::
+        where(function($search){
+            $search->where('nombre','LIKE','%'.$this->search.'%')
+            ->orwhere('documento','LIKE','%'.$this->search.'%');
+        })
+        ->where('estado',$this->estado)
         ->paginate(20);
 
         return view('livewire.admin.users-index', compact('users'));

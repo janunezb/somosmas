@@ -182,7 +182,7 @@ return [
     | Here you can change the look and behavior of the admin panel.
     |
     | For detailed instructions you can look the admin panel classes here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Layout-and-Styling-Configuration
+    |
     |
     */
 
@@ -192,7 +192,8 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    // 'classes_sidebar' => 'sidebar-dark-blue elevation-4',
+    'classes_sidebar' => 'sidebar-light-fuchsia elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',

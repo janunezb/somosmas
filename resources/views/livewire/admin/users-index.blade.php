@@ -4,7 +4,16 @@
             <input wire:model="search" class="form-control" placeholder="Ingrese Nombre o Documento">
         </div>
         <div class="card-header">
-            <a class="btn btn-secondary" href="{{route('admin.users.create')}}">Agregar Colaborador</a>
+            <div class="row">
+                <div class="form-group col-10" >
+                    <a class="btn btn-secondary" href="{{route('admin.users.create')}}">Agregar Colaborador</a>
+                </div>
+                <div class="form-group col-2" >
+                {!! Form::label('estado', 'Habilitados') !!}
+                {{-- {!! Form::checkbox('estado','1',null ,['class'=>'mr-1'])!!} --}}
+                <input wire:model="estado" type="checkbox">
+                </div>
+            </div>
         </div>
         @if ($users->count())
             <div class="card-body">
@@ -22,8 +31,8 @@
                     </thead>
                     <tbody>
                         @foreach ($users as $user)
-                            @if ($user->estado == 0)  
-                                <tr class="p-3 mb-2 bg-warning text-dark">
+                            @if ($user->estado == 0)
+                                <tr class="p-3 mb-2 bg-fuchsia text-dark">
                                     <td>{{$user->documento}}</td>
                                     <td>{{$user->nombre}}</td>
                                     <td>{{$user->cargo}}</td>
