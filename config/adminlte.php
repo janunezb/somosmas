@@ -332,7 +332,7 @@ return [
         [
             'text'        => 'Noticias',
             'route'         => 'admin.news.index',
-            'icon'        => 'fas fa-hands-newspape',
+            'icon'        => 'fas fa-solid fa-newspaper',
             'label_color' => 'success',
 
         ],
