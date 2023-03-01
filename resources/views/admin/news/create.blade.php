@@ -40,26 +40,24 @@
         </div>
         <div class="row">
             <div class="form-group col-4">
-                {!! Form::label('imagen', 'Foto') !!}
-                {!! Form::file('imagen',['accept'=>'image/*'])!!}
-                @error('imagen')
+                {!! Form::label('imagenes', 'Foto') !!}
+                {!! Form::file('imagenes',['accept'=>'image/*'])!!}
+                @error('imagenes')
                 <span class="text-danger">{{$message }}</span>
             @enderror
             </div>
         </div>
         <div class="row">
             <div class="form-group col-4" >
-               {{-- @foreach ($roles as $role)
-                    {!! Form::checkbox('roles[]',$role->id,null ,['class'=>'mr-1']);!!}
-                    {{$role->name}}
-                 @endforeach  --}}
-                 {!! Form::checkbox('estado','1',true ,['class'=>'mr-1'])!!}
-                 {!! Form::label('estado', 'Habilitado') !!}
+                 {!! Form::radio('estado',1 ,['class'=>'mr-1'])!!}
+                 {!! Form::label('estado', 'Publicado') !!}
+                 {!! Form::radio('estado',0,['class'=>'mr-1'])!!}
+                 {!! Form::label('estado', 'Borrador') !!}
             </div>
         </div>
     </div>
   </div>
-  
+
   {!! Form::submit('Crear Noticia', ['class'=>'btn btn-primary']) !!}
   <hr>
 {!!Form::close()!!}
@@ -67,7 +65,7 @@
 
 @section('js')
     @livewireScripts
-    
+
     <script src="{{ asset('js/ckeditor.js') }}"></script>
 
     <script>
@@ -77,6 +75,6 @@
             console.error( error );
         } );
     </script>
-   
+
 
 @stop

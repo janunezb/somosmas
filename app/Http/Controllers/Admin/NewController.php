@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Noticia;
+use App\Http\Requests\StoreNewRequest;
 class NewController extends Controller
 {
 
@@ -20,9 +21,11 @@ class NewController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreNewRequest $request)
     {
-        //
+        $new=Noticia::create($request->all());
+        return $new;
+        return redirect()->route('admin.news.edit',$new)->with('info','Los datos han sido actualizados');
     }
 
 
