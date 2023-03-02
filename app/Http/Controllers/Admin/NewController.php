@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Noticia;
 use App\Http\Requests\StoreNewRequest;
+use Intervention\Image\Facades\Image;
 class NewController extends Controller
 {
 
@@ -23,9 +24,23 @@ class NewController extends Controller
 
     public function store(StoreNewRequest $request)
     {
+        // $nombre_img=$request->input('id');
+        //  $extension= $request->file('imagenes')->getClientOriginalExtension();
+        //  $nombre_foto=$nombre_img.'.'.$extension;
+
+        //  $request->merge(['imagenes'=>$nombre_foto]);
+         
+
+        //  Image::make($request->file('imagenes'))
+        //  ->resize(1000, null, function ($constraint) {
+        //     $constraint->aspectRatio();
+        //  })
+        //  ->save('images\ensayo/'.$nombre_foto);
+
+        // return $request->all();
         $new=Noticia::create($request->all());
-        return $new;
-        return redirect()->route('admin.news.edit',$new)->with('info','Los datos han sido actualizados');
+        
+        // return redirect()->route('admin.news.edit',$new)->with('info','Los datos han sido actualizados');
     }
 
 

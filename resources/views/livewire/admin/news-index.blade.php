@@ -4,7 +4,7 @@
             <input wire:model="search" class="form-control" placeholder="Ingrese Nombre o Documento">
         </div>
         <div class="card-header">
-            <a class="btn btn-secondary" href="{{route('admin.news.create')}}">Agregar Noticia</a>
+            <a class="btn btn-enviar" href="{{route('admin.news.create')}}">Agregar Noticia</a>
         </div>
         @if ($news->count())
             <div class="card-body">

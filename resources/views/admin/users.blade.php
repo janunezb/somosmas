@@ -1,5 +1,19 @@
 @extends('adminlte::page')
 
+@section('css')
+<style>
+    .btn-enviar{
+        background: #F23DB3;
+        color: azure;
+    }
+    .btn-enviar:hover {
+        background: #9f2976;
+        color: azure;
+    }
+
+</style>
+@endsection
+
 @section('title', 'Colaboradores')
 
 @section('content_header')

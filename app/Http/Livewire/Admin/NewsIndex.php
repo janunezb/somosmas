@@ -20,7 +20,7 @@ class NewsIndex extends Component
     {
         $news = Noticia::where('titulo','LIKE','%'.$this->search.'%')
         ->orwhere('contenido','LIKE','%'.$this->search.'%')
-        ->paginate(2);
+        ->paginate(4);
         return view('livewire.admin.news-index',compact('news'));
     }
 }
