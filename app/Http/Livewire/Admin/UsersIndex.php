@@ -29,6 +29,7 @@ class UsersIndex extends Component
             $search->where('nombre','LIKE','%'.$this->search.'%')
             ->orwhere('documento','LIKE','%'.$this->search.'%');
         })
+
         ->where('estado',$this->estado)
         ->paginate(20);
 

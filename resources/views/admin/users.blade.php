@@ -28,14 +28,13 @@
         </div>
     @endif
 
-    
+
 
     <p>@livewire('admin.users-index',['base'=>$users1])</p>
 @stop
-
-
-
 @section('js')
+    <script src="{{ asset('js/sweetalert.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/alerta_admin.js') }}"></script>
     @livewireScripts
-    <script></script>
+
 @stop

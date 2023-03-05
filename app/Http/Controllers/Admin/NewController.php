@@ -29,7 +29,7 @@ class NewController extends Controller
         //  $nombre_foto=$nombre_img.'.'.$extension;
 
         //  $request->merge(['imagenes'=>$nombre_foto]);
-         
+
 
         //  Image::make($request->file('imagenes'))
         //  ->resize(1000, null, function ($constraint) {
@@ -39,7 +39,7 @@ class NewController extends Controller
 
         // return $request->all();
         $new=Noticia::create($request->all());
-        
+
         // return redirect()->route('admin.news.edit',$new)->with('info','Los datos han sido actualizados');
     }
 

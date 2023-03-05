@@ -82,7 +82,6 @@ use PhpParser\Node\Stmt\Return_;
             'empresa_id'=>'required:',
             "imagen'=>'image:users,imagen,$user->id"
         ]);
-
         $user->roles()->sync($request->roles);
         $user->update($request->all());
         return redirect()->route('admin.users.edit',$user)->with('info','Los datos han sido actualizados');
@@ -95,6 +94,11 @@ use PhpParser\Node\Stmt\Return_;
         else{
             $user->update(['estado' => '1']);
         }
+        return redirect()->route('admin.users.index',$user)->with('info','Los datos han sido actualizados');
+    }
+    public function delete(User $user)
+    {
+        $user->update(['estado' => '2']);
         return redirect()->route('admin.users.index',$user)->with('info','Los datos han sido actualizados');
     }
 
