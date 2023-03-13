@@ -7,6 +7,7 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GestorAdmin;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\NewController;
 // Route::get('/', function () {
@@ -59,7 +60,7 @@ Route::get('inicio/portales/portal-navega', [AdminController::class, 'navega'])
 
 //Interfaz Admin
 
-Route::get('admin', [AdminController::class, 'index'])
+Route::get('admin', [GestorAdmin::class, 'index'])
     ->middleware('can:admin')
     -> name('admin');
 
