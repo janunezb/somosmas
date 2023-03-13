@@ -102,9 +102,9 @@ use PhpParser\Node\Stmt\Return_;
         return redirect()->route('admin.users.index',$user)->with('info','Los datos han sido actualizados');
     }
 
-    public function restpassword ( User $user)
+    public function restpassword(User $user)
     {
         $user->update(['password' => $user->documento]);
-        return redirect()->route('admin.users.edit',$user);
+        return redirect()->route('admin.users.edit',$user)->with('info','Los datos han sido actualizados');
     }
 }

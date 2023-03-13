@@ -67,18 +67,22 @@ Route::get('admin', [AdminController::class, 'index'])
     ->middleware('can:admin')
     -> name('admin');
 
+//Interfaz Admin Usuarios
+
 Route::resource('admin/users',UserController::class)
-    ->only('index','edit','create','store','update','show','destroy')
+    ->only('index','edit','create','store','update','show')
     ->middleware('can:admin')
     ->names('admin.users');
 
 Route::put('admin/{user}/edit', [UserController::class, 'restpassword'])
     ->middleware('can:admin')
     ->name('admin.users.restpassword');
-
-Route::put('admin/{user}/edit', [UserController::class, 'delete'])
+    
+Route::put('admin/user/{user}/edit', [UserController::class, 'delete'])
     ->middleware('can:admin')
     ->name('admin.users.delete');
+
+//Interfaz Admin Noticias
 
 Route::resource('admin/news',NewController::class)
     ->only('index','edit','create','store','update','show')

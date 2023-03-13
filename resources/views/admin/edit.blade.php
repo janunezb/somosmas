@@ -119,7 +119,8 @@
                         {!!Form::close()!!}
                     </div>
                     <div class="form-group col-3" >
-                        {!! Form::open(['route'=> ['admin.users.restpassword',$user],'method'=>'put','id'=>'form']) !!}
+                        {{-- {!!Form::model($user,['route'=> ['admin.users.update',$user],'method'=>'put','id'=>'form2'])!!} --}}
+                        {!!Form::model($user,['route'=> ['admin.users.restpassword',$user],'method'=>'put','id'=>'form']) !!}
                             {!! Form::submit('Restablecer contraseña', ['id'=>'btn1','class'=>'btn btn-primary']) !!}
                         {!! Form::close() !!}
                     </div>

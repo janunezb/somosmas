@@ -306,7 +306,7 @@
                         <div class="card" style="height: 28rem;">
                             <div class="tamaño">
                                 @if ($new['foto'])
-                                    @php Log::info($new['foto']); @endphp
+                                    
                                     <img src="images/fotos/{{ $new['foto'] }}" alt="">
                                 @else
                                     <img src="{{ asset('images/fotonone.jpeg') }}" alt="">

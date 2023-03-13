@@ -24,20 +24,23 @@ class NewController extends Controller
 
     public function store(StoreNewRequest $request)
     {
+        
+
+        $imagenes=$request->input('titulo');
         // $nombre_img=$request->input('id');
-        //  $extension= $request->file('imagenes')->getClientOriginalExtension();
-        //  $nombre_foto=$nombre_img.'.'.$extension;
+        // $extension= $request->file('imagenes')->getClientOriginalExtension();
+        // $nombre_foto=$nombre_img.'.'.$extension;
 
-        //  $request->merge(['imagenes'=>$nombre_foto]);
+        // $request->merge(['imagenes'=>$nombre_foto]);
 
 
-        //  Image::make($request->file('imagenes'))
+        // Image::make($request->file('imagenes'))
         //  ->resize(1000, null, function ($constraint) {
         //     $constraint->aspectRatio();
-        //  })
-        //  ->save('images\ensayo/'.$nombre_foto);
+        // })
+        // ->save('images\ensayo/'.$nombre_foto);
 
-        // return $request->all();
+        return $imagenes;
         $new=Noticia::create($request->all());
 
         // return redirect()->route('admin.news.edit',$new)->with('info','Los datos han sido actualizados');
