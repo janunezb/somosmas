@@ -814,7 +814,6 @@
                 <button class="botonn">
                 <a href="https://forms.gle/s8ns9EERMzbMUoNv8" target="_blank" class="btn-ingresa">
                     <div> 
-                 
                         <span class="hover"></span>
                         <span class="hover"></span>
                         <span class="hover"></span>

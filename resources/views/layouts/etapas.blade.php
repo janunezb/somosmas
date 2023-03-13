@@ -3,7 +3,8 @@
 @section('title', 'Portal Liwa')
 
 @section('content1')
-
+    <body> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-3">
             <a class="navbar-brand p-0" href="{{ route('admin.index') }}"><img class="img_portal" src="{{ asset('images/logos/liwa.png') }}" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
