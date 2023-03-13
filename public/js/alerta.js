@@ -1,6 +1,6 @@
 Swal.fire({
     icon: 'warning',
-   title: 'Oops...',
+    title: 'Oops...',
     text: 'No perteneces a esta compañía',
   });
 
