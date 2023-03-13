@@ -405,7 +405,7 @@ neww{
 .btn-ingresa {
     width: 100%;
     font-size: 16px;
-    color: #FE3EB2;
+    /*color: #FE3EB2;*/
 }
 
 .btn-ingresa:hover {

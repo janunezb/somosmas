@@ -698,19 +698,21 @@
 
         <div class="row">
             <div class="cajon col-3 p-2">
+                <a href="https://forms.gle/RuYsLP2iRA1N5wEh9" target="_blank" class="">
                 <button class="botonn">
                     <div>
                         <span class="hover"></span>
                         <span class="hover"></span>
                         <span class="hover"></span>
                         <span class="hover"></span>
-                        <a href="https://forms.gle/RuYsLP2iRA1N5wEh9" target="_blank" class="btn-ingresa">
+                        
                         <i class="iconify fa-solid fa-virus-covid"></i>
                         <h5 class="card-title">Encuesta de prevención COVID-19</h5>
                         <p class="card-text h6">Debes realizarla mínimo 1 vez a la semana durante cada mes. Tiempo estimado 1 minuto.</p>
-                        Ingresa</a>
+                        <span class="btn-ingresa">Ingresa</span>
                     </div>
                 </button>
+                </a>
             </div>
 
             <div class="cajon col-3 p-2">
