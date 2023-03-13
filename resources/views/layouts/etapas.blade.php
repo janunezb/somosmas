@@ -4,7 +4,7 @@
 
 @section('content1')
 
-            <a class="navbar-brand" href="{{ route('admin.index') }}">Liwa</a>
+            <a class="navbar-brand p-0" href="{{ route('admin.index') }}"><img class="img_portal" src="{{ asset('images/logos/liwa.png') }}" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

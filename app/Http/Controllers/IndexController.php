@@ -127,6 +127,8 @@ class IndexController extends Controller
 
         return view('inicio.index',compact('contenido','noticia', 'card',
          'formacion', 'listap', 'lista', 'formato1', 'formato', 'fecha_hoy', 'formatos'));
+
+        
     }
 
     public function cultura()
@@ -156,7 +158,6 @@ class IndexController extends Controller
 
     public function editar_perfil()
     {
-        
         $empresas = DB::table('users')
             ->join('empresas', 'empresas.id', '=', 'users.empresa_id')
             ->select('empresas.nombre')

@@ -5,7 +5,7 @@
 
 @section('content1')
 <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle text-white" href="{{route('inicio.index')}}" id="navbarDropdown"
+    <a class="nav-link text-white" href="{{route('inicio.index')}}" id="navbarDropdown"
     role="button" aria-expanded="false">
     Tu SGSST</a>
 @endsection
@@ -17,6 +17,7 @@
 
         <div class="pt-3 col-4 offset-4">
             <h2 class="titulo">Cambio de Foto</h2>
+            <hr class="line-title">
         </div>
 
         <div class="form-body2">

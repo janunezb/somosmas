@@ -4,7 +4,7 @@
 
 @section('content1')
 <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle text-white" href="{{route('inicio.index')}}" id="navbarDropdown"
+    <a class="nav-link text-white" href="{{route('inicio.index')}}" id="navbarDropdown"
     role="button" aria-expanded="false">
     Tu SGSST</a>
 @endsection
@@ -17,6 +17,8 @@
             <div class="row posicion">
                 <div class="col-4">
                     <h2 class="titulo">Portales SGSST</h2>
+                    <hr class="line-title">
+                    <br>
                 </div>
 
                 <div class="col-12 texto">

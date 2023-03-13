@@ -3829,16 +3829,6 @@ fieldset:disabled .btn {
   background-color: transparent;
 }
 
-.btn-outline-light {
-  color: #f8f9fa;
-  border-color: #f8f9fa;
-}
-
-.btn-outline-light:hover {
-  color: #000;
-  background-color: #f8f9fa;
-  border-color: #f8f9fa;
-}
 
 .btn-check:focus + .btn-outline-light, .btn-outline-light:focus {
   -webkit-box-shadow: 0 0 0 0.25rem rgba(248, 249, 250, 0.5);
@@ -4590,6 +4580,16 @@ fieldset:disabled .btn {
   font-size: 1.25rem;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.img_portal{
+  width: 60px;
+  height: 50px;
+}
+
+.logo_portal{
+  display: block;
+  margin: 100px auto;
 }
 
 .navbar-nav {
@@ -6411,7 +6411,6 @@ fieldset:disabled .btn {
 }
 
 
-}
 
 .modal-backdrop {
   position: fixed;

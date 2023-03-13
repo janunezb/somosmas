@@ -21,6 +21,7 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/materialize.min.css') }}"> --}}
     
     
+    
     <script src="{{ asset('js/swiper.bundle.min.js') }}"></script>
     <script src="{{ asset('js/splide.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-5.1.bundle.min.js') }}"></script>
@@ -33,7 +34,7 @@
 
 </head>
 
-<body>
+<body> 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('inicio.index') }}">

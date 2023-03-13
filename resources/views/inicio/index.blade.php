@@ -6,7 +6,7 @@
 {{-- *********** menu desplegable ***********************--}}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown"
-                         role="button"data-bs-toggle="dropdown" aria-expanded="false">
+                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Tu SGSST
                         </a>
                         <ul class="dropdown-menu bg" aria-labelledby="navbarDropdown">
@@ -75,7 +75,7 @@
                         <div class="contenedores">
                             <div class="col-12 pasti h5">
                                 <p> <strong>Felicitamos a los colaboradores que
-                                        hoy están cumpliendo una fecha especial</strong>
+                                        hoy están cumpliendo una fecha especial.</strong>
                                 </p>
                             </div>
                             <div class="row">
@@ -87,6 +87,7 @@
                                             <strong>
                                                 Aniversario
                                             </strong>
+                                            
                                         </p>
                                     </div>
                                     <div class="carrusel-itemsssn">
@@ -146,6 +147,7 @@
                                         <strong>
                                             Cumpleaños
                                         </strong>
+                                        
                                     </p>
                                 </div>
 
@@ -166,19 +168,16 @@
                                                 </div>
 
                                                 <div class="card-body pt-0">
-                                                    <p class="card-title p-2" style="font-size:medium;">
+                                                    <p class="card-title" style="font-size:medium;">
                                                         <strong>{{ $fecha['nombre'] }}</strong>
                                                     </p>
-
-                                                    <p style="color: #707b7c" class="tam p-2">
-                                                        {{ $fecha['cargo'] }}
-                                                    </p>
-
-                                                    <p style="color: #ff0083" class="p-1">
+                                                    <p style="color: #FE3EB2" class="p-1">
                                                         <strong>
                                                             {{ $fecha['empresa'] }}
                                                         </strong>
-
+                                                    </p>
+                                                    <p style="color: #707b7c" class="tam p-2">
+                                                        <strong>{{ $fecha['cargo'] }}</strong> 
                                                     </p>
                                                 </div>
                                             </div>
@@ -203,6 +202,7 @@
                 <div class="row">
                     <div class="col-4 offset-4">
                         <h2 class="titulo">Cumpleaños!</h2>
+                        <hr class="line-title">
                     </div>
                 </div>
 
@@ -244,11 +244,11 @@
                                         <strong>{{ $fecha['nombre'] }}</strong>
                                     </p>
 
-                                    <p style="color: #ff0083" class="tam">
+                                    <p style="color: #707b7c" class="tam">
                                         <strong>{{ $fecha['cargo'] }}</strong>
                                     </p>
 
-                                    <p style="color: #ff0083">
+                                    <p style="color: #FE3EB2">
                                         <strong>
                                             {{ $fecha['empresa'] }}
                                         </strong>
@@ -276,9 +276,10 @@
             <div class="row">
                 <div class="col-4 offset-4">
                     <h2 class="titulo">Aniversario</h2>
+                    <hr class="line-title">
                 </div>
             </div>
-
+            <br>
             <div class="col-12">
                 <p class="texto">
                     Felicitamos a los colaboradores que el dia de hoy
@@ -320,7 +321,7 @@
                                     </strong>
                                 </p>
 
-                                <p style="color: #FE3EB2">
+                                <p style="color: #707b7c">
                                     <strong>
                                         {{ $new['cargo'] }}
                                     </strong>
@@ -348,7 +349,7 @@
     </section>
 @endif
 
-
+<br>
 <section id="NoticiaDestacada" class="pt-4">
     @php $cant = 0; @endphp
     @foreach ($noticia as $noticias)
@@ -454,9 +455,8 @@
                     </div>
 
                 </div>
-                <div class="vermas" style="padding-top: 20%; padding-left:76%">
-                    <a href="{{ route('inicio.noticia') }}">Más noticias <i
-                            class="bi bi-arrow-right-square"></i> </a>
+                <div class="vermas" style="width: 700px; padding-top: 15%; padding-left:90%">
+                    <a href="{{ route('inicio.noticia') }}">Más noticias <i class="bi bi-arrow-right-square"></i> </a>
                 </div>
             </div>
 
@@ -498,14 +498,11 @@
     <div class="row">
         <div class="col-12">
             <p>
-
-                <br>
-                <br>
+                <br> 
                 <hr>
             </p>
         </div>
     </div>
-
 </section>
 
 <p></p>
@@ -513,9 +510,10 @@
     <div class="row">
         <div class="col-4 offset-4">
             <h2 class="titulo">Inducción</h2>
+            <hr class="line-title">
         </div>
     </div>
-
+    <br>
 
     <div class="container-1">
 
@@ -563,6 +561,8 @@
     <div class="row">
         <div class="col-6 offset-3">
             <h2 class="titulo">Formaciones Del Mes</h2>
+            <hr class="line-title">
+            <br>
         </div>
     </div>
 
@@ -601,7 +601,10 @@
     <div class="row">
         <div class="col-6 offset-3">
             <h2 class="titulo">Formaciones Comités</h2>
+            <hr class="line-title">
+            <br>
         </div>
+        
         <div class="row">
             <div class="col-3 p-2">
                 <div class="card">
@@ -676,7 +679,6 @@
         <br>
         <br>
         <hr>
-
     </p>
 </section>
 
@@ -684,56 +686,63 @@
     <div class="row">
         <div class="col-6 offset-3 ">
             <h2 class="titulo">Medicina Preventiva</h2>
+            <hr class="line-title">
+            <br>
         </div>
+        
         <div class="col-12">
             <p class="texto">A través de las actividades de esta sección juntos identificaremos
                 situaciones de riesgo asociadas al COVID 19 y frente a otras situaciones que puedan
                 afectar tu salud</p>
         </div>
+
         <div class="row">
-            <div class="col-4 p-2">
+            <div class="cajon col-3 p-2">
                 <button class="botonn">
                     <div>
-                        <i class=" fa-solid fa-virus-covid"></i>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <a href="https://forms.gle/RuYsLP2iRA1N5wEh9" target="_blank" class="btn-ingresa">
+                        <i class="iconify fa-solid fa-virus-covid"></i>
                         <h5 class="card-title">Encuesta de prevención COVID-19</h5>
-                        <p class="card-text h6">Debes realizarla mínimo 1 ves a la semana durante cada
-                            mes. Tiempo estimado 1 minuto.</p>
-                        <a href="https://forms.gle/RuYsLP2iRA1N5wEh9" class="btn btn-outline-light"
-                            target="_blank"><i class="icon bi bi-arrow-right"></i> Ingresa</a>
-
+                        <p class="card-text h6">Debes realizarla mínimo 1 vez a la semana durante cada mes. Tiempo estimado 1 minuto.</p>
+                        Ingresa</a>
                     </div>
                 </button>
             </div>
-            <div class="col-4 p-2">
-                <button class="botonn1">
+
+            <div class="cajon col-3 p-2">
+                <button class="botonn">
                     <div>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <a href="https://forms.gle/LRGMRZASXysFLKKj9" target="_blank" class="btn-ingresa">
                         <span class="iconify" data-icon="ri:user-heart-line"></span>
                         <h5 class="card-title">Encuesta de perfil sociodemográfico</h5>
                         <p></p>
-
-                        <p class="card-text h6">Realizada en Enero 2022. Tiempo estimado 5 minutos.</p>
-                        <p></p>
-                        <a href="https://forms.gle/LRGMRZASXysFLKKj9" class="btn btn-outline-light"
-                            target="_blank"><i class="icon bi bi-arrow-right"></i> Ingresa</a>
-
+                        <p class="card-text h6">Debes realizarla en Enero 2022. Tiempo estimado 5 minutos.</p>
+                        <p></p>Ingresa</a>
                     </div>
                 </button>
 
-
             </div>
-            <div class="col-4 p-2">
-                <button class="botonn2">
+            <div class="cajon col-3 p-2">
+                <button class="botonn">
                     <div>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <a href="https://forms.gle/3jxiPHVHRMWnivkp7" target="_blank" class="btn-ingresa">
                         <span class="iconify" data-icon="ri:open-arm-line"></span>
                         <h5 class="card-title">Gestión de riesgos ergonómicos</h5>
                         <p></p>
-
-                        <p class="card-text h6">Enfoque cargas y posturas. Tiempo estimado 5 minutos.
-                        </p>
-                        <p></p>
-                        <a href="https://forms.gle/3jxiPHVHRMWnivkp7" class="btn btn-outline-light"
-                            target="_blank"><i class="icon bi bi-arrow-right"></i> Ingresa</a>
-
+                        <p class="card-text h6">Enfoque cargas y posturas. Tiempo estimado 5 minutos.</p>
+                        <p></p>Ingresa</a>
                     </div>
                 </button>
 
@@ -757,66 +766,70 @@
     <div class="row">
         <div class="col-6 offset-3">
             <h2 class="titulo">Seguridad Industrial</h2>
+            <hr class="line-title">
+            <br>
         </div>
+        
         <div class="col-12">
             <p class="texto">Eres el actor principal en la identificación de los peligros y riesgos
                 que se puedan presentar en tu área de trabajo; con tu ayuda los identificaremos y
                 gestionaremos mucho mejor.</p>
         </div>
+
         <div class="row">
-            <div class="col-4 p-2">
-                <button class="botonn3">
-                    <div>
+            <div class="cajon col-3 p-2">
+                <button class="botonn">
+                    <div> 
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <a href="https://forms.gle/sFSS61k8rNVyuuSN7" target="_blank" class="btn-ingresa">
                         <span class="iconify" data-icon="ci:user-voice"></span>
                         <h5 class="card-title">Reportes de peligros y riesgos</h5>
-                        <p class="card-text h6">Realízala en enero 2022. Tiempo estimado 5 minutos;
-                            aplica para todos
-                            los colaboradores.</p>
-                        <a href="https://forms.gle/sFSS61k8rNVyuuSN7" class="btn btn-outline-light"
-                            target="_blank"><i class="icon bi bi-arrow-right"></i> Ingresa</a>
-
+                        <p class="card-text h6">Realízala en enero 2022. Tiempo estimado 5 minutos; aplica para todos los colaboradores.</p> 
+                        Ingresa</a>
                     </div>
                 </button>
-
-
             </div>
-            <div class="col-4 p-2">
 
-                <button class="botonn4">
+            <div class="cajon col-3 p-2">
+                <button class="botonn">
                     <div>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <a href="https://forms.gle/gVAaSMWJjCnLbica7" target="_blank" class="btn-ingresa">
                         <span class="iconify" data-icon="ri:hand-heart-fill"></span>
                         <h5 class="card-title">Como es tu gestión frente al SGSST</h5>
-                        <p class="card-text h6">Realízala en enero 2022. Tiempo estimado 5 minutos;
-                            aplica para todos
-                            los colaboradores.</p>
-                        <a href="https://forms.gle/gVAaSMWJjCnLbica7" class="btn btn-outline-light"
-                            target="_blank"><i class="icon bi bi-arrow-right"></i> Ingresa</a>
-
+                        <p></p>
+                        <p class="card-text h6">Realízala en enero 2022. Tiempo estimado 5 minutos; aplica para todos los colaboradores.</p>
+                        Ingresa</a>
                     </div>
                 </button>
-
             </div>
-            <div class="col-4 p-2">
 
-                <button class="botonn5">
-                    <div>
-                        <span class="iconify" data-icon="ri:hand-heart-fill"></span>
-                        <h5 class="card-title">Tomémonos un café</h5>
+            <div class="cajon col-3 p-2">
+                <button class="botonn">
+                <a href="https://forms.gle/s8ns9EERMzbMUoNv8" target="_blank" class="btn-ingresa">
+                    <div> 
+                 
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>                     
+                        
+                        <span class="iconify" data-icon="bxs-coffee"></span>
+                        <h5 class="card-title">Tomémonos un <br> café</h5>
                         <p></p>
-                        <p class="card-text h6">Requieres atención o apoyo frente a algún peligro
-                            solicítalo aquí.</p>
-                        <p></p>
-                        <a href="https://forms.gle/s8ns9EERMzbMUoNv8" class="btn btn-outline-light"
-                            target="_blank"><i class="icon bi bi-arrow-right"></i> Ingresa</a>
-
+                        <p class="card-text h6">Requieres atención o apoyo frente a algún peligro solicítalo aquí.</p>
+                        Ingresa
                     </div>
+                    </a>
                 </button>
-
-
-            </div>
-
+            </div> 
         </div>
-
     </div>
 </section>
 
@@ -825,7 +838,6 @@
         <br>
         <br>
         <hr>
-
     </p>
 </section>
 
@@ -833,66 +845,66 @@
     <div class="row">
         <div class="col-6 offset-3">
             <h2 class="titulo">Seguridad Vial</h2>
-
+            <hr class="line-title">
+            <br>
         </div>
+        
         <div class="col-12">
             <p class="texto"> El riesgo vial está presente en nuestro día a día y debemos gestionarlo
                 de manera
                 preventiva.</p>
         </div>
+
         <div class="row">
-            <div class="col-4 p-2">
-                <button class="botonn6">
-                    <div>
+            <div class="cajon col-3 p-2">
+                <button class="botonn">
+                    <div>     
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>                   
+                        <a href="https://forms.gle/xBF7h7eCq8fBxD5z8" target="_blank" class="btn-ingresa">
                         <span class="iconify" data-icon="ri:roadster-fill"></span>
                         <h5 class="card-title">Encuesta De Seguridad Vial</h5>
                         <p></p>
-                        <p class="card-text h6">Realízala en enero 2022. Tiempo estimado 5 minutos;
-                            aplica para todos
-                            los colaboradores.</p>
-                        <p></p>
-                        <a href="https://forms.gle/xBF7h7eCq8fBxD5z8" class="btn btn-outline-light"
-                            target="_blank"><i class="icon bi bi-arrow-right"></i> Ingresa</a>
-
+                        <p class="card-text h6">Realízala en enero 2022. Tiempo estimado 5 minutos; aplica para todos los colaboradores.</p>
+                        <p></p> Ingresa</a>
                     </div>
                 </button>
-
             </div>
-            <div class="col-4 p-2">
-                <button class="botonn7">
-                    <div>
+
+            <div class="cajon col-3 p-2">
+                <button class="botonn">
+                    <div class="botonn_div">  
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <a href="https://forms.gle/YDDPqcozj3B8cYoB8" target="_blank" class="btn-ingresa">
                         <span class="iconify" data-icon="ri:user-3-fill"></span>
                         <h5 class="card-title">Formación teórica para conductores</h5>
-                        <p class="card-text h6">Dirigida a conductores que se desplazan en ellos con
-                            fines de la actividad económica de la empresa.</p>
-                        <a href="https://forms.gle/YDDPqcozj3B8cYoB8" class="btn btn-outline-light"
-                            target="_blank"><i class="icon bi bi-arrow-right"></i> Ingresa</a>
-
+                        <p class="card-text h6">Dirigida a conductores que se desplazan en ellos con fines de la actividad económica de la empresa.</p> 
+                        Ingresa</a>
                     </div>
                 </button>
-
-
             </div>
-            <div class="col-4 p-2">
 
-                <button class="botonn8">
+            <div class="cajon col-3 p-2">
+                <button class="botonn">
                     <div>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        <span class="hover"></span>
+                        
                         <span class="iconify" data-icon="ri:discuss-line"></span>
                         <h5 class="card-title">Reportes de riesgos en la vía</h5>
-                        <p class="card-text h6">Es importante que conozcas los peligros con el fin de
-                            prevenir accidentes.
-                            Tiempo estimado 5 minutos; aplica para todos.</p>
-                        <a href="https://forms.gle/pTuqrBD4ccGR4e7i6" class="btn btn-outline-light"
-                            target="_blank"><i class="icon bi bi-arrow-right"></i> Ingresa</a>
-
+                        <p class="card-text h6">Es importante que conozcas los peligros con el fin de prevenir accidentes.Tiempo estimado 5 minutos; aplica para todos.</p>
+                        <a href="https://forms.gle/pTuqrBD4ccGR4e7i6" target="_blank" class="btn-ingresa">Ingresa</a>
                     </div>
                 </button>
-
-
             </div>
-
         </div>
-
     </div>
 </section>
 
@@ -901,7 +913,6 @@
         <br>
         <br>
         <hr>
-
     </p>
 </section>
 
@@ -909,7 +920,10 @@
     <div class="row">
         <div class="col-6 offset-3">
             <h2 class="titulo">Avance del SGSST</h2>
+            <hr class="line-title">
+            <br>
         </div>
+        
         <div class="row">
             <div class="col-4 p-2">
                 <img src="{{ asset('images/equipo.jpg') }}" alt="">
@@ -925,7 +939,7 @@
             </div>
             <div class="col-12">
                 <h3 class="align-items-center">Actividades para que tu sgsst avance.</h3>
-                <p>Verifica que ya cuentas con tu inducción, de igual modo consulta las formaciones
+                <p style="text-align: justify">Verifica que ya cuentas con tu inducción, de igual modo consulta las formaciones
                     planificadas durante el mes y cuál te aplica. Para finalizar consulta si ya
                     realizaste las encuestas de medicina preventiva, seguridad industrial y seguridad
                     vial. Si ya cuentas con tu Inducción, tus formaciones y la participación en las

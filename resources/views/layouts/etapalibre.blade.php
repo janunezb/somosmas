@@ -1,10 +1,11 @@
 @extends('layouts.plantilla_portales')
 
-@section('title', 'Portal Suncolombia')
+@section('title', 'Portal Libre')
 
 @section('content1')
-
-            <a class="navbar-brand" href="{{ route('admin.libre') }}">Libre</a>
+    <body class="libre_barra"> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-3">
+            <a class="navbar-brand p-0" href="{{ route('admin.index') }}"><img class="img_portal" src="{{ asset('images/logos/libre.png')}}" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

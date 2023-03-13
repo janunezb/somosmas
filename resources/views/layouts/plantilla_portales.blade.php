@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css')}}">
     <link rel="stylesheet" href="{{ asset('css/custom.css')}}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min-4.6.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fonts/puget.css')}}">
         
     <script src="{{ asset('js/jquery.slim.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
@@ -20,9 +21,7 @@
 
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-3">
-        <div class="container-fluid">
+
 
 @yield('content1')
 
@@ -64,29 +63,6 @@
             </div>
         </div>
     </nav>
-<div style="background-color: rgb(201, 201, 201)">
-        <main class="container d-flex p-5">
-            <div class="row">
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-8">
-                            <h1 style="color: #007aff">Sistema de gestión de seguridad
-                                y salud en el trabajo.</h1>
-                            <div style="">
-                                <p class="nuevaa h3">
-                                    Desarrollamos nuestras actividades
-                                    pensando en el bienestar de las personas.</p>
-                            </div>
-                            <!-- <br>
-                            <a href="#poldeseguridad" class="btn btn-outline-danger">Comencemos</a>
-                            <br>
-                            <br> -->
-                        </div> 
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
 
 @yield('content2') 
 

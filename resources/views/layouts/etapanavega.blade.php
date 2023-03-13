@@ -3,8 +3,9 @@
 @section('title', 'Portal Navega')
 
 @section('content1')
-
-            <a class="navbar-brand" href="{{ route('admin.navega') }}">Navega</a>
+    <body class="navega_barra"> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top p-3">
+            <a class="navbar-brand p-0" href="{{ route('admin.index') }}"><img class="img_portal" src="{{ asset('images/logos/navega.png')}}" alt=""></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

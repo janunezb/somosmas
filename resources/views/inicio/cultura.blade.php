@@ -4,7 +4,7 @@
 
 @section('content1')
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-white" href="{{ route('inicio.index') }}" id="navbarDropdown" role="button"
+        <a class="nav-link text-white" href="{{ route('inicio.index') }}" id="navbarDropdown" role="button"
             aria-expanded="false">
             Tu SGSST</a>
     @endsection
@@ -18,6 +18,7 @@
                 <div class="row aling-items-center">
                     <div class="col-6 offset-3">
                         <h2 class="titulo" id="fechas">Fechas Especiales</h2>
+                        <hr class="line-title">
                     </div>
                     <div class="col-12">
                         <p>
@@ -174,7 +175,7 @@
                     <div class="row">
                         <div class="col-4 offset-4">
                             <h2 class="titulo">Tus Podcast</h2>
-
+                            <hr class="line-title">
                         </div>
                         <div class="row">
                             <div class="col-12">
@@ -223,7 +224,7 @@
                     <div class="row aling items center">
                         <div class="col-8 offset-2">
                             <h2 class="titulo">Conoce tu comité de diversidad e inclusión.</h2>
-
+                            <hr class="line-title">
                         </div>
                         <div class="col-12 texto">
                             <p>En nuestra organización celebramos la Diversidad y le apostamos a la inclusión; es por eso
@@ -280,7 +281,7 @@
                     <div class="row aling items center">
                         <div class="col-4 offset-4">
                             <h2 class="titulo">Mantente Visible</h2>
-
+                            <hr class="line-title">
                         </div>
                         <div class="col-12 texto">
                             <p>Participa!! compártenos tus opiniones, tus películas, fotografías favoritas, libros, planes
@@ -540,7 +541,7 @@
                     <div class="row aling items center">
                         <div class="col-4 offset-4">
                             <h2 class="titulo">Momentos</h2>
-
+                            <hr class="line-title">
                         </div>
                         <div class="col-12 texto">
                             <p>Quien dijo que el tiempo no se puede detener, disfruta de esta galería.</p>

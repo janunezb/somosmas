@@ -6,7 +6,7 @@
 
     <section id="" class="container d-flex justify-content pt-5">
         <div class="col-6">
-            <h4>Etapas 10 a la 14 del SGSST</h4>
+            <h4 class="subtitulo">Etapas 10 a la 14 del SGSST</h4>
             <p class="et">
             @foreach($etapas as $index => $etapa)
             @if($etapa->grupo==3)
@@ -18,30 +18,44 @@
         </div>
     </section>
 
-    <div class="cuadrado">
+    <section id="etapa10">
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    <br> 
+                    <br>
+                    <br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container titulo">
         <div class="row">
             <div class="col-12 fs-2">
-            Fases del sistema de gestión: {{ $etapas[9]->nombre }}
+                <hr class="line-title-libre">
+                Fases del sistema de gestión: {{ $etapas[9]->nombre }}
+                <hr class="line-title-libre">
             </div>
         </div>
     </div>
 
-    <section id="etapa10" class="container d-flex justify-content pt-4">
+    <section class="container d-flex justify-content pt-4">
         <div class="row">
             <div class="col-12">
                 <p class="h6">
                     Etapa: 10 <i class="bi bi-caret-right-square-fill"></i>
                 </p>
                 <br>
-                <h2>DOCUMENTACIÓN Y EVIDENCIAS</h2>
+                <h3 class="subtitulo">DOCUMENTACIÓN Y EVIDENCIAS</h3>
                 <br>
             </div>
 
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==10 && $evidencia->grupo==1)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -51,8 +65,8 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==10 && $evidencia->grupo==2)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -62,8 +76,8 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==10 && $evidencia->grupo==3)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -73,8 +87,8 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==10 && $evidencia->grupo==4)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -83,33 +97,44 @@
         </div>
     </section>
 
-    <div class="cuadrado">
+    <section id="etapa11">
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    <br> 
+                    <br>
+                    <br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container titulo">
         <div class="row">
             <div class="col-12 fs-2">
-                <P></P>
+                <hr class="line-title-libre">
                 Fases del sistema de gestión: {{ $etapas[10]->nombre }}
-                <P></P>
+                <hr class="line-title-libre">
             </div>
         </div>
     </div>
 
-    <section id="etapa11" class="container d-flex justify-content pt-4">
-
+    <section  class="container d-flex justify-content pt-4">
         <div class="row">
             <div class="col-12">
                 <p class="h6">
                     Etapa: 11 <i class="bi bi-caret-right-square-fill"></i>
                 </p>
                 <br>
-                <h2>DOCUMENTACIÓN Y EVIDENCIAS</h2>
+                <h3 class="subtitulo">DOCUMENTACIÓN Y EVIDENCIAS</h3>
                 <br>
             </div>
 
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==11 && $evidencia->grupo==1)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -119,8 +144,8 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==11 && $evidencia->grupo==2)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -130,8 +155,8 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==11 && $evidencia->grupo==3)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -141,8 +166,8 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==11 && $evidencia->grupo==4)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -151,31 +176,44 @@
         </div>
     </section>
 
-    <div class="cuadrado">
+    <section id="etapa12">
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    <br> 
+                    <br>
+                    <br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container titulo">
         <div class="row">
             <div class="col-12 fs-2">
+                <hr class="line-title-libre">
                 Fases del sistema de gestión: {{ $etapas[11]->nombre }}
+                <hr class="line-title-libre">
             </div>
         </div>
     </div>
 
-    <section id="etapa12" class="container d-flex justify-content pt-4">
-
+    <section class="container d-flex justify-content pt-4">
         <div class="row">
             <div class="col-12">
                 <p class="h6">
                     Etapa: 12 <i class="bi bi-caret-right-square-fill"></i>
                 </p>
                 <br>
-                <h2>DOCUMENTACIÓN Y EVIDENCIAS</h2>
+                <h3 class="subtitulo">DOCUMENTACIÓN Y EVIDENCIAS</h3>
                 <br>
             </div>
 
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==12 && $evidencia->grupo==1)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -185,8 +223,8 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==12 && $evidencia->grupo==2)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -196,8 +234,8 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==12 && $evidencia->grupo==3)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -207,8 +245,8 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==12 && $evidencia->grupo==4)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -217,33 +255,44 @@
         </div>
     </section>
 
-    <div class="cuadrado">
+    <section id="etapa13">
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    <br> 
+                    <br>
+                    <br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container titulo">
         <div class="row">
             <div class="col-12 fs-2">
-                <p></p>
+                <hr class="line-title-nav_li">
                 Fases del sistema de gestión: {{ $etapas[12]->nombre }}
-                <p></p>
+                <hr class="line-title-nav_li">
             </div>
         </div>
     </div>
 
-    <section id="etapa13" class="container d-flex justify-content pt-4">
-
+    <section class="container d-flex justify-content pt-4">
         <div class="row">
             <div class="col-12">
                 <p class="h6">
                     Etapa: 13 <i class="bi bi-caret-right-square-fill"></i>
                 </p>
                 <br>
-                <h2>DOCUMENTACIÓN Y EVIDENCIAS</h2>
+                <h3 class="subtitulo">DOCUMENTACIÓN Y EVIDENCIAS</h3>
                 <br>
             </div>
             
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==13 && $evidencia->grupo==1)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -253,8 +302,8 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==13 && $evidencia->grupo==2)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -263,33 +312,44 @@
         </div>
     </section>
 
-    <div class="cuadrado">
+    <section id="etapa14">
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    <br> 
+                    <br>
+                    <br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container titulo">
         <div class="row">
             <div class="col-12 fs-2">
-                <p></p>
+                <hr class="line-title-libre">
                 Fases del sistema de gestión: {{ $etapas[13]->nombre }}
-                <p></p>
+                <hr class="line-title-libre">
             </div>
         </div>
     </div>
 
-    <section id="etapa14" class="container d-flex justify-content pt-4">
-
+    <section class="container d-flex justify-content pt-4">
         <div class="row">
             <div class="col-12">
                 <p class="h6">
                     Etapa: 14 <i class="bi bi-caret-right-square-fill"></i>
                 </p>
                 <br>
-                <h2>DOCUMENTACIÓN Y EVIDENCIAS</h2>
+                <h3 class="subtitulo">DOCUMENTACIÓN Y EVIDENCIAS</h3>
                 <br>
             </div>
 
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==14 && $evidencia->grupo==1)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -299,8 +359,8 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==14 && $evidencia->grupo==2)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -310,8 +370,8 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==14 && $evidencia->grupo==3)
-                <button class="buton uno">
-                    <span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span>
+                <button class="buton">
+                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -323,7 +383,7 @@
     <section id="" class="container d-flex justify-content">
         <div class="col-6"> 
         <hr>
-            <h4>Etapas 10 a la 14 del SGSST</h4>
+            <h4 class="subtitulo">Etapas 10 a la 14 del SGSST</h4>
             <p class="et">
             @foreach($etapas as $index => $etapa)
             @if($etapa->grupo==3)
