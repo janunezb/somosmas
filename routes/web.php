@@ -39,12 +39,7 @@ Route::get('/logut', [SessionsController::class, 'destroy'])
 //permisos
 
 Route::get('inicio/portales/portal-liwa', [AdminController::class, 'index'])
-<<<<<<< HEAD
-->middleware('auth.admin')
-
-=======
 ->middleware('auth.admin1')
->>>>>>> pruebas2
 -> name('admin.index');
 
 Route::get('inicio/portales/portal-sunco', [AdminController::class, 'sunco'])
@@ -59,7 +54,6 @@ Route::get('inicio/portales/portal-navega', [AdminController::class, 'navega'])
 ->middleware('auth.admin4')
 -> name('admin.navega');
 
-<<<<<<< HEAD
 
 
 
@@ -91,8 +85,6 @@ Route::resource('admin/news',NewController::class)
     ->middleware('can:admin')
     ->names('admin.news');
 
-=======
->>>>>>> pruebas2
 //Interfaz De Inicio
 
 Route::get('inicio', [IndexController::class, 'index'])
@@ -137,21 +129,11 @@ Route::get('inicio/cambio_foto', [IndexController::class, 'cambio_foto'])
 
 Route::post('inicio/cambiocontrasena', [IndexController::class, 'cambiocontrasena'])
     ->middleware('auth')
-<<<<<<< HEAD
-    ->name('inicio.cambiocontrasena');
-
-Route::get('inicio/galeria', [IndexController::class, 'galeria'])
-    ->middleware('auth')
-    ->name('inicio.galeria');
-
-
-=======
     ->name('inicio.cambiocontrasena'); 
     
 Route::get('inicio/galeria', [IndexController::class, 'galeria'])
     ->middleware('auth')
     ->name('inicio.galeria');
->>>>>>> pruebas2
 
 Route::put('inicio/update-foto', [IndexController::class, 'cambiofoto'])
     ->middleware('auth')
@@ -175,45 +157,6 @@ Route::get('inicio/portales/portal-liwa/etapa20', [IndexController::class, 'etap
 ->middleware('auth.admin1')
 ->name('admin.etapa20liwa');
 
-<<<<<<< HEAD
-// Vistas Portal navega
-
-Route::get('inicio/portales/portal-navega/etapa5n', [IndexController::class, 'etapa5navega'])
-->middleware('auth')
-->name('admin.etapa5navega');
-
-Route::get('inicio/portales/portal-navega/etapa10n', [IndexController::class, 'etapa10navega'])
-->middleware('auth')
-->name('admin.etapa10navega');
-
-Route::get('inicio/portales/portal-navega/etapa15n', [IndexController::class, 'etapa15navega'])
-->middleware('auth')
-->name('admin.etapa15navega');
-
-Route::get('inicio/portales/portal-navega/etapa20n', [IndexController::class, 'etapa20navega'])
-->middleware('auth')
-->name('admin.etapa20navega');
-
-// Vistas Portal libre
-
-Route::get('inicio/portales/portal-libre/etapa5l', [IndexController::class, 'etapa5libre'])
-->middleware('auth.admin2')
-->name('admin.etapa5libre');
-
-Route::get('inicio/portales/portal-libre/etapa10l', [IndexController::class, 'etapa10libre'])
-->middleware('auth.admin2')
-->name('admin.etapa10libre');
-
-Route::get('inicio/portales/portal-libre/etapa15l', [IndexController::class, 'etapa15libre'])
-->middleware('auth.admin2')
-->name('admin.etapa15libre');
-
-Route::get('inicio/portales/portal-libre/etapa20l', [IndexController::class, 'etapa20libre'])
-->middleware('auth.admin2')
-->name('admin.etapa20libre');
-
-=======
->>>>>>> pruebas2
 // Vistas Portal Sunco
 
 Route::get('inicio/portales/portal-sunco/etapa5s', [IndexController::class, 'etapa5sunco'])
