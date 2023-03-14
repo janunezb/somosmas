@@ -148,6 +148,36 @@ hr.line-title-sunco {
     border: 1px solid black;
 }
 
+.buton_libre{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(233, 233, 233);
+    cursor: pointer;
+    transition: 1s ease all;
+    border-radius: 5px;
+    padding: auto;
+    box-shadow: 3px 3px 5px 2px black;
+    border: 1px solid black;
+}
+
+.buton_navega{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(233, 233, 233);
+    cursor: pointer;
+    transition: 1s ease all;
+    border-radius: 5px;
+    padding: auto;
+    box-shadow: 3px 3px 5px 2px black;
+    border: 1px solid black;
+}
+
 #evidencia{
     text-decoration: none;
     color: #343a40;
@@ -172,6 +202,20 @@ hr.line-title-sunco {
     background-color: #01aaad1a;
     box-shadow: 3px 3px 5px 2px #01aaad;
     border: 1px solid #01aaad;
+}
+
+.buton_libre:hover{
+    text-decoration: none;
+    background-color: rgba(0, 0, 255, 0.148);
+    box-shadow: 3px 3px 5px 2px rgba(0, 0, 255, 0.816);
+    border: 1px solid rgba(0, 0, 255, 0.816);
+}
+
+.buton_navega:hover{
+    text-decoration: none;
+    background-color: #0065C11A;
+    box-shadow: 3px 3px 5px 2px #0065C1;
+    border: 1px solid #0065C1;
 }
 
 .buton2{
@@ -204,6 +248,36 @@ hr.line-title-sunco {
     border: 1px solid black;
 }
 
+.buton2_libre{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    background-color: rgb(233, 233, 233);
+    cursor: pointer;
+    transition: 1s ease all;
+    border-radius: 5px;
+    padding: auto;
+    box-shadow: 3px 3px 5px 2px black;
+    border: 1px solid black;
+}
+
+.buton2_navega{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    background-color: rgb(233, 233, 233);
+    cursor: pointer;
+    transition: 1s ease all;
+    border-radius: 5px;
+    padding: auto;
+    box-shadow: 3px 3px 5px 2px black;
+    border: 1px solid black;
+}
+
 .buton2:hover{
     text-decoration: none;
     background-color: #FE3EB21A;
@@ -216,6 +290,20 @@ hr.line-title-sunco {
     background-color: #42B8BC1a;
     box-shadow: 3px 3px 5px 2px #42B8BC;
     border: 1px solid #42B8BC;
+}
+
+.buton2_libre:hover{
+    text-decoration: none;
+    background-color: rgba(0, 0, 255, 0.148);
+    box-shadow: 3px 3px 5px 2px rgba(0, 0, 255, 0.816);
+    border: 1px solid rgba(0, 0, 255, 0.816);
+}
+
+.buton2_navega:hover{
+    text-decoration: none;
+    background-color: #0065C11A;
+    box-shadow: 3px 3px 5px 2px #0065C1;
+    border: 1px solid #0065C1;
 }
 
 /*botones grandes*/
@@ -312,7 +400,7 @@ neww{
 
 .botonn{
     position: relative;
-    width: 260px;
+    width: 290px;
     height: 310px;
     margin: -10px;
     border-radius: 10px;
@@ -393,19 +481,19 @@ neww{
 }
 
 .botonn_div{
-    height: 280px;
+    height: 277px;
+    width: 238px;
 }
 
 .iconify{
-    width: 100%;
-    font-size: 70px;
+    font-size: 60px;
     margin-top: 0;
 }
 
 .btn-ingresa {
     width: 100%;
     font-size: 16px;
-    color: #FE3EB2;
+    margin-bottom: 5px;
 }
 
 .btn-ingresa:hover {
@@ -721,7 +809,7 @@ neww{
 
 .container-1 .card-1:hover{
     transform: translateY(-15px);
-    box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 12px 16px #FE3EB2;
 
 
 }
@@ -962,21 +1050,21 @@ neww{
     border-radius: 10px;
 }
 
-
-
-
 .carrusel-itemm{
     padding: 10px;
     min-width: 25%;
     max-width: 25%;
 }
 
+.carrusel-itemm .card{
+    border: 1px solid #FE3EB2;
+    padding: 5px;
+}
+
 .carrusel-itemm img {
-    
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
-
 }
 
 .card_img{

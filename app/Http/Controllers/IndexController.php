@@ -93,11 +93,11 @@ class IndexController extends Controller
 
         $cumplep = User::join('empresas', 'empresas.id', '=', 'users.empresa_id')
             ->select('users.nombre as nombre',
-             'empresas.nombre as empresa', 
+             'empresas.nombre as empresa',
              'users.foto as foto',
-             'users.cargo as cargo', 
-             'users.fecha_nacimiento', 
-             'users.fecha_ingreso', 
+             'users.cargo as cargo',
+             'users.fecha_nacimiento',
+             'users.fecha_ingreso',
              'users.fecha_ingreso as inicio')
             ->where('empresas.estado', '1')
             ->get();
@@ -120,7 +120,7 @@ class IndexController extends Controller
             }
         }
 
-        $fecha_hoy = Carbon::now();
+        $fecha_hoy= Carbon::now();
         $fecha_hoy = $fecha_hoy->format('m-d');
 
         $formatos = $formato == $formato1;
@@ -152,7 +152,7 @@ class IndexController extends Controller
     {
         $not = Noticia::where('estado', '1')
         ->get();
-        Log::info(gettype($not));
+        
         return view('inicio.noticia', compact('not'));
     }
 

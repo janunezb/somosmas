@@ -7,7 +7,9 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\GestorAdmin;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\NewController;
 // Route::get('/', function () {
 //     return view('home');
 // })->middleware('auth');
@@ -15,22 +17,25 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'home'])
         -> name('home');
 
-Route::get('/register', [RegisterController::class, 'create'])
-        -> name('register.index');
+// Route::get('/register', [RegisterController::class, 'create'])
+//         -> name('register.index');
 
-Route::post('/register', [RegisterController::class, 'store'])
-        -> name('register.store');
+// Route::post('/register', [RegisterController::class, 'store'])
+//         -> name('register.store');
 
 //Interfaz Login
 
 Route::get('/login', [SessionsController::class, 'create'])
-        -> name('login.index');
+        -> name('login.index')
+        ->middleware('guest');
 
 Route::post('/login', [SessionsController::class, 'store'])
         -> name('login.store');
 
 Route::get('/logut', [SessionsController::class, 'destroy'])
         -> name('login.destroy');
+
+
 
 //permisos
 
@@ -49,6 +54,37 @@ Route::get('inicio/portales/portal-libre', [AdminController::class, 'libre'])
 Route::get('inicio/portales/portal-navega', [AdminController::class, 'navega'])
 ->middleware('auth.admin4')
 -> name('admin.navega');
+
+
+
+
+//Interfaz Admin
+
+Route::get('admin', [GestorAdmin::class, 'index'])
+    ->middleware('can:admin')
+    -> name('admin');
+
+//Interfaz Admin Usuarios
+
+Route::resource('admin/users',UserController::class)
+    ->only('index','edit','create','store','update','show')
+    ->middleware('can:admin')
+    ->names('admin.users');
+
+Route::put('admin/{user}/edit', [UserController::class, 'restpassword'])
+    ->middleware('can:admin')
+    ->name('admin.users.restpassword');
+    
+Route::put('admin/user/{user}/edit', [UserController::class, 'delete'])
+    ->middleware('can:admin')
+    ->name('admin.users.delete');
+
+//Interfaz Admin Noticias
+
+Route::resource('admin/news',NewController::class)
+    ->only('index','edit','create','store','update','show')
+    ->middleware('can:admin')
+    ->names('admin.news');
 
 //Interfaz De Inicio
 
@@ -75,7 +111,7 @@ Route::get('inicio/portales', [IndexController::class, 'portales'])
 Route::get('inicio/noticia', [IndexController::class, 'noticia'])
     ->middleware('auth')
     ->name('inicio.noticia');
-    
+
 Route::get('inicio/import-users', [IndexController::class, 'importUsers'])
     ->middleware('auth')
     ->name('inicio.import');

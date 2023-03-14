@@ -79,6 +79,10 @@
                         <ul class="dropdown-menu bg" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item mr-3" style="" href="{{ route('inicio.editar_perfil') }}">
                             Mi Perfil</a></li>
+                            @can('admin')
+                            <li><a class="dropdown-item mr-3" style="" href="{{ route('admin') }}">
+                                Administrador</a></li>
+                            @endcan
                             <li><a class="dropdown-item" id="sesion" style="" href="{{ route('login.destroy') }}">
                             Cerrar Sesión</a></li>
                         </ul>   

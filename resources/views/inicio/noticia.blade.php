@@ -119,11 +119,11 @@
                             </div>
                         @endif
                     </div>
-                    <div class="vermaa" style="padding-top: 10%; padding-left:76%">
+                    <div class="vermaa" style="padding-top: 10%; padding-left:90%">
                         {{ $noticias->updated_at }}
                     </div>
                 </div>
-                <div id="carouselExampleControls{{ $noticias->id }}" class="carousel slide col-6 noticia" data-ride="carousel">
+                <div id="carouselExampleControls{{ $noticias->id }}" style="height: 500px" class="carousel slide col-6 noticia" data-ride="carousel">
                     <div class="carousel-inner">
                         @if ($var > 1)
                             <?php $porciones = explode(',', $noticias->imagenes); ?>
