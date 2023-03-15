@@ -932,7 +932,7 @@
                 <img src="{{ asset('images/porcentg.jpg') }}" alt="">
             </div>
             <div class="col-12">
-                <h3 class="align-items-center">Actividades para que tu sgsst avance.</h3>
+                <h3 class="align-items-center">Actividades para que tu SGSTT avance.</h3>
                 <p style="text-align: justify">Verifica que ya cuentas con tu inducción, de igual modo consulta las formaciones
                     planificadas durante el mes y cuál te aplica. Para finalizar consulta si ya
                     realizaste las encuestas de medicina preventiva, seguridad industrial y seguridad

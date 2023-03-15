@@ -949,8 +949,6 @@ neww{
 
 }
 
-
-
 .vermas a{
     color: #6a6a6a;
     text-decoration: double;
@@ -1328,10 +1326,43 @@ neww{
     justify-content: center;
 }
 
-
-
 .aniversario {
     color: #FE3EB2;
     font-size: larger;
+}
+
+.footer_bg{
+    /* background: #707070; */
+    background: #343a40;
+    background-image: url(/images/textura-pie-pagina.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer_red{
+	text-align: center;
+	color: #FE3EB2;
+	margin-bottom: 10px;
+    font-family: "puget";
+    background: black;
+}
+
+.wp a{
+    margin-left: 30px;
+    border-radius: 50%;
+}
+
+.sedes{
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.emergencia{
+    color: white;
+    width: 100%;
+    margin-left: 50px;
 }
 

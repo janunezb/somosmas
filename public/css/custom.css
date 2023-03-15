@@ -4556,6 +4556,10 @@ fieldset:disabled .btn {
           justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  background: #343a40;
+    background-image: url(/images/textura-pie-pagina.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .navbar > .container,
