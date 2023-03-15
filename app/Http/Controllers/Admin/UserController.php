@@ -86,21 +86,7 @@ use PhpParser\Node\Stmt\Return_;
         $user->update($request->all());
         return redirect()->route('admin.users.edit',$user)->with('info','Los datos han sido actualizados');
     }
-    public function show (User $user)
-    {
-        if ($user->estado == 1  ){
-            $user->update(['estado' => '0']);
-        }
-        else{
-            $user->update(['estado' => '1']);
-        }
-        return redirect()->route('admin.users.index',$user)->with('info','Los datos han sido actualizados');
-    }
-    public function delete(User $user)
-    {
-        $user->update(['estado' => '2']);
-        return redirect()->route('admin.users.index',$user)->with('info','Los datos han sido actualizados');
-    }
+
 
     public function restpassword(User $user)
     {

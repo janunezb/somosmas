@@ -1,4 +1,5 @@
 <div>
+    
     <div class="card">
         <div class="card-header">
 
@@ -11,7 +12,6 @@
                 </div>
                 <div class="col-2" >
                 {!! Form::label('estado', 'Activos') !!}
-                {{-- {!! Form::checkbox('estado','1',null ,['class'=>'mr-1'])!!} --}}
                 <input wire:model="estado" type="checkbox">
                 </div>
             </div>
@@ -46,21 +46,14 @@
                                         </a>
                                     </td>
                                     <td >
-                                        <form action="{{route('admin.users.show',$user)}}" >
-                                            @csrf
-                                                <button type="submit" class="btn btn-success d-block mx-auto">Habilitar</button>
-                                        </form>
+                                        <button type="submit" class="btn btn-success d-block mx-auto"  wire:click="$emit('hab',{{$user->id}})">
+                                            Habilitar
+                                        </button>
                                     </td>
                                     <td >
-                                        {!! Form::open(['route'=> ['admin.users.delete',$user],'method'=>'put','id'=>'form3']) !!}
-                                            {!! Form::submit('Eliminar', ['id'=>'btn3','class'=>'btn btn-danger d-block mx-auto']) !!}
-                                        {!! Form::close() !!}
-                                        {{-- <form action="{{route('admin.users.destroy',$user)}}" , method="">
-                                            @csrf
-                                                <button type="submit" class="btn btn-danger d-block mx-auto">
-                                                    Eliminar
-                                                </button>
-                                        </form> --}}
+                                        <button type="submit" class="btn btn-danger d-block mx-auto" wire:click="$emit('delete',{{$user->id}})">
+                                            Eliminar
+                                        </button>
                                     </td>
                                 </tr>
                             @else
@@ -77,12 +70,9 @@
                                         </a>
                                     </td>
                                     <td >
-                                        <form action="{{route('admin.users.show',$user)}}" >
-                                            @csrf
-                                                <button type="submit" class="btn btn-outline-danger d-block mx-auto">
-                                                    Deshabilitar
-                                                </button>
-                                        </form>
+                                        <button type="submit" class="btn btn-outline-danger d-block mx-auto"  wire:click="$emit('des_ha',{{$user->id}})">
+                                            Deshabilitar
+                                        </button>
                                     </td>
 
                                 </tr>
@@ -102,25 +92,87 @@
     </div>
 </div>
 
+@push('js')
+<script src="{{ asset('js/sweetalert.js') }}"></script>
 <script>
-    $('#btn3').on('click', function(b) {
-    b.preventDefault();
+    Livewire.on('des_ha',posId => {
     Swal.fire({
-        title: '¿Estas seguro de eliminar la información ?',
-        text: "¡No podrás revertir esto!",
+        title: '¿Está seguro(a) de deshabilitar este usuario?',
+        text: "¡No podrá revertir esta acción!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Si'
-      }).then((result) => {
+        confirmButtonText: '¡Sí, deshabilitar!',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
         if (result.isConfirmed) {
-          Swal.fire(
-            'Informacion Actualizada!',
-            'La información ha sido actulizada exitosamente.',
-            'success'
-          )
-          $(this).closest('#form3').submit();}
-      })
+                Livewire.emitTo('admin.users-index','deshabilitar',posId);
+                Swal.fire(
+                '¡Deshabilitado!',
+                'El usuario ha sido deshabilitado.',
+                'success'
+            )
+            
+        }
+    })
 });
 </script>
+<script>
+    Livewire.on('hab',posId => {
+    Swal.fire({
+        title: '¿Está seguro(a) de habilitar este usuario?',
+        text: "¡No podrá revertir esta acción!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '¡Sí, habilitar!',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+                Livewire.emitTo('admin.users-index','deshabilitar',posId);
+                Swal.fire(
+                '¡Deshabilitado!',
+                'El usuario ha sido habilitado.',
+                'success'
+            )
+            
+        }
+    })
+});
+</script>
+<script>
+    Livewire.on('delete',posId => {
+    Swal.fire({
+        title: '¿Está seguro(a) de eliminar este usuario?',
+        text: "¡No podrá revertir esta acción!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '¡Sí, eliminar!',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+                Livewire.emitTo('admin.users-index','eliminar',posId);
+                Swal.fire(
+                '¡Deshabilitado!',
+                'El usuario ha sido eliminado.',
+                'success'
+            )
+            
+        }
+    })
+});
+</script>
+@endpush
+
+
+
+    
+
+
+
+
+
