@@ -1,5 +1,5 @@
 <div>
-    
+
 {!!Form::open(['route'=>'admin.news.store','enctype'=>'multipart/form-data', 'multiple'])!!}
   <div class="card">
     <div class="card-body" >
@@ -16,7 +16,7 @@
             {!! Form::label('contenido', 'Contenido') !!}
             {!! Form::textarea('contenido',null, ['class'=>
                 'form-control',
-                
+
                 'placeholder'=>'Ingrese la noticia']) !!}
                 @error('contenido')
                     <span class="text-danger">{{$message }}</span>
@@ -36,7 +36,7 @@
                     <div class="form-group col-4">
                         {!! Form::label('imagenes', 'Foto') !!}
                         {!! Form::file('imagenes',['accept'=>'image/*','wire:model'=>'imagenes', 'multiple'])!!}
-                        
+
                         @error('imagenes')
                         <span class="text-danger">{{$message }}</span>
                         @enderror
@@ -62,13 +62,13 @@
                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                             <span class="sr-only">Next</span>
                                         </a>
-                                    
+
                                 </div>
                             </div>
-                       
+
                             {{-- <img src="{{$imagen->temporaryURL()}}" height="200" width="200" class="img-fluid" alt=""/> --}}
-                        
-                        
+
+
                     @endif
                 {{-- <div class="form-group col-4">
                     {!! Form::label('imagenes', 'Foto') !!}
@@ -90,7 +90,7 @@
     </div>
   </div>
   <hr>
-  
+
   {!! Form::submit('Crear Noticia', ['class'=>'btn btn-personal']) !!}
 {!!Form::close()!!}
   <hr>
@@ -103,9 +103,6 @@
 
 @push('js')
     <script src="{{ asset('ckeditor/build/ckeditor.js') }}"></script>
-    <script src="{{ asset('js/dropzone-min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
-     
     <script>
         ClassicEditor
        .create( document.querySelector( '#contenido' ) )
@@ -113,18 +110,6 @@
            console.error( error );
        } );
    </script>
-   <script>
-   
-    Dropzone.options.myDropzone = {
-        headers:{
-            'X-CSRF-TOKEN':"{{ csrf_token() }}"
-        },
-        paramName:"imagenes",
-        acceptedFiles:"image/*",
-    
-    };
-  </script>
-    
 @endpush
 
 </div>

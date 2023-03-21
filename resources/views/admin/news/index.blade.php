@@ -32,6 +32,5 @@
 
 
 @section('js')
-    @livewireScripts
-    <script></script>
+
 @stop
