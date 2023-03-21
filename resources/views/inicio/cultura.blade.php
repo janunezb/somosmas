@@ -591,14 +591,4 @@
         <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/modal_cultura.js') }}"></script>
-        <script>
-            // $('.btn-close').click(() => {
-            //     $('.video').removeAttr('src');
-            // });
-
-            // $('#modal01 button').click(function () {
-            //     $('#modal01 video').removeAttr('src');
-            // });
-        </script>
-
     @endsection
