@@ -124,9 +124,9 @@
                     <br>
                     Número general Cruz Roja: 132
                     <br>
-                    Número general Policía 112
+                    Número general Policía: 112
                     <br>
-                    Número general Bomberos 119
+                    Número general Bomberos: 119
                     <br>
                     <br>
                     Estamos para servirte, cuenta con nosotros WhatsApp profesionales HSE</p>

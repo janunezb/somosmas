@@ -57,7 +57,7 @@
                                             <div class="modal-body">
 
                                                 <div class="col-auto">
-                                                    <div class="row">
+                                                    <div class="row"> 
                                                         {{-- CUERPO MODAL --}}
                                                         <div class="col-md-8">
                                                             <div>

@@ -6457,6 +6457,13 @@ fieldset:disabled .btn {
   margin: -0.5rem -0.5rem -0.5rem auto;
 }
 
+.buton_close{
+  font-weight: 800;
+  font-size: 25px;
+  color: red;
+  
+}
+
 .modal-title {
   margin-bottom: 0;
   line-height: 1.5;
@@ -12060,6 +12067,19 @@ fieldset:disabled .btn {
 .menu_nav:hover{
   text-decoration: none;
   
+}
+
+#cerrar-video{
+  cursor: pointer;
+}
+
+#cerrar-video i{
+  font-size: 30px;
+  color: red;
+}
+
+#cerrar-video i:hover{
+  color: black;
 }
 
 .checkbtn{
