@@ -75,8 +75,8 @@
             
                 <div class="col-3 ml-5">
                     
-                    <h5><strong class="emergencia">En caso de emergencias    
-                    <i class="fa-sharp fa-solid fa-phone-volume"></i></strong></h5>
+                <h5 class="emergencia">En caso de emergencias   
+                    <i class="fa-sharp fa-solid fa-phone-volume"></i> </h5>
                     <br>
                     <p style="font-size: 14px; text-align: center; color: white"> 
                     Número general de Emergencias: 123

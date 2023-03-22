@@ -116,8 +116,8 @@
             
                 <div class="col-3 ml-5">
                     
-                    <h5><strong class="emergencia">En caso de emergencias    
-                    <i class="fa-sharp fa-solid fa-phone-volume"></i></strong></h5>
+                    <h5 class="emergencia">En caso de emergencias   
+                    <i class="fa-sharp fa-solid fa-phone-volume"></i> </h5>  
                     <br>
                     <p style="font-size: 14px; text-align: center; color: white"> 
                     Número general de Emergencias: 123
@@ -146,7 +146,7 @@
                     </div>
                 </div>
                 
-                <div style="font-size: 14px" class="col-4">
+                <div style="font-size: 14px" class="col-4 ml-3">
                     <h5><i style="color: #FE3EB2" class="fa-solid fa-location-dot"></i><strong style="color: #FE3EB2">  Direcciones oficinas</strong></h5>
                     <ul style="color: white">
                         <li>Oficina Bogotá: Calle 127b bis # 49-48 - Barrio Tierra Linda.</li>

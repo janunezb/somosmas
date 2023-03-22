@@ -78,6 +78,15 @@ hr.line-title{
     width: 100%;
 }
 
+hr.line-title2{
+    color: black;
+    margin: 2px auto 10px auto;
+    border: 0;
+    border-bottom: 2px solid black;
+    box-shadow: 0px 1px 15px 2px black;
+    width: 100%;
+}
+
 hr.line-title-libre{
     color: rgba(0, 0, 255, 0.816);
     margin: 5px auto 10px auto;
@@ -376,11 +385,13 @@ hr.line-title-sunco {
 .fondo{
     width: 300px;
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(15, 0, 36, 0.148) 15%, #FE3EB2 90%);
+    border: 1px solid #FE3EB2;
+    background: linear-gradient(90deg, rgb(254, 254, 254) 15%, #fe3eb138 90%);
 }
 
 .fondo img{
     margin-top: 20px;
+    border: 1px solid #FE3EB2;
 }
 
 .nuevaa{
@@ -732,6 +743,7 @@ hr.line-title-sunco {
 
 /* Carrusel Videos */
 
+
 .carrusel-items1{
     display: flex;
     overflow-x: scroll;
@@ -743,12 +755,12 @@ hr.line-title-sunco {
 }
 
 .carrusel-items1::-webkit-scrollbar-thumb {
-    background-color: #42B8BC;
+    background-color: #acabab;
     border-radius: 10px;
 }
 
 .carrusel-items1::-webkit-scrollbar-track{
-    background-color: #42b8bc69;
+    background-color: #6a6a6a27;
 }
 
 .carrusel-item1{
@@ -762,7 +774,7 @@ hr.line-title-sunco {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 1px solid #42B8BC;
+    border: 1px solid #6a6a6a27;
 }
 
 .carrusel-item1:hover {
@@ -1339,6 +1351,7 @@ hr.line-title-sunco {
     background-image: url(/images/textura-pie-pagina.png);
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
 }
 
 .footer_red{
@@ -1349,8 +1362,12 @@ hr.line-title-sunco {
     background: black;
 }
 
+.wp{
+    text-align: center;
+}
+
 .wp a{
-    margin-left: 30px;
+    margin-left: 5%;
     border-radius: 50%;
 }
 
@@ -1364,8 +1381,7 @@ hr.line-title-sunco {
 
 .emergencia{
     color: white;
-    width: 100%;
-    margin-left: 50px;
+    text-align: center;
 }
 
 .foto-video{
@@ -1373,17 +1389,16 @@ hr.line-title-sunco {
     height: 100px;
     margin-left: 30px;
     border-radius: 50%;
-    border: 3px solid black;
+    border: 3px solid gray;
 }
 
 .card-body.visible{
-    background: #7070703d;
-   
+    background: white;
+    border: 1px solid gray;
 }
 
-.card-body.visible:hover{
-    background: #7070703d;
-    border: 3px solid black;
+.card-body .datos{
+    margin-left: 20%;
 }
 
 .video1 video{
