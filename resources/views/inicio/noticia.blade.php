@@ -55,7 +55,7 @@
                                             {{-- contenido --}}
                                             {{-- TITULO MODAL --}}
                                             <div class="modal-header">
-                                                <header style="" class="h2">
+                                                <header style="" class="subtitulo h2">
                                                     {{ $noticias->titulo }}</header>
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
@@ -88,9 +88,8 @@
                                                                     <div class="splide__track">
                                                                         <ul class="splide__list">
                                                                             @foreach ($imgs as $img)
-                                                                                <li class="splide__slide">
-                                                                                    <img src="../images/noticias/<?php echo $img; ?>"
-                                                                                        alt="">
+                                                                                <li class="splide__slide"> 
+                                                                                    <img src="../images/noticias/<?php echo $img; ?>" alt="">
                                                                                 </li>
                                                                             @endforeach
                                                                         </ul>
