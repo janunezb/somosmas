@@ -306,7 +306,6 @@
                         <div class="col-6 p-3">
                             <article class="card h-100">
                                 <div class="card-body visible">
-                                <hr class="line-title2">
                                     <div class="d-flex mb-3">
                                         <img src="{{ asset('images/Jhon.jpg') }}" alt="" class="foto-video">
                                         <div class="datos pt-2">
@@ -338,7 +337,6 @@
                         <div class="col-6 p-3">
                             <article class="card h-100">
                                 <div class="card-body visible">
-                                    <hr class="line-title2"> 
                                     <div class="d-flex mb-3">
                                         <img src="{{ asset('images/carlos.jpg') }}" alt="" class="foto-video">
                                         <div class="datos pt-2">
@@ -371,7 +369,6 @@
                         <div class="col-6 p-3">
                             <article class="card h-100">
                                 <div class="card-body visible">
-                                    <hr class="line-title2">
                                     <div class="d-flex mb-3">
                                         <img src="{{ asset('images/ximena.jpg') }}" alt="" class="foto-video">
                                         <div class="datos pt-2">
@@ -403,7 +400,6 @@
                         <div class="col-6 p-3">
                             <article class="card h-100">
                                 <div class="card-body visible">
-                                    <hr class="line-title2">
                                     <div class="d-flex mb-3">
                                         <img src="{{ asset('images/paula.jpeg') }}" alt="" class="foto-video">
                                         <div class="datos pt-2">
@@ -435,7 +431,6 @@
                         <div class="col-6 p-3">
                             <article class="card h-100">
                                 <div class="card-body visible">
-                                    <hr class="line-title2">
                                     <div class="d-flex mb-3">
                                         <img src="{{ asset('images/vanesa.jpg') }}" alt="" class="foto-video">
                                         <div class="datos pt-2">                 
@@ -467,7 +462,6 @@
                         <div class="col-6 p-3">
                             <article class="card h-100">
                                 <div class="card-body visible">
-                                    <hr class="line-title2">
                                     <div class="d-flex mb-3">
                                         <img src="{{ asset('images/anamaria.jpg') }}" alt="" class="foto-video">
                                         <div class="datos">             

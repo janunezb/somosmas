@@ -105,28 +105,33 @@
                                                     </div>
 
                                                     <div class="card-body pt-0">
-                                                        <p class="card-title" style="font-size:medium;">
-                                                            <strong>{{ $new['nombre'] }}</strong>
-                                                        </p>
-
-                                                        <p style="color: #FE3EB2">
-                                                            <strong>{{ $new['empresa'] }}</strong>
-                                                        </p>
-
-                                                        <p style="color: #707b7c" class="tam">
-                                                            <strong>{{ $new['cargo'] }}</strong>
-                                                        </p>
-
-                                                        <p style="color: #FE3EB2">
-                                                        <strong>
-                                                            {{ $new['ann'] }}
-                                                            @if ($new['ann'] <= 1)
-                                                                año
-                                                            @else
-                                                                años
-                                                            @endif
-                                                        </strong>
-                                                        </p>
+                                                        <div class="nombre">
+                                                            <p class="card-title" style="font-size:medium;">
+                                                                <strong>{{ $new['nombre'] }}</strong>
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p style="color: #FE3EB2">
+                                                                <strong>{{ $new['empresa'] }}</strong>
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p style="color: #707b7c" class="cargo">
+                                                                <strong>{{ $new['cargo'] }}</strong>
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="años" style="color: #FE3EB2">
+                                                                <strong>
+                                                                {{ $new['ann'] }}
+                                                                @if ($new['ann'] <= 1)
+                                                                    año
+                                                                @else
+                                                                    años
+                                                                @endif
+                                                                </strong>
+                                                            </p>
+                                                        </div>   
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,17 +173,22 @@
                                                 </div>
 
                                                 <div class="card-body pt-0">
-                                                    <p class="card-title" style="font-size:medium;">
-                                                        <strong>{{ $fecha['nombre'] }}</strong>
-                                                    </p>
-                                                    <p style="color: #FE3EB2" class="p-1">
-                                                        <strong>
-                                                            {{ $fecha['empresa'] }}
-                                                        </strong>
-                                                    </p>
-                                                    <p style="color: #707b7c" class="tam p-2">
-                                                        <strong>{{ $fecha['cargo'] }}</strong> 
-                                                    </p>
+                                                    <div class="nombre">
+                                                        <p class="card-title" style="font-size:medium;">
+                                                            <strong>{{ $fecha['nombre'] }}</strong>
+                                                        </p>
+                                                    </div>
+                                                    <div>
+                                                        <p style="color: #FE3EB2">
+                                                            <strong>{{ $fecha['empresa'] }}</strong>  
+                                                        </p>
+                                                    </div>
+                                                    <div>
+                                                        <p style="color: #707b7c" class="cargo">
+                                                            <strong>{{ $fecha['cargo'] }}</strong> 
+                                                        </p>
+                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -240,20 +250,26 @@
                                 </div>
 
                                 <div class="card-body pt-0">
-                                    <p class="card-title" style="font-size:medium;">
-                                        <strong>{{ $fecha['nombre'] }}</strong>
-                                    </p>
+                                    <div clas="nombre">
+                                        <p class="card-title" style="font-size:medium;">
+                                            <strong>{{ $fecha['nombre'] }}</strong>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p style="color: #FE3EB2">
+                                            <strong>
+                                                {{ $fecha['empresa'] }}
+                                            </strong>
+                                         </p>
+                                    </div>
+                                    <div>
+                                        <p style="color: #707b7c" class="cargo">
+                                            <strong>{{ $fecha['cargo'] }}</strong>
+                                        </p>
+                                    </div>
+                                    
 
-                                    <p style="color: #707b7c" class="tam">
-                                        <strong>{{ $fecha['cargo'] }}</strong>
-                                    </p>
-
-                                    <p style="color: #FE3EB2">
-                                        <strong>
-                                            {{ $fecha['empresa'] }}
-                                        </strong>
-
-                                    </p>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -311,32 +327,37 @@
                             </div>
 
                             <div class="card-body pt-0">
-                                <p class="card-title" style="font-size:medium;">
-                                    <strong>{{ $new['nombre'] }}</strong>
-                                </p>
+                                <div class="nombre">
+                                    <p class="card-title" style="font-size:medium;">
+                                        <strong>{{ $new['nombre'] }}</strong>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p style="color: #FE3EB2">
+                                        <strong>{{ $new['empresa'] }}</strong>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="cargo" style="color: #707b7c">
+                                        <strong>{{ $new['cargo'] }}</strong>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p style="color: #FE3EB2">
+                                        <strong>
+                                            {{ $new['ann'] }}
+                                            @if ($new['ann'] <= 1)
+                                                año
+                                            @else
+                                                años
+                                            @endif
+                                        </strong>
+                                    </p>
+                                </div>
 
-                                <p style="color: #FE3EB2">
-                                    <strong>
-                                        {{ $new['empresa'] }}
-                                    </strong>
-                                </p>
+                                
 
-                                <p style="color: #707b7c">
-                                    <strong>
-                                        {{ $new['cargo'] }}
-                                    </strong>
-                                </p>
-
-                                <p style="color: #FE3EB2">
-                                    <strong>
-                                        {{ $new['ann'] }}
-                                        @if ($new['ann'] <= 1)
-                                            año
-                                        @else
-                                            años
-                                        @endif
-                                    </strong>
-                                </p>
+                                
                             </div>
                         </div>
                     </div>
@@ -356,7 +377,9 @@
         @php $cant = $cant+1; @endphp
         <div class="row">
             <div class="col-6 " style="padding-right: 1px;">
-                <h1>{{ $noticias->titulo }}</h1>
+                <h1 class="titulo">{{ $noticias->titulo }}</h1>
+                <hr class="line-title">
+                <br>
                 <div>
                     <p class="nuevaa">
                         {!! Str::limit($noticias->contenido, 800, '...') !!}
@@ -605,9 +628,9 @@
             <br>
         </div>
         
-        <div class="row">
+        <div class="comites row">
             <div class="col-3 p-2">
-                <div class="card" style="border-color: #FE3EB2">
+                <div class="card">
                     <img src="{{ asset('images/copasst.png') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Formación integrantes del Copasst</h5>

@@ -20,8 +20,6 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.icons-1.10.css')}}">
     {{-- <link rel="stylesheet" href="{{ asset('css/materialize.min.css') }}"> --}}
     
-    
-    
     <script src="{{ asset('js/swiper.bundle.min.js') }}"></script>
     <script src="{{ asset('js/splide.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-5.1.bundle.min.js') }}"></script>
@@ -50,12 +48,11 @@
                         <a class="nav-link text-white" href="{{ route('inicio.noticia') }}">Noticias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#redapoyo">Red De Apoyo</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link text-white" href="{{ route('inicio.galeria') }}">Galería de fotos</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#redapoyo">Red De Apoyo</a>
+                    </li>
                 </ul>
 
             

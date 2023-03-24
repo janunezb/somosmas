@@ -34,7 +34,7 @@
                             <button type="button" class="ctn"
                                 data-toggle="modal"data-target="#myModal<?php echo $cant; ?>">Ver fotos</button>
                             <div class="vermaa" style="padding-top: 10%; padding-left:0%">
-                                Actualización: {{ $galerias->updated_at }}
+                                Actualización: {{ $galerias->updated_at->format('d/m/Y') }}
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,6 @@
 
                 </div>
             @endforeach
-
         </div>
     </main>
 
