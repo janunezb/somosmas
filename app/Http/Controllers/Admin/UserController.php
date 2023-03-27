@@ -49,6 +49,9 @@ use PhpParser\Node\Stmt\Return_;
          $extension= $request->file('imagen')->getClientOriginalExtension();
          $nombre_foto=$nombre_img.'.'.$extension;
 
+         $request->merge(['cargo'=>mb_strtoupper($request->cargo)]);
+         $request->merge(['nombre'=>mb_strtoupper($request->nombre)]);
+         $request->merge(['email'=>strtolower($request->email)]);
          $request->merge(['foto'=>$nombre_foto]);
          $request->merge(['password'=>$nombre_img]);
          $request->merge(['estado'=>1]);
@@ -80,6 +83,11 @@ use PhpParser\Node\Stmt\Return_;
             'empresa_id'=>'required:',
             "imagen'=>'image:users,imagen,$user->id"
         ]);
+
+        $request->merge(['cargo'=>mb_strtoupper($request->cargo)]);
+        $request->merge(['nombre'=>mb_strtoupper($request->nombre)]);
+        $request->merge(['email'=>strtolower($request->email)]);
+        
         $user->roles()->sync($request->roles);
         $user->update($request->all());
         return redirect()->route('admin.users.edit',$user)->with('info','Los datos han sido actualizados');
