@@ -405,7 +405,7 @@
                                             <div class="modal-body">
 
                                                 <div class="col-auto">
-                                                    <div class="row"> 
+                                                    <div class="row">
                                                         {{-- CUERPO MODAL --}}
                                                         <div class="col-md-8">
                                                             <div>
@@ -433,7 +433,7 @@
                                                                         <div class="splide__track">
                                                                             <ul class="splide__list">
                                                                                 @foreach ($imgs as $img)
-                                                                                    <li class="splide__slide"> 
+                                                                                    <li class="splide__slide">
                                                                                         <img src="../images/noticias/<?php echo $img; ?>" alt="">
                                                                                     </li>
                                                                                 @endforeach
@@ -473,7 +473,7 @@
                     </div>
 
                 </div>
-                <div class="vermas" style="width: 700px; padding-top: 15%; padding-left:90%">
+                <div class="vermas" style="width: 600px; padding-top: 3%; padding-left:80%">
                     <a href="{{ route('inicio.noticia') }}">Más noticias <i class="bi bi-arrow-right-square"></i> </a>
                 </div>
             </div>
@@ -975,7 +975,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="{{ asset('js/new.js') }}"></script>
 <script src="{{ asset('js/swiper.js') }}"></script>
-
+<script src="{{ asset('js/splider.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
