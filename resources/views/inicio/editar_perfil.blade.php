@@ -64,7 +64,7 @@
                             <label class="label" for="fecha_ingreso">Fecha de Ingreso</label>
                                 <input disabled type="text" value="{{ auth()->user()->fecha_ingreso }}" class="input border border-gray-00 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-1 my-1" name="fecha_ingreso">                
                             </div>
-                            <p class="caracteres">*Si deseas actualizar algún dato personal favor comunicate con el administrador.* </p>
+                            <p class="caracteres">*Si deseas actualizar algún dato personal por favor contacta al administrador.* </p>
                         </div>
 
                         <div class="box2">
