@@ -83,7 +83,7 @@
                                                                         <ul class="splide__list">
                                                                             @foreach ($imgs as $img)
                                                                                 <li class="splide__slide">
-                                                                                    <img src="../images/noticias/<?php echo $img; ?>"
+                                                                                    <img src="../storage/images/noticias/<?php echo $img; ?>"
                                                                                         alt="">
                                                                                 </li>
                                                                             @endforeach
@@ -94,7 +94,7 @@
                                                                 <div class="dos">
                                                                     <img style="max-width: 100%;
                                                                         max-height: 100%;"
-                                                                        src="../images/noticias/{{ $noticias->imagenes }}"
+                                                                        src="../storage/images/noticias/{{ $noticias->imagenes }}"
                                                                         alt="">
                                                                 </div>
                                                             @endif
@@ -129,7 +129,7 @@
                             <?php $porciones = explode(',', $noticias->imagenes); ?>
                             @for ($i = 0; $i < count($porciones); $i++)
                                 <div class="{{ $i == 0 ? 'active' : '' }}  carousel-item">
-                                    <img class="d-block w-100" src="../images/noticias/{{ $porciones[$i] }}" class="pl-4">
+                                    <img class="d-block w-100" src="../storage/images/noticias/{{ $porciones[$i] }}" class="pl-4">
                                 </div>
                             @endfor
                             <a class="carousel-control-prev" href="#carouselExampleControls{{ $noticias->id }}" role="button"
@@ -144,7 +144,7 @@
                             </a>
                         @else
                             <div class="carousel-item active">
-                                <img class="img_noticia"src="../images/noticias/{{ $noticias->imagenes }}"
+                                <img class="img_noticia"src="../storage/images/noticias/{{ $noticias->imagenes }}"
                                     alt=""class="">
                             </div>
                         @endif
@@ -173,13 +173,7 @@
             return new bootstrap.Tooltip(tooltipTriggerEl)
         })
     </script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="{{ asset('js/swiper_noti.js') }}"></script>
-    <script src="{{ asset('js/splider.js') }}"></script>
-    <script src="{{ asset('js/swiper.js') }}"></script> --}}
-
+    
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="{{ asset('js/new.js') }}"></script>

@@ -1,8 +1,6 @@
 <div>
-    
     <div class="card">
         <div class="card-header">
-
             <input wire:model="search" class="form-control" placeholder="Ingrese Nombre o Documento">
         </div>
         <div class="card-header">
@@ -11,8 +9,8 @@
                     <a class="btn btn-enviar " href="{{route('admin.users.create')}}">Agregar Colaborador</a>
                 </div>
                 <div class="col-2" >
-                {!! Form::label('estado', 'Activos') !!}
-                <input wire:model="estado" type="checkbox">
+                    {!! Form::label('estado', 'Activos') !!}
+                    <input wire:model="estado" type="checkbox">
                 </div>
             </div>
         </div>
@@ -33,7 +31,7 @@
                     <tbody>
                         @foreach ($users as $user)
                             @if ($user->estado == 0)
-                                <tr class="p-3 mb-2  text-dark">
+                                <tr class="p-3 mb-2 text-dark">
                                     <td>{{$user->documento}}</td>
                                     <td>{{$user->nombre}}</td>
                                     <td>{{$user->cargo}}</td>

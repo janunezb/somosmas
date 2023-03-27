@@ -14,10 +14,6 @@ class UsersIndex extends Component
     public $estado=1;
     protected $paginationTheme = "bootstrap";
     protected $listeners = ['render','deshabilitar','eliminar'];
-    
-
-
-
     public function updatingSearch()
     {
         $this->resetPage();
