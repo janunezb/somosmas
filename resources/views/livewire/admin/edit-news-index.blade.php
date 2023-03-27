@@ -29,7 +29,10 @@
             <div class="form-group col-4">
                 <div class="row" style="margin: 3rem 0 4rem 0">
                     {!! Form::label('adjunto', 'Adjuntos') !!}
-                    {!! Form::text('adjunto',null, ['class'=>'form-control','placeholder'=>'Ingrese links de adjuntos']) !!}
+                    {!! Form::text('adjunto',null, ['class'=>
+                    'form-control',
+                    'wire:model'=>'new.adjunto',
+                    'placeholder'=>'Ingrese links de adjuntos']) !!}
                     @error('adjunto')
                         <span class="text-danger">{{$message }}</span>
                     @enderror

@@ -24,6 +24,8 @@ class EditNewsIndex extends Component
         'new.estado' => 'required',
         'new.contenido' => 'required',
         'new.imagenes' => 'max:2048',
+        'new.adjunto' => '',
+
     ];
 
     public function mount(Noticia $new){
