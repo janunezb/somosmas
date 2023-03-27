@@ -434,7 +434,7 @@
                                                                             <ul class="splide__list">
                                                                                 @foreach ($imgs as $img)
                                                                                     <li class="splide__slide">
-                                                                                        <img src="../images/noticias/<?php echo $img; ?>" alt="">
+                                                                                        <img src="../storage/images/noticias/<?php echo $img; ?>" alt="">
                                                                                     </li>
                                                                                 @endforeach
                                                                             </ul>
@@ -444,7 +444,7 @@
                                                                     <div class="dos">
                                                                         <img style="max-width: 100%;
                                                                             max-height: 100%;"
-                                                                            src="../images/noticias/{{ $noticias->imagenes }}"
+                                                                            src="../storage/images/noticias/{{ $noticias->imagenes }}"
                                                                             alt="">
                                                                     </div>
                                                                 @endif
@@ -973,6 +973,10 @@
 <script src="{{ asset('js/new.js') }}"></script>
 <script src="{{ asset('js/swiper.js') }}"></script>
 <script src="{{ asset('js/splider.js') }}"></script>
+<<<<<<< HEAD
+
+=======
+>>>>>>> pruebas2
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
