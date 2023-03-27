@@ -105,28 +105,33 @@
                                                     </div>
 
                                                     <div class="card-body pt-0">
-                                                        <p class="card-title" style="font-size:medium;">
-                                                            <strong>{{ $new['nombre'] }}</strong>
-                                                        </p>
-
-                                                        <p style="color: #FE3EB2">
-                                                            <strong>{{ $new['empresa'] }}</strong>
-                                                        </p>
-
-                                                        <p style="color: #707b7c" class="tam">
-                                                            <strong>{{ $new['cargo'] }}</strong>
-                                                        </p>
-
-                                                        <p style="color: #FE3EB2">
-                                                        <strong>
-                                                            {{ $new['ann'] }}
-                                                            @if ($new['ann'] <= 1)
-                                                                año
-                                                            @else
-                                                                años
-                                                            @endif
-                                                        </strong>
-                                                        </p>
+                                                        <div class="nombre">
+                                                            <p class="card-title" style="font-size:medium;">
+                                                                <strong>{{ $new['nombre'] }}</strong>
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p style="color: #FE3EB2">
+                                                                <strong>{{ $new['empresa'] }}</strong>
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p style="color: #707b7c" class="cargo">
+                                                                <strong>{{ $new['cargo'] }}</strong>
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="años" style="color: #FE3EB2">
+                                                                <strong>
+                                                                {{ $new['ann'] }}
+                                                                @if ($new['ann'] <= 1)
+                                                                    año
+                                                                @else
+                                                                    años
+                                                                @endif
+                                                                </strong>
+                                                            </p>
+                                                        </div>   
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,17 +173,22 @@
                                                 </div>
 
                                                 <div class="card-body pt-0">
-                                                    <p class="card-title" style="font-size:medium;">
-                                                        <strong>{{ $fecha['nombre'] }}</strong>
-                                                    </p>
-                                                    <p style="color: #FE3EB2" class="p-1">
-                                                        <strong>
-                                                            {{ $fecha['empresa'] }}
-                                                        </strong>
-                                                    </p>
-                                                    <p style="color: #707b7c" class="tam p-2">
-                                                        <strong>{{ $fecha['cargo'] }}</strong> 
-                                                    </p>
+                                                    <div class="nombre">
+                                                        <p class="card-title" style="font-size:medium;">
+                                                            <strong>{{ $fecha['nombre'] }}</strong>
+                                                        </p>
+                                                    </div>
+                                                    <div>
+                                                        <p style="color: #FE3EB2">
+                                                            <strong>{{ $fecha['empresa'] }}</strong>  
+                                                        </p>
+                                                    </div>
+                                                    <div>
+                                                        <p style="color: #707b7c" class="cargo">
+                                                            <strong>{{ $fecha['cargo'] }}</strong> 
+                                                        </p>
+                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -229,7 +239,7 @@
                     @foreach ($lista as $fecha)
                         <div class="carrusel-itemms">
 
-                            <div class="card" style="height: 26rem;">
+                            <div class="card" style="height: 28rem;">
                                 <div class="tamaño">
                                     @if ($fecha['foto'])
                                         <img src="images/fotos/{{ $fecha['foto'] }}" alt="">
@@ -240,20 +250,26 @@
                                 </div>
 
                                 <div class="card-body pt-0">
-                                    <p class="card-title" style="font-size:medium;">
-                                        <strong>{{ $fecha['nombre'] }}</strong>
-                                    </p>
+                                    <div clas="nombre">
+                                        <p class="card-title" style="font-size:medium;">
+                                            <strong>{{ $fecha['nombre'] }}</strong>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p style="color: #FE3EB2">
+                                            <strong>
+                                                {{ $fecha['empresa'] }}
+                                            </strong>
+                                         </p>
+                                    </div>
+                                    <div>
+                                        <p style="color: #707b7c" class="cargo">
+                                            <strong>{{ $fecha['cargo'] }}</strong>
+                                        </p>
+                                    </div>
+                                    
 
-                                    <p style="color: #707b7c" class="tam">
-                                        <strong>{{ $fecha['cargo'] }}</strong>
-                                    </p>
-
-                                    <p style="color: #FE3EB2">
-                                        <strong>
-                                            {{ $fecha['empresa'] }}
-                                        </strong>
-
-                                    </p>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -299,7 +315,7 @@
                 @foreach ($listap as $new)
                     <div class="carrusel-itemms">
 
-                        <div class="card" style="height: 25rem;">
+                        <div class="card" style="height: 28rem;">
                             <div class="tamaño">
                                 @if ($new['foto'])
                                     
@@ -311,32 +327,37 @@
                             </div>
 
                             <div class="card-body pt-0">
-                                <p class="card-title" style="font-size:medium;">
-                                    <strong>{{ $new['nombre'] }}</strong>
-                                </p>
+                                <div class="nombre">
+                                    <p class="card-title" style="font-size:medium;">
+                                        <strong>{{ $new['nombre'] }}</strong>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p style="color: #FE3EB2">
+                                        <strong>{{ $new['empresa'] }}</strong>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="cargo" style="color: #707b7c">
+                                        <strong>{{ $new['cargo'] }}</strong>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p style="color: #FE3EB2">
+                                        <strong>
+                                            {{ $new['ann'] }}
+                                            @if ($new['ann'] <= 1)
+                                                año
+                                            @else
+                                                años
+                                            @endif
+                                        </strong>
+                                    </p>
+                                </div>
 
-                                <p style="color: #FE3EB2">
-                                    <strong>
-                                        {{ $new['empresa'] }}
-                                    </strong>
-                                </p>
+                                
 
-                                <p style="color: #707b7c">
-                                    <strong>
-                                        {{ $new['cargo'] }}
-                                    </strong>
-                                </p>
-
-                                <p style="color: #FE3EB2">
-                                    <strong>
-                                        {{ $new['ann'] }}
-                                        @if ($new['ann'] <= 1)
-                                            año
-                                        @else
-                                            años
-                                        @endif
-                                    </strong>
-                                </p>
+                                
                             </div>
                         </div>
                     </div>
@@ -356,7 +377,9 @@
         @php $cant = $cant+1; @endphp
         <div class="row">
             <div class="col-6 " style="padding-right: 1px;">
-                <h1>{{ $noticias->titulo }}</h1>
+                <h1 class="titulo">{{ $noticias->titulo }}</h1>
+                <hr class="line-title">
+                <br>
                 <div>
                     <p class="nuevaa">
                         {!! Str::limit($noticias->contenido, 800, '...') !!}
@@ -365,46 +388,39 @@
                         @if (strlen($noticias->contenido) > 800)
                             <div class="col-3">
                                 <!-- Large modal -->
-                                <button type="button" class="ctn" data-toggle="modal"
-                                    data-target="#myModal<?php echo $cant; ?>">Ver más</button>
-
-                                <div class="modal fade bd-example-modal-lg"
-                                    id="myModal<?php echo $cant; ?>" tabindex="-1" role="dialog"
-                                    aria-hidden="true">
+                                <button type="button" class="ctn"
+                                    data-toggle="modal"data-target="#myModal<?php echo $cant; ?>">Ver más</button>
+                                <div class="modal fade bd-example-modal-lg" id="myModal<?php echo $cant; ?>" tabindex="-1"
+                                    role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-xl">
                                         <div class="modal-content">
                                             {{-- contenido --}}
                                             {{-- TITULO MODAL --}}
                                             <div class="modal-header">
-                                                <header class="h2">
-                                                    {{ $noticias->titulo }}
-                                                </header>
-                                                <button type="button" class="close"
-                                                    data-dismiss="modal">
-                                                    &times;</button>
+                                                <header style="" class="subtitulo h2">
+                                                    {{ $noticias->titulo }}</header>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
                                             {{-- ************* --}}
                                             <div class="modal-body">
-                                                <div class="row">
-                                                    <div class="col-auto">
-                                                        <div class="row">
-                                                            {{-- CUERPO MODAL --}}
-                                                            <div class="col-md-8">
-                                                                <div>
-                                                                    <p
-                                                                        class="nuevaa"style="background-
-                                                                                    color:#FAFAFA">
-                                                                        {!! $noticias->contenido !!}
-                                                                    </p>
-                                                                </div>
+
+                                                <div class="col-auto">
+                                                    <div class="row">
+                                                        {{-- CUERPO MODAL --}}
+                                                        <div class="col-md-8">
+                                                            <div>
+                                                                <p class="nuevaa" style="background-color: #FAFAFA">
+                                                                    {!! $noticias->contenido !!}
+                                                                </p>
                                                             </div>
-                                                            {{-- ************ --}}
-                                                            {{-- IMAGEN MODAL --}}
-                                                            <div class="col">
-                                                                <div class="col-img-noti">
-                                                                    <?php $imgs = explode(',', $noticias->imagenes);
-                                                                    $var = count($imgs); ?>
-                                                                    @if ($var > 1)
+                                                        </div>
+                                                        {{-- ************ --}}
+                                                        {{-- IMAGEN MODAL --}}
+                                                        <div class="col">
+                                                            <div class="col-img-noti">
+                                                                <?php $imgs = explode(',', $noticias->imagenes);
+                                                                $var = count($imgs); ?>
+                                                                @if ($var > 1)
                                                                     <section class="splide"
                                                                         data-splide='{
                                                                                 "type":"loop",
@@ -418,8 +434,7 @@
                                                                             <ul class="splide__list">
                                                                                 @foreach ($imgs as $img)
                                                                                     <li class="splide__slide">
-                                                                                        <img src="../storage/images/noticias/<?php echo $img; ?>"
-                                                                                            alt="">
+                                                                                        <img src="../images/noticias/<?php echo $img; ?>" alt="">
                                                                                     </li>
                                                                                 @endforeach
                                                                             </ul>
@@ -429,43 +444,17 @@
                                                                     <div class="dos">
                                                                         <img style="max-width: 100%;
                                                                             max-height: 100%;"
-                                                                            src="../storage/images/noticias/{{ $noticias->imagenes }}"
+                                                                            src="../images/noticias/{{ $noticias->imagenes }}"
                                                                             alt="">
                                                                     </div>
                                                                 @endif
-                                                                    {{-- @if ($var > 1)
-                                                                        <section class="splide slider1"
-                                                                            data-splide='{"type":"loop",
-                                                                                        "perPage":3,
-                                                                                        "arrows":true,
-                                                                                        "autoplay":true,
-                                                                                        "pagination":false,
-                                                                                        "height":"40rem",
-                                                                                        "direction":"ttb"}'>
-                                                                            <div class="splide__track">
-                                                                                <ul class="splide__list">
-                                                                                    <?php foreach($imgs as $img){?>
-                                                                                    <li
-                                                                                        class="splide__slide">
-                                                                                        <img src="storage/images/noticias/<?php echo $img; ?>"
-                                                                                            alt="">
-                                                                                    </li>
-                                                                                    <?php } ?>
-                                                                                </ul>
-                                                                            </div>
-                                                                        </section>
-                                                                    @else
-                                                                        <div class="dos">
-                                                                            <img src="images/noticias/{{ $noticias->imagenes }}"
-                                                                                alt="">
-                                                                        </div> --}}
-                                                                    {{-- @endif --}}
-                                                                </div>
                                                             </div>
-                                                            {{-- ************ --}}
                                                         </div>
+                                                        {{-- ************ --}}
                                                     </div>
                                                 </div>
+
+
                                             </div>
                                             {{-- /contenido --}}
                                         </div>
@@ -484,13 +473,13 @@
                     </div>
 
                 </div>
-                <div class="vermas" style="width: 700px; padding-top: 15%; padding-left:90%">
+                <div class="vermas" style="width: 600px; padding-top: 3%; padding-left:80%">
                     <a href="{{ route('inicio.noticia') }}">Más noticias <i class="bi bi-arrow-right-square"></i> </a>
                 </div>
             </div>
 
             {{-- imagenes noticias --}}
-            <div id="carouselExampleControls" class="carousel slide col-6 noticia" data-ride="carousel">
+            <div id="carouselExampleControls" style="height: 500px" class="carousel slide col-6 noticia" data-ride="carousel">
                 <div class="carousel-inner">
                     @if ($var > 1)
                         <?php $porciones = explode(',', $noticias->imagenes); ?>
@@ -601,7 +590,7 @@
             @foreach ($formacion as $formaciones)
                 <div class="carrusel-itemm">
 
-                    <div class="card" style="widtyh: 18rem;">
+                    <div class="card" style="width: 16rem;">
                         <img src="{{ $formaciones->imagen }}" alt="">
                         <div class="card-body">
                             <h5 class="card-title">{{ $formaciones->titulo }}</h5>
@@ -631,7 +620,7 @@
             <br>
         </div>
         
-        <div class="row">
+        <div class="comites row">
             <div class="col-3 p-2">
                 <div class="card">
                     <img src="{{ asset('images/copasst.png') }}" class="card-img-top" alt="...">
@@ -641,15 +630,14 @@
                         <p class="card-text">Conoce los aspectos básicos de entrada del Copasst.
                         </p>
                         <br>
-                        <a href="https://forms.gle/K9qonnyf7TxdHNLy9" class="btn btn-outline-dark"
-                            target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
+                        <a href="https://forms.gle/K9qonnyf7TxdHNLy9" class="btn btn-outline-dark" target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-3 p-2">
-                <div class="card" style="">
-                    <img src="{{ asset('images/convivencia.jpg') }}" class="card-img-top"
-                        alt="...">
+                <div class="card" style="border-color: #FE3EB2">
+                    <img src="{{ asset('images/convivencia.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Formación integrantes comité de convivencia</h5>
                         <p class="card-text">Dirigida a los integrantes del comité. </p>
@@ -663,7 +651,7 @@
                 </div>
             </div>
             <div class="col-3 p-2">
-                <div class="card" style="">
+                <div class="card" style="border-color: #FE3EB2">
                     <img src="{{ asset('images/vial.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Formación integrantes del comité vial</h5>
@@ -679,15 +667,13 @@
                 </div>
             </div>
             <div class="col-3 p-2">
-                <div class="card" style="">
+                <div class="card" style="border-color: #FE3EB2">
                     <img src="{{ asset('images/ambiental.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Formación integrantes del comité ambiental</h5>
                         <p class="card-text">Dirigida a los integrantes del comité. </p>
                         <p class="text-justify card-text"> Conoce los aspectos básicos de entrada del
                             comité.
-
-
                         </p>
                         <br>
                         <a href="https://forms.gle/YauqYbGhC6Exoxu69" class="btn btn-outline-dark"
@@ -724,60 +710,56 @@
 
         <div class="row">
             <div class="cajon col-3 p-2">
-                <a href="https://forms.gle/RuYsLP2iRA1N5wEh9" target="_blank" class="">
-                <button class="botonn">
-                    <div>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        
-                        <i class="iconify fa-solid fa-virus-covid"></i>
-                        <h5 class="card-title">Encuesta de prevención COVID-19</h5>
-                        <p class="card-text h6">Debes realizarla mínimo 1 vez a la semana durante cada mes. Tiempo estimado 1 minuto.</p>
-                        <span class="btn-ingresa">Ingresa</span>
-                    </div>
-                </button>
+                <a href="https://forms.gle/RuYsLP2iRA1N5wEh9" target="_blank">
+                    <button class="botonn">
+                        <div>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span><i class="fa-solid fa-virus-covid"></i></span>
+                            <h5 class="card-title">Encuesta de prevención COVID-19</h5>
+                            <p class="card-text h6">Debes realizarla mínimo 1 vez por semana. Tiempo estimado 1 minuto.</p>
+                            <span class="btn btn-outline-dark"><i class="bi bi-arrow-right"></i> Ingresa</span>
+                        </div>
+                    </button>
                 </a>
             </div>
 
             <div class="cajon col-3 p-2">
-                <button class="botonn">
-                    <div>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <a href="https://forms.gle/LRGMRZASXysFLKKj9" target="_blank" class="btn-ingresa">
-                        <span class="iconify" data-icon="ri:user-heart-line"></span>
-                        <h5 class="card-title">Encuesta de perfil sociodemográfico</h5>
-                        <p></p>
-                        <p class="card-text h6">Debes realizarla en Enero 2022. Tiempo estimado 5 minutos.</p>
-                        <p></p>Ingresa</a>
-                    </div>
-                </button>
-
+                <a href="https://forms.gle/LRGMRZASXysFLKKj9" target="_blank">
+                    <button class="botonn">
+                        <div>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span><i class="fa-solid fa-user-pen"></i></span>
+                            <h5 class="card-title">Encuesta de perfil sociodemográfico</h5>
+                            <p class="card-text h6">Debes realizarla en Enero 2022. Tiempo estimado 5 minutos.</p>
+                            <span class="btn btn-outline-dark"><i class="bi bi-arrow-right"></i> Ingresa</span>
+                        </div>
+                    </button>
+                </a>
             </div>
+
             <div class="cajon col-3 p-2">
-                <button class="botonn">
-                    <div>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <a href="https://forms.gle/3jxiPHVHRMWnivkp7" target="_blank" class="btn-ingresa">
-                        <span class="iconify" data-icon="ri:open-arm-line"></span>
-                        <h5 class="card-title">Gestión de riesgos ergonómicos</h5>
-                        <p></p>
-                        <p class="card-text h6">Enfoque cargas y posturas. Tiempo estimado 5 minutos.</p>
-                        <p></p>Ingresa</a>
-                    </div>
-                </button>
-
+                <a href="https://forms.gle/3jxiPHVHRMWnivkp7" target="_blank">
+                    <button class="botonn">
+                        <div>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span><i class="fa-solid fa-people-carry-box"></i></span>
+                            <h5 class="card-title">Gestión de riesgos ergonómicos</h5>
+                            <p class="card-text h6">Enfoque cargas y posturas. Tiempo estimado 5 minutos.</p>
+                            <span class="btn btn-outline-dark"><i class="bi bi-arrow-right"></i> Ingresa</span>
+                        </div>
+                    </button>
+                </a>
             </div>
-
         </div>
-
     </div>
 </section>
 
@@ -786,7 +768,6 @@
         <br>
         <br>
         <hr>
-
     </p>
 </section>
 
@@ -806,56 +787,54 @@
 
         <div class="row">
             <div class="cajon col-3 p-2">
-                <button class="botonn">
-                    <div> 
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <a href="https://forms.gle/sFSS61k8rNVyuuSN7" target="_blank" class="btn-ingresa">
-                        <span class="iconify" data-icon="ci:user-voice"></span>
-                        <h5 class="card-title">Reportes de peligros y riesgos</h5>
-                        <p class="card-text h6">Realízala en enero 2022. Tiempo estimado 5 minutos; aplica para todos los colaboradores.</p> 
-                        Ingresa</a>
-                    </div>
-                </button>
+                <a href="https://forms.gle/sFSS61k8rNVyuuSN7" target="_blank">
+                    <button class="botonn">
+                        <div> 
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span><i class="fa-solid fa-file-pen"></i></span>
+                            <h5 class="card-title">Reportes de peligros y riesgos</h5>
+                            <p class="card-text h6">Realízala en enero 2022. Tiempo estimado 5 minutos; aplica para todos los colaboradores.</p> 
+                            <span class="btn btn-outline-dark"><i class="bi bi-arrow-right"></i> Ingresa</span>
+                        </div>
+                    </button>
+                </a>
             </div>
 
             <div class="cajon col-3 p-2">
-                <button class="botonn">
-                    <div>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <a href="https://forms.gle/gVAaSMWJjCnLbica7" target="_blank" class="btn-ingresa">
-                        <span class="iconify" data-icon="ri:hand-heart-fill"></span>
-                        <h5 class="card-title">Como es tu gestión frente al SGSST</h5>
-                        <p></p>
-                        <p class="card-text h6">Realízala en enero 2022. Tiempo estimado 5 minutos; aplica para todos los colaboradores.</p>
-                        Ingresa</a>
-                    </div>
-                </button>
+                <a href="https://forms.gle/gVAaSMWJjCnLbica7" target="_blank">
+                    <button class="botonn">
+                        <div>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span><i class="fa-solid fa-hand-holding-heart"></i></span>
+                            <h5 class="card-title">Como es tu gestión frente al SGSST</h5>
+                            <p class="card-text h6">Realízala en enero 2022. Tiempo estimado 5 minutos; aplica para todos los colaboradores.</p>
+                            <span class="btn btn-outline-dark"><i class="bi bi-arrow-right"></i> Ingresa</span>
+                        </div>
+                    </button>
+                </a>
             </div>
 
             <div class="cajon col-3 p-2">
-                <button class="botonn">
-                <a href="https://forms.gle/s8ns9EERMzbMUoNv8" target="_blank" class="btn-ingresa">
-                    <div> 
-                 
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>                     
-                        
-                        <span class="iconify" data-icon="bxs-coffee"></span>
-                        <h5 class="card-title">Tomémonos un <br> café</h5>
-                        <p></p>
-                        <p class="card-text h6">Requieres atención o apoyo frente a algún peligro solicítalo aquí.</p>
-                        Ingresa
-                    </div>
-                    </a>
-                </button>
+                <a href="https://forms.gle/s8ns9EERMzbMUoNv8" target="_blank" >
+                    <button class="botonn">
+                        <div> 
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span><i class="fa-solid fa-mug-hot"></i></span>
+                            <h5 class="card-title">Tomémonos un <br> café</h5>
+                            <p class="card-text h6">Requieres atención o apoyo frente algún peligro. <br> Solicítalo aquí.</p>
+                            <span class="btn btn-outline-dark"><i class="bi bi-arrow-right"></i> Ingresa</span>
+                        </div> 
+                    </button>
+                </a>
             </div> 
         </div>
     </div>
@@ -885,52 +864,54 @@
 
         <div class="row">
             <div class="cajon col-3 p-2">
-                <button class="botonn">
-                    <div>     
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>                   
-                        <a href="https://forms.gle/xBF7h7eCq8fBxD5z8" target="_blank" class="btn-ingresa">
-                        <span class="iconify" data-icon="ri:roadster-fill"></span>
-                        <h5 class="card-title">Encuesta De Seguridad Vial</h5>
-                        <p></p>
-                        <p class="card-text h6">Realízala en enero 2022. Tiempo estimado 5 minutos; aplica para todos los colaboradores.</p>
-                        <p></p> Ingresa</a>
-                    </div>
-                </button>
+                <a href="https://forms.gle/xBF7h7eCq8fBxD5z8" target="_blank">
+                    <button class="botonn">
+                        <div>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span><i class="fa-solid fa-car"></i></span>
+                            <h5 class="card-title">Encuesta De Seguridad <br> Vial</h5>
+                            <p class="card-text h6">Realízala en enero 2022. Tiempo estimado 5 minutos; aplica para todos los colaboradores.</p>
+                            <span class="btn btn-outline-dark"><i class="bi bi-arrow-right"></i> Ingresa</span>
+                        </div>
+                    </button>
+                </a>
             </div>
 
             <div class="cajon col-3 p-2">
-                <button class="botonn">
-                    <div class="botonn_div">  
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <a href="https://forms.gle/YDDPqcozj3B8cYoB8" target="_blank" class="btn-ingresa">
-                        <span class="iconify" data-icon="ri:user-3-fill"></span>
-                        <h5 class="card-title">Formación teórica para conductores</h5>
-                        <p class="card-text h6">Dirigida a conductores que se desplazan en ellos con fines de la actividad económica de la empresa.</p> 
-                        Ingresa</a>
-                    </div>
-                </button>
+                <a href="https://forms.gle/YDDPqcozj3B8cYoB8" target="_blank">
+                    <button class="botonn">
+                        <div>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span><i class="fa-solid fa-screwdriver-wrench"></i></span>
+                            <h5 class="card-title">Formación teórica para conductores</h5>
+                            <p class="card-text h6">Dirigida a conductores que se desplazan en ellos con fines de la actividad económica de la empresa.</p> 
+                            <span class="btn btn-outline-dark"><i class="bi bi-arrow-right"></i> Ingresa</span>
+                        </div>
+                    </button>
+                </a>
             </div>
 
             <div class="cajon col-3 p-2">
-                <button class="botonn">
-                    <div>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        <span class="hover"></span>
-                        
-                        <span class="iconify" data-icon="ri:discuss-line"></span>
-                        <h5 class="card-title">Reportes de riesgos en la vía</h5>
-                        <p class="card-text h6">Es importante que conozcas los peligros con el fin de prevenir accidentes.Tiempo estimado 5 minutos; aplica para todos.</p>
-                        <a href="https://forms.gle/pTuqrBD4ccGR4e7i6" target="_blank" class="btn-ingresa">Ingresa</a>
-                    </div>
-                </button>
+                <a href="https://forms.gle/pTuqrBD4ccGR4e7i6" target="_blank">
+                    <button class="botonn"> 
+                        <div>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span class="hover"></span>
+                            <span><i class="fa-solid fa-road"></i></span>
+                            <h5 class="card-title">Reportes de riesgos en la vía</h5>
+                            <p class="card-text h6">Es importante que conozcas los peligros con el fin de prevenir accidentes. Tiempo estimado 5 minutos; aplica para todos.</p>
+                            <span class="btn btn-outline-dark"><i class="bi bi-arrow-right"></i> Ingresa</span>
+                        </div>
+                    </button>
+                </a>
             </div>
         </div>
     </div>
@@ -966,7 +947,7 @@
                 <img src="{{ asset('images/porcentg.jpg') }}" alt="">
             </div>
             <div class="col-12">
-                <h3 class="align-items-center">Actividades para que tu sgsst avance.</h3>
+                <h3 class="align-items-center">Actividades para que tu SGSTT avance.</h3>
                 <p style="text-align: justify">Verifica que ya cuentas con tu inducción, de igual modo consulta las formaciones
                     planificadas durante el mes y cuál te aplica. Para finalizar consulta si ya
                     realizaste las encuestas de medicina preventiva, seguridad industrial y seguridad
@@ -992,7 +973,6 @@
 <script src="{{ asset('js/new.js') }}"></script>
 <script src="{{ asset('js/swiper.js') }}"></script>
 <script src="{{ asset('js/splider.js') }}"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 

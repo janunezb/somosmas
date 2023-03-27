@@ -66,7 +66,7 @@
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==20 && $evidencia->grupo==2)
                 <button class="buton_sunco">
-                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
+                    <a style="font-size: 15px" id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif

@@ -30,8 +30,14 @@
             $var = count($imgs); ?>
 
             <div class="row pb-4 card-3">
-                <div class="col-6 pb-5" style="padding-right: 1px;">
-                    <h1>{{ $noticias->titulo }}</h1>
+                <div class="col-6 pb-1" style="padding-right: 1px;">
+                    <h1 class="subtitulo mb-0" >{{ $noticias->titulo }}</h1>
+                    <div class="vermaa">
+                    
+                    Actualización : {{ $noticias->updated_at->format('d/m/Y') }}
+                    
+                    </div>
+                    <br>
                     <div>
                         <p class="nuevaa">
                             {!! Str::limit($noticias->contenido, 800, '...') !!}
@@ -49,7 +55,7 @@
                                             {{-- contenido --}}
                                             {{-- TITULO MODAL --}}
                                             <div class="modal-header">
-                                                <header style="" class="h2">
+                                                <header style="" class="subtitulo h2">
                                                     {{ $noticias->titulo }}</header>
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
@@ -57,7 +63,7 @@
                                             <div class="modal-body">
 
                                                 <div class="col-auto">
-                                                    <div class="row">
+                                                    <div class="row"> 
                                                         {{-- CUERPO MODAL --}}
                                                         <div class="col-md-8">
                                                             <div>
@@ -119,11 +125,8 @@
                             </div>
                         @endif
                     </div>
-                    <div class="vermaa" style="padding-top: 10%; padding-left:76%">
-                        {{ $noticias->updated_at }}
-                    </div>
                 </div>
-                <div id="carouselExampleControls{{ $noticias->id }}" class="carousel slide col-6 noticia" data-ride="carousel">
+                <div id="carouselExampleControls{{ $noticias->id }}" style="height: 500px" class="carousel slide col-6 noticia" data-ride="carousel">
                     <div class="carousel-inner">
                         @if ($var > 1)
                             <?php $porciones = explode(',', $noticias->imagenes); ?>

@@ -54,7 +54,7 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==20 && $evidencia->grupo==1)
-                <button class="buton">
+                <button class="buton_libre">
                     <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
@@ -65,8 +65,8 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==20 && $evidencia->grupo==2)
-                <button class="buton">
-                    <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
+                <button class="buton_libre">
+                    <a style="font-size: 15px" id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
                 @endif
@@ -76,7 +76,7 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==20 && $evidencia->grupo==3)
-                <button class="buton">
+                <button class="buton_libre">
                     <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
@@ -87,7 +87,7 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==20 && $evidencia->grupo==4)
-                <button class="buton">
+                <button class="buton_libre">
                     <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
@@ -132,7 +132,7 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==21 && $evidencia->grupo==1)
-                <button class="buton">
+                <button class="buton_libre">
                     <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
@@ -177,7 +177,7 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==22 && $evidencia->grupo==1)
-                <button class="buton">
+                <button class="buton_libre">
                     <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
@@ -188,7 +188,7 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==22 && $evidencia->grupo==2)
-                <button class="buton2">
+                <button class="buton2_libre">
                     <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>
@@ -199,7 +199,7 @@
             <div class="col-3">
                 @foreach($evidencias as $evidencia)
                 @if($evidencia->etapa_id==22 && $evidencia->grupo==3)
-                <button class="buton">
+                <button class="buton_libre">
                     <a id="evidencia" href="{{ $evidencia->adjunto }}" target="_blank"><span><i class="fa-solid fa-rocket"></i>    {{ $evidencia->nombre }}</span></a>
                 </button>
                 <p></p>

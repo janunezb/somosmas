@@ -23,7 +23,7 @@
         <div class="form-body2">
 
             <div class="single-input-item">
-                <p class="caracteres">Recuerda: Solo se admiten formato jpg. jpeg. .png y peso menos de 150kb</p>
+                <p class="caracteres">Recuerda: Solo se admiten formato .jpg .jpeg .png y peso igual o inferior a 150Kb</p>
             <label for="foto"></label>
                 <input type="file" class="border border-gray-00 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white @error('foto') is-invalid @enderror" id="foto" name="foto">
                 @error('foto')
@@ -47,7 +47,7 @@
                 @enderror                
             </div>
 
-            <button type="submit" class="text-white p-2 my-3" name="guardar">Guardar</button>
+            <button type="submit" class="text-white p-2 my-3" name="guardar">Actualizar</button>
             <a class="atras" href="{{route('inicio.editar_perfil')}}">Atrás</a>
         </div>
     </form>

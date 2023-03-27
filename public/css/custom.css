@@ -4556,6 +4556,10 @@ fieldset:disabled .btn {
           justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  background: #343a40;
+    background-image: url(/images/textura-pie-pagina.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .navbar > .container,
@@ -6451,6 +6455,13 @@ fieldset:disabled .btn {
 .modal-header .btn-close {
   padding: 0.5rem 0.5rem;
   margin: -0.5rem -0.5rem -0.5rem auto;
+}
+
+.buton_close{
+  font-weight: 800;
+  font-size: 25px;
+  color: red;
+  
 }
 
 .modal-title {
@@ -12056,6 +12067,19 @@ fieldset:disabled .btn {
 .menu_nav:hover{
   text-decoration: none;
   
+}
+
+#cerrar-video{
+  cursor: pointer;
+}
+
+#cerrar-video i{
+  font-size: 30px;
+  color: red;
+}
+
+#cerrar-video i:hover{
+  color: black;
 }
 
 .checkbtn{
