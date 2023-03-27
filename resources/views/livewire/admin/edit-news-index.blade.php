@@ -111,11 +111,13 @@
                 </label>
             </div>
         </div>
+        <hr>
+        <button type="submit" class="btn btn-personal" wire:click="$emit('save')">
+            Actualizar
+         </button>
     </div>
   </div>
-  <button type="submit" class="btn btn-personal" wire:click="$emit('save')">
-    Actualizar
- </button>
+  
   <hr>
 {!!Form::close()!!}
 @push('js')

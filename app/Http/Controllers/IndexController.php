@@ -145,7 +145,7 @@ class IndexController extends Controller
     public function portales()
     {
         $portal = Empresa::where('estado', '1')
-            ->get();
+        ->get();
         return view('inicio.portales', compact(('portal')));
     }
 
@@ -153,10 +153,7 @@ class IndexController extends Controller
     {
         $not = Noticia::where('estado', '1')
         ->orderBy('updated_at', 'desc')
-        ->get();
-
-        // return $not;
-        
+        ->get();    
         return view('inicio.noticia', compact('not'));
     }
 
@@ -166,8 +163,7 @@ class IndexController extends Controller
             ->join('empresas', 'empresas.id', '=', 'users.empresa_id')
             ->select('empresas.nombre')
             ->where('users.documento', auth()->user()->documento)
-            ->get();                     
-                      
+            ->get();                      
         return view('inicio.editar_perfil', compact('empresas'));
     }
 
