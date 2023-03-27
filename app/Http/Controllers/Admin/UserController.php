@@ -51,6 +51,7 @@ use PhpParser\Node\Stmt\Return_;
 
          $request->merge(['foto'=>$nombre_foto]);
          $request->merge(['password'=>$nombre_img]);
+         $request->merge(['estado'=>1]);
          Log::info($request->file('imagen'));
 
          Image::make($request->file('imagen'))
@@ -59,8 +60,6 @@ use PhpParser\Node\Stmt\Return_;
          })
          ->save('images\fotos/'.$nombre_foto);
         User::create($request->all());
-        
-
         return redirect()->route('admin.users.index')->with('info','El colaborador se creó con exito');
     }
     public function edit(User $user)
