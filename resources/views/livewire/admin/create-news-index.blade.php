@@ -42,7 +42,7 @@
                         <span class="text-danger">{{$message }}</span>
                     @enderror
                 </div>
-                <div class="row" style="margin: 3rem 0 4rem 3rem">
+                <div class="row" style="margin: 3rem 0 4rem 0">
                         {!! Form::label('imagenes', 'Foto') !!}
                         {!! Form::file('imagenes',['accept'=>'image/*','wire:model'=>'imagenes', 'multiple'])!!}
 
