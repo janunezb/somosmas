@@ -108,8 +108,8 @@
 <script>
     Livewire.on('des_hau',posId => {
     Swal.fire({
-        title: '¿Está seguro(a) de deshabilitar esta noticia?',
-        text: "¡No podrá revertir esta acción!",
+        title: '¿Estás seguro(a) de deshabilitar esta noticia?',
+        text: "¡No podrás revertir esta acción!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#FE3EB2',
@@ -131,8 +131,8 @@
 <script>
     Livewire.on('hab',posId => {
     Swal.fire({
-        title: '¿Está seguro(a) de habilitar esta noticia?',
-        text: "¡No podrá revertir esta acción!",
+        title: '¿Estás seguro(a) de habilitar esta noticia?',
+        text: "¡No podrás revertir esta acción!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#FE3EB2',
@@ -155,8 +155,8 @@
 <script>
     Livewire.on('delete',posId => {
     Swal.fire({
-        title: '¿Está seguro(a) de eliminar este usuario?',
-        text: "¡No podrá revertir esta acción!",
+        title: '¿Estás seguro(a) de eliminar este usuario?',
+        text: "¡No podrás revertir esta acción!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#FE3EB2',
