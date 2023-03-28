@@ -53,6 +53,7 @@
             <div class="form-group col-4">
                 {!! Form::label('imagen', 'Foto') !!}
                 {!! Form::file('imagen',['accept'=>'image/*'])!!}
+                <br>
                 @error('imagen')
                 <span class="text-danger">{{$message }}</span>
             @enderror

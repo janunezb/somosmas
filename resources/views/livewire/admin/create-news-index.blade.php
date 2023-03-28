@@ -5,7 +5,7 @@
     <div class="card-body" >
         <div class="row">
             <div class="form-group col-8">
-                {!! Form::label('titulo', 'Titulo') !!}
+                {!! Form::label('titulo', 'Título') !!}
                 {!! Form::text('titulo',null, ['class'=>
                 'form-control',
                 'wire:model'=>'titulo',
@@ -43,7 +43,7 @@
                     @enderror
                 </div>
                 <div class="row" style="margin: 3rem 0 4rem 3rem">
-                        {!! Form::label('imagenes', 'Foto') !!}
+                        {!! Form::label('imagenes', 'foto') !!}
                         {!! Form::file('imagenes',['accept'=>'image/*','wire:model'=>'imagenes', 'multiple'])!!}
 
                         @error('imagenes')
