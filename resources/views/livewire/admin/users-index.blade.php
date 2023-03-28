@@ -131,7 +131,7 @@
         if (result.isConfirmed) {
                 Livewire.emitTo('admin.users-index','deshabilitar',posId);
                 Swal.fire(
-                '¡Deshabilitado!',
+                '¡Habilitado!',
                 'El usuario ha sido habilitado.',
                 'success'
             )
