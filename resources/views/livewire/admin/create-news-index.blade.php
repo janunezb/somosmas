@@ -43,8 +43,8 @@
                     @enderror
                 </div>
                 <div class="row" style="margin: 3rem 0 4rem 3rem">
-                        {!! Form::label('imagenes', 'foto') !!}
-                        {!! Form::file('imagenes',['accept'=>'image/*','wire:model'=>'imagenes', 'multiple'])!!}
+                        {!! Form::label('imagenes', 'Foto') !!}
+                        {!! Form::file('imágenes',['accept'=>'image/*','wire:model'=>'imagenes', 'multiple'])!!}
 
                         @error('imagenes')
                         <span class="text-danger">{{$message }}</span>
