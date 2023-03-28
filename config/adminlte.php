@@ -339,7 +339,7 @@ return [
         [
             'text'        => 'Salir',
             'url'         => 'inicio',
-            'icon'        => 'fas fa-solid fa-circle',
+            'icon'        => 'fas fa-solid fa-times-circle',
             'label_color' => 'success',
         ],
         // [
