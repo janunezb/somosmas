@@ -1,7 +1,7 @@
 <div>
     <div class="card">
         <div class="card-header">
-            <input wire:model="search" class="form-control" placeholder="Ingrese Nombre o Documento">
+            <input wire:model="search" class="form-control" placeholder="Ingrese título de la noticia">
         </div>
         <div class="card-header">
             <div class="row">
