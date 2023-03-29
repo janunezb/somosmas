@@ -105,18 +105,24 @@
             </div>
         </div>
         <hr>
-        <button type="submit" class="btn btn-personal" wire:click="$emit('save1')">
-            Enviar
-         </button>
-         <div wire:loading wire:target="save1">
+        <div class="row">
+            <div class="col-1"> 
+                <a class="btn btn-gris" href="{{ url('admin/news') }}">Volver</a>
+            </div>
+            <div class="col-2">
+               <button type="submit" class="btn btn-personal" wire:click="$emit('save')">
+                Enviar
+                </button> 
+            </div>
+        </div>
+        <div wire:loading wire:target="save1">
                 <div class="spinner-border text-primary" role="status">
                     <span class="sr-only">Loading...</span>
                 </div>
             {{-- <button type="submit" class="btn btn-personal" disabled>
                 Enviar
              </button> --}}
-         </div>
-         
+         </div>        
     </div>
     
   </div>
