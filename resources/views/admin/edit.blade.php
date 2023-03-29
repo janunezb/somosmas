@@ -10,12 +10,22 @@
         .btn-magenta{
             background: #FE3EB2;
             color: azure;
+            margin-right: 15px;
         }
         .btn-magenta:hover {
             background: #d10b82;
             color: azure;
         }
-        
+        .btn-gris{
+        color: white;
+        background: #343a40;
+        border-color: #343a40;
+        }
+        .btn-gris:hover{
+            color: white;
+            background: #343a40a2;
+            border-color: #343a40a2;
+        }
     </style>
 @endsection
 
@@ -140,17 +150,18 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-2" >
-                            {!! Form::submit('Actualizar Colaborador', ['id'=>'btn2','class'=>'btn btn-magenta ']) !!}
+                        <div class="col-0" > 
+                            <a class="btn btn-gris" href="{{ url('admin/users') }}">Volver</a>
+                        </div>
+                        <div class="col-2" >
+                            {!! Form::submit('Actualizar Colaborador', ['id'=>'btn2','class'=>'btn btn-magenta']) !!}
                             {!!Form::close()!!}
                         </div>
-                        <div class="form-group col-2" > 
+                        <div class="col-1" > 
                             {!!Form::model($user,['route'=> ['admin.users.restpassword',$user],'method'=>'put','id'=>'form']) !!}
                                 {!! Form::submit('Restablecer contraseña', ['id'=>'btn1','class'=>'btn btn-magenta']) !!}
                         </div>
-                        <div class="form-group col-2" > 
-                            <a class="btn btn-magenta" href="{{ url('admin/users') }}">Atrás</a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

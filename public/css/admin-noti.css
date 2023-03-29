@@ -1,7 +1,12 @@
 .btn-gris{
-    color: red;
-    background: #c20101;
+    color: white;
+    background: #343a40;
     border-color: #343a40;
+}
+.btn-gris:hover{
+    color: white;
+    background: #343a40a2;
+    border-color: #343a40a2;
 }
 
 .btn-personal{

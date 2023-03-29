@@ -9,7 +9,16 @@
         background: #d10b82;
         color: azure;
     }
-    
+    .btn-gris{
+        color: white;
+        background: #343a40;
+        border-color: #343a40;
+    }
+    .btn-gris:hover{
+        color: white;
+        background: #343a40a2;
+        border-color: #343a40a2;
+    }
 </style>
 @endsection
 
@@ -112,13 +121,14 @@
     </div>
   </div>
   <div class="row">
+    <div class="col-1" > 
+        <a class="btn btn-gris" href="{{ url('admin/users') }}">Volver</a>
+    </div>
     <div class="col-2">
         {!! Form::submit('Crear Colaborador', ['class'=>'btn btn-magenta']) !!}
         {!!Form::close()!!}
     </div>
-    <div class="col-2" > 
-        <a class="btn btn-magenta" href="{{ url('admin/users') }}">Atrás</a>
-    </div>
+    
   </div>
     
 <hr>

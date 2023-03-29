@@ -106,8 +106,9 @@
             <div class="form-group col-4" >
                  <label>
                     <input type="radio" name="estado" value="1" wire:model=new.estado checked>
-                    Publicado
+                    Publicado      
                 </label>
+                
                 <label>
                     <input type="radio" name="estado" value="0"wire:model=new.estado>
                     Borrador
@@ -116,14 +117,15 @@
         </div>
         <hr>
         <div class="row">
+            <div class="col-1"> 
+                <a class="btn btn-gris" href="{{ url('admin/news') }}">Volver</a>
+            </div>
             <div class="col-2">
                 <button type="submit" class="btn btn-personal" wire:click="$emit('save')">
                 Actualizar
                 </button>
             </div>
-            <div class="col-2"> 
-                <a class="btn btn-personal" href="{{ url('admin/news') }}">Atrás</a>
-            </div>
+            
         </div>
     </div>
   </div>

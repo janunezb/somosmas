@@ -111,13 +111,13 @@
         </div>
         <hr>
         <div class="row">
+            <div class="col-1"> 
+                <a class="btn btn-gris" href="{{ url('admin/news') }}">Volver</a>
+            </div>
             <div class="col-2">
                <button type="submit" class="btn btn-personal" wire:click="$emit('save')">
                 Enviar
                 </button> 
-            </div>
-            <div class="col-2"> 
-                <a class="btn btn-personal " href="{{ url('admin/news') }}">Atrás</a>
             </div>
         </div>
         
