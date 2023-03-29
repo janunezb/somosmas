@@ -116,7 +116,7 @@
                         </div>
                         <div class="form-group col-4">
                             {!! Form::label('empresa_id', 'Empresa') !!}
-                            {!! Form::select('empresa_id', $empresas
+                            {!! Form::select('empresa_id', $empresas->pluck('nombre')
                                 ,null, ['class'=>'form-control','placeholder'=>'Ingrese empresa']) !!}
                             @error('empresa_id')
                                 <span class="text-danger">{{$message }}</span>

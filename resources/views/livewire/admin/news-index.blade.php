@@ -11,7 +11,8 @@
                 {{-- @livewire('admin.create-new') --}}
                 <div class="col-2" >
                     {!! Form::label('estado', 'Noticias publicadas') !!}
-                    <input wire:model="estado" type="checkbox">
+                    {{-- <input wire:model="estado" type="checkbox"> --}}
+                    <input type="checkbox" wire:model="estado"  wire:click="$emit('noti_pub')" >
                 </div>
             </div>
         </div>
@@ -31,11 +32,7 @@
                             @if ($new->estado == 0)
                                 <tr class="p-3 mb-2 text-dark">
                                     <td>{{$new->titulo}}</td>
-                                    @if ($new->id == $destacada->noticias_id)
-                                        <td><input type="radio" name="$new->id" disabled checked></td>
-                                    @else
-                                        <td><input type="radio" name="$new->id" disabled></td>
-                                    @endif
+                                    <td><input type="radio" wire:model="destacada2" value={{ $new->id }} wire:click="$emit('destacada_nuevo')" disabled></td>
                                     <td>{{$new->adjunto}}</td>
                                     <td width="10px">
                                         <a class="btn btn-magenta" href="{{route('admin.news.edit',$new)}}">
@@ -56,13 +53,7 @@
                             @else
                                 <tr >
                                     <td>{{$new->titulo}}</td>
-                                    @if ($new->id == $destacada->noticias_id)
-                                        <td><input type="radio" class="dispay:flex" name="$new->id" wire:click=
-                                            "$emit('destacada1',{{$new->id}},{{$destacada->id}})"checked></td>
-                                    @else
-                                        <td><input type="radio" class="text-center" name="$new->id" wire:click=
-                                            "$emit('destacada1',{{$new->id}},{{$destacada->id}})"></td>
-                                    @endif
+                                    <td><input type="radio" wire:model="destacada2" value={{ $new->id }} wire:click="$emit('destacada_nuevo')"></td>                                    
                                     <td>{{$new->adjunto}}</td>
                                     <td width="10px">
                                         <a class="btn btn-magenta" href="{{route('admin.news.edit',$new)}}">
@@ -177,7 +168,7 @@
 });
 </script>
 <script>
-    Livewire.on('destacada1',(posId,not) => {
+    Livewire.on('destacada_nuevo',(posId,not) => {
     Swal.fire({
         title: 'Noticia destacada',
         icon: 'question',
@@ -190,7 +181,7 @@
         cancelButtonText: 'No'
     }).then((result) => {
         if (result.isConfirmed) {
-            Livewire.emitTo('admin.news-index','destacada',posId,not);
+            Livewire.emitTo('admin.news-index','destacada_nuevo1');
             Swal.fire({
             position: 'center',
             icon: 'success',
@@ -199,6 +190,19 @@
             timer: 2000
             })
         }
+        else{
+            Livewire.emit('mount')
+        }
+    })
+});
+</script>
+<script>
+    Livewire.on('noti_pub',() => {
+    Swal.fire({
+        position: 'center',
+            title: 'Cargando, por favor no cierres la ventana',
+            showConfirmButton: false,
+            timer: 3000
     })
 });
 </script>
