@@ -152,7 +152,7 @@ class IndexController extends Controller
     public function noticia()
     {
         $not = Noticia::where('estado', '1')
-        ->orderBy('id', 'desc')
+        ->orderBy('updated_at', 'desc')
         ->get();
         return view('inicio.noticia', compact('not'));
     }

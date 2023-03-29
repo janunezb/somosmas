@@ -168,7 +168,7 @@
 });
 </script>
 <script>
-    Livewire.on('destacada1',(posId,not) => {
+    Livewire.on('destacada_nuevo',(posId,not) => {
     Swal.fire({
         title: 'Noticia destacada',
         icon: 'question',
@@ -181,38 +181,11 @@
         cancelButtonText: 'No'
     }).then((result) => {
         if (result.isConfirmed) {
-            Livewire.emitTo('admin.news-index','destacada',posId,not);
+            Livewire.emitTo('admin.news-index','destacada_nuevo1');
             Swal.fire({
             position: 'center',
             icon: 'success',
             title: '¡Proceso finalizado correctamente!',
-            showConfirmButton: false,
-            timer: 2000
-            })
-        }
-        else{
-            Livewire.emit('postAdded')
-        }
-    })
-});
-</script>
-<script>
-    Livewire.on('destacada_nuevo',() => {
-    Swal.fire({
-        title: '¿Noticia destacada?',
-        icon: 'question',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si',
-        cancelButtonText: 'No'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            Livewire.emitTo('admin.news-index','destacada_nuevo1');
-            Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: '¡Perfecto!',
             showConfirmButton: false,
             timer: 2000
             })
