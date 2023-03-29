@@ -110,9 +110,17 @@
             </div>
         </div>
         <hr>
-        <button type="submit" class="btn btn-personal" wire:click="$emit('save')">
-            Enviar
-         </button>
+        <div class="row">
+            <div class="col-2">
+               <button type="submit" class="btn btn-personal" wire:click="$emit('save')">
+                Enviar
+                </button> 
+            </div>
+            <div class="col-2"> 
+                <a class="btn btn-personal " href="{{ url('admin/news') }}">Atrás</a>
+            </div>
+        </div>
+        
     </div>
     
   </div>

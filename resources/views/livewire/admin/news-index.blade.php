@@ -1,12 +1,12 @@
 <div>
     <div class="card">
         <div class="card-header">
-            <input wire:model="search" class="form-control" placeholder="Ingrese nombre o palabra clave">
+            <input wire:model="search" class="form-control" placeholder="Busca por Nombre o Palabra Clave">
         </div>
         <div class="card-header">
             <div class="row">
                 <div class="col-10" >
-                    <a class="btn btn-enviar" href="{{route('admin.news.create')}}">Agregar Noticia</a>
+                    <a class="btn btn-magenta" href="{{route('admin.news.create')}}">Agregar Noticia</a>
                 </div>
                 {{-- @livewire('admin.create-new') --}}
                 <div class="col-2" >
@@ -38,17 +38,17 @@
                                     @endif
                                     <td>{{$new->adjunto}}</td>
                                     <td width="10px">
-                                        <a style="background: #FE3EB2; border-color: #FE3EB2" class="btn btn-primary btn-sm" href="{{route('admin.news.edit',$new)}}">
+                                        <a class="btn btn-magenta" href="{{route('admin.news.edit',$new)}}">
                                             Editar
                                         </a>
                                     </td>
                                     <td width="10px">
-                                        <button style="background: #343a40; border-color: #343a40" type="submit" class="btn btn-success btn-sm" wire:click="$emit('hab',{{$new->id}})">
+                                        <button type="submit" class="btn btn-gris" wire:click="$emit('hab',{{$new->id}})">
                                             Habilitar
                                         </button>
                                     </td>
                                     <td width="10px">
-                                        <button type="submit" class="btn btn-danger btn-sm" wire:click="$emit('delete',{{$new->id}})">
+                                        <button type="submit" class="btn btn-rojo" wire:click="$emit('delete',{{$new->id}})">
                                             Eliminar
                                         </button>
                                     </td>
@@ -65,12 +65,12 @@
                                     @endif
                                     <td>{{$new->adjunto}}</td>
                                     <td width="10px">
-                                        <a style="color: white; background: #FE3EB2; border-color: #FE3EB2" class="btn btn-outline-primary btn-sm" href="{{route('admin.news.edit',$new)}}">
+                                        <a class="btn btn-magenta" href="{{route('admin.news.edit',$new)}}">
                                             Editar
                                         </a>
                                     </td>
                                     <td width="10px">
-                                        <button style="color: white; background: #343a40; border-color: #343a40" type="submit" class="btn btn-outline-danger btn-sm" wire:click="$emit('des_hau',{{$new->id}})">
+                                        <button type="submit" class="btn btn-gris" wire:click="$emit('des_hau',{{$new->id}})">
                                             Deshabilitar
                                         </button>
                                     </td>

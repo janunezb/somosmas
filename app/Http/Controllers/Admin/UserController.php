@@ -90,13 +90,13 @@ use PhpParser\Node\Stmt\Return_;
         
         $user->roles()->sync($request->roles);
         $user->update($request->all());
-        return redirect()->route('admin.users.edit',$user)->with('info','Los datos han sido actualizados');
+        return redirect()->route('admin.users.edit',$user)->with('info','Los datos han sido actualizados.');
     }
 
 
     public function restpassword(User $user)
     {
         $user->update(['password' => $user->documento]);
-        return redirect()->route('admin.users.edit',$user)->with('info','Los datos han sido actualizados');
+        return redirect()->route('admin.users.edit',$user)->with('info','La contraseña ha sido restablecida al número de cédula.');
     }
 }

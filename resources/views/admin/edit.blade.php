@@ -7,15 +7,15 @@
 <link rel="stylesheet" href="{{ asset('css/swiper_noti.css') }}">
 @section('css')
     <style>
-        .btn-enviar{
-            background: #F23DB3;
+        .btn-magenta{
+            background: #FE3EB2;
             color: azure;
         }
-        .btn-enviar:hover {
-            background: #9f2976;
+        .btn-magenta:hover {
+            background: #d10b82;
             color: azure;
         }
-
+        
     </style>
 @endsection
 
@@ -137,14 +137,16 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-4" >
-                            {!! Form::submit('Actualizar Colaborador', ['id'=>'btn2','class'=>'btn btn-enviar ']) !!}
+                        <div class="form-group col-2" >
+                            {!! Form::submit('Actualizar Colaborador', ['id'=>'btn2','class'=>'btn btn-magenta ']) !!}
                             {!!Form::close()!!}
                         </div>
-                        <div class="form-group col-3" >
-                            
+                        <div class="form-group col-2" > 
                             {!!Form::model($user,['route'=> ['admin.users.restpassword',$user],'method'=>'put','id'=>'form']) !!}
-                                {!! Form::submit('Restablecer contraseña', ['id'=>'btn1','class'=>'btn btn-enviar']) !!}
+                                {!! Form::submit('Restablecer contraseña', ['id'=>'btn1','class'=>'btn btn-magenta']) !!}
+                        </div>
+                        <div class="form-group col-2" > 
+                            <a class="btn btn-magenta" href="{{ url('admin/users') }}">Atrás</a>
                         </div>
                     </div>
                 </div>
