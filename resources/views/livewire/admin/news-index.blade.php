@@ -11,7 +11,8 @@
                 {{-- @livewire('admin.create-new') --}}
                 <div class="col-2" >
                     {!! Form::label('estado', 'Noticias publicadas') !!}
-                    <input wire:model="estado" type="checkbox">
+                    {{-- <input wire:model="estado" type="checkbox"> --}}
+                    <input type="checkbox" wire:model="estado"  wire:click="$emit('noti_pub')" >
                 </div>
             </div>
         </div>
@@ -31,11 +32,7 @@
                             @if ($new->estado == 0)
                                 <tr class="p-3 mb-2 text-dark">
                                     <td>{{$new->titulo}}</td>
-                                    @if ($new->id == $destacada->noticias_id)
-                                        <td><input type="radio" name="$new->id" disabled checked></td>
-                                    @else
-                                        <td><input type="radio" name="$new->id" disabled></td>
-                                    @endif
+                                    <td><input type="radio" wire:model="destacada2" value={{ $new->id }} wire:click="$emit('destacada_nuevo')" disabled></td>
                                     <td>{{$new->adjunto}}</td>
                                     <td width="10px">
                                         <a style="background: #FE3EB2; border-color: #FE3EB2" class="btn btn-primary btn-sm" href="{{route('admin.news.edit',$new)}}">
@@ -56,16 +53,10 @@
                             @else
                                 <tr >
                                     <td>{{$new->titulo}}</td>
-                                    @if ($new->id == $destacada->noticias_id)
-                                        <td><input type="radio" class="dispay:flex" name="$new->id" wire:click=
-                                            "$emit('destacada1',{{$new->id}},{{$destacada->id}})"checked></td>
-                                    @else
-                                        <td><input type="radio" class="text-center" name="$new->id" wire:click=
-                                            "$emit('destacada1',{{$new->id}},{{$destacada->id}})"></td>
-                                    @endif
+                                    <td><input type="radio" wire:model="destacada2" value={{ $new->id }} wire:click="$emit('destacada_nuevo')"></td>                                    
                                     <td>{{$new->adjunto}}</td>
                                     <td width="10px">
-                                        <a style="color: white; background: #FE3EB2; border-color: #FE3EB2" class="btn btn-outline-primary btn-sm" href="{{route('admin.news.edit',$new)}}">
+                                        <a class="btn btn-outline-primary btn-sm" href="{{route('admin.news.edit',$new)}}" >
                                             Editar
                                         </a>
                                     </td>
@@ -199,6 +190,46 @@
             timer: 2000
             })
         }
+        else{
+            Livewire.emit('postAdded')
+        }
+    })
+});
+</script>
+<script>
+    Livewire.on('destacada_nuevo',() => {
+    Swal.fire({
+        title: '¿Noticia destacada?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si',
+        cancelButtonText: 'No'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Livewire.emitTo('admin.news-index','destacada_nuevo1');
+            Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: '¡Perfecto!',
+            showConfirmButton: false,
+            timer: 2000
+            })
+        }
+        else{
+            Livewire.emit('mount')
+        }
+    })
+});
+</script>
+<script>
+    Livewire.on('noti_pub',() => {
+    Swal.fire({
+        position: 'center',
+            title: 'Cargando, por favor no cierres la ventana',
+            showConfirmButton: false,
+            timer: 3000
     })
 });
 </script>

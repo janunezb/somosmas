@@ -102,17 +102,21 @@
                 <input type="radio" name="estado" value="0"wire:model=estado>
                 Borrador
             </label>
-            {{-- |   
-                 {!! Form::radio('estado',1 ,['class'=>'mr-1'])!!}
-                 {!! Form::label('estado', 'Publicado') !!}
-                 {!! Form::radio('estado',0,['class'=>'mr-1'])!!}
-                 {!! Form::label('estado', 'Borrador') !!} --}}
             </div>
         </div>
         <hr>
-        <button type="submit" class="btn btn-personal" wire:click="$emit('save')">
+        <button type="submit" class="btn btn-personal" wire:click="$emit('save1')">
             Enviar
          </button>
+         <div wire:loading wire:target="save1">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            {{-- <button type="submit" class="btn btn-personal" disabled>
+                Enviar
+             </button> --}}
+         </div>
+         
     </div>
     
   </div>
@@ -123,6 +127,7 @@
 
 @push('js')
     <script src="{{ asset('ckeditor/build/ckeditor.js') }}"></script>
+    <script src="{{ asset('js/sweetalert.js') }}"></script>
     <script>
         ClassicEditor
        .create( document.querySelector( '#contenido' ) )
@@ -135,6 +140,18 @@
            console.error( error );
        } );
    </script>
+    <script>
+        Livewire.on('save1',posId => {
+            Swal.fire({
+                position: 'center',
+                title: 'Cargando.... Por favor no cierres la ventana',
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                timer: 3000
+                })
+    });
+    </script>
 @endpush
 
 </div>
