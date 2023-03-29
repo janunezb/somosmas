@@ -10,7 +10,8 @@
                 </div>
                 <div class="col-2" >
                     {!! Form::label('estado', 'Activos') !!}
-                    <input wire:model="estado" type="checkbox">
+                    {{-- <input wire:model="estado" type="checkbox"> --}}
+                    <input type="checkbox" wire:model="estado"  wire:click="$emit('noti_pub')" >
                 </div>
             </div>
         </div>
@@ -161,6 +162,16 @@
             )
             
         }
+    })
+});
+</script>
+<script>
+    Livewire.on('noti_pub',() => {
+    Swal.fire({
+        position: 'center',
+            title: 'Cargando, por favor no cierres la ventana',
+            showConfirmButton: false,
+            timer: 3000
     })
 });
 </script>

@@ -10,18 +10,20 @@ $('#btn1').on('click', function(e) {
         confirmButtonText: 'Aceptar'
       }).then((result) => {
         if (result.isConfirmed) {
-          // Swal.fire(
-          //   'Contraseña restablecida!',
-          //   'La contraseña ha sido restablcida exitosamente.',
-          //   'success'
-          // )
+          Swal.fire({
+            position: 'center',
+            title: 'Cargando....',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            })
           $(this).closest('#form').submit();}
       })
 });
 
 $('#btn2').on('click', function(d) {
     d.preventDefault();
-    Swal.fire({
+        Swal.fire({
         title: '¿Estás seguro(a) de actualizar la información ?',
         text: "¡No podrás revertir esto!",
         icon: 'warning',
@@ -30,12 +32,29 @@ $('#btn2').on('click', function(d) {
         cancelButtonColor: '#d33',
         confirmButtonText: 'Si'
       }).then((result) => {
-        if (result.isConfirmed) {
-          // Swal.fire(
-          //   'Informacion Actualizada!',
-          //   'La información ha sido actulizada exitosamente.',
-          //   'success'
-          // )
-          $(this).closest('#form2').submit();}
+        if (result.isConfirmed) {          
+          Swal.fire({
+            position: 'center',
+            title: 'Cargando....',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            })
+          $(this).closest('#form2').submit();      
+        }
       })
+});
+$('#btn').on('click', function(e) {
+  e.preventDefault();  
+  Swal.fire({
+    position: 'center',
+    title: 'Cargando....',
+    showConfirmButton: false,
+    allowOutsideClick: false,
+    allowEscapeKey: false,
+    onOpen: () => {
+      Swal.showLoading();
+  }
+    })
+    $(this).closest('#form').submit();
 });

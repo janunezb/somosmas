@@ -99,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div>
             @endif
         </div>
         <div class="row">
@@ -115,7 +115,10 @@
             </div>
         </div>
         <hr>
-        <button type="submit" class="btn btn-personal" wire:click="$emit('save')">
+        {{-- <button type="submit" class="btn btn-personal" wire:click="$emit('save')">
+            Actualizar
+         </button> --}}
+         <button type="submit" class="btn btn-personal" wire:click="$emit('save1',{{$new->id}})">
             Actualizar
          </button>
     </div>
@@ -125,6 +128,7 @@
 {!!Form::close()!!}
 @push('js')
     <script src="{{ asset('ckeditor/build/ckeditor.js') }}"></script>
+    <script src="{{ asset('js/sweetalert.js') }}"></script>
     <script>
         ClassicEditor
        .create( document.querySelector( '#contenido' ) )
@@ -137,5 +141,17 @@
            console.error( error );
        } );
    </script>
+   <script>
+    Livewire.on('save1',posId => {
+        Swal.fire({
+            position: 'center',
+            title: 'Cargando.... Por favor no cierres la ventana',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            timer: 3000
+            })
+});
+</script>
 @endpush
 </div>
