@@ -327,6 +327,17 @@ return [
             'url'         => 'admin/users',
             'icon'        => 'fas fa-hands-helping',
             'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Tabla Colaborador',
+                    'url'  => 'admin/users',
+                ],
+                [
+                    'text' => 'Nuevo Colaborador',
+                    'url'  => 'admin/users/create',
+                ],
+            ]
+            
 
         ],
         [
@@ -334,13 +345,31 @@ return [
             'route'       => 'admin.news.index',
             'icon'        => 'fas fa-solid fa-newspaper',
             'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Tabla Noticias',
+                    'url'  => 'admin/news',
+                ],
+                [
+                    'text' => 'Nueva Noticia',
+                    'url'  => 'admin/news/create',
+                ],
+            ]
 
+        ],
+        [
+            'text'        => 'Banners',
+            'url'         => 'admin/banners',
+            'icon'        => 'fas fa-solid fa-sign-hanging',
+            'label_color' => 'success',
+            
         ],
         [
             'text'        => 'Salir',
             'url'         => 'inicio',
             'icon'        => 'fas fa-solid fa-times-circle',
             'label_color' => 'success',
+            
         ],
         // [
         //     'text' => 'profile',
