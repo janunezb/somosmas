@@ -1,7 +1,10 @@
 @extends('adminlte::page')
+
 @section('css')
+{{-- <link rel="stylesheet" href="{{ asset('css/swiper_noti.css') }}">
+<link rel="stylesheet" href="{{ asset('css/swiper-9.0.bundle.min.css') }}"> --}}
 <style>
-   
+
 </style>
 @endsection
 
@@ -18,11 +21,11 @@
             <strong>{{session('info')}}</strong>
         </div>
     @endif --}}
-    {{-- <p>@livewire('admin.news-index')</p> --}}
+    <p>@livewire('admin.banners-index')</p>
 @stop
 
 
 
 @section('js')
-
+{{-- <script src="{{ asset('js/swiper.bundle.min.js') }}"></script> --}}
 @stop
