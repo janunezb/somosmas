@@ -149,7 +149,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-0" >
+                        <div class="col-2" >
                             <a class="btn btn-gris" href="{{ url('admin/users') }}">Volver</a>
                         </div>
                         <div class="col-3" >
