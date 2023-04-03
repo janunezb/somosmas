@@ -149,18 +149,18 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-2" > 
+                        <div class="col-0" >
                             <a class="btn btn-gris" href="{{ url('admin/users') }}">Volver</a>
                         </div>
                         <div class="col-3" >
                             {!! Form::submit('Actualizar Colaborador', ['id'=>'btn2','class'=>'btn btn-magenta']) !!}
                             {!!Form::close()!!}
                         </div>
-                        <div class="col-1" > 
+                        <div class="col-1" >
                             {!!Form::model($user,['route'=> ['admin.users.restpassword',$user],'method'=>'put','id'=>'form']) !!}
                                 {!! Form::submit('Restablecer contraseña', ['id'=>'btn1','class'=>'btn btn-magenta']) !!}
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
