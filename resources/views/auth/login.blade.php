@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
+    
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
@@ -23,56 +24,77 @@
 </head>
 
 <body class="bg-login">
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top p-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('inicio.index') }}">
-                <strong style="color: #FE3EB2">Somos</strong>Más</a>
+    <div class="row">
+         <div class="col-7 container-fluid">
+            <img class="img_logo" src="{{ asset('images/logos/liwa2.png') }}" alt="">    
         </div>
-        <img class="img_portal" src="{{ asset('images/logos/liwa.png') }}" alt="">
+        <div class="col-3">
+            <p class="navbar-logo" ><strong style="color: #FE3EB2">Somos</strong>Más</p>
+        </div>
+    </div>
+       
+        
         <ul class="w-1/2 px-16 ml-auto flex justify-end pt-1">
             @if (auth()->check())
             @endif
         </ul>
     </nav>
-
-    <div class="block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200 rounded-lg shadow-">
-
-        <h1 class="text-3xl text-center font-bold text-pink-600">Somos Más</h1>
-
-        <form action="" class="mt-4" method="POST">
-
+    <div class="contenedor-formulario contenedor">
+        <!-- <div class="img-formu">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="object-fit_fill" src="{{ asset('images/somosmas/working.jpg') }}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="object-fit_fill" src="{{ asset('images/somosmas/working2.jpg') }}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="object-fit_fill" src="{{ asset('images/somosmas/working3.jpg') }}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div> 
+        </div> -->
+        <div class="img-formu">
+            <img class="imagen-formulario" src="{{ asset('images/somosmas/working.jpg') }}" alt="">
+        </div> 
+        <form action="" class="formulario" method="POST">
         @csrf
-        <div class="">
-            <div class="single-input-item">
-                <label for="cedula" >Usuario</label>
-                <input type="text" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Número de cédula" id="cedula" name="documento">
+            <div class="texto-formulario">
+                <h1>Bienvenido(a)</h1>            
+                <hr class="line-title">
             </div>
             <br>
             <div class="single-input-item">
-                <label for="cedula" >Contraseña</label>
-                <span class="icon-eye1"><i class="fa-solid fa-eye-slash"></i></span>
-                <input type="password" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Ingresa tu contraseña" id="password" name="password">
-            
+                <label class="label-login" for="cedula" >Usuario</label>
+                <input type="text" class="input-login border border-gray-200 rounded-md w-full text-lg p-2 my-2 focus:bg-white" placeholder="Número de cédula" id="cedula" name="documento">
             </div>
-        
-        @error('message')
-            <p class="border border-red-500 rounded-md bg-red-100 w-full text-red-600 p-2 my-2">
-            * {{ $message }}</p>
-        @enderror
-
-        <button type="submit" class="rounded-md bg-pink-500 w-full text-lg text-white font-semibold p-2 my-3 hover:bg-pink-600">Ingresar</button>
-
+            <br>
+            <div class="single-input-item">
+                <label class="label-login" for="cedula" >Contraseña</label>
+                <span class="icon-eye1"><i class="fa-solid fa-eye-slash"></i></span>
+                <input type="password" class="input-login border border-gray-200 rounded-md w-full text-lg p-2 my-2 focus:bg-white" placeholder="Ingresa tu contraseña" id="password" name="password">
+            </div>
+            
+            @error('message')
+                <p class="border border-red-500 rounded-md bg-red-100 w-full text-red-600 p-2 my-2">
+                * {{ $message }}</p>
+            @enderror
+            <br>
+            <br>
+            <button type="submit" style="background: #FE3EB2"class="btn-ingreso-login">Ingresar</button>
+            
         </form>
-        
     </div>
-
+    
+    
     <script>
         $("#password").keyup(function(){
                 let string = $("#password").val();
                 $("#password").val(string.replace(/ /g, ""))
             })
     </script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{ asset('js/password.js') }}"></script>
 
 </body>
