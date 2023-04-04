@@ -1,14 +1,13 @@
 @extends('adminlte::page')
 
 @section('css')
-{{-- <link rel="stylesheet" href="{{ asset('css/swiper_noti.css') }}">
-<link rel="stylesheet" href="{{ asset('css/swiper-9.0.bundle.min.css') }}"> --}}
+<link rel="stylesheet" href="{{ asset('css/admin-noti.css')}}">
 <style>
 
 </style>
 @endsection
 
-@section('title', 'Noticias')
+@section('title', 'Banners')
 
 @section('content_header')
     <h1>Banners</h1>
