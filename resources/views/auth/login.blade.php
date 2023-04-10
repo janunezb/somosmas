@@ -29,32 +29,11 @@
             <img class="img_logo" src="{{ asset('images/logos/liwa2.png') }}" alt="">    
         </div>
         <div class="col-3">
-            <p class="navbar-logo" ><strong style="color: #FE3EB2">Somos</strong>Más</p>
+            <p class="navbar-logo"><strong style="color: #FE3EB2">Somos</strong>Más</p>
         </div>
     </div>
-       
-        
-        <ul class="w-1/2 px-16 ml-auto flex justify-end pt-1">
-            @if (auth()->check())
-            @endif
-        </ul>
-    </nav>
-    <div class="contenedor-formulario contenedor">
-        <!-- <div class="img-formu">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="object-fit_fill" src="{{ asset('images/somosmas/working.jpg') }}" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="object-fit_fill" src="{{ asset('images/somosmas/working2.jpg') }}" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="object-fit_fill" src="{{ asset('images/somosmas/working3.jpg') }}" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-            </div> 
-        </div> -->
+
+    <div class="contenedor-formulario">
         <div class="img-formu">
             <img class="imagen-formulario" src="{{ asset('images/somosmas/working.jpg') }}" alt="">
         </div> 
