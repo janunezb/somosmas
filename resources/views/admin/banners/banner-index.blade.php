@@ -3,7 +3,15 @@
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/admin-noti.css')}}">
 <style>
-
+ div.carousel-item::before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #8181818c;
+    content: "";
+}
 </style>
 @endsection
 
@@ -15,16 +23,9 @@
 @stop
 
 @section('content')
-    {{-- @if (session('info'))
-        <div class="alert alert-success">
-            <strong>{{session('info')}}</strong>
-        </div>
-    @endif --}}
     <p>@livewire('admin.banners-index')</p>
 @stop
 
-
-
 @section('js')
-{{-- <script src="{{ asset('js/swiper.bundle.min.js') }}"></script> --}}
+
 @stop

@@ -9,20 +9,21 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Admin\BannerController;
 
 
 
 class BannersIndex extends Component
 {
     use WithFileUploads;
-    // public $imagenes = [];
     public $imagen;
     public $banner;
     public $estado = 1;
     public $nombre ;
-    public $nombres =[];
     public $adjunto ;
-    protected $listeners = ['update','deshabilitar'];
+    public $orde=[];
+    
+    protected $listeners = ['update','deshabilitar','delete'];
     protected $rules = [
     
         'nombre' => 'required',
@@ -31,9 +32,13 @@ class BannersIndex extends Component
     ];
     public function render()
     {
-        $banners=Banner::where('estado',$this->estado)
+        $orden = Banner::where('estado','1')
+        ->orderBy('orden', 'asc')
         ->get();
-        return view('livewire.admin.banners-index', compact('banners'));
+        $banners=Banner::where('estado',$this->estado)
+        ->orderBy('orden', 'asc')
+        ->get();
+        return view('livewire.admin.banners-index', compact('banners','orden'));
     }
    
     public function create()
@@ -47,22 +52,31 @@ class BannersIndex extends Component
                 $c->upsize();
         });
         $img->stream();
-        Banner::create([
+        $banner =Banner::create([
             'ruta' =>$avatarName,
             'estado' => $this->estado,
             'nombre' => $this->nombre,
             'adjunto' => $this->adjunto,
         ]);
         Storage::disk('local')->put('public/images/banners' . '/' . $avatarName, $img, 'public');
+        $this->reset(['imagen','nombre','adjunto']);
+        $obj_BannerController= new BannerController();
+        $banner->update(['orden' => $obj_BannerController->ordenar_sin()]);
         return view('livewire.admin.banners-index');
     }
     public function deshabilitar(Banner $banner)
     {
-        if ($banner->estado == 1  ){
-            $banner->update(['estado' => '0']);
+        $obj_BannerController= new BannerController();
+        if ($banner->estado == 1){
+            $banner->update(['estado' => '0','orden' => 0]);
+            $obj_BannerController->ordena();
         }
         else{
-            $banner->update(['estado' => '1']);
+            $banner->update(['estado' => '1','orden' => $obj_BannerController->ordenar_sin()]);
         }
+    }
+    public function delete(Banner $banner)
+    {
+        $banner->update(['estado' => '2']);
     }
 }

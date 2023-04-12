@@ -329,7 +329,7 @@ return [
             'label_color' => 'success',
             'submenu' => [
                 [
-                    'text' => 'Tabla Colaborador',
+                    'text' => 'Ver todos',
                     'url'  => 'admin/users',
                 ],
                 [
@@ -347,7 +347,7 @@ return [
             'label_color' => 'success',
             'submenu' => [
                 [
-                    'text' => 'Tabla Noticias',
+                    'text' => 'Ver todas',
                     'url'  => 'admin/news',
                 ],
                 [
@@ -360,7 +360,7 @@ return [
         [
             'text'        => 'Banners',
             'url'         => 'admin/banners',
-            'icon'        => 'fas fa-solid fa-sign-hanging',
+            'icon'        => 'fas fa-solid fa-film',
             'label_color' => 'success',
             
         ],

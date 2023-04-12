@@ -7,7 +7,17 @@
               @php $i = 0; @endphp
               @foreach ($banners as $banner)
                 <div class="{{ $i == 0 ? 'active' : '' }} carousel-item">
-                  <img src="../storage/images/banners/{{ $banner->ruta }}" class="d-block w-100" alt="...">
+                  @if ($banner->adjunto != null)
+                    <a href="{{ $banner->adjunto }}" target="_blank">
+                      <img src="../storage/images/banners/{{ $banner->ruta }}" class="d-block w-100 img1" alt="..." >
+                    </a>
+                  @else
+                      <img src="../storage/images/banners/{{ $banner->ruta }}" class="d-block w-100" alt="..." >
+                  @endif
+                  <div class="carousel-caption d-none d-md-block">
+                    
+                    <h5><strong>{{ $banner->nombre}}</strong></h5>
+                  </div>
                 </div>
               @php $i=$i+1; @endphp
               @endforeach
@@ -30,9 +40,10 @@
   <div class="card-header">
       <div class="row">
           <div class="col-10" >
+              <h5 ><strong>Todos los Banner's</strong></h5>
           </div>
           <div class="col-2" >
-              {!! Form::label('estado', 'Activos') !!}
+              {!! Form::label('estado', 'Publicados') !!}
               <input type="checkbox" wire:model="estado"  wire:click="$emit('noti_pub')" >
           </div>
       </div>
@@ -42,12 +53,10 @@
           <table class="table table-striped">
               <thead>
                   <tr>
-                    <th>Id</th>
+                    <th>Orden</th>
                     <th>Nombre</th>
                     <th>Imagen</th>
                     <th>Adjunto</th>
-                    {{-- <th>Estado</th> --}}
-                    {{-- <th>Fecha de creación</th> --}}
                     <th></th>
                   </tr>
               </thead>
@@ -57,56 +66,60 @@
                     'route'=> ['admin.banners.update',$banner],
                     'enctype'=>'multipart/form-data',
                     'method'=>'put',
-                    'id'=>'form2'])!!}
+                    'id'=>'form'])!!}
                   @if ($banner->estado == 0)
                       <tr class="p-3 mb-2 text-dark">
-                          <td>{{$banner->id}}</td>
+                          <td>{{$banner->orden}}</td>
                           <td>{{$banner->nombre}}</td>
-                          {{-- <td>{{$banner->ruta}}</td> --}}
-                          {{-- <td>{{$banner->estado}}</td> --}}
-                          {{-- <td>{{$banner->adjunto}}</td> --}}
-                          {{-- <td>{{$banner->created_at}}</td> --}}
-                          <td>{{$banner->updated_at}}</td>
-                          {{-- <td >
-                              <a class="btn btn-magenta" href="{{route('admin.users.edit',$banner)}}">
-                                  Editar
-                              </a>
-                          </td> --}}
+                          <td>{{$banner->ruta}}</td>
+                          <td><input type="text" value="{{$banner->adjunto}}" disabled></td>
                           <td >
                             <a  class="btn btn-gris"  wire:click="$emit('hab',{{$banner->id}})">
                                   Habilitar
                                 </a>
                           </td>
                           <td >
-                              <button type="submit" class="btn btn-rojo" wire:click="$emit('delete',{{$banner->id}})">
+                              <button  class="btn btn-rojo" wire:click="$emit('delet',{{$banner->id}})">
                                   Eliminar
                               </button>
                           </td>
                       </tr>
                   @else
-                      <tr >
-                      <td>{{$banner->id}}</td>
-                      <td>{!!Form::text('nombre'.$banner->id, $banner->nombre,['class'=>'form-control'])!!}
-                        @error('nombre'.$banner->id)
+                      <tr>
+                        <td>
+                          <select name="orden.{{$banner->id}}"wire:click="$emit('EveOrden', {{$banner->orden}})" class="form-control" style="width:4rem">
+                          @foreach ($orden as $o)
+                            @if ($o->orden == $banner->orden)
+                              <option value="{{ $o->orden }}" selected >{{$o->orden }} </option>                              
+                            @else
+                              <option value="{{ $o->orden }}">{{$o->orden }}</option>
+                            @endif
+                          @endforeach
+                          </select>
+                          @error('orden'.$banner->id)
+                            <span class="text-danger">{{$message }}</span>
+                          @enderror</td>
+                        <td>{!!Form::text('nombre'.$banner->id, $banner->nombre,['class'=>'form-control'])!!}
+                          @error('nombre'.$banner->id)
+                            <span class="text-danger">{{$message }}</span>
+                          @enderror</td>
+                        <td>{!! Form::file('imagen'.$banner->id,['accept'=>'image/*'])!!}
+                          @error('imagen'.$banner->id)
                           <span class="text-danger">{{$message }}</span>
-                        @enderror</td>
-                      <td>{!! Form::file('imagen'.$banner->id,['accept'=>'image/*'])!!}
-                        @error('imagen'.$banner->id)
-                        <span class="text-danger">{{$message }}</span>
-                        @enderror</td>
-                      <td style="min-width:10px">{!!Form::text('adjunto'.$banner->id, $banner->adjunto,['class'=>'form-control'])!!}
-                        @error('adjunto'.$banner->id)
-                          <span class="text-danger">{{$message }}</span>
-                        @enderror</td>
+                          @enderror</td>
+                        <td style="min-width:10px">{!!Form::text('adjunto'.$banner->id, $banner->adjunto,['class'=>'form-control'])!!}
+                          @error('adjunto'.$banner->id)
+                            <span class="text-danger">{{$message }}</span>
+                          @enderror</td>
                           <td >
-                            <button type="submit" class="btn btn-personal" >
-                              Actualizar
-                            </button>
+                              <button type="submit" class="btn btn-personal" id="" >
+                                Actualizar
+                              </button>
                           </td>
                           <td >
-                            <a class="btn btn-gris" wire:click="$emit('des_hau',{{$banner->id}})">
-                              Deshabilitar
-                            </a>
+                              <a class="btn btn-gris" wire:click="$emit('des_hau',{{$banner->id}})">
+                                Deshabilitar
+                              </a>
                           </td>
                       </tr>
                   @endif
@@ -126,10 +139,8 @@
 {{-- *********************FIN TABLA*************************** --}}
   <div class="card">
     <div class="card-body">
-
         <div class="row">
-          <h5 class="card-title">Nuevo Banner</h5>
-          
+          <h5><strong>Nuevo Banner</strong></h5>
         </div>
         <hr>
       {!!Form::open(['wire:submit.prevent'=>'create','method'=>'put'])!!}
@@ -173,7 +184,7 @@
                       <span class="text-danger">{{$message }}</span>
                   @enderror
               </div>
-              <div class="row" style="margin: 3rem 0 4rem 0">
+              <div class="row" style="margin: 2rem 0 2rem 0">
                 <div class="col-2">
                   {!! Form::label('imagen', 'Imagen') !!}
                   </div>
@@ -186,17 +197,19 @@
                 @enderror
               </div>
           </div>
+        </div>
+        <div class="row justify-content-center">
           @if ($imagen)
-              <div class="col-4 justify-content-center "style="margin: 0 10rem 0 10rem ">
+              <div class=" justify-content-center ">
                   <div class="img_noti" >
-                      <img class="d-block w-100" src="{{$imagen->temporaryURL()}}" alt="">
+                      <img class="d-block " src="{{$imagen->temporaryURL()}}" alt="">
                   </div>
               </div>
-              
           @endif
-      </div>
+        </div>
+        <hr>
       {{-- ************************************************ --}}
-        <button type="submit" class="btn btn-personal" >
+        <button type="submit" class="btn btn-personal" wire:click="$emit('nuevo')">
           Nuevo Banner
         </button>
         {!!Form::close()!!}
@@ -205,6 +218,7 @@
 </div>
 @push('js')
 <script src="{{ asset('js/sweetalert.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/alerta_admin.js') }}"></script>
 <script>
   Livewire.on('des_hau',posId => {
   Swal.fire({
@@ -249,6 +263,52 @@
           )
           
       }
+  })
+});
+</script>
+<script>
+  Livewire.on('nuevo',posId => {
+      Swal.fire({
+          position: 'center',
+          title: 'Cargando.... Por favor no cierres la ventana',
+          showConfirmButton: false,
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+          timer: 2000
+          })
+});
+</script>
+<script>
+  Livewire.on('delet',posId => {
+  Swal.fire({
+      title: '¿Estás seguro(a) de eliminar este banner?',
+      text: "¡No podrás revertir esta acción!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#FE3EB2',
+      cancelButtonColor: '#343a40',
+      confirmButtonText: '¡Sí, eliminar!',
+      cancelButtonText: 'Cancelar'
+  }).then((result) => {
+      if (result.isConfirmed) {
+              Livewire.emitTo('admin.banners-index','delete',posId);
+              Swal.fire(
+              '¡Eliminada!',
+              'EL banner ha sido eliminado.',
+              'success'
+          )
+          
+      }
+  })
+});
+</script>
+<script>
+  Livewire.on('noti_pub',() => {
+  Swal.fire({
+      position: 'center',
+          title: 'Cargando, por favor no cierres la ventana',
+          showConfirmButton: false,
+          timer: 2000
   })
 });
 </script>
