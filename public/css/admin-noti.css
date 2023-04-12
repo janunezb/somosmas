@@ -55,7 +55,7 @@
     height: 30rem;
 }
 
-@supports(object-fit: fill){
+@supports(object-fit: contain){
     .img_noti .active img{
       
       object-fit: cover;
@@ -72,8 +72,7 @@
 
 @media only screen and (max-width: 1400px) {
     .img_noti .active img{
-        height: 20rem;
-    
+        max-height: 20rem;
     }
     .img_noti img{
         height: 20rem;

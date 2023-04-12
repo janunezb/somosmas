@@ -8,6 +8,7 @@ use App\Models\Banner;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
+use PhpParser\Node\Stmt\Return_;
 
 class BannerController extends Controller
 {
@@ -23,22 +24,22 @@ class BannerController extends Controller
     {
         $request->validate([
             'nombre'.$banner->id=>'required',
-            // 'imagen'.$banner->id=>'required|image'
+            'imagen'.$banner->id=>'image|max:2048',
         ]);
-        if($request->hasFile('imagen')){
-        $image = $request->file('imagen'.$banner->id);
-        $avatarName = substr(uniqid(rand(), true), 8, 8) . '.' . $image->getClientOriginalExtension();
-        $img = Image::make($image->getRealPath())->encode('jpg', 65)
-            ->fit(1920, 400, function ($c) {
-                $c->aspectRatio();
-                $c->upsize();
-        });
-        $request->merge(['ruta'=>$avatarName]);
+        if($request->hasFile('imagen'.$banner->id)){
+            $image = $request->file('imagen'.$banner->id);
+            $avatarName = substr(uniqid(rand(), true), 8, 8) . '.' . $image->getClientOriginalExtension();
+            $img = Image::make($image->getRealPath())->encode('jpg', 65)
+                ->fit(1920, 400, function ($c) {
+                    $c->aspectRatio();
+                    $c->upsize();
+            });
+            $request->merge(['ruta'=>$avatarName]);
+            $img->stream();
+            Storage::disk('local')->put('public/images/banners' . '/' . $avatarName, $img, 'public');
+        }
         $request->merge(['nombre'=>request('nombre'.$banner->id)]);
         $request->merge(['adjunto'=>request('adjunto'.$banner->id)]);
-        $img->stream();
-        Storage::disk('local')->put('public/images/banners' . '/' . $avatarName, $img, 'public');
-        }
         $banner->update($request->all());
         if(($request->input('orden_'.$banner->id))!=$banner->orden){
             $this->ordenar($request->input('orden_'.$banner->id),$banner->id);
@@ -69,7 +70,7 @@ class BannerController extends Controller
     }
 
     public function ordenar_sin()
-    {
+    {   
         return max(json_decode(json_encode(Banner::pluck('orden')), true))+1;
         //le suma 1 al valor maximo de la conversion del objeto a array del valor de orden de la tabla banners
     }

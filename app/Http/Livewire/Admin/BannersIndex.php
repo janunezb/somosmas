@@ -19,6 +19,7 @@ class BannersIndex extends Component
     public $imagen;
     public $banner;
     public $estado = 1;
+    public $estado_nuevo = 1;
     public $nombre ;
     public $adjunto ;
     public $orde=[];
@@ -43,6 +44,7 @@ class BannersIndex extends Component
    
     public function create()
     {
+        
         $this->validate();
         $image = $this->imagen;
         $avatarName = substr(uniqid(rand(), true), 8, 8) . '.' . $image->getClientOriginalExtension();
@@ -52,16 +54,24 @@ class BannersIndex extends Component
                 $c->upsize();
         });
         $img->stream();
+        // if($this->estado_nuevo==0){
+        //     $orden=$this->estado_nuevo;
+        // }else{
+        //     $orden=$this->estado_nuevo;
+        // }
         $banner =Banner::create([
             'ruta' =>$avatarName,
-            'estado' => $this->estado,
+            'estado' => $this->estado_nuevo,
             'nombre' => $this->nombre,
             'adjunto' => $this->adjunto,
+            'orden' => 0,
         ]);
         Storage::disk('local')->put('public/images/banners' . '/' . $avatarName, $img, 'public');
-        $this->reset(['imagen','nombre','adjunto']);
-        $obj_BannerController= new BannerController();
-        $banner->update(['orden' => $obj_BannerController->ordenar_sin()]);
+        $this->reset(['imagen','nombre','adjunto','estado_nuevo']);
+        if($this->estado_nuevo==1){
+            $obj_BannerController= new BannerController();
+            $banner->update(['orden' => $obj_BannerController->ordenar_sin()]);
+        }
         return view('livewire.admin.banners-index');
     }
     public function deshabilitar(Banner $banner)

@@ -9,7 +9,7 @@
                 <div class="{{ $i == 0 ? 'active' : '' }} carousel-item">
                   @if ($banner->adjunto != null)
                     <a href="{{ $banner->adjunto }}" target="_blank">
-                      <img src="../storage/images/banners/{{ $banner->ruta }}" class="d-block w-100 img1" alt="..." >
+                      <img src="../storage/images/banners/{{ $banner->ruta }}" class="d-block w-100" alt="..." >
                     </a>
                   @else
                       <img src="../storage/images/banners/{{ $banner->ruta }}" class="d-block w-100" alt="..." >
@@ -161,12 +161,12 @@
             {!! Form::label('estado', 'Estado') !!}
             <br>
             <label>
-               <input type="radio" name="estado" value="1" wire:model=estado checked>
+               <input type="radio" name="estado" value="1" wire:model=estado_nuevo checked>
                Publicado
            </label>
            
            <label>
-               <input type="radio" name="estado" value="0"wire:model=estado>
+               <input type="radio" name="estado" value="0"wire:model=estado_nuevo>
                Borrador
            </label>
           </div>
@@ -201,7 +201,7 @@
         <div class="row justify-content-center">
           @if ($imagen)
               <div class=" justify-content-center ">
-                  <div class="img_noti" >
+                  <div class="img_noti">
                       <img class="d-block " src="{{$imagen->temporaryURL()}}" alt="">
                   </div>
               </div>
