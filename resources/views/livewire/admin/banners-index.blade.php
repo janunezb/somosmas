@@ -40,7 +40,7 @@
   <div class="card-header">
       <div class="row">
           <div class="col-10" >
-              <h5 ><strong>Todos los Banner's</strong></h5>
+              <h5 ><strong>Todos los Banner</strong></h5>
           </div>
           <div class="col-2" >
               {!! Form::label('estado', 'Publicados') !!}
@@ -55,7 +55,7 @@
                   <tr>
                     <th>Orden</th>
                     <th>Nombre</th>
-                    <th>Imagen</th>
+                    {{-- <th>Imagen</th> --}}
                     <th>Adjunto</th>
                     <th></th>
                   </tr>
@@ -71,7 +71,7 @@
                       <tr class="p-3 mb-2 text-dark">
                           <td>{{$banner->orden}}</td>
                           <td>{{$banner->nombre}}</td>
-                          <td>{{$banner->ruta}}</td>
+                          {{-- <td>{{$banner->ruta}}</td> --}}
                           <td><input type="text" value="{{$banner->adjunto}}" disabled></td>
                           <td >
                             <a  class="btn btn-gris"  wire:click="$emit('hab',{{$banner->id}})">
@@ -103,10 +103,10 @@
                           @error('nombre'.$banner->id)
                             <span class="text-danger">{{$message }}</span>
                           @enderror</td>
-                        <td>{!! Form::file('imagen'.$banner->id,['accept'=>'image/*'])!!}
+                        {{-- <td>{!! Form::file('imagen'.$banner->id,['accept'=>'image/*'])!!}
                           @error('imagen'.$banner->id)
                           <span class="text-danger">{{$message }}</span>
-                          @enderror</td>
+                          @enderror</td> --}}
                         <td style="min-width:10px">{!!Form::text('adjunto'.$banner->id, $banner->adjunto,['class'=>'form-control'])!!}
                           @error('adjunto'.$banner->id)
                             <span class="text-danger">{{$message }}</span>
@@ -201,8 +201,8 @@
         <div class="row justify-content-center">
           @if ($imagen)
               <div class=" justify-content-center ">
-                  <div class="img_noti">
-                      <img class="d-block " src="{{$imagen->temporaryURL()}}" alt="">
+                  <div class="col-12">
+                      <img class="d-block w-100" src="{{$imagen->temporaryURL()}}" alt="">
                   </div>
               </div>
           @endif
@@ -235,7 +235,7 @@
           Livewire.emitTo('admin.banners-index','deshabilitar',posId);
               Swal.fire(
               'Proceso Ejecutado!',
-              'La noticia ha sido deshabilitada.',
+              'El banner ha sido deshabilitado.',
               'success'
           )
       }
@@ -258,7 +258,7 @@
               Livewire.emitTo('admin.banners-index','deshabilitar',posId);
               Swal.fire(
               '¡Habilitada!',
-              'LEste banner ha sido habilitado.',
+              'Este banner ha sido habilitado.',
               'success'
           )
           
@@ -294,7 +294,7 @@
               Livewire.emitTo('admin.banners-index','delete',posId);
               Swal.fire(
               '¡Eliminada!',
-              'EL banner ha sido eliminado.',
+              'El banner ha sido eliminado.',
               'success'
           )
           
