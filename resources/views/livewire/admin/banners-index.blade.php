@@ -15,7 +15,7 @@
                       <img src="../storage/images/banners/{{ $banner->ruta }}" class="d-block w-100" alt="..." >
                   @endif
                   <div class="carousel-caption d-none d-md-block">
-                    
+
                     <h5><strong>{{ $banner->nombre}}</strong></h5>
                   </div>
                 </div>
@@ -90,7 +90,7 @@
                           <select name="orden.{{$banner->id}}"wire:click="$emit('EveOrden', {{$banner->orden}})" class="form-control" style="width:4rem">
                           @foreach ($orden as $o)
                             @if ($o->orden == $banner->orden)
-                              <option value="{{ $o->orden }}" selected >{{$o->orden }} </option>                              
+                              <option value="{{ $o->orden }}" selected >{{$o->orden }} </option>
                             @else
                               <option value="{{ $o->orden }}">{{$o->orden }}</option>
                             @endif
@@ -164,7 +164,7 @@
                <input type="radio" name="estado" value="1" wire:model=estado_nuevo checked>
                Publicado
            </label>
-           
+
            <label>
                <input type="radio" name="estado" value="0"wire:model=estado_nuevo>
                Borrador
@@ -178,7 +178,7 @@
                   {!! Form::text('adjunto',null, ['class'=>
                   'form-control',
                   'wire:model'=>'adjunto',
-                  'placeholder'=>'Ingrese links de adjuntos']) !!}
+                  'placeholder'=>'Ingrese link de adjunto']) !!}
                   <br>
                   @error('adjunto')
                       <span class="text-danger">{{$message }}</span>
@@ -261,7 +261,7 @@
               'Este banner ha sido habilitado.',
               'success'
           )
-          
+
       }
   })
 });
@@ -297,7 +297,7 @@
               'El banner ha sido eliminado.',
               'success'
           )
-          
+
       }
   })
 });
