@@ -337,7 +337,7 @@ return [
                     'url'  => 'admin/users/create',
                 ],
             ]
-            
+
 
         ],
         [
@@ -362,14 +362,14 @@ return [
             'url'         => 'admin/banners',
             'icon'        => 'fas fa-solid fa-film',
             'label_color' => 'success',
-            
+
         ],
         [
             'text'        => 'Salir',
             'url'         => 'inicio',
             'icon'        => 'fas fa-solid fa-times-circle',
             'label_color' => 'success',
-            
+
         ],
         // [
         //     'text' => 'profile',
