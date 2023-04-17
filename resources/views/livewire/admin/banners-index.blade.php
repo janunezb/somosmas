@@ -62,68 +62,37 @@
               </thead>
               <tbody>
                 @foreach ($banners as $banner)
-                  {!!Form::model($banner,[
-                    'route'=> ['admin.banners.update',$banner],
-                    'enctype'=>'multipart/form-data',
-                    'method'=>'put',
-                    'id'=>'form'])!!}
-                  @if ($banner->estado == 0)
-                      <tr class="p-3 mb-2 text-dark">
-                          <td>{{$banner->orden}}</td>
-                          <td>{{$banner->nombre}}</td>
-                          {{-- <td>{{$banner->ruta}}</td> --}}
-                          <td><input type="text" value="{{$banner->adjunto}}" disabled></td>
-                          <td >
-                            <a  class="btn btn-gris"  wire:click="$emit('hab',{{$banner->id}})">
-                                  Habilitar
-                                </a>
-                          </td>
-                          <td >
-                              <button  class="btn btn-rojo" wire:click="$emit('delet',{{$banner->id}})">
-                                  Eliminar
-                              </button>
-                          </td>
-                      </tr>
-                  @else
-                      <tr>
-                        <td>
-                          <select name="orden.{{$banner->id}}"wire:click="$emit('EveOrden', {{$banner->orden}})" class="form-control" style="width:4rem">
-                          @foreach ($orden as $o)
-                            @if ($o->orden == $banner->orden)
-                              <option value="{{ $o->orden }}" selected >{{$o->orden }} </option>                              
-                            @else
-                              <option value="{{ $o->orden }}">{{$o->orden }}</option>
-                            @endif
-                          @endforeach
-                          </select>
-                          @error('orden'.$banner->id)
-                            <span class="text-danger">{{$message }}</span>
-                          @enderror</td>
-                        <td>{!!Form::text('nombre'.$banner->id, $banner->nombre,['class'=>'form-control'])!!}
-                          @error('nombre'.$banner->id)
-                            <span class="text-danger">{{$message }}</span>
-                          @enderror</td>
-                        {{-- <td>{!! Form::file('imagen'.$banner->id,['accept'=>'image/*'])!!}
-                          @error('imagen'.$banner->id)
-                          <span class="text-danger">{{$message }}</span>
-                          @enderror</td> --}}
-                        <td style="min-width:10px">{!!Form::text('adjunto'.$banner->id, $banner->adjunto,['class'=>'form-control'])!!}
-                          @error('adjunto'.$banner->id)
-                            <span class="text-danger">{{$message }}</span>
-                          @enderror</td>
-                          <td >
-                              <button type="submit" class="btn btn-personal" id="" >
-                                Actualizar
-                              </button>
-                          </td>
-                          <td >
+                    @if ($banner->estado == 0)
+                        <tr class="p-3 mb-2 text-dark">
+                            <td class="col-2">{{$banner->orden}}</td>
+                            <td class="col-2">{{$banner->nombre}}</td>
+                            <td class="col-4"><input type="text" value="{{$banner->adjunto}}" disabled></td>
+                            <td class="col-1">
+                              <a  class="btn btn-gris"  wire:click="$emit('hab',{{$banner->id}})">
+                                    Habilitar
+                                  </a>
+                            </td>
+                            <td class="col-1">
+                                <button  class="btn btn-rojo" wire:click="$emit('delet',{{$banner->id}})">
+                                    Eliminar
+                                </button>
+                            </td>
+                        </tr>
+                    @else
+                        <tr>
+                          <td class="col-2">{{$banner->orden}}</td>
+                          <td class="col-2">{{$banner->nombre}}</td>
+                          <td ><input style="min-width:25rem" type="text" value="{{$banner->adjunto}}" disabled></td>
+                            <td width="10px">
+                              <x-modal id="{{$banner->id}}"/>
+                            </td>
+                            <td width="10px">
                               <a class="btn btn-gris" wire:click="$emit('des_hau',{{$banner->id}})">
                                 Deshabilitar
                               </a>
-                          </td>
-                      </tr>
-                  @endif
-                  {!!Form::close()!!}
+                            </td>
+                        </tr>
+                    @endif
                 @endforeach
               </tbody>
           </table>
@@ -217,101 +186,101 @@
   </div>
 </div>
 @push('js')
-<script src="{{ asset('js/sweetalert.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/alerta_admin.js') }}"></script>
-<script>
-  Livewire.on('des_hau',posId => {
-  Swal.fire({
-      title: '¿Estás seguro(a) de deshabilitar este banner?',
-      text: "¡No podrás revertir esta acción!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#FE3EB2',
-      cancelButtonColor: '#343a40',
-      confirmButtonText: '¡Sí, deshabilitar!',
-      cancelButtonText: 'Cancelar'
-  }).then((result) => {
-      if (result.isConfirmed) {
-          Livewire.emitTo('admin.banners-index','deshabilitar',posId);
-              Swal.fire(
-              'Proceso Ejecutado!',
-              'El banner ha sido deshabilitado.',
-              'success'
-          )
-      }
-  })
-});
-</script>
-<script>
-  Livewire.on('hab',posId => {
-  Swal.fire({
-      title: '¿Estás seguro(a) de habilitar este banner?',
-      text: "¡No podrás revertir esta acción!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#FE3EB2',
-      cancelButtonColor: '#343a40',
-      confirmButtonText: '¡Sí, habilitar!',
-      cancelButtonText: 'Cancelar'
-  }).then((result) => {
-      if (result.isConfirmed) {
-              Livewire.emitTo('admin.banners-index','deshabilitar',posId);
-              Swal.fire(
-              '¡Habilitada!',
-              'Este banner ha sido habilitado.',
-              'success'
-          )
-          
-      }
-  })
-});
-</script>
-<script>
-  Livewire.on('nuevo',posId => {
-      Swal.fire({
-          position: 'center',
-          title: 'Cargando.... Por favor no cierres la ventana',
-          showConfirmButton: false,
-          allowOutsideClick: false,
-          allowEscapeKey: false,
-          timer: 2000
-          })
-});
-</script>
-<script>
-  Livewire.on('delet',posId => {
-  Swal.fire({
-      title: '¿Estás seguro(a) de eliminar este banner?',
-      text: "¡No podrás revertir esta acción!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#FE3EB2',
-      cancelButtonColor: '#343a40',
-      confirmButtonText: '¡Sí, eliminar!',
-      cancelButtonText: 'Cancelar'
-  }).then((result) => {
-      if (result.isConfirmed) {
-              Livewire.emitTo('admin.banners-index','delete',posId);
-              Swal.fire(
-              '¡Eliminada!',
-              'El banner ha sido eliminado.',
-              'success'
-          )
-          
-      }
-  })
-});
-</script>
-<script>
-  Livewire.on('noti_pub',() => {
-  Swal.fire({
-      position: 'center',
-          title: 'Cargando, por favor no cierres la ventana',
-          showConfirmButton: false,
-          timer: 2000
-  })
-});
-</script>
+  <script src="{{ asset('js/sweetalert.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/alerta_admin.js') }}"></script>
+  <script>
+    Livewire.on('des_hau',posId => {
+    Swal.fire({
+        title: '¿Estás seguro(a) de deshabilitar este banner?',
+        text: "¡No podrás revertir esta acción!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#FE3EB2',
+        cancelButtonColor: '#343a40',
+        confirmButtonText: '¡Sí, deshabilitar!',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Livewire.emitTo('admin.banners-index','deshabilitar',posId);
+                Swal.fire(
+                'Proceso Ejecutado!',
+                'El banner ha sido deshabilitado.',
+                'success'
+            )
+        }
+    })
+  });
+  </script>
+  <script>
+    Livewire.on('hab',posId => {
+    Swal.fire({
+        title: '¿Estás seguro(a) de habilitar este banner?',
+        text: "¡No podrás revertir esta acción!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#FE3EB2',
+        cancelButtonColor: '#343a40',
+        confirmButtonText: '¡Sí, habilitar!',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+                Livewire.emitTo('admin.banners-index','deshabilitar',posId);
+                Swal.fire(
+                '¡Habilitada!',
+                'Este banner ha sido habilitado.',
+                'success'
+            )
+            
+        }
+    })
+  });
+  </script>
+  <script>
+    Livewire.on('nuevo',posId => {
+        Swal.fire({
+            position: 'center',
+            title: 'Cargando.... Por favor no cierres la ventana',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            timer: 2000
+            })
+  });
+  </script>
+  <script>
+    Livewire.on('delet',posId => {
+    Swal.fire({
+        title: '¿Estás seguro(a) de eliminar este banner?',
+        text: "¡No podrás revertir esta acción!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#FE3EB2',
+        cancelButtonColor: '#343a40',
+        confirmButtonText: '¡Sí, eliminar!',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+                Livewire.emitTo('admin.banners-index','delete',posId);
+                Swal.fire(
+                '¡Eliminada!',
+                'El banner ha sido eliminado.',
+                'success'
+            )
+            
+        }
+    })
+  });
+  </script>
+  <script>
+    Livewire.on('noti_pub',() => {
+    Swal.fire({
+        position: 'center',
+            title: 'Cargando, por favor no cierres la ventana',
+            showConfirmButton: false,
+            timer: 2000
+    })
+  });
+  </script>
 @endpush
 
 

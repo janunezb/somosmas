@@ -22,6 +22,7 @@ class BannerController extends Controller
     
     public function update(Request $request,Banner $banner)
     {
+        Log::info('update');
         $request->validate([
             'nombre'.$banner->id=>'required',
             'imagen'.$banner->id=>'image|max:2048',
