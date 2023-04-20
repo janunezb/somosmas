@@ -486,7 +486,7 @@
 
             {{-- imagenes noticias --}}
             <div id="carouselExampleControls" style="height: 500px" class="carousel slide col-6 noticia" data-ride="carousel">
-                <div class="carousel-inner">                    
+                <div class="carousel-inner">
                         <?php $porciones = explode(',', $noticias->imagenes); ?>
                         @for ($i = 0; $i < count($porciones); $i++)
                             <div class="{{ $i == 0 ? 'active' : '' }} carousel-item">
@@ -508,7 +508,7 @@
             <div class="row">
                 <div class="col-12">
                     <p>
-                        <br> 
+                        <br>
                         <hr>
                     </p>
                 </div>
@@ -583,21 +583,15 @@
     <br>
 
     <div class="">
-
-
         <div class="carrusel-itemss">
             @foreach ($formacion as $formaciones)
                 <div class="carrusel-itemm">
-
                     <div class="card" style="width: 16rem;">
-                        <img src="{{ $formaciones->imagen }}" alt="">
+                        <img src="{{ asset('../storage/images/formaciones/'.$formaciones->imagen)}}" alt="">
                         <div class="card-body">
                             <h5 class="card-title">{{ $formaciones->titulo }}</h5>
-
-                            <p class="card-text">
-                                {{ $formaciones->cuerpo }}
-                            </p>
-                            <br>
+                            {!! Str::limit($formaciones->cuerpo, 160, '...') !!}
+                            <hr>
                             <a href="{{ $formaciones->adjunto }}" class="btn btn-outline-dark"
                                 target="_blank"><i class="bi bi-arrow-right"></i> Ingresa</a>
                         </div>
