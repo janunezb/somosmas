@@ -14,18 +14,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="row justify-content-center">
-                    {{-- <div class=" justify-content-center "> --}}
-                        {{-- <div style="height: 150px; background-color: rgba(255,0,0,0.1);"> --}}
-                            {{-- <div class="h-50 d-inline-block" style="width: 300px;"> 
-                                @if ($imagen)                                            
-                                    <img class="mw-100" src="{{ $imagen->temporaryURL() }}" alt="">
-                                @endif
-                            </div> --}}
-                        {{-- </div> --}}
-                    {{-- </div> --}}
-                    
-                </div>
+                
                 <div class="modal-body">
                     {!! Form::open(['wire:submit.prevent' => 'create', 'method' => 'post']) !!}
                     <div class="row">
@@ -112,7 +101,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-gris" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-gris" data-dismiss="modal">Cerrar</button>
                     <button type="submit" formmethod="post" class="btn btn-personal">Guardar</button>
                 </div>
                 {!! Form::close() !!}
@@ -135,3 +124,4 @@
            console.error( error );
        } );
    </script>
+@endpush

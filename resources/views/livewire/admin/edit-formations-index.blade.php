@@ -2,7 +2,7 @@
     <div>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-personal"data-toggle="modal"data-target="#myModal{{ $form->id }}">
-            Actualizar
+            Editar
         </button>
         <!-- Modal -->
         <div wire:ignore.self class="modal fade" id="myModal{{ $form->id }}" tabindex="-1" role="dialog"
@@ -92,7 +92,7 @@
                             
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-gris" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-gris" data-dismiss="modal">Cerrar</button>
                             <button type="submit" formmethod="post" class="btn btn-personal">Guardar cambios</button>
                         </div>
                     {!! Form::close() !!}

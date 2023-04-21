@@ -5,10 +5,10 @@
 
 @endsection
 
-@section('title', 'Banners')
+@section('title', 'Formaciones')
 
 @section('content_header')
-    <h1>Formaciones de mes</h1>
+    <h1>Formaciones del mes</h1>
     @livewireStyles
 @stop
 
