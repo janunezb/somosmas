@@ -50,7 +50,6 @@
                                             disabled></td>
                                      <td width="10px">
                                         <livewire:admin.edit-formations-index :form="$form" :wire:key="$form->id">
-                                        {{-- <x-modal-formation-edit id="{{ $form->id }}"  /> --}}
                                     </td>
                                     
                                     <td width="10px">
@@ -95,7 +94,7 @@
     <script>
         Livewire.on('des_hau', posId => {
             Swal.fire({
-                title: '¿Estás seguro(a) de deshabilitar este banner?',
+                title: '¿Estás seguro(a) de deshabilitar esta formación?',
                 text: "¡No podrás revertir esta acción!",
                 icon: 'warning',
                 showCancelButton: true,
@@ -108,7 +107,7 @@
                     Livewire.emitTo('admin.formations-index', 'deshabilitar', posId);
                     Swal.fire(
                         'Proceso Ejecutado!',
-                        'El banner ha sido deshabilitado.',
+                        'Esta formación ha sido deshabilitada.',
                         'success'
                     )
                 }
@@ -118,7 +117,7 @@
     <script>
         Livewire.on('hab', posId => {
             Swal.fire({
-                title: '¿Estás seguro(a) de habilitar este banner?',
+                title: '¿Estás seguro(a) de esta formación?',
                 text: "¡No podrás revertir esta acción!",
                 icon: 'warning',
                 showCancelButton: true,
@@ -131,7 +130,7 @@
                     Livewire.emitTo('admin.formations-index', 'deshabilitar', posId);
                     Swal.fire(
                         '¡Habilitada!',
-                        'Este banner ha sido habilitado.',
+                        'Esta formación ha sido habilitada.',
                         'success'
                     )
 
@@ -142,7 +141,7 @@
     <script>
         Livewire.on('delet', posId => {
             Swal.fire({
-                title: '¿Estás seguro(a) de eliminar este banner?',
+                title: '¿Estás seguro(a) de eliminar esta formación?',
                 text: "¡No podrás revertir esta acción!",
                 icon: 'warning',
                 showCancelButton: true,
@@ -155,7 +154,7 @@
                     Livewire.emitTo('admin.formations-index', 'delete', posId);
                     Swal.fire(
                         '¡Eliminada!',
-                        'El banner ha sido eliminado.',
+                        'Esta formación ha sido eliminada.',
                         'success'
                     )
 

@@ -115,18 +115,3 @@
     } );
     </script>
 @endpush
-
-{{-- @foreach ($orden as $f)
-    <script>
-        ClassicEditor
-       .create( document.querySelector( '#cuerpo{{ $f->id }}') )
-       .then( function( editor ) {
-          editor.model.document.on( 'change:data', () => {
-              @this.set('cuerpo', editor.getData());
-          });
-       } )
-       .catch( error => {
-           console.error( error );
-       } );
-   </script>
-@endforeach --}}

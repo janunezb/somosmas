@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Log;
 use Livewire\WithFileUploads;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
+use App\Http\livewire\Admin\FormationsIndex;
 
 class EditFormationsIndex extends Component
 {
@@ -24,7 +25,9 @@ class EditFormationsIndex extends Component
     ];
     public function mount(Formacion $form)
     {
+
         $this->form = $form;
+
         $this->orden = Formacion::where('estado',1)
         ->orderBy('orden', 'asc')
         ->get();
@@ -37,7 +40,6 @@ class EditFormationsIndex extends Component
     {
         $this->validate();
         if($this->imagen){
-            Log::info('dentro imagen');
             $image =$this->imagen;
             $avatarName = substr(uniqid(rand(), true), 8, 8) . '.' . $image->getClientOriginalExtension();
             $img = Image::make($image->getRealPath())->encode('jpg', 65)
@@ -46,15 +48,33 @@ class EditFormationsIndex extends Component
                 $c->upsize();
             });
                 $img->stream();
+                $this->form->update([
+                    'imagen' => $avatarName,
+                ]);
                 Storage::disk('local')->put('public/images/formaciones' . '/' . $avatarName, $img, 'public');
         }
-        
-        $this->form->save();
-        $this->emit('render');
-        
-        $this->dispatchBrowserEvent('close-modal');
+        if($this->form->orden!=Formacion::whereId($this->form->id)->value('orden'))
+        {
+            $this->ordenar($this->form->orden,$this->form->id);
+        }
         $this->emitTo('admin.formations-index','render');
+        $this->form->save();
+        $this->dispatchBrowserEvent('close-modal');
         $this->reset(['imagen','titulo','adjunto','cuerpo']);
         return view('livewire.admin.banners-index');
+        
+    }
+    public function ordenar($select,$id_banner)
+    {
+        $base =Formacion::where('estado', 1)->get();
+        $registro_Mod=$base->where('id',$id_banner)->first();
+        $registro_orden=$base->where('id',$id_banner)->pluck('orden')->first();
+        $registro_Mod->update(['orden' =>$select]);
+        foreach ($base as $key => $registro) {
+            if($registro->orden==$select && $registro->id!=$id_banner){
+                 $registro->update(['orden' =>$registro_orden]);
+            }
+          }
+        
     }
 }

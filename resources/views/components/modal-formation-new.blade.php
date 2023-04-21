@@ -15,11 +15,16 @@
                     </button>
                 </div>
                 <div class="row justify-content-center">
-                    <div class=" justify-content-center ">
-                        <div class="col-12">
-                            {{-- <img class="d-block w-100" src="../storage/images/banners/{{}}" alt=""> --}}
-                        </div>
-                    </div>
+                    {{-- <div class=" justify-content-center "> --}}
+                        {{-- <div style="height: 150px; background-color: rgba(255,0,0,0.1);"> --}}
+                            {{-- <div class="h-50 d-inline-block" style="width: 300px;"> 
+                                @if ($imagen)                                            
+                                    <img class="mw-100" src="{{ $imagen->temporaryURL() }}" alt="">
+                                @endif
+                            </div> --}}
+                        {{-- </div> --}}
+                    {{-- </div> --}}
+                    
                 </div>
                 <div class="modal-body">
                     {!! Form::open(['wire:submit.prevent' => 'create', 'method' => 'post']) !!}
@@ -130,4 +135,3 @@
            console.error( error );
        } );
    </script>
-@endpush

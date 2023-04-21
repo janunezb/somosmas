@@ -1139,23 +1139,25 @@ hr.line-title-sunco {
 
 
 .carrusel-itemss{
-    width: 100%;
+    width: 1104px;
     display: flex;
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
     /* overflow-x: scroll; */
-    justify-content: center;
+    /* justify-content: center; */
 
 }
-/* 
+
 .carrusel-itemss::-webkit-scrollbar {
-    width: 3px;
+    /* width: 2px; */
+    height: 7px;
 
 }
+
 
 .carrusel-itemss::-webkit-scrollbar-thumb {
     background-color: #FE3EB2;
     border-radius: 8px;
-} */
+} 
 
 .carrusel-itemm{
     padding: 10px;

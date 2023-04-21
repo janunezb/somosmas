@@ -19,14 +19,14 @@ class FormationsIndex extends Component
     public $titulo ;
     public $adjunto ;
     // public $orde=[];.
-    protected $listeners = ['update','deshabilitar','delete'];
+    protected $listeners = ['update','deshabilitar','delete','render'];
 
     protected $rules = [
     
         'titulo' => 'required',
         'cuerpo' => 'required',
         'imagen' => 'required|max:2048|image',
-        'adjunto' => '',
+        'adjunto' => 'required',
     ];
     public function render()
     {
@@ -46,11 +46,6 @@ class FormationsIndex extends Component
                 $c->upsize();
         });
         $img->stream();
-        // if($this->estado_nuevo==0){
-        //     $orden=$this->estado_nuevo;
-        // }else{
-        //     $orden=$this->estado_nuevo;
-        // }
         $banner =Formacion::create([
             'imagen' =>$avatarName,
             'estado' => $this->estado_nuevo,
@@ -90,7 +85,7 @@ class FormationsIndex extends Component
     public function ordenar_sin()
     {
         return max(json_decode(json_encode(Formacion::pluck('orden')), true))+1;
-        //le suma 1 al valor maximo de la conversion del objeto a array del valor de orden de la tabla banners
+        //suma 1 al valor maximo de la conversion del objeto a array del valor de orden de la tabla banners
     }
     public function ordena()
     {
