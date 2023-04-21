@@ -49,7 +49,7 @@ class IndexController extends Controller
         ->get();
         
         $formacion = Formacion::where('estado', '1')
-            ->orderBy('orden', 'desc')
+            ->orderBy('orden', 'asc')
             ->get();
 
         $now = Carbon::now();

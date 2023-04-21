@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="form-group col-8">
                                     {!! Form::label('titulo', 'Título') !!}
-                                    {!! Form::text('titulo' . $form->id, $form->titulo, ['class' => 'form-control','wire:model'=>'form.titulo',]) !!}
+                                    {!! Form::text('titulo' . $form->id, $form->titulo, ['class' => 'form-control','wire:model'=>'form.titulo','maxlength'=>'40']) !!}
                                     @error('titulo' . $form->id)
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

@@ -21,7 +21,7 @@ class EditFormationsIndex extends Component
         'form.titulo' => 'required',
         'form.cuerpo' => 'required',
         'form.imagen' => 'required',
-        'form.adjunto' => '',
+        'form.adjunto' => 'required',
     ];
     public function mount(Formacion $form)
     {

@@ -24,6 +24,7 @@
                                 'class' => 'form-control',
                                 'wire:model' => 'titulo',
                                 'placeholder' => 'Ingrese el titúlo de la formación',
+                                'maxlength'=>'40'
                             ]) !!}
                             @error('titulo')
                                 <span class="text-danger">{{ $message }}</span>
